@@ -744,16 +744,156 @@ ul.side-nav {
 	list-style-position:inside;
 }
 
+#group_cover_photo {
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	height:400px;
+	margin-top:-20px;
+}
+
+#group_tab_1 {
+	padding:30px 0 10px 0;
+	border-bottom:4px solid #006f7c;
+}
+
+#group_tab_1:hover h3 {
+	color:#006f7c !important;
+}
+
+#group_tab_1 h3 {
+	text-align:center;
+	font-weight:bold;
+}
+
+#group_tab_2 {
+	padding:30px 0 10px 0;
+	border-bottom:4px solid #7f3e19;
+}
+
+#group_tab_2:hover h3 {
+	color:#7f3e19 !important;
+}
+
+#group_tab_2 h3 {
+	text-align:center;
+	font-weight:bold;
+	color:black;
+}
+
+#group_tab_3 {
+	padding:30px 0 10px 0;
+	border-bottom:4px solid #989d00;
+}
+
+#group_tab_3:hover h3 {
+	color:#989d00 !important;
+}
+
+#group_tab_3 h3 {
+	text-align:center;
+	font-weight:bold;
+	color:black;
+}
+
+#find_a_group, #start_a_group, #connect_your_group {
+	padding:40px 0;
+}
+
+#find_a_group {
+	display:block;
+}
+
+#browse_groups_button {
+	background-color:#006f7c;
+	color:white;
+	width:120px;
+	text-align:center;
+	margin:10px;
+	padding:10px;
+	float:right;
+}
+
+#need_help_button {
+	background-color:#006f7c;
+	color:white;
+	width:120px;
+	text-align:center;
+	margin:10px;
+	padding:10px;
+	float:right;
+}
+
+#start_a_group, #connect_your_group {
+	display:none;
+}
+
+#start_a_group_button {
+	background-color:#7f3e19;
+	color:white;
+	width:120px;
+	text-align:center;
+	margin:10px;
+	padding:10px;
+	float:right;
+}
+
+#wufoo-p7x3x5 {
+	margin-top:20px;
+}
+
+#groups_back_button {
+	background-color:#989d00;
+	color:white;
+	width:140px;
+	text-align:center;
+	margin:10px;
+	padding:10px;
+}
+
+#groups_footer {
+	height:215px;
+}
+
+#groups_logo {
+	margin-right:0;
+	padding-bottom:0;
+	padding-right:0;
+	height:210px;
+}
+
+#groups_links {
+	margin-left:0;
+	background-color:#F9F9F9;
+	padding:10px 0 20px 40px;
+	height:175px;
+	border-left:4px solid #006f7c;
+	border-top-right-radius:6px;
+	border-bottom-right-radius:6px;
+}
+
+#groups_links ul {
+	list-style-type:none;
+	margin-top:30px;
+}
+
+#groups_links ul li a {
+	font-size:1.5em;
+}
+
 /* Latest */
 #latest {
 	margin: 20px auto 40px;
 }
-	#latest h2 {
-		color: #707170;
-		font-size: 36px;
-		padding-top: 65px;
-		text-transform: uppercase;
-	}
+
+#latest h2 {
+	color: #707170;
+	font-size: 36px;
+	padding-top: 65px;
+	text-transform: uppercase;
+}
+
 .latest-ind {
 	margin: 20px auto;
 }

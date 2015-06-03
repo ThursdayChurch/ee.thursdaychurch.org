@@ -1,16 +1,117 @@
 {embed="_includes/header" title="{if segment_2}{exp:channel:entries channel='Groups' dynamic='yes'}{title}{/exp:channel:entries}{if:else}Life Groups{/if}"}
 
+<script src="/_js/parallax.js-1.3.1/parallax.js"></script>
+
+<div id="group_cover_photo"></div>
+
 <div class="container clearfix">
-	<div class="grid_3">
-		{embed="_component/sidebar-groups"}
+	<a href="#group_tab_1">
+		<div id="group_tab_1" class="grid_4 push_1">
+			<h3>Find a Group</h3>
+		</div>
+	</a>
+
+	<a href="#group_tab_1">
+		<div id="group_tab_2" class="grid_4 push_1">
+			<h3>Start a Group</h3>
+		</div>
+	</a>
+
+	<a href="#group_tab_1">
+		<div id="group_tab_3" class="grid_4 push_1">
+			<h3>Connect Your Group</h3>
+		</div>
+	</a>
+
+	<div class="clear"></div>
+
+	{exp:channel:entries channel="Pages" url_title="find-a-group"}
+	<div id="find_a_group" class="grid_12">
+		<h2>{title}</h2>
+		<p>{page-body}</p>
+		<a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/"><div id="need_help_button">I Need Help</div></a>
+		<a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank"><div id="browse_groups_button">Browse Groups</div></a>
 	</div>
-	<div class="grid_9">
-		{exp:channel:entries channel="Pages" url_title="groups" dynamic="no"}
-			<div class="fancy-page">
-				{page-body}
-			</div>
+	{/exp:channel:entries}
+
+	<div class="clear"></div>
+
+	{exp:channel:entries channel="Pages" url_title="start-a-group"}
+	<div id="start_a_group" class="grid_12">
+		<h2>{title}</h2>
+		<p>{page-body}</p>
+		<a href="/groups/start"><div id="start_a_group_button">Start A Group</div></a>
+	</div>
+	{/exp:channel:entries}
+
+	<div class="clear"></div>
+
+	{exp:channel:entries channel="Pages" url_title="connect-your-group"}
+	<div id="connect_your_group" class="grid_12">
+		<h2>{title}</h2>
+		<p>{page-body}</p>
+
+		{exp:channel:entries channel="Pages"}
+		<div id="group_events">
+
+		</div>
 		{/exp:channel:entries}
 	</div>
+	{/exp:channel:entries}
+
+	<div class="clear"></div>
+
+	<div id="groups_footer">
+		<div id="groups_logo" class="grid_3 alpha push_1">
+			<a href="/groups"><img class="groups-logo" src="/_img/lifegroups.png"></a>
+		</div>
+
+		<div id="groups_links" class="grid_9 omega push_1">
+			<ul>
+				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Find a Group</a></li>
+				<li><a href="/groups/faq">FAQ &amp; Benefits</a></li>
+				<li><a href="/groups/start">Become a Leader</a></li>
+				<li><a href="/groups/resources">Leader Resources</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
 </div>
+
+<script>
+	$(document).ready(function() {
+
+		$('#group_cover_photo').parallax({imageSrc: '/_img/Awakening.jpg'});
+
+		$('#group_tab_1').click(function() {
+			$('#find_a_group').css('display', 'block');
+			$('#start_a_group').css('display', 'none');
+			$('#connect_your_group').css('display', 'none');
+			$('#group_tab_1 h3').css('color', '#006f7c');
+			$('#group_tab_2 h3').css('color', 'black');
+			$('#group_tab_3 h3').css('color', 'black');
+		});
+
+		$('#group_tab_2').click(function() {
+			$('#find_a_group').css('display', 'none');
+			$('#start_a_group').css('display', 'block');
+			$('#connect_your_group').css('display', 'none');
+			$('#group_tab_2 h3').css('color', '#7f3e19');
+			$('#group_tab_1 h3').css('color', 'black');
+			$('#group_tab_3 h3').css('color', 'black');
+		});
+
+		$('#group_tab_3').click(function() {
+			$('#find_a_group').css('display', 'none');
+			$('#start_a_group').css('display', 'none');
+			$('#connect_your_group').css('display', 'block');
+			$('#group_tab_3 h3').css('color', '#989d00');
+			$('#group_tab_1 h3').css('color', 'black');
+			$('#group_tab_2 h3').css('color', 'black');
+		});
+	});
+</script>
 
 {embed="_includes/footer"}
