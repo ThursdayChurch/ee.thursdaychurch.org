@@ -29,7 +29,7 @@
 	<div id="find_a_group" class="grid_12">
 		<h2>{title}</h2>
 		<p>{page-body}</p>
-		<a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/"><div id="need_help_button">I Need Help</div></a>
+		<a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/" target="_blank"><div id="need_help_button">I Need Help</div></a>
 		<a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank"><div id="browse_groups_button">Browse Groups</div></a>
 	</div>
 	{/exp:channel:entries}
@@ -46,27 +46,47 @@
 
 	<div class="clear"></div>
 
-	{exp:channel:entries channel="Pages" url_title="connect-your-group"}
+	{exp:channel:entries channel="pages" url_title="connect-your-group"}
 	<div id="connect_your_group" class="grid_12">
 		<h2>{title}</h2>
 		<p>{page-body}</p>
-
-		{exp:channel:entries channel="Pages"}
-		<div id="group_events">
-
-		</div>
 		{/exp:channel:entries}
+
+		<div id="group_events">
+		<h2>Upcoming Life Group Events</h2>
+			{exp:channel:entries channel="group_events" orderby="group_event_date"}
+			<div id="group_events_entry" class="grid_12 alpha omega">
+				<div id="group_events_title" class="grid_8 alpha"><h3>{title}</h3></div>
+				<div id="group_events_date" class="grid_3 omega"><h3>{group_event_date format="%D, %F %d"}</h3></div>
+				<div class="clear"></div>
+				<div class="grid_4 alpha"><h4><span>Time:</span> {group_event_time}</h4></div>
+				<div class="grid_4"><h4><span>Where:</span> {group_event_location}</h4></div>
+				<div class="grid_4 omega"><h4><span>Contact:</span> {group_event_contact}</h4></div>
+				<br class="clear"><br>
+				<p><span>Description:</span> {group_event_description}</p><br>
+				<p>{if group_event_directions != ""}<span>Directions:</span> {group_event_directions}{/if}</p>
+			</div>
+			{/exp:channel:entries}
+		</div>
 	</div>
-	{/exp:channel:entries}
+</div>
 
-	<div class="clear"></div>
+<div class="clear"></div>
 
+<div class="container clearfix">
+	<a href="#group_events"><div class="expand_down_button grid_3 alpha"><h4>Connect Your Group</h4> <i class="fa fa-chevron-down fa-2x"></i></div></a>
+	<a href="#group_tab_1"><div class="expand_up_button grid_1 alpha"><i class="fa fa-chevron-up fa-2x"></i></div></a>
+</div>
+
+<div class="clear"></div>
+
+<div class="container clearfix">
 	<div id="groups_footer">
-		<div id="groups_logo" class="grid_3 alpha push_1">
+		<div id="groups_logo" class="grid_3 push_1 alpha">
 			<a href="/groups"><img class="groups-logo" src="/_img/lifegroups.png"></a>
 		</div>
 
-		<div id="groups_links" class="grid_9 omega push_1">
+		<div id="groups_links" class="grid_9 push_1 omega">
 			<ul>
 				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Find a Group</a></li>
 				<li><a href="/groups/faq">FAQ &amp; Benefits</a></li>
@@ -76,8 +96,6 @@
 		</div>
 	</div>
 
-	<div class="clear"></div>
-
 </div>
 
 <script>
@@ -86,21 +104,23 @@
 		$('#group_cover_photo').parallax({imageSrc: '/_img/Awakening.jpg'});
 
 		$('#group_tab_1').click(function() {
-			$('#find_a_group').css('display', 'block');
+			$('#find_a_group').css('display', 'inline');
 			$('#start_a_group').css('display', 'none');
 			$('#connect_your_group').css('display', 'none');
 			$('#group_tab_1 h3').css('color', '#006f7c');
 			$('#group_tab_2 h3').css('color', 'black');
 			$('#group_tab_3 h3').css('color', 'black');
+			$('.expand_down_button').css('display', 'none');
 		});
 
 		$('#group_tab_2').click(function() {
 			$('#find_a_group').css('display', 'none');
-			$('#start_a_group').css('display', 'block');
+			$('#start_a_group').css('display', 'inline');
 			$('#connect_your_group').css('display', 'none');
 			$('#group_tab_2 h3').css('color', '#7f3e19');
 			$('#group_tab_1 h3').css('color', 'black');
 			$('#group_tab_3 h3').css('color', 'black');
+			$('.expand_down_button').css('display', 'none');
 		});
 
 		$('#group_tab_3').click(function() {
@@ -110,6 +130,24 @@
 			$('#group_tab_3 h3').css('color', '#989d00');
 			$('#group_tab_1 h3').css('color', 'black');
 			$('#group_tab_2 h3').css('color', 'black');
+			$('.expand_down_button').css('display', 'block');
+		});
+
+		$('.expand_down_button').click(function() {
+			$('.expand_down_button').css('display', 'none');
+			$('.expand_up_button').css('display', 'block');
+			$('#group_events').css('display', 'block');
+			{!--$('#group_events').css('-webkit-transition','display 1s');
+			$('#group_events').css('-o-transition','height 1s');
+			$('#group_events').css('-moz-transition','display 1s');
+			$('#group_events').css('-moz-transition','display 1s');
+			$('#group_events').css('transition','display 1s');--}
+		});
+
+		$('.expand_up_button').click(function() {
+			$('.expand_up_button').css('display', 'none');
+			$('.expand_down_button').css('display', 'block');
+			$('#group_events').css('display', 'none');
 		});
 	});
 </script>
