@@ -1,85 +1,132 @@
-{embed="_includes/header" title="{if segment_2}{exp:channel:entries channel='Groups' dynamic='yes'}{title}{/exp:channel:entries}{if:else}Life Groups{/if}"}
+{embed="_includes/header" title="{if segment_2}{exp:channel:entries channel='groups' dynamic='yes'}{title}{/exp:channel:entries}{if:else}Life groups{/if}"}
 
 <script src="/_js/parallax.js-1.3.1/parallax.js"></script>
 
-<div id="group_cover_photo"></div>
+<div id="groups_cover_photo"></div>
 
 <div class="container clearfix">
-	<a href="#group_tab_1">
-		<div id="group_tab_1" class="grid_4 push_1">
-			<h3>Find a Group</h3>
+
+
+	{!-- Find A Group Tab --}
+	<a href="#groups_tab_1">
+		<div id="groups_tab_1" class="grid_4 push_1">
+			<h3>Find a group</h3>
 		</div>
 	</a>
 
-	<a href="#group_tab_1">
-		<div id="group_tab_2" class="grid_4 push_1">
-			<h3>Start a Group</h3>
+
+	{!-- Start A Group Tab --}
+	<a href="#groups_tab_1">
+		<div id="groups_tab_2" class="grid_4 push_1">
+			<h3>Start a group</h3>
 		</div>
 	</a>
 
-	<a href="#group_tab_1">
-		<div id="group_tab_3" class="grid_4 push_1">
-			<h3>Connect Your Group</h3>
+
+	{!-- Connect Your Group Tab --}
+	<a href="#groups_tab_1">
+		<div id="groups_tab_3" class="grid_4 push_1">
+			<h3>Connect Your group</h3>
 		</div>
 	</a>
 
 	<div class="clear"></div>
 
+
+	{!-- Find A Group Info --}
 	{exp:channel:entries channel="Pages" url_title="find-a-group"}
 	<div id="find_a_group" class="grid_12">
 		<h2>{title}</h2>
 		<p>{page-body}</p>
 		<a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/" target="_blank"><div id="need_help_button">I Need Help</div></a>
-		<a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank"><div id="browse_groups_button">Browse Groups</div></a>
+		<a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank"><div id="browse_groups_button">Browse groups</div></a>
 	</div>
 	{/exp:channel:entries}
 
 	<div class="clear"></div>
 
+
+	{!-- Start A Group Info --}
 	{exp:channel:entries channel="Pages" url_title="start-a-group"}
 	<div id="start_a_group" class="grid_12">
 		<h2>{title}</h2>
 		<p>{page-body}</p>
-		<a href="/groups/start"><div id="start_a_group_button">Start A Group</div></a>
+
+		{!-- Wufoo Form for Starting A Group --}
+		<a href="#wufoo-p7x3x5"><div class="grid_2" id="start_a_group_button">Start A Group</div></a>
+		<a href="#groups_tab_1"><div class="start_a_group_close grid_2"><i class="fa fa-times fa-2x"></i></div></a>
+		<div class="grid_12 alpha omega">
+			<div id="wufoo-p7x3x5"></div>
+		</div>
+		<a href="#groups_tab_1"><div class="start_a_group_close grid_2"><i class="fa fa-chevron-up fa-2x"></i></div></a>
 	</div>
 	{/exp:channel:entries}
 
+	{!-- Wufoo Form Stuff --}
+	<script type="text/javascript">var p7x3x5;(function(d, t) {
+	var s = d.createElement(t), options = {
+	'userName':'journeydreamteam',
+	'formHash':'p7x3x5',
+	'autoResize':true,
+	'height':'1483',
+	'async':true,
+	'header':'show',
+	'ssl':true};
+	s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+	s.onload = s.onreadystatechange = function() {
+	var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+	try { p7x3x5 = new WufooForm();p7x3x5.initialize(options);p7x3x5.display(); } catch (e) {}};
+	var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+	})(document, 'script');</script>
+
 	<div class="clear"></div>
 
+
+	{!-- Connect Your Group Info --}
 	{exp:channel:entries channel="pages" url_title="connect-your-group"}
 	<div id="connect_your_group" class="grid_12">
 		<h2>{title}</h2>
 		<p>{page-body}</p>
-		{/exp:channel:entries}
+	{/exp:channel:entries}
+		<a href="#groups_expand"><div class="expand_down_button grid_3 alpha"><h4>Connect Your Group</h4> <i class="fa fa-chevron-down fa-2x"></i></div></a>
+		<div class="clear"></div>
 
-		<div id="group_events">
-		<h2>Upcoming Life Group Events</h2>
-			{exp:channel:entries channel="group_events" orderby="group_event_date"}
-			<div id="group_events_entry" class="grid_12 alpha omega">
-				<div id="group_events_title" class="grid_8 alpha"><h3>{title}</h3></div>
-				<div id="group_events_date" class="grid_3 omega"><h3>{group_event_date format="%D, %F %d"}</h3></div>
+		<a href="#groups_tab_1"><div class="expand_up_button grid_2 alpha"><i class="fa fa-times fa-2x"></i></div></a>
+		<div class="clear"></div>
+
+		{!-- Expandable Group Connection Content --}
+		<div id="groups_expand">
+
+			{!-- Group Events --}
+			<div id="groups_events">
+			<h2>Upcoming Life Group Events</h2>
+				{exp:channel:entries channel="group_events" limit="15" orderby="group_event_date"}
+				<div id="groups_events_entry">
+					<div id="groups_events_title" class="grid_8 alpha"><h3>{title}</h3></div>
+					<div id="groups_events_date" class="grid_3 omega"><h3>{group_event_date format="%D, %F %d"}</h3></div>
+					<div class="clear"></div>
+
+					<div class="grid_4 alpha"><h4><span>Time:</span> {group_event_time}</h4></div>
+					<div class="grid_4 alpha omega"><h4><span>Where:</span> {group_event_location}</h4></div>
+					<div class="grid_4 omega"><h4><span>Contact:</span> {group_event_contact}</h4></div>
+					<br class="clear"><br>
+
+					<p><span>Description:</span> {group_event_description}</p><br>
+					<p>{if group_event_directions != ""}<span>Directions:</span> {group_event_directions}{/if}</p>
+				</div>
+				{/exp:channel:entries}
 				<div class="clear"></div>
-				<div class="grid_4 alpha"><h4><span>Time:</span> {group_event_time}</h4></div>
-				<div class="grid_4"><h4><span>Where:</span> {group_event_location}</h4></div>
-				<div class="grid_4 omega"><h4><span>Contact:</span> {group_event_contact}</h4></div>
-				<br class="clear"><br>
-				<p><span>Description:</span> {group_event_description}</p><br>
-				<p>{if group_event_directions != ""}<span>Directions:</span> {group_event_directions}{/if}</p>
+
+				<a href="#groups_tab_1"><div class="expand_up_button grid_1 alpha"><i class="fa fa-chevron-up fa-2x"></i></div></a>
 			</div>
-			{/exp:channel:entries}
 		</div>
 	</div>
 </div>
 
 <div class="clear"></div>
 
-<div class="container clearfix">
-	<a href="#group_events"><div class="expand_down_button grid_3 alpha"><h4>Connect Your Group</h4> <i class="fa fa-chevron-down fa-2x"></i></div></a>
-	<a href="#group_tab_1"><div class="expand_up_button grid_1 alpha"><i class="fa fa-chevron-up fa-2x"></i></div></a>
-</div>
 
-<div class="clear"></div>
-
+{!-- Groups Footer --}
 <div class="container clearfix">
 	<div id="groups_footer">
 		<div id="groups_logo" class="grid_3 push_1 alpha">
@@ -88,7 +135,7 @@
 
 		<div id="groups_links" class="grid_9 push_1 omega">
 			<ul>
-				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Find a Group</a></li>
+				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Find a group</a></li>
 				<li><a href="/groups/faq">FAQ &amp; Benefits</a></li>
 				<li><a href="/groups/start">Become a Leader</a></li>
 				<li><a href="/groups/resources">Leader Resources</a></li>
@@ -98,56 +145,75 @@
 
 </div>
 
+
 <script>
 	$(document).ready(function() {
 
-		$('#group_cover_photo').parallax({imageSrc: '/_img/Awakening.jpg'});
 
-		$('#group_tab_1').click(function() {
+		/* Parallax Cover Photo */
+		$('#groups_cover_photo').parallax({imageSrc: '/_img/Awakening.jpg'});
+
+
+		/* Find A Group Fun Stuff */
+		$('#groups_tab_1').click(function() {
 			$('#find_a_group').css('display', 'inline');
 			$('#start_a_group').css('display', 'none');
 			$('#connect_your_group').css('display', 'none');
-			$('#group_tab_1 h3').css('color', '#006f7c');
-			$('#group_tab_2 h3').css('color', 'black');
-			$('#group_tab_3 h3').css('color', 'black');
-			$('.expand_down_button').css('display', 'none');
+			$('#groups_tab_1 h3').css('color', '#006f7c');
+			$('#groups_tab_2 h3').css('color', 'black');
+			$('#groups_tab_3 h3').css('color', 'black');
 		});
 
-		$('#group_tab_2').click(function() {
+
+		/* Start A Group Fun Stuff */
+		$('#groups_tab_2').click(function() {
 			$('#find_a_group').css('display', 'none');
 			$('#start_a_group').css('display', 'inline');
 			$('#connect_your_group').css('display', 'none');
-			$('#group_tab_2 h3').css('color', '#7f3e19');
-			$('#group_tab_1 h3').css('color', 'black');
-			$('#group_tab_3 h3').css('color', 'black');
-			$('.expand_down_button').css('display', 'none');
+			$('#groups_tab_2 h3').css('color', '#7f3e19');
+			$('#groups_tab_1 h3').css('color', 'black');
+			$('#groups_tab_3 h3').css('color', 'black');
+			$('#wufoo-p7x3x5').slideUp('slow');
+			$('.start_a_group_close').css('display', 'none');
+			$('#start_a_group_button').fadeIn();
 		});
 
-		$('#group_tab_3').click(function() {
+		$('#start_a_group_button').click(function() {
+			$('#wufoo-p7x3x5').slideDown('slow');
+			$('#start_a_group_button').css('display', 'none');
+			$('.start_a_group_close').fadeIn();
+		});
+
+		$('.start_a_group_close').click(function() {
+			$('#wufoo-p7x3x5').slideUp('slow');
+			$('.start_a_group_close').css('display', 'none');
+			$('#start_a_group_button').fadeIn();
+		});
+
+
+		/* Connect Your Group Fun Stuff */
+		$('#groups_tab_3').click(function() {
 			$('#find_a_group').css('display', 'none');
 			$('#start_a_group').css('display', 'none');
 			$('#connect_your_group').css('display', 'block');
-			$('#group_tab_3 h3').css('color', '#989d00');
-			$('#group_tab_1 h3').css('color', 'black');
-			$('#group_tab_2 h3').css('color', 'black');
-			$('.expand_down_button').css('display', 'block');
+			$('#groups_tab_3 h3').css('color', '#989d00');
+			$('#groups_tab_1 h3').css('color', 'black');
+			$('#groups_tab_2 h3').css('color', 'black');
+			$('.expand_down_button').fadeIn();
+			$('.expand_up_button').css('display', 'none');
+			$('#groups_expand').slideUp('slow');
 		});
 
 		$('.expand_down_button').click(function() {
 			$('.expand_down_button').css('display', 'none');
-			$('.expand_up_button').css('display', 'block');
-			$('#group_events').css('display', 'block');
-			{!--$('#group_events').css('-webkit-transition','display 1s');
-			$('#group_events').css('-o-transition','height 1s');
-			$('#group_events').css('-moz-transition','display 1s');
-			$('#group_events').css('-moz-transition','display 1s');
-			$('#group_events').css('transition','display 1s');--}
+			$('.expand_up_button').fadeIn();
+			$('#groups_expand').slideDown('slow');
 		});
 
 		$('.expand_up_button').click(function() {
+			$('.expand_down_button').fadeIn();
 			$('.expand_up_button').css('display', 'none');
-			$('.expand_down_button').css('display', 'block');
-			$('#group_events').css('display', 'none');
+			$('#groups_expand').slideUp('slow');
 		});
 	});
 </script>
