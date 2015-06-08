@@ -788,6 +788,7 @@ ul.side-nav {
 #groups_tab_3 {
 	padding:30px 0 10px 0;
 	border-bottom:4px solid #989d00;
+	margin-bottom:20px;
 }
 
 #groups_tab_3:hover h3 {
@@ -801,7 +802,7 @@ ul.side-nav {
 }
 
 #find_a_group, #start_a_group, #connect_your_group {
-	padding:40px 0;
+	padding:20px 0 40px 0;
 }
 
 #find_a_group {
@@ -838,8 +839,15 @@ ul.side-nav {
 	width:120px;
 	text-align:center;
 	margin:20px 10px 10px 10px;
-	padding:10px;
 	float:right;
+}
+
+#start_a_group_button {
+	padding:10px;
+}
+
+.start_a_group_close {
+	padding:5px;
 }
 
 #groups_expand {
@@ -904,8 +912,8 @@ ul.side-nav {
 #groups_links {
 	margin-left:0;
 	background-color:#F9F9F9;
-	padding:10px 0 20px 40px;
-	height:175px;
+	padding:20px 0 20px 40px;
+	height:auto;
 	border-left:4px solid #006f7c;
 	border-top-right-radius:6px;
 	border-bottom-right-radius:6px;
@@ -913,11 +921,16 @@ ul.side-nav {
 
 #groups_links ul {
 	list-style-type:none;
-	margin-top:30px;
+	margin-top:0px;
 }
 
 #groups_links ul li a {
 	font-size:1.5em;
+}
+
+#groups_links h3 {
+	display:inline;
+	font-size:1.2em;
 }
 
 #groups_events {
