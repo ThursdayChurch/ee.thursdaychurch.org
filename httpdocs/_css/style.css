@@ -866,6 +866,34 @@ ul.side-nav {
 	height:215px;
 }
 
+.footer_expand_up_button {
+	background-color:#006f7c;
+	color:white;
+	text-align:center;
+	padding:5px;
+	float:right;
+	margin-top:40px;
+	margin-bottom:40px;
+	display:none;
+}
+
+.footer_expand_down_button {
+	padding-bottom:10px !important;
+}
+
+.footer_expand_down_button h4 {
+	display:inline;
+	margin-top:-20px !important;
+}
+
+#groups_faq, #groups_leader_resources {
+	display:none;
+}
+
+#groups_footer_content {
+	display:none;
+}
+
 #groups_logo {
 	margin-right:0;
 	padding-bottom:0;

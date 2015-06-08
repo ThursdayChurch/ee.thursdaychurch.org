@@ -6,7 +6,6 @@
 
 <div class="container clearfix">
 
-
 	{!-- Find A Group Tab --}
 	<a href="#groups_tab_1">
 		<div id="groups_tab_1" class="grid_4 push_1">
@@ -129,22 +128,74 @@
 {!-- Groups Footer --}
 <div class="container clearfix">
 	<div id="groups_footer">
-		<div id="groups_logo" class="grid_3 push_1 alpha">
+		<div id="groups_logo" class="grid_3 alpha">
 			<a href="/groups"><img class="groups-logo" src="/_img/lifegroups.png"></a>
 		</div>
 
-		<div id="groups_links" class="grid_9 push_1 omega">
+		<div id="groups_links" class="grid_9 omega">
 			<ul>
-				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Find a group</a></li>
-				<li><a href="/groups/faq">FAQ &amp; Benefits</a></li>
-				<li><a href="/groups/start">Become a Leader</a></li>
-				<li><a href="/groups/resources">Leader Resources</a></li>
+				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Browse Groups</a></li>
+				<li><a id="groups_faq_link" href="#groups_footer">FAQ &amp; Benefits</a></li>
+				<li><a id="groups_become_leader_link" href="#wufoo-p7x3x5">Become a Leader</a></li>
+				<li><a id="groups_leader_resources_link" href="#groups_footer">Leader Resources</a></li>
 			</ul>
 		</div>
 	</div>
 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+	<div class="clear"></div>
+
+	<a href="#group_tab_1"><div class="footer_expand_up_button grid_2 alpha" style="background-color:#006f7c;"><i class="fa fa-times fa-2x"></i></div></a>
+
+	<div class="clear"></div>
+
+	<div id="groups_footer_content">
+		<div id="groups_faq" class="grid_12 marg-b-40">
+			<div id="accordion">
+				<h2>FAQ</h2>
+				{exp:channel:entries channel="FAQ" category="24" orderby="date" sort="asc"}
+					<h3><span class="accordion-title">{title}</span> <span class="fa fa-plus pull-right" style="padding-right:10px"></span></h3>
+					<div>
+						{faq-body}
+					</div>
+				{/exp:channel:entries}
+			</div>
+			<br>
+			<div id="accordion2">
+				<h2>Benefits</h2>
+				{exp:channel:entries channel="FAQ" category="25" orderby="date" sort="asc"}
+					<h3><span class="accordion-title">{title}</span> <span class="fa fa-plus pull-right" style="padding-right:10px"></span></h3>
+					<div>
+						{faq-body}
+					</div>
+				{/exp:channel:entries}
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="groups_leader_resources">
+			<div class="grid_12">
+				{exp:channel:entries channel="pages" url_title="life-group-resources"}
+					{page-body}
+				{/exp:channel:entries}
+			</div>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<a href="#group_tab_1"><div class="footer_expand_up_button grid_2 alpha" style="background-color:#006f7c;"><i class="fa fa-chevron-up fa-2x"></i></div></a>
+
 </div>
 
+<script>
+$(function() {
+ $("#accordion").accordion({ header: "h3", active: false, collapsible: true, heightStyle: "content" });
+ $("#accordion2").accordion({ header: "h3", active: false, collapsible: true, heightStyle: "content" });
+});
+</script>
 
 <script>
 	$(document).ready(function() {
@@ -214,6 +265,41 @@
 			$('.expand_down_button').fadeIn();
 			$('.expand_up_button').css('display', 'none');
 			$('#groups_expand').slideUp('slow');
+		});
+
+
+		/* Groups Footer Fun Stuff */
+		$('#groups_faq_link').click(function() {
+			$('#groups_leader_resources').css('display', 'none');
+			$('#groups_faq').fadeIn();
+			$('.footer_expand_up_button').fadeIn();
+			$('#groups_footer_content').slideDown('slow');
+		});
+
+		$('#groups_leader_resources_link').click(function() {
+			$('#groups_faq').css('display', 'none');
+			$('#groups_leader_resources').fadeIn();
+			$('.footer_expand_up_button').fadeIn();
+			$('#groups_footer_content').slideDown('slow');
+		});
+
+		$('#groups_become_leader_link').click(function() {
+			$('#groups_faq').css('display', 'none');
+			$('#groups_leader_resources').css('display', 'none');
+			$('#find_a_group').css('display', 'none');
+			$('#start_a_group').css('display', 'inline');
+			$('#connect_your_group').css('display', 'none');
+			$('#groups_tab_2 h3').css('color', '#7f3e19');
+			$('#groups_tab_1 h3').css('color', 'black');
+			$('#groups_tab_3 h3').css('color', 'black');
+			$('#wufoo-p7x3x5').slideDown('slow');
+			$('#start_a_group_button').css('display', 'none');
+			$('.start_a_group_close').fadeIn();
+		});
+
+		$('.footer_expand_up_button').click(function() {
+			$('.footer_expand_up_button').css('display', 'none');
+			$('#groups_footer_content').slideUp('slow');
 		});
 	});
 </script>
