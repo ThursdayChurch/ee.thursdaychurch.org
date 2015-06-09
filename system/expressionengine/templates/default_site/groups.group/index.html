@@ -109,7 +109,7 @@
 
 					<div class="grid_3 alpha"><h4><span>Time:</span> {group_event_time}</h4></div>
 					<div class="grid_3 alpha"><h4><span>Where:</span> {group_event_location}</h4></div>
-					<div class="grid_3 alpha"><h4><span>Contact:</span> {group_event_contact}<br>{if group_event_contact_email != ""}<a href="mailto:{group_event_contact_email}" style="color:white !important; word-wrap:break-word !important;">{group_event_contact_email}</a><br>{/if}{if group_event_contact_phone_number != ""}{group_event_contact_phone_number}{/if}</h4></div>
+					<div class="grid_3 alpha"><h4><span>Contact:</span> {group_event_contact}<br><br>{if group_event_contact_email != ""}Email: <a href="mailto:{group_event_contact_email}" style="color:white !important; word-wrap:break-word !important;">{group_event_contact_email}</a><br><br>{/if}{if group_event_contact_phone_number != ""}Phone Number: {group_event_contact_phone_number}{/if}</h4></div>
 					<div class="grid_3 alpha"><h4><span>Who:</span> {group_event_who}</h4></div>
 					<br class="clear"><br>
 
