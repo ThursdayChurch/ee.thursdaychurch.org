@@ -801,7 +801,8 @@ ul.side-nav {
 	color:black;
 }
 
-#find_a_group, #start_a_group, #connect_your_group {
+#find_a_group h2, #start_a_group h2, #connect_your_group h2 {
+	margin-bottom:15px;
 }
 
 #find_a_group {
