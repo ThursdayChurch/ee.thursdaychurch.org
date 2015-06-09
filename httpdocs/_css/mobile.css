@@ -86,6 +86,26 @@
 		display:none !important;
 	}
 
+	#groups_form grid_2 {
+		display:block !important;
+	}
+
+	#browse_groups_button, #need_help_button, #start_a_group_button {
+		display:block;
+		width:100% !important;
+		float:none !important;
+		margin:15px auto !important;
+		padding:10px 0 !important;
+	}
+
+	#start_a_group_button {
+		margin:40px 0 40px 0 !important;
+	}
+
+	#find_a_group a:hover, #start_a_group a:hover, #connect_your_group a:hover {
+		text-decoration:none !important;
+	}
+
 	#groups_faq {
 		float:left !important;
 	}
@@ -103,7 +123,30 @@
 	}
 
 	#groups_logo {
-		margin:30px auto;
+		margin:40px auto !important;
+	}
+
+	#groups_logo img {
+		display:block !important;
+		margin-left:auto !important;
+		margin-right:auto !important;
+	}
+
+	#groups_events h3 {
+		text-align:center;
+	}
+
+	#groups_events_date {
+		float:none !important;
+		width:102% !important;
+		margin-left:-13px !important;
+		border-left:none !important;
+		border-right:none !important;
+	}
+
+	#groups_events_entry h4 {
+		margin-top:5px;
+		margin-bottom:5px;
 	}
 
 	/* Locations */
