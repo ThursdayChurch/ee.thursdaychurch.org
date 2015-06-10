@@ -356,6 +356,7 @@ ul.side-nav {
 		#layerslider-container {
 			margin-bottom: 10px;
 		}
+
 		.mobile_boxes {
 			text-transform: uppercase;
 			color: #fff;
@@ -892,6 +893,11 @@ ul.side-nav {
 .footer_expand_down_button h4 {
 	display:inline;
 	margin-top:-20px !important;
+}
+
+#groups_resources #layerslider-container {
+	margin-top:20px;
+	margin-bottom:15px;
 }
 
 #groups_faq, #groups_resources {

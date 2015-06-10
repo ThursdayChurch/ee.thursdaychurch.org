@@ -183,24 +183,33 @@
 
 		<div id="groups_resources">
 			<div class="grid_12">
-
+				<h2>Resources</h2>
 				<div class="grid_12 alpha omega">
 					<div id="layerslider-container">
-						<div id="layerslider" style="width:966px;height:200px;margin-bottom:40px">
+						<div id="layerslider" style="width:966px;height:300px;margin-bottom:40px">
 							<div class="ls-layer" style="slidedirection: top; slidedelay: 8000; delayout: 300;">
-								<img class="ls-s3 si" src="/_img/interns/catherine.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<img class="ls-s3 si" src="/_img/do_hard_things.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<a href="http://www.amazon.com/Do-Hard-Things-Rebellion-Expectations/dp/1601421125" class="ls-link"></a>
 							</div>
+
 							<div class="ls-layer" style="slidedirection: top; slidedelay: 8000; delayout: 300;">
-								<img class="ls-s3 si" src="/_img/interns/powell.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<img class="ls-s3 si" src="/_img/sun-stand-still.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<a href="http://www.amazon.com/Sun-Stand-Still-Happens-Impossible/dp/1601423225" class="ls-link"></a>
 							</div>
+
 							<div class="ls-layer" style="slidedirection: top; slidedelay: 8000; delayout: 300;">
-								<img class="ls-s3 si" src="/_img/interns/josiah.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<img class="ls-s3 si" src="/_img/Speed-of-Trust.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<a href="http://www.amazon.com/The-SPEED-Trust-Changes-Everything-ebook/dp/B000MGATWG" class="ls-link"></a>
 							</div>
+
 							<div class="ls-layer" style="slidedirection: top; slidedelay: 8000; delayout: 300;">
-								<img class="ls-s3 si" src="/_img/interns/brandon.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<img class="ls-s3 si" src="/_img/the_circle_maker.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<a href="http://www.amazon.com/The-Circle-Maker-Praying-Greatest/dp/1491511370" class="ls-link"></a>
 							</div>
+
 							<div class="ls-layer" style="slidedirection: top; slidedelay: 8000; delayout: 300;">
-								<img class="ls-s3 si" src="/_img/interns/mark.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<img class="ls-s3 si" src="/_img/chase-the-lion.jpg" style="slidedirection : left; slideoutdirection : right; durationin : 900; durationout : 900; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin:300; delayout:0;">
+								<a href="http://www.amazon.com/Pit-Lion-Snowy-Day-Opportunity/dp/1590527151" class="ls-link"></a>
 							</div>
 						</div>
 					</div>
@@ -208,14 +217,23 @@
 					<script src="/_js/layerslider.transitions.js"type="text/javascript"></script>
 					<script type="text/javascript">
 						$(document).ready(function(){
+
+							var width = $('html').width();
+
+							var autostartvalue = true;
+
 							$('#groups_resources_link').click(function() {
+								if (width <= 768) {
+									autostartvalue = false;
+								}
+
 								$('#layerslider').layerSlider({
 									skinsPath : '/themes/assets/',
 									skin : 'fullwidth',
-									autoStart : true,
+									autoStart : autostartvalue,
 									navStartStop : false,
 									responsive : true,
-									responsiveUnder : 966,
+									responsiveUnder : 0,
 									sublayerContainer : 966,
 									hoverPrevNext : false,
 									thumbnailNavigation : false,
