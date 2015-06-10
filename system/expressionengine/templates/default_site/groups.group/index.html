@@ -141,8 +141,8 @@
 		<div id="groups_links" class="grid_9 omega">
 			<ul>
 				<li><a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest" target="_blank">Browse Groups</a></li>
-				<li><a id="groups_faq_link" href="#groups_footer">FAQ &amp; Benefits</a></li>
 				<li><a id="groups_become_leader_link" href="#wufoo-p7x3x5">Become a Leader</a></li>
+				<li><a id="groups_faq_link" href="#groups_footer">FAQ &amp; Benefits</a></li>
 				<li><a id="groups_resources_link" href="#groups_footer">Resources</a></li><br>
 				<li><h3>Get Connected With Life Groups On</h3> <a href="https://www.facebook.com/journeychurchtv">Facebook</a>  <h3>and</h3>  <a href="https://twitter.com/lifegroupsjc">Twitter!</a></li>
 			</ul>
@@ -220,17 +220,17 @@
 
 							var width = $('html').width();
 
-							var autostartvalue = true;
+							var autoStartvalue = true;
 
 							$('#groups_resources_link').click(function() {
 								if (width <= 768) {
-									autostartvalue = false;
+									autoStartvalue = false;
 								}
 
 								$('#layerslider').layerSlider({
 									skinsPath : '/themes/assets/',
 									skin : 'fullwidth',
-									autoStart : autostartvalue,
+									autoStart : autoStartvalue,
 									navStartStop : false,
 									responsive : true,
 									responsiveUnder : 0,
