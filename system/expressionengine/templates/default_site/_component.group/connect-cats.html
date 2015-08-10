@@ -1,4 +1,26 @@
 {if embed:catid}
+
+	{if embed:catid==83 || embed:catid==78}
+	<div class="container">
+			{exp:channel:entries channel="Team" dynamic="off" category="{embed:catid}" orderby="team-sort" sort="asc"}
+				<div class="grid_4">
+					<div class="team-entry">
+						<a href="/team/{url_title}"><div class="circle"><img src="{team-photo}"></div></a>
+						<h3><a href="/team/{url_title}">{title}</a></h3><br>
+
+						<div class="team-entry-content">
+							<h4>{team-title}</h4>
+							{if team-bio}<p><a class="read-more" href="/team/{url_title}">Read Bio <i class="fa fa-chevron-right"></i></a></p>{/if}
+							<p class="team-entry-bio" style="margin-top:10px"><span class="fa fa-envelope-o"> Email:</span> <a href="mailto:{team-email}">{team-email}</a>{if team-fb}<br><span class="fa fa-facebook"></span> <a href="http://www.facebook.com/{team-fb}" target="_blank">{team-fb}</a>{/if}{if team-twitter}<br><span class="fa fa-twitter"></span> <a href="http://twitter.com/{team-twitter}" target="_blank">@{team-twitter}</a>{/if}{if team-instagram}<br><span class="fa fa-instagram"></span> <a href="http://www.instagram.com/{team-instagram}" target="_blank">{team-instagram}</a>{/if}</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			{/exp:channel:entries}
+	</div>
+
+	<div class="clear"></div>
+	{if:else}
 	<div class="container clearfix marg-b-40">
 		<div class="grid_12 fancy-page">
 			<h2>Meet the {embed:title} Team</h2>

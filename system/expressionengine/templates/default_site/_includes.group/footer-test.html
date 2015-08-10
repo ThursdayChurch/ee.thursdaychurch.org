@@ -1,0 +1,188 @@
+{embed="_includes/footer-content-test"}
+
+	<script>
+	$(document).ready(function() {
+		$(document).scroll(function() {
+			var scrollTop = $(document).scrollTop();
+			var	counter_height = $('#countdown_contain').outerHeight();
+
+			if (scrollTop > counter_height) {
+				$('#header_wrapper').css({
+					'position' : 'fixed',
+					'top' : '0px'
+				});
+
+				$('.filler').css('display', 'block');
+
+				$('#nav_icon a').attr('href', '#nav');
+				$('#nav_icon_close a').attr('href', '#nav');
+				$('#search_icon a').attr('href', '#nav');
+			}
+			else {
+				$('#header_wrapper').css({
+					'position' : 'static'
+				});
+
+				$('.filler').css('display', 'none');
+
+				$('#nav_icon a').attr('href', '#countdown_contain');
+				$('#nav_icon_close a').attr('href', '#countdown_contain');
+				$('#search_icon a').attr('href', '#countdown_contain');
+			}
+
+			$('nav').slideUp(350);
+			$('#search').slideUp(350);
+
+			$('#nav_icon_close').css('transform', 'rotateX(-90deg)');
+
+			setTimeout(
+				function()
+				{
+					$('#nav_icon').css({
+						'margin-right': '15px',
+						'visibility': 'visible',
+						'transform': 'rotateX(0deg)'
+					});
+
+					$('#nav_icon_close').css({
+						'visibility': 'hidden',
+						'margin-top': '-30px'
+					});
+			}, 500);
+		});
+
+		$('#nav_icon').click(function() {
+			$('nav').slideDown(350);
+			$('#search').slideUp(350);
+
+			$(this).css('transform', 'rotateX(-90deg)');
+			$('#nav_icon_close').css('transform', 'rotateX(-90deg)');
+
+			setTimeout(
+				function()
+				{
+					$('#nav_icon').css({
+	          'margin-right': '-79.5px',
+	          'visibility': 'hidden'
+	        });
+
+					$('#nav_icon_close').css({
+	          'visibility': 'visible',
+	          'transform': 'rotateX(0deg)',
+						'margin-top': '-35px'
+	        });
+			}, 500);
+		});
+
+		$('#nav_icon_close').click(function() {
+			$('nav').slideUp(350);
+			$('#search').slideUp(350);
+
+			$(this).css('transform', 'rotateX(-90deg)');
+
+			setTimeout(
+				function()
+				{
+					$('#nav_icon').css({
+						'margin-right': '15px',
+						'visibility': 'visible',
+						'transform': 'rotateX(0deg)'
+					});
+
+					$('#nav_icon_close').css({
+						'visibility': 'hidden',
+						'margin-top': '-30px'
+					});
+			}, 500);
+		});
+
+		$('#search_icon').click(function() {
+			$('nav').slideUp(350);
+			$('#search').slideToggle(350);
+
+			$('#nav_icon_close').css('transform', 'rotateX(-90deg)');
+
+			setTimeout(
+				function()
+				{
+					$('#nav_icon').css({
+						'margin-right': '15px',
+						'visibility': 'visible',
+						'transform': 'rotateX(0deg)'
+					});
+
+					$('#nav_icon_close').css({
+						'visibility': 'hidden',
+						'margin-top': '-30px'
+					});
+			}, 500);
+		});
+
+		var width = $(window).width();
+
+		if (width < 1024) {
+			$('nav ul .grid_3:nth-child(1) li').click(function() {
+				$('nav ul .grid_3:nth-child(1) li ul').slideToggle();
+				$('nav ul .grid_3:nth-child(2) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(3) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(4) li ul').slideUp();
+			});
+
+			$('nav ul .grid_3:nth-child(2) li').click(function() {
+				$('nav ul .grid_3:nth-child(1) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(2) li ul').slideToggle();
+				$('nav ul .grid_3:nth-child(3) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(4) li ul').slideUp();
+			});
+
+			$('nav ul .grid_3:nth-child(3) li').click(function() {
+				$('nav ul .grid_3:nth-child(1) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(2) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(3) li ul').slideToggle();
+				$('nav ul .grid_3:nth-child(4) li ul').slideUp();
+			});
+
+			$('nav ul .grid_3:nth-child(4) li').click(function() {
+				$('nav ul .grid_3:nth-child(1) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(2) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(3) li ul').slideUp();
+				$('nav ul .grid_3:nth-child(4) li ul').slideToggle();
+			});
+		}
+	});
+	</script>
+
+	<script type="text/javascript">
+	var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
+	(function(){
+	  function loadChartbeat() {
+	    window._sf_endpt=(new Date()).getTime();
+	    var e = document.createElement('script');
+	    e.setAttribute('language', 'javascript');
+	    e.setAttribute('type', 'text/javascript');
+	    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+	    document.body.appendChild(e);
+	  }
+	  var oldonload = window.onload;
+	  window.onload = (typeof window.onload != 'function') ?
+	     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+	})();
+
+	</script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23134458-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+	<script src="/_js/scripts.js"></script>
+</body>
+</html>

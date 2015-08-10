@@ -1,0 +1,27 @@
+<script type="text/javascript" src="/_js/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
+
+{exp:channel:entries channel="media" {if embed:cat_id}category="{embed:cat_id}"{/if} sort="desc" {if embed:limit}limit="{embed:limit}"{/if}}
+    <div id="vid{entry_id}"></div>
+
+    <script type="text/javascript">
+      jwplayer("vid{entry_id}").setup({
+        'autostart': 'false',
+        'height': 'auto',
+        'width': '100%',
+        'menu': 'false',
+        'aspectratio': '16:9',
+        'file': 'http://www.youtube.com/watch?v={media-youtube}?hd=1',
+        'image': '{media-series}{media-series:series-img}{/media-series}',
+        'abouttext': 'JourneyChurch.tv Media',
+        'aboutlink': 'http://journeychurch.tv/media',
+          'plugins': {
+            'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
+          },
+          'modes': [{
+            'type':'flash',
+            'src': '/_js/jwplayer.flash.swf'
+          }]
+      });
+    </script>
+{/exp:channel:entries}
