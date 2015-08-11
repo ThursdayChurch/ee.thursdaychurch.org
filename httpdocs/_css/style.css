@@ -356,7 +356,6 @@ ul.side-nav {
 		#layerslider-container {
 			margin-bottom: 10px;
 		}
-
 		.mobile_boxes {
 			text-transform: uppercase;
 			color: #fff;
@@ -705,7 +704,6 @@ ul.side-nav {
 	}
 
 /* Groups */
-
 /*
 .groups-logo {
 	margin-bottom: 30px;
@@ -713,7 +711,6 @@ ul.side-nav {
 .groups-date {
 	padding-bottom: 5px;
 }
-
 .entry img {
 	padding-right: 10px;
 	padding-bottom: 10px;
@@ -721,12 +718,10 @@ ul.side-nav {
 .med-icon {
 	font-size: 16px;
 }
-
 .group-entry {
 	padding: 10px 0;
 	border-bottom: 1px solid #b2b4b1;
 }
-
 .group-entry h3 {
 	font-size: 18px;
 	font-weight: 500;
@@ -738,11 +733,9 @@ ul.side-nav {
 .getDetails button {
 	margin-top: 0;
 }
-
 .group-entry .groups-date {
 	font-weight: 400;
 }
-
 .groups-individual li {
 	list-style-position:inside;
 }
@@ -755,6 +748,23 @@ ul.side-nav {
 	background-size:cover;
 	height:400px;
 	margin-top:-20px;
+}
+
+.groups-title {
+	font-size:60px;
+	text-align:center;
+	color:white;
+	margin-top:-160px;
+	position:relative;
+	top:-125px;
+}
+
+@media only screen and (max-width: 767px) {
+	.groups-title {
+		font-size:30px;
+		top:-150px;
+		margin-top:-90px;
+	}
 }
 
 #groups_tab_1 {
@@ -1031,14 +1041,12 @@ ul.side-nav {
 #latest {
 	margin: 20px auto 40px;
 }
-
-#latest h2 {
-	color: #707170;
-	font-size: 36px;
-	padding-top: 65px;
-	text-transform: uppercase;
-}
-
+	#latest h2 {
+		color: #707170;
+		font-size: 36px;
+		padding-top: 65px;
+		text-transform: uppercase;
+	}
 .latest-ind {
 	margin: 20px auto;
 }
@@ -1165,6 +1173,10 @@ ul.side-nav {
 
 .stories {
 	min-height: 300px;
+}
+
+.stories img {
+	margin-bottom:10px;
 }
 
 /* Opportunities */
@@ -1923,9 +1935,9 @@ h4.easterfont {
 }
 @media (min-width: 768px) {
 	#household .mobileapp {
-		display: none;
+		display: block;
 	}
 	#household .webapp {
-		display: block;
+		display: none;
 	}
 }
