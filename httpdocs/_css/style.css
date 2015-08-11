@@ -742,6 +742,7 @@ ul.side-nav {
 */
 
 #groups_cover_photo {
+	background: url(/_img/annualreport/lifegroups.jpg) no-repeat center center fixed;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
