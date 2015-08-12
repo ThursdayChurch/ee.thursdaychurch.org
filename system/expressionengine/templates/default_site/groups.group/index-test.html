@@ -4,9 +4,13 @@
 
 <link rel="stylesheet" type="text/css" href="/_css/layerslider.css" />
 
+<link rel="stylesheet" type="text/css" href="/_css/style-test.css" />
+
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <div id="groups_cover_photo"></div>
+
+<div class="groups-title"><h1>Groups</h1></div>
 
 <div class="container clearfix">
 
@@ -88,8 +92,8 @@
 
 
 	{!-- Connect Your Group Info --}
-	{exp:channel:entries channel="pages" url_title="connect-your-group"}
 	<div id="connect_your_group" class="grid_12">
+	{exp:channel:entries channel="pages" url_title="connect-your-group"}
 		<h2>{title}</h2>
 		<p>{page-body}</p>
 	{/exp:channel:entries}
@@ -103,6 +107,8 @@
 		<div id="groups_expand">
 
 			{!-- Group Events --}
+			<h2>Get Connected On Our Household App</h2>
+			<img src="/_img/Life Groups Infographic.png" style="margin-bottom:30px"/>
 			<div id="groups_events">
 			<h2>Upcoming Life Group Events</h2>
 				{exp:channel:entries channel="group_events" limit="15" orderby="group_event_date"}
@@ -273,7 +279,7 @@ $(function() {
 
 
 		/* Parallax Cover Photo */
-		$('#groups_cover_photo').parallax({imageSrc: '/_img/Awakening.jpg'});
+		$('#groups_cover_photo').parallax({imageSrc: '/_img/annualreport/lifegroups.jpg'});
 
 
 		/* Find A Group Fun Stuff */
