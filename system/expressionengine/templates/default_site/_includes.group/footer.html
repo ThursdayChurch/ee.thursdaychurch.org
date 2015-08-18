@@ -1,5 +1,69 @@
 {embed="_includes/footer-content"}
 
+<script>
+	$(document).ready(function() {
+		var windowHeight = $(window).height();
+		var headerHeight = $('#header').outerHeight();
+
+		{!-- Cover --}
+		$('.cover').css({
+			'height': windowHeight-headerHeight
+		});
+
+		setTimeout(
+			function() {
+				$('.cover h1').animate({
+					opacity : '1',
+					top : '200px'
+				}, 500, function() {
+					$('.cover h2').animate({
+						opacity : '1',
+						top : '230px'
+					}, 500);
+				});
+			}
+		, 750);
+
+		{!-- Header/Navigation --}
+		$('.header-filler').css({
+			'height': headerHeight
+		});
+
+		$('#nav-icon').click(function() {
+			$('nav').slideToggle('fast');
+			$('#search').slideUp('fast');
+
+			$('#search-icon i').removeClass('fa-chevron-up');
+			$('#search-icon i').addClass('fa-search');
+
+			$('#nav-icon i').toggleClass('fa-bars');
+			$('#nav-icon i').toggleClass('fa-chevron-up');
+		});
+
+		$('#search-icon').click(function() {
+			$('#search').slideToggle('fast');
+			$('nav').slideUp('fast');
+
+			$('#nav-icon i').removeClass('fa-chevron-up');
+			$('#nav-icon i').addClass('fa-bars');
+
+			$('#search-icon i').toggleClass('fa-search');
+			$('#search-icon i').toggleClass('fa-chevron-up');
+		});
+
+		$(document).scroll(function() {
+			$('nav').slideUp('fast');
+			$('#search').slideUp('fast');
+
+			$('#nav-icon i').removeClass('fa-chevron-up');
+			$('#nav-icon i').addClass('fa-bars');
+
+			$('#search-icon i').removeClass('fa-chevron-up');
+			$('#search-icon i').addClass('fa-search');
+		});
+	});
+</script>
+
 	<script type="text/javascript">
 	var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
 	(function(){
