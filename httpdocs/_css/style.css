@@ -59,11 +59,46 @@ body {
   padding:0;
 }
 
+h1 {
+  color:#333333;
+}
+
+h2 {
+  color:#006f7c;
+}
+
+p {
+  color:#686868;
+  font-size:16px;
+}
+
+p i {
+  color:#333333;
+  font-size:20px;
+}
+
+a, a:link, a:visited, a:active {
+  color:#006f7c;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a:hover {
+  color:#989d00;
+}
+
+.circle {
+  width:300px !important;
+  height:300px !important;
+  overflow:hidden;
+  border-radius:50%;
+}
+
 #header {
   position:fixed;
   width:100%;
-  background-color:white;
   z-index:100;
+  background-color:#333333;
 }
 
 #logo {
@@ -85,10 +120,9 @@ header {
   border-bottom: 4px solid #005963;
 }
 
-nav {
-  padding:45px 0;
+#nav-wrapper {
   display:none;
-  border-bottom: 4px solid #F8F8F8;
+  padding:45px 0;
 }
 
 nav ul {
@@ -96,24 +130,11 @@ nav ul {
 }
 
 nav ul .grid_3 {
-  padding-right:11px;
-  padding-left:11px;
-  border-right:4px solid #989d00;
   height:403px;
 }
 
-nav ul .grid_3:first-child {
-  padding-left:0px;
-}
-
-nav ul .grid_3:last-child {
-  padding-right:0px;
-  border:none;
-}
-
 nav ul li h3 {
-  text-align:center;
-  color:#989d00;
+  color:white;
   font-weight:bold;
   margin-top:0;
 }
@@ -126,39 +147,21 @@ nav ul li ul li {
   display:block;
   margin-top:20px;
   margin-bottom:20px;
-  text-align:center;
-}
-
-nav ul li ul li a .fa-chevron-right {
-  opacity:0;
-  color:#989d00;
-  padding-right:15px;
-  margin-left:-30px;
-  transition:opacity 0.3s ease-in;
 }
 
 nav ul li ul li a h4 {
   font-weight:400;
-  color:#636363;
+  color:white;
   display:inline;
   padding:5px 0;
-  transition:color 0.3s ease-in;
 }
 
-nav ul li ul li a {
-  text-decoration:none;
+nav ul li ul li a h4:hover {
+
 }
 
 nav ul li ul li a:hover {
   text-decoration:none !important;
-}
-
-nav ul li ul li a:hover .fa-chevron-right {
-  opacity:1;
-}
-
-nav ul li ul li a:hover h4 {
-  color:#989d00;
 }
 
 #search {
@@ -168,10 +171,15 @@ nav ul li ul li a:hover h4 {
 
 .gsc-search-button {
   font-weight:normal !important;
+  background-color:#006f7c !important;
+}
+
+.gsc-search-button, input.gsc-search-button {
+  border:0 !important;
 }
 
 .cover {
-  background: url(/_img/annualreport/college.jpg) no-repeat center center fixed;
+  background: url(/_img/easter.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -200,4 +208,8 @@ nav ul li ul li a:hover h4 {
   position:relative;
   top:270px;
   opacity:0;
+}
+
+.location {
+  padding:30px 0;
 }

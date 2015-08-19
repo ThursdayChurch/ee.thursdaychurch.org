@@ -30,7 +30,7 @@
 		});
 
 		$('#nav-icon').click(function() {
-			$('nav').slideToggle('fast');
+			$('#nav-wrapper').slideToggle('fast');
 			$('#search').slideUp('fast');
 
 			$('#search-icon i').removeClass('fa-chevron-up');
@@ -42,7 +42,7 @@
 
 		$('#search-icon').click(function() {
 			$('#search').slideToggle('fast');
-			$('nav').slideUp('fast');
+			$('#nav-wrapper').slideUp('fast');
 
 			$('#nav-icon i').removeClass('fa-chevron-up');
 			$('#nav-icon i').addClass('fa-bars');
@@ -52,7 +52,7 @@
 		});
 
 		$(document).scroll(function() {
-			$('nav').slideUp('fast');
+			$('#nav-wrapper').slideUp('fast');
 			$('#search').slideUp('fast');
 
 			$('#nav-icon i').removeClass('fa-chevron-up');
