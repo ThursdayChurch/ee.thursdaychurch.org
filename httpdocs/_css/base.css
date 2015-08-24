@@ -31,12 +31,12 @@ body {
  */
 
 ::-moz-selection {
-    background: #989d00;
+    background: #b3d4fc;
     text-shadow: none;
 }
 
 ::selection {
-    background: #989d00;
+    background: #b3d4fc;
     text-shadow: none;
 }
 
@@ -205,15 +205,6 @@ textarea {
 	height: 0;
 }
 
-.pull-right {
-	right: 100%;
-}
-
-ul, li {
-	margin: 0;
-	padding: 0;
-}
-
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    Theses examples override the primary ('mobile first') styles.
@@ -301,7 +292,4 @@ ul, li {
     h3 {
         page-break-after: avoid;
     }
-}
-.extra-margin {
-	margin: 20px 0;
 }

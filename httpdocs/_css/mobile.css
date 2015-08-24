@@ -1,0 +1,52 @@
+.circle {
+  padding:0 !important;
+}
+
+#nav-wrapper {
+  padding:10px 0;
+}
+
+nav ul .grid_3 {
+  height:auto;
+  clear:both;
+  overflow:hidden;
+}
+
+nav ul li {
+  margin-left:15px;
+}
+
+nav ul li h3 {
+  font-size:18px;
+  border-bottom:0;
+}
+
+nav ul ul {
+  display:none;
+  overflow:hidden;
+  margin-top:-20px;
+}
+
+#cover h1 {
+  font-size:35px;
+}
+
+#cover .container {
+  overflow:visible;
+}
+
+footer #footer-nav .grid_3 {
+  padding-right:0;
+  width:45%;
+  margin-bottom:10px;
+}
+
+footer #footer-nav .grid_3:nth-child(2) {
+  float:right !important;
+  padding-left:0;
+}
+
+footer #footer-nav .grid_3:nth-child(4) {
+  float:right !important;
+  padding-left:0;
+}

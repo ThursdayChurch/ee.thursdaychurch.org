@@ -2,8 +2,8 @@
   Site Colors:
     Green:	#989d00
     Blue:	#006f7c
-    Rust:	#7f3e19
-    Gray:	#b2b4b1
+    Dark Grey: #2D2D2D
+    Grey: #686868
 
   Fonts:
     Main: 'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B';
@@ -59,12 +59,16 @@ body {
   padding:0;
 }
 
-h1 {
-  color:#333333;
+h1, h4 {
+  color:#2D2D2D;
 }
 
-h2 {
+h2, h5 {
   color:#006f7c;
+}
+
+h3, h6 {
+  color:#989d00;
 }
 
 p {
@@ -73,7 +77,7 @@ p {
 }
 
 p i {
-  color:#333333;
+  color:#2D2D2D;
   font-size:20px;
 }
 
@@ -83,22 +87,41 @@ a, a:link, a:visited, a:active {
   font-weight:bold;
 }
 
-a:hover {
+a:hover, a:active {
   color:#989d00;
 }
 
-.circle {
-  width:300px !important;
-  height:300px !important;
-  overflow:hidden;
-  border-radius:50%;
+ul {
+  list-style-type:none;
+  padding-left:0;
+}
+
+.button {
+  padding:10px 15px;
+  border:3px solid #989d00;
+  color:#989d00;
+  display:inline-block;
+  -webkit-transition: color 0.2s ease-in, background-color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in, background-color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in, background-color 0.2s ease-in;
+  transition:color 0.2s ease-in, background-color 0.2s ease-in;
+  margin:20px 0;
+}
+
+.button:hover {
+  background-color:#989d00;
+  color:white;
+}
+
+.entry {
+  padding:50px 0;
 }
 
 #header {
   position:fixed;
   width:100%;
   z-index:100;
-  background-color:#333333;
+  background-color:#2D2D2D;
 }
 
 #logo {
@@ -125,22 +148,19 @@ header {
   padding:45px 0;
 }
 
-nav ul {
-  list-style-type:none;
-}
-
 nav ul .grid_3 {
   height:403px;
 }
 
 nav ul li h3 {
   color:white;
-  font-weight:bold;
   margin-top:0;
+  font-weight:bold;
+  border-bottom:1px solid white;
 }
 
 nav ul ul {
-  margin-top:25px;
+  margin-top:10px;
 }
 
 nav ul li ul li {
@@ -149,15 +169,19 @@ nav ul li ul li {
   margin-bottom:20px;
 }
 
-nav ul li ul li a h4 {
-  font-weight:400;
-  color:white;
+nav ul li ul li a h4, nav ul li ul li a h4:visited {
+  font-weight:normal;
+  color:#BFBFBF;
   display:inline;
   padding:5px 0;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
 }
 
-nav ul li ul li a h4:hover {
-
+nav ul li ul li a h4:hover, nav ul li ul li a h4:active {
+  color:white;
 }
 
 nav ul li ul li a:hover {
@@ -178,7 +202,7 @@ nav ul li ul li a:hover {
   border:0 !important;
 }
 
-.cover {
+#cover {
   background: url(/_img/easter.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -189,7 +213,7 @@ nav ul li ul li a:hover {
   height:700px;
 }
 
-.cover h1 {
+#cover h1 {
   margin:0;
   font-size:70px;
   text-align:center;
@@ -200,7 +224,7 @@ nav ul li ul li a:hover {
   opacity:0;
 }
 
-.cover h2 {
+#cover h2 {
   margin:0;
   font-size:20px;
   text-align:center;
@@ -210,6 +234,208 @@ nav ul li ul li a:hover {
   opacity:0;
 }
 
-.location {
-  padding:30px 0;
+#cover .button {
+  border-color:white;
+  color:white;
+  text-transform:uppercase;
+}
+
+#cover .button:hover {
+  background-color:white;
+  color:#2D2D2D;
+}
+
+#locations img {
+  overflow:hidden !important;
+  border-radius:50%;
+  width:auto;
+  height:306px;
+}
+
+#connect {
+
+}
+
+#connect-background {
+  background: url(/_img/connect-filler.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:-100 !important;
+  background-color:black;
+  height:500px;
+}
+
+#connect-captions {
+  position:relative;
+  top:-70px;
+  margin-top:-360px !important;
+}
+
+.caption {
+  background-color:white;
+}
+
+.caption-image {
+  height:200px;
+  width:auto;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-attachment:scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow:hidden;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+  background-color:white;
+}
+
+.caption-image:hover {
+  opacity:0.7;
+}
+
+#caption-image-1 {
+  background-image:url(/_img/annualreport/college.jpg);
+}
+
+#caption-image-2 {
+  background-image:url(/_img/annualreport/creative.jpg);
+}
+
+#caption-image-3 {
+  background-image:url(/_img/annualreport/sj.jpg);
+}
+
+.caption-description {
+  height:130px;
+  width:auto;
+  padding:15px;
+}
+
+.caption-description h4 {
+  margin:0;
+  color:#006f7c;
+}
+
+.caption-description p {
+  margin:7px 0 0 0;
+}
+
+#ministries {
+
+}
+
+#ministries h3 {
+  text-align:center;
+  color:#006f7c;
+}
+
+#ministries .button {
+  margin:0 auto;
+}
+
+.ministry {
+  margin-bottom:30px;
+}
+
+.ministry .ministry-image {
+  width:200px;
+  height:200px;
+  margin:0 auto;
+  overflow:hidden !important;
+  border-radius:50%;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+}
+
+.ministry .ministry-image:hover {
+  opacity:0.7;
+}
+
+#events {
+  background: url(/_img/events-filler.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:-100 !important;
+  background-color:black;
+  height:500px;
+}
+
+footer {
+  background-color:#2D2D2D;
+}
+
+footer #footer-nav {
+  margin-top:20px;
+}
+
+footer .button, footer .button:hover {
+  color:white;
+  background-color:#006f7c;
+  border-color:#006f7c;
+}
+
+footer .social-media {
+  margin-top:15px;
+}
+
+footer .social-media ul li {
+  display:inline;
+  margin:0 5px;
+}
+
+footer .social-media i {
+  color:#BFBFBF;
+  font-size:30px;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+footer .social-media i:hover {
+  color:white;
+}
+
+footer #footer-nav h3, footer #footer-nav h4 {
+  color:white;
+  font-size:14px;
+}
+
+footer #footer-nav h4 {
+  color:#BFBFBF;
+  font-weight:normal;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+footer #footer-nav h4:hover {
+  color:white;
+}
+
+footer #footer-copyright {
+  background-color:#282828;
+  padding:15px 0;
+  margin-top:10px;
+}
+
+footer #footer-copyright p {
+  color:white;
+  font-size:12px;
+  text-align:center;
+}
+
+footer #footer-copyright p a:hover {
+  color:#006f7c;
 }
