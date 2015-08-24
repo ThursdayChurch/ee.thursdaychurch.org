@@ -101,6 +101,7 @@ ul {
   border:3px solid #989d00;
   color:#989d00;
   display:inline-block;
+  text-align:center;
   -webkit-transition: color 0.2s ease-in, background-color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in, background-color 0.2s ease-in;
   -o-transition: color 0.2s ease-in, background-color 0.2s ease-in;
@@ -111,6 +112,10 @@ ul {
 .button:hover {
   background-color:#989d00;
   color:white;
+}
+
+.center {
+  margin:0 auto;
 }
 
 .entry {
@@ -336,7 +341,13 @@ nav ul li ul li a:hover {
 }
 
 #ministries .button {
-  margin:0 auto;
+  color:#006f7c;
+  border-color:#006f7c;
+}
+
+#ministries .button:hover {
+  background-color:#006f7c;
+  color:white;
 }
 
 .ministry {
