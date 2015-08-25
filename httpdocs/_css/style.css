@@ -115,7 +115,7 @@ ul {
 }
 
 .center {
-  margin:0 auto;
+  text-align:center;
 }
 
 .entry {
@@ -257,8 +257,9 @@ nav ul li ul li a:hover {
   height:306px;
 }
 
-#connect {
-
+#map {
+  height:400px;
+  opacity:0;
 }
 
 #connect-background {

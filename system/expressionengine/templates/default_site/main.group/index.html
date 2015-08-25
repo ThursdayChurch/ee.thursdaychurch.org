@@ -1,5 +1,7 @@
 {embed="_includes/header"}
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&sensor=true"></script>
+
 <div id="cover">
 	<div class="container">
 		<div class="grid_12">
@@ -24,12 +26,14 @@
 	 			<i class="fa fa-envelope-o"></i>    <a href="mailto:norman@journeychurch.tv">NORMAN@JourneyChurch.tv</a>
 			</p>
 
-			<a href="http://maps.google.com/?q=3801 Journey Parkway, Norman, OK 73072" target="_blank"><div class="button">Get Directions</div></a>
+			<a href="#locations"><div class="button">Get Directions</div></a>
 		</div>
 		<div class="grid_4 push_2"><img src="/_img/normancampus.jpg"></div>
 	</div>
 	<div class="clear"></div>
 </div>
+
+<div id="map"></div>
 
 <div id="connect">
 	<div id="connect-background"></div>
@@ -54,21 +58,21 @@
 	<div class="container">
 		<h1>We Have A Ministry For You</h1><br><br>
 		<div id="college-ministry" class="grid_4 ministry">
-			<div id="college-ministry-photo" class="ministry-image"><img src="/_img/ministries/college.jpg"/></div>
+			<a href="/college"><div id="college-ministry-photo" class="ministry-image"><img src="/_img/ministries/college.jpg"/></div></a>
 			<h3>College</h3>
 		</div>
 
 		<div id="sj-ministry" class="grid_4 ministry">
-			<div id="sj-ministry-photo" class="ministry-image"><img src="/_img/ministries/student.jpg"/></div>
+			<a href="/student"><div id="sj-ministry-photo" class="ministry-image"><img src="/_img/ministries/student.jpg"/></div></a>
 			<h3>Student</h3>
 		</div>
 
 		<div id="kids-ministry" class="grid_4 ministry">
-			<div id="kids-ministry-photo" class="ministry-image"><img src="/_img/ministries/kids.jpg"/></div>
+			<a href="/kids"><div id="kids-ministry-photo" class="ministry-image"><img src="/_img/ministries/kids.jpg"/></div>
 			<h3>Kids</h3>
 		</div>
 		<div class="clear"></div>
-		<a href="/ministries"><div class="button">More Ministries</div></a>
+		<div class="center"><a href="/ministries"><div class="button">More Ministries</div></a></div>
 	</div>
 	<div class="clear"></div>
 </div>
@@ -77,6 +81,84 @@
 	<div class="container">
 
 	</div>
+	<div class="clear"></div>
 </div>
+
+<script type="text/javascript">
+  var locations = [
+  		{exp:channel:entries channel="location"}
+        	['<h2>{title}</h2><p>{location-times}</p><p>{location-phone}</p>', '{location-lat}', '{location-long}', 4],
+		{/exp:channel:entries}
+      ];
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: new google.maps.LatLng(35.3105644, -97.4944153),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+				scrollwheel: false
+      });
+      var infowindow = new google.maps.InfoWindow();
+      var marker, i;
+      var markers = new Array();
+      for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+        markers.push(marker);
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          };
+		  setTimeout(function(){$("img[src$='iws3.png']").hide();},80);
+        })(marker, i));
+      }
+      function AutoCenter() {
+        //  Create a new viewpoint bound
+        var bounds = new google.maps.LatLngBounds();
+        //  Go through each...
+        $.each(markers, function (index, marker) {
+       		bounds.extend(marker.position);
+        });
+        //  Fit these to the map
+        map.fitBounds(bounds);
+      }
+      //AutoCenter();
+      map.panTo(marker.getPosition());
+
+			var styles = [
+		  {
+		    stylers: [
+		      { hue: "#006f7c" },
+		      { saturation: -20 }
+		    ]
+		  },{
+		    featureType: "road",
+		    elementType: "geometry",
+		    stylers: [
+		      { lightness: 100 },
+		      { visibility: "simplified" }
+		    ]
+		  },{
+		    featureType: "road",
+		    elementType: "labels",
+		    stylers: [
+		      { visibility: "off" }
+		    ]
+		  }
+		];
+
+		map.setOptions({styles: styles});
+
+		$(document).ready(function() {
+			$('#locations .button').click(function() {
+				$('#map').animate({
+					opacity:'1'
+				});
+
+				});
+			});
+		});
+</script>
 
 {embed="_includes/footer"}
