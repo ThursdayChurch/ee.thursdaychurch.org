@@ -2,8 +2,11 @@
   Site Colors:
     Green:	#989d00
     Blue:	#006f7c
+    Dark Blue:#005963
+    Darkest Grey: #282828
     Dark Grey: #2D2D2D
     Grey: #686868
+    Light Grey: #F3F3F3
 
   Fonts:
     Main: 'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B';
@@ -122,6 +125,17 @@ ul {
   padding:50px 0;
 }
 
+.entry-shade {
+  padding:50px 0;
+  background-color:#F3F3F3;
+}
+
+.circle img {
+  border-radius:50%;
+  overflow:hidden;
+  clip: rect(0px,500px,500px,0px);
+}
+
 #header {
   position:fixed;
   width:100%;
@@ -215,51 +229,71 @@ nav ul li ul li a:hover {
   background-size: cover;
   z-index:-100;
   background-color:black;
-  height:700px;
+}
+
+#page-cover {
+  height:350px;
+  background: url(/_img/annualreport/creative.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:-100;
+  background-color:black;
 }
 
 #cover h1 {
+  top:230px;
+}
+
+#page-cover h1 {
+  top:140px;
+}
+
+#cover h1, #page-cover h1 {
   margin:0;
   font-size:70px;
   text-align:center;
   color:white;
   position:relative;
-  top:230px;
   text-transform:uppercase;
   opacity:0;
 }
 
 #cover h2 {
+  top:270px;
+}
+
+#page-cover h2 {
+  top:180px;
+}
+
+#cover h2, #page-cover h2 {
   margin:0;
   font-size:20px;
   text-align:center;
   color:white;
   position:relative;
-  top:270px;
   opacity:0;
 }
 
-#cover .button {
+#cover .button, #page-cover .button {
   border-color:white;
   color:white;
   text-transform:uppercase;
 }
 
-#cover .button:hover {
+#cover .button:hover, #page-cover .button:hover {
   background-color:white;
   color:#2D2D2D;
 }
 
-#locations img {
-  overflow:hidden !important;
-  border-radius:50%;
-  width:auto;
-  height:306px;
+#map-wrapper {
+  padding:30px 0 70px 0;
 }
 
 #map {
-  height:400px;
-  opacity:0;
+  height:350px;
 }
 
 #connect-background {
@@ -380,6 +414,218 @@ nav ul li ul li a:hover {
   z-index:-100 !important;
   background-color:black;
   height:500px;
+}
+
+#about-nav {
+  padding:5px 0;
+  background-color:#F3F3F3;
+  overflow:hidden;
+}
+
+#about-nav ul {
+  text-align:center;
+}
+
+#about-nav ul li {
+  display:inline-block;
+  padding:0 10px;
+  margin:0 auto;
+}
+
+#about-nav ul li a {
+  color:#B0B0B0;
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+  padding:22px 0 23px 0;
+}
+
+#about-nav .active {
+  color:#989d00 !important;
+  border-bottom:5px solid #989d00;
+  padding-bottom:18px;
+}
+
+#about-nav ul li a:hover {
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+  color:#686868;
+}
+
+#clark-mitchell {
+  background: url(/_img/annualreport/closing.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:black;
+}
+
+#clark-mitchell p {
+  color:white;
+}
+
+#values .grid_6 {
+  height:425px;
+}
+
+#values .grid_6 img {
+  -moz-transition:all 0.4s ease-in;
+	-webkit-transition:all 0.4s ease-in;
+	-ms-transition:all 0.4s ease-in;
+	-o-transition:all 0.4s ease-in;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+#values .grid_6:hover img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.span-border {
+  border-bottom:4px solid #006f7c;
+  width:30px;
+  height:56px;
+  display:inline-block;
+  transition:width 0.7s ease-in-out;
+}
+
+.span-border:hover {
+  width:250px;
+}
+
+.span-border-2 {
+  border-bottom:4px solid #F3F3F3;
+  width:300px;
+  height:56px;
+  display:inline-block;
+}
+
+#theology h2 {
+  display:inline-block;
+  width:300px;
+}
+
+#theology p {
+  margin-left:30px;
+  padding-bottom:10px;
+}
+
+#structure .grid_4 {
+  height:375px;
+}
+
+#structure h1 {
+
+}
+
+.structure-level {
+
+}
+
+.bar {
+  height:153px;
+  width:153px;
+}
+
+#top-left-bar {
+  position:relative;
+  top:172px;
+  left:113px;
+  border-top:10px dashed #989d00;
+  border-left:10px dashed #989d00;
+}
+
+#top-right-bar {
+  position:relative;
+  top:172px;
+  right:-40px;
+  border-top:10px dashed #989d00;
+  border-right:10px dashed #989d00;
+}
+
+#bottom-left-bar {
+  position:relative;
+  left:113px;
+  bottom:-50px;
+  border-bottom:10px dashed #989d00;
+  border-left:10px dashed #989d00;
+}
+
+#bottom-right-bar {
+  position:relative;
+  right:-40px;
+  bottom:-50px;
+  border-bottom:10px dashed #989d00;
+  border-right:10px dashed #989d00;
+}
+
+#nav_categories > li:nth-child(2) {
+  margin-left:10px;
+}
+
+#nav_categories > li:nth-child(2) a {
+  color:#686868;
+  font-size:20px;
+}
+
+#team-nav ul {
+  background-color:#F3F3F3;
+  padding:10px;
+  border-left:5px solid #989d00;
+}
+
+#team-nav ul ul {
+  border:0;
+}
+
+#team-nav ul li {
+  margin:20px 0;
+}
+
+#team-nav ul li a {
+  font-size:16px;
+  color:#B0B0B0;
+  padding:5px 0;
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+.team-member {
+  height:350px;
+}
+
+.team-member p {
+  
+}
+
+.team-photo img {
+  overflow: hidden;
+  width:150px;
+  margin:0 auto;
+  display:inline-block;
+}
+
+#team-nav ul li:first-child a {
+  color:#686868;
+}
+
+#team-nav ul li a:hover {
+  color:#686868;
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+#demographic-pastors .team {
+  display:none;
 }
 
 footer {

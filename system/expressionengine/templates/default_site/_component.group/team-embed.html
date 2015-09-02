@@ -1,0 +1,8 @@
+{if embed:catid}
+  {exp:channel:entries channel="Team" category="{embed:catid}" sort="{team-sort}"}
+  <div class="grid_3 team-member">
+    <div class="team-photo"><img src="{team-photo}"/></div>
+    <p>{team-title}</p>
+  </div>
+  {/exp:channel:entries}
+{/if}

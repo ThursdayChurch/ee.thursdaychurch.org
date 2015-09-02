@@ -1,0 +1,56 @@
+{embed="_includes/header" title="JourneyChurch.tv : Our Team"}
+
+<div id="page-cover">
+  <h1>Team</h1>
+</div>
+
+<div id="about-nav">
+  <div class="container">
+    <ul>
+      <li><a href="/about">Our Story</a></li>
+      <li><a href="/about/values">Our Values</a></li>
+      <li><a href="/about/theology">Our Theology</a></li>
+      <li><a href="/about/structure">Our Structure</a></li>
+      <li><a href="/about/team" class="active">Our Team</a></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container entry">
+    <div id="team-nav" class="grid_3">
+      <div id="staff">
+        {exp:channel:categories channel="Team" show="not 75"}
+          <li><a id="team-{category_id}-anchor" href="#about-nav">{category_name}</a><li>
+        {/exp:channel:categories}
+      </div>
+
+      <div id="demographic-pastors">
+        {exp:channel:categories channel="Team" show="not 73"}
+          <li><a id="team-{category_id}-anchor" href="#about-nav">{category_name}</a><li>
+        {/exp:channel:categories}
+      </div>
+    </div>
+
+    <div class="grid_9">
+      {exp:channel:categories channel="Team"}
+        <div id="team-{category_id}" class="team">{embed="_component/team-embed" catid="{category_id}"}</div>
+
+        <script>
+          $(document).ready(function() {
+            $('.team-member').addClass('omega');
+
+            $('#team-{category_id}-anchor').click(function() {
+              $('.team').css('display', 'none');
+              $('#team-{category_id}').fadeIn('fast');
+            });
+          });
+        </script>
+      {/exp:channel:categories}
+    </div>
+  <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+
+{embed="_includes/footer"}

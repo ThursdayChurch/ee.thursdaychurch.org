@@ -27,6 +27,21 @@
 			}
 		, 750);
 
+		{!-- Page Cover --}
+		setTimeout(
+			function() {
+				$('#page-cover h1').animate({
+					opacity : '1',
+					top : '110px'
+				}, 500, function() {
+					$('#page-cover h2').animate({
+						opacity : '1',
+						top : '140px'
+					}, 500);
+				});
+			}
+		, 750);
+
 		{!-- Header/Navigation --}
 		$('.header-filler').css({
 			'height': headerHeight

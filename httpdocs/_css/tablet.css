@@ -6,6 +6,10 @@ nav ul li h3 {
   font-size:60px;
 }
 
+#locations img {
+  height:240px;
+}
+
 footer .social-media i {
   color:white;
   font-size:23px;
