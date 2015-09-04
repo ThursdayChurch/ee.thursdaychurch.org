@@ -102,6 +102,19 @@
 				$('nav ul .grid_3:last-child li ul').slideToggle();
 			});
 		}
+
+		{!-- About Nav --}
+		if (windowWidth <= 767) {
+			$('#staff').click(function() {
+				$('#demographic-pastors ul ul').slideUp('fast');
+				$('#staff ul ul').slideDown('fast');
+			});
+
+			$('#demographic-pastors').click(function() {
+				$('#staff ul ul').slideUp('fast');
+				$('#demographic-pastors ul ul').slideDown('fast');
+			});
+		}
 	});
 </script>
 

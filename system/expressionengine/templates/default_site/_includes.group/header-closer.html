@@ -1,13 +1,6 @@
 </head>
 
 <body>
-		{!-- Site announcement/alerts take priority over countdown
-		{if site-alert != ""}
-			{embed="_component/alert"}
-		{if:else}
-			<div id="countdown_contain"></div>
-		{/if}
-		--}
 		<div id="header">
 			<div id="nav-wrapper">
 				<div class="container">
@@ -91,6 +84,12 @@
 
 			<header>
 				<a href="/"><div id="logo"><img src="/_img/logo.PNG"/></div></a>
+				{!-- Site announcement/alerts take priority over countdown --}
+				{if site-alert != ""}
+					{embed="_component/alert"}
+				{if:else}
+					<div id="countdown_contain"></div>
+				{/if}
 				<a href="#nav-icon"><div id="nav-icon"><i class="fa fa-bars"></i></div></a>
 				<a href="#search-icon"><div id="search-icon"><i class="fa fa-search"></i></div></a>
 				<div class="clear"></div>

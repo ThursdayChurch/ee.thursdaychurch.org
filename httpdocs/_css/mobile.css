@@ -28,11 +28,51 @@ nav ul ul {
 }
 
 #cover h1 {
-  font-size:35px;
+  font-size:40px;
 }
 
 #cover .container {
   overflow:visible;
+}
+
+#page-cover h1 {
+  font-size:40px;
+}
+
+#about-nav ul li {
+  display:block;
+  padding:10px 0;
+  text-align:center;
+}
+
+#about-nav ul li a {
+
+}
+
+#about-nav .active {
+  padding-bottom:0;
+  border-bottom:none;
+}
+
+#values img {
+  -webkit-filter:grayscale(0%) !important;
+  filter:grayscale(0%) !important;
+}
+
+.team-member {
+  height:575px;
+}
+
+.team-photo {
+  height:416px;
+}
+
+.team-member-info .team-photo {
+  height:416px;
+}
+
+#staff ul ul, #demographic-pastors ul ul {
+  display:none;
 }
 
 footer #footer-nav .grid_3 {

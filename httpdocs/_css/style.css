@@ -288,14 +288,6 @@ nav ul li ul li a:hover {
   color:#2D2D2D;
 }
 
-#map-wrapper {
-  padding:30px 0 70px 0;
-}
-
-#map {
-  height:350px;
-}
-
 #connect-background {
   background: url(/_img/connect-filler.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -455,7 +447,7 @@ nav ul li ul li a:hover {
   color:#686868;
 }
 
-#clark-mitchell {
+#story {
   background: url(/_img/annualreport/closing.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -464,7 +456,7 @@ nav ul li ul li a:hover {
   background-color:black;
 }
 
-#clark-mitchell p {
+#story p {
   color:white;
 }
 
@@ -487,10 +479,13 @@ nav ul li ul li a:hover {
 }
 
 .span-border {
-  border-bottom:4px solid #006f7c;
+  border-bottom:4px solid #2D2D2D;
   width:30px;
-  height:56px;
+  height:66px;
   display:inline-block;
+  -moz-transition:width 0.7s ease-in-out;
+  -webkit-transition:width 0.7s ease-in-out;
+  -ms-transition:width 0.7s ease-in-out;
   transition:width 0.7s ease-in-out;
 }
 
@@ -501,13 +496,14 @@ nav ul li ul li a:hover {
 .span-border-2 {
   border-bottom:4px solid #F3F3F3;
   width:300px;
-  height:56px;
+  height:66px;
   display:inline-block;
 }
 
-#theology h2 {
+#theology h1 {
   display:inline-block;
   width:300px;
+  color:#2D2D2D;
 }
 
 #theology p {
@@ -515,53 +511,51 @@ nav ul li ul li a:hover {
   padding-bottom:10px;
 }
 
-#structure .grid_4 {
-  height:375px;
-}
-
-#structure h1 {
-
-}
-
 .structure-level {
+  height:325px;
+  margin-bottom:30px;
+}
+
+.structure-level p {
+  padding:0 20px;
+  margin-top:50px;
+}
+
+.structure-level h1 {
+  padding:0 20px;
+  margin-top:30px;
+  -moz-transition:color 0.2s ease-in-out;
+  -webkit-transition:color 0.2s ease-in-out;
+  -ms-transition:color 0.2s ease-in-out;
+  transition:color 0.2s ease-in-out;
+}
+
+.structure-level:hover h1 {
+  color:#006f7c;
+  -moz-transition:color 0.2s ease-in-out;
+  -webkit-transition:color 0.2s ease-in-out;
+  -ms-transition:color 0.2s ease-in-out;
+  transition:color 0.2s ease-in-out;
+}
+
+.structure-level .flip {
+  -moz-transition:transform 0.4s ease-in-out;
+  -webkit-transition:transform 0.4s ease-in-out;
+  -ms-transition:transform 0.4s ease-in-out;
+  transition:transform 0.4s ease-in;
 
 }
 
-.bar {
-  height:153px;
-  width:153px;
-}
-
-#top-left-bar {
-  position:relative;
-  top:172px;
-  left:113px;
-  border-top:10px dashed #989d00;
-  border-left:10px dashed #989d00;
-}
-
-#top-right-bar {
-  position:relative;
-  top:172px;
-  right:-40px;
-  border-top:10px dashed #989d00;
-  border-right:10px dashed #989d00;
-}
-
-#bottom-left-bar {
-  position:relative;
-  left:113px;
-  bottom:-50px;
-  border-bottom:10px dashed #989d00;
-  border-left:10px dashed #989d00;
-}
-
-#bottom-right-bar {
-  position:relative;
-  right:-40px;
-  bottom:-50px;
-  border-bottom:10px dashed #989d00;
-  border-right:10px dashed #989d00;
+.structure-level:hover .flip {
+  -ms-transform:rotateY(360deg);
+  -o-transform:rotateY(360deg);
+  -webkit-transform:rotateY(360deg);
+  -moz-transform:rotateY(360deg);
+  transform:rotateY(360deg);
+  -moz-transition:transform 0.4s ease-in-out;
+  -webkit-transition:transform 0.4s ease-in-out;
+  -ms-transition:transform 0.4s ease-in-out;
+  transition:transform 0.4s ease-in;
 }
 
 #nav_categories > li:nth-child(2) {
@@ -598,18 +592,45 @@ nav ul li ul li a:hover {
 }
 
 .team-member {
-  height:350px;
+  height:425px;
+  text-align:center;
+  margin-bottom:20px;
 }
 
-.team-member p {
-  
+.team-photo {
+  -webkit-transition:border-radius 0.2s ease-in;
+  -moz-transition:border-radius 0.2s ease-in;
+  -o-transition:border-radius 0.2s ease-in;
+  transition:border-radius 0.2s ease-in;
+  overflow:hidden;
+  height:223px;
+}
+
+.team-photo:hover {
+  border-radius:50%;
+  -webkit-transition:border-radius 0.2s ease-in;
+  -moz-transition:border-radius 0.2s ease-in;
+  -o-transition:border-radius 0.2s ease-in;
+  transition:border-radius 0.2s ease-in;
 }
 
 .team-photo img {
-  overflow: hidden;
-  width:150px;
-  margin:0 auto;
-  display:inline-block;
+  overflow:hidden;
+}
+
+.team-member-info .team-photo {
+  height:389px;
+  border-radius:50%;
+
+}
+
+.team-member-info ul li {
+  display:inline;
+  margin:0 10px;
+}
+
+.team-member-info ul li:first-child {
+  margin-left:0;
 }
 
 #team-nav ul li:first-child a {
@@ -624,8 +645,24 @@ nav ul li ul li a:hover {
   transition:color 0.2s ease-in;
 }
 
+#pastor-clark {
+  margin-bottom:50px;
+}
+
 #demographic-pastors .team {
   display:none;
+}
+
+.location {
+  padding:30px 0;
+}
+
+#map-wrapper {
+  border-top:1px solid white;
+}
+
+#map {
+  height:350px;
 }
 
 footer {

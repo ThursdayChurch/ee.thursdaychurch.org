@@ -10,6 +10,19 @@ nav ul li h3 {
   height:240px;
 }
 
+.team-member {
+  height:350px;
+}
+
+.team-photo {
+  height:176px;
+  border-radius:50%;
+}
+
+.team-member-info .team-photo {
+  height:304px;
+}
+
 footer .social-media i {
   color:white;
   font-size:23px;
