@@ -665,6 +665,41 @@ nav ul li ul li a:hover {
   height:350px;
 }
 
+#connect .grid_6 {
+  height:400px;
+}
+
+.connect-entry-right h1, .connect-entry-right p {
+  padding-left:26px;
+}
+
+.connect-entry-left h1, .connect-entry-left p {
+  padding-right:26px;
+}
+
+.connect-img {
+  background: url(/_img/annualreport/lifegroups.jpg) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:black;
+}
+
+.connect-img h1 {
+  font-size:45px;
+  text-transform:uppercase;
+  font-weight:lighter;
+  color:white;
+  text-align:center;
+  margin-top:140px;
+  opacity:0;
+}
+
+.connect-img:hover h1 {
+  opacity:1;
+}
+
 footer {
   background-color:#2D2D2D;
 }
