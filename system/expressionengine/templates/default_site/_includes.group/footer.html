@@ -5,7 +5,7 @@
 		var windowHeight = $(window).height();
 		var headerHeight = $('#header').outerHeight();
 		var windowWidth = $(window).width();
-		var scrollTop;
+		var scrollTop = 0;
 		var scrollPosition = 0;
 
 		{!-- Cover --}
@@ -15,30 +15,46 @@
 
 		setTimeout(
 			function() {
-				$('#cover h1').animate({
-					opacity : '1',
-					top : '200px'
-				}, 500, function() {
-					$('#cover h2').animate({
+				if (windowWidth > 776) {
+					$('#cover h1').animate({
 						opacity : '1',
-						top : '230px'
+						top : '200px'
+					}, 500, function() {
+						$('#cover h2').animate({
+							opacity : '1',
+							top : '230px'
+						}, 500);
+					});
+				}
+				else {
+					$('#cover h1').animate({
+						opacity : '1',
+						top : '85px'
 					}, 500);
-				});
+				}
 			}
 		, 750);
 
 		{!-- Page Cover --}
 		setTimeout(
 			function() {
-				$('#page-cover h1').animate({
-					opacity : '1',
-					top : '110px'
-				}, 500, function() {
-					$('#page-cover h2').animate({
+				if (windowWidth > 776) {
+					$('#page-cover h1').animate({
 						opacity : '1',
-						top : '140px'
+						top : '110px'
+					}, 500, function() {
+						$('#page-cover h2').animate({
+							opacity : '1',
+							top : '140px'
+						}, 500);
+					});
+				}
+				else {
+					$('#page-cover h1').animate({
+						opacity : '1',
+						top : '70px'
 					}, 500);
-				});
+				}
 			}
 		, 750);
 
@@ -82,28 +98,50 @@
 
 		{!-- Mobile Nav --}
 		if (windowWidth <= 767) {
-			$('nav ul .grid_3:first-child li').click(function() {
+			$('nav ul .grid_3:first-child li h3').click(function() {
 				$('nav ul ul').slideUp();
 				$('nav ul .grid_3:first-child li ul').slideToggle();
 			});
 
-			$('nav ul .grid_3:nth-child(2) li').click(function() {
+			$('nav ul .grid_3:nth-child(2) li h3').click(function() {
 				$('nav ul ul').slideUp();
 				$('nav ul .grid_3:nth-child(2) li ul').slideToggle();
 			});
 
-			$('nav ul .grid_3:nth-child(3) li').click(function() {
+			$('nav ul .grid_3:nth-child(3) li h3').click(function() {
 				$('nav ul ul').slideUp();
 				$('nav ul .grid_3:nth-child(3) li ul').slideToggle();
 			});
 
-			$('nav ul .grid_3:last-child li').click(function() {
+			$('nav ul .grid_3:last-child li h3').click(function() {
 				$('nav ul ul').slideUp();
 				$('nav ul .grid_3:last-child li ul').slideToggle();
 			});
 		}
 
-		{!-- About Nav --}
+		{!-- Page Nav --}
+		if (windowWidth > 776) {
+			var pageCoverHeight = $('#page-cover').outerHeight();
+			var pageNavHeight = $('#page-nav').outerHeight();
+
+			$('.page-nav-filler').css('height', pageNavHeight);
+
+			$(document).scroll(function() {
+				scrollTop = $(document).scrollTop();
+
+				if (scrollTop > headerHeight+pageCoverHeight-pageNavHeight) {
+					$('#page-nav').addClass('sticky-nav');
+					$('#page-nav').css('top', headerHeight);
+					$('.page-nav-filler').css('display', 'block');
+				}
+				else {
+					$('#page-nav').removeClass('sticky-nav');
+					$('.page-nav-filler').css('display', 'none');
+				}
+			});
+		}
+
+		{!-- Staff Nav --}
 		if (windowWidth <= 767) {
 			$('#staff').click(function() {
 				$('#demographic-pastors ul ul').slideUp('fast');

@@ -1,3 +1,8 @@
+.button {
+  background-color:#989d00;
+  color:white !important;
+}
+
 nav ul li h3 {
   font-size:16px;
 }
@@ -6,8 +11,12 @@ nav ul li h3 {
   font-size:60px;
 }
 
-#locations img {
+#home-locations img {
   height:240px;
+}
+
+#home-ministries .button {
+  background-color:#006f7c;
 }
 
 .team-member {
@@ -21,6 +30,15 @@ nav ul li h3 {
 
 .team-member-info .team-photo {
   height:304px;
+}
+
+.connect-img h3 {
+  background-color:white;
+  color:black;
+}
+
+.group-filler .button {
+  margin-top:20px;
 }
 
 footer .social-media i {

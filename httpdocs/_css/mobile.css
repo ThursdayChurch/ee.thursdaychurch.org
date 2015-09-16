@@ -27,36 +27,113 @@ nav ul ul {
   margin-top:-20px;
 }
 
+#cover {
+  -webkit-background-size:100% auto;
+  -moz-background-size:100% auto;
+  -o-background-size:100% auto;
+  background-size:100% auto;
+  background-attachment:scroll;
+  height:250px !important;
+  overflow:hidden;
+}
+
 #cover h1 {
-  font-size:40px;
+  font-size:35px;
+  top:115px;
+}
+
+#cover h2 {
+  display:none;
 }
 
 #cover .container {
   overflow:visible;
 }
 
+#page-cover {
+  -webkit-background-size:100% auto;
+  -moz-background-size:100% auto;
+  -o-background-size:100% auto;
+  background-size:100% auto;
+  background-attachment:scroll;
+  height:200px;
+  overflow:hidden;
+}
+
+#page-cover h1 {
+  top:100px;
+}
+
+#home-locations img {
+  margin-top:30px;
+}
+
+#boxes {
+  background-color:#F3F3F3;
+  padding:70px 0;
+}
+
+#boxes-background {
+  display:none;
+}
+
+#boxes-captions {
+  position:static;
+  margin-top:0 !important;
+}
+
+.caption {
+  padding-left:0 !important;
+  padding-right:0 !important;
+  margin-left:13px !important;
+  margin-bottom:50px;
+}
+
+.caption:last-child {
+  margin-bottom:0;
+}
+
 #page-cover h1 {
   font-size:40px;
 }
 
-#about-nav ul li {
+#page-nav ul li {
   display:block;
   padding:10px 0;
   text-align:center;
 }
 
-#about-nav ul li a {
+#page-nav ul li a {
 
 }
 
-#about-nav .active {
+#page-nav .active {
   padding-bottom:0;
   border-bottom:none;
+}
+
+#story {
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size: auto 100%;
+  background-attachment:scroll;
 }
 
 #values img {
   -webkit-filter:grayscale(0%) !important;
   filter:grayscale(0%) !important;
+}
+
+#nav_categories > li:first-child, #nav_categories > li:nth-child(2), #nav_categories > li:nth-child(3) {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+#team-nav ul li a i {
+  display:block;
+  float:right;
+  margin-top:5px;
 }
 
 .team-member {
@@ -69,6 +146,93 @@ nav ul ul {
 
 .team-member-info .team-photo {
   height:416px;
+}
+
+.connect-entry-right h1, .connect-entry-right p {
+  padding-left:0;
+  margin-top:0;
+}
+
+.connect-entry-left h1, .connect-entry-left p {
+  padding-right:0;
+  margin-top:0;
+}
+
+#connect .grid_6 {
+  height:auto;
+}
+
+.connect-img, .connect-img-mobile {
+  height:250px !important;
+  margin:30px 0 50px 0;
+}
+
+.connect-img h3 {
+  margin-top:100px;
+}
+
+#connect-connections .connect-img, #connect-devos .connect-img {
+  display:none !important;
+}
+
+.connect-img-mobile {
+  display:block;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-attachment:scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:black;
+  text-align:center;
+}
+
+#connect-small-groups .connect-img {
+  background-image: url("/_img/annualreport/lifegroups.jpg");
+}
+
+#connect-connections .connect-img-mobile {
+  background-image: url("/_img/annualreport/serving.jpg");
+}
+
+#connect-classes .connect-img {
+  background-image: url("/_img/annualreport/equip.jpg");
+}
+
+#connect-devos .connect-img-mobile {
+  background-image: url("/_img/annualreport/attendance.jpg");
+}
+
+#connect-interns .connect-img {
+  background-image: url("/_img/annualreport/letter.jpg");
+}
+
+.connect-img-mobile h3 {
+  text-transform:uppercase;
+  color:black;
+  margin-top:100px;
+  padding:10px;
+  border:3px solid white;
+  background-color:white;
+}
+
+.connect-img-mobile .hvr-sweep-to-right:before {
+  background:white;
+}
+
+.connect-img-mobile .hvr-sweep-to-right:hover, .connect-img-mobile .hvr-sweep-to-right:focus, .connect-img-mobile .hvr-sweep-to-right:active {
+  color: black;
+}
+
+.group-filler {
+  height:auto;
+  background-size:auto 100%;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size: auto 100%;
+  background-attachment:scroll;
 }
 
 #staff ul ul, #demographic-pastors ul ul {

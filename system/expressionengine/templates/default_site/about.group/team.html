@@ -4,7 +4,7 @@
   <h1>Our Team</h1>
 </div>
 
-<div id="about-nav">
+<div id="page-nav">
   <div class="container">
     <ul>
       <li><a href="/about">Our Story</a></li>
@@ -42,13 +42,21 @@
     <div id="team-nav" class="grid_3">
       <div id="staff">
         {exp:channel:categories channel="Team" show="not 75"}
-          <li><a id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
+          {if category_id == "73"}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name} <i class="fa fa-chevron-down"></i></a><li>
+          {if:else}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
+          {/if}
         {/exp:channel:categories}
       </div>
 
       <div id="demographic-pastors">
         {exp:channel:categories channel="Team" show="not 73"}
-          <li><a id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
+          {if category_id == "75"}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name} <i class="fa fa-chevron-down"></i></a><li>
+          {if:else}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
+          {/if}
         {/exp:channel:categories}
       </div>
     </div>
@@ -66,7 +74,9 @@
 
             $('#team-{category_id}-anchor').click(function() {
               $('.team').css('display', 'none');
+              $('.team-anchor').removeClass('active');
               $('#team-{category_id}').fadeIn('fast');
+              $('#team-{category_id}-anchor').addClass('active');
             });
           });
         </script>

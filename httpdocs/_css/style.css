@@ -105,16 +105,15 @@ ul {
   color:#989d00;
   display:inline-block;
   text-align:center;
-  -webkit-transition: color 0.2s ease-in, background-color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in, background-color 0.2s ease-in;
-  -o-transition: color 0.2s ease-in, background-color 0.2s ease-in;
-  transition:color 0.2s ease-in, background-color 0.2s ease-in;
   margin:20px 0;
 }
 
-.button:hover {
-  background-color:#989d00;
-  color:white;
+.hvr-sweep-to-right:before {
+  background:#989d00;
+}
+
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
 }
 
 .center {
@@ -176,6 +175,7 @@ nav ul li h3 {
   margin-top:0;
   font-weight:bold;
   border-bottom:1px solid white;
+  text-transform:uppercase;
 }
 
 nav ul ul {
@@ -205,6 +205,19 @@ nav ul li ul li a h4:hover, nav ul li ul li a h4:active {
 
 nav ul li ul li a:hover {
   text-decoration:none !important;
+}
+
+.sticky-nav {
+  position:fixed;
+  width:100%;
+  z-index:75;
+  padding:0 !important;
+  border-bottom:1px solid #F2F2F2;
+  background-color:white !important;
+  -webkit-transition:background-color 0.3s ease-in;
+  -moz-transition:background-color 0.3s ease-in;
+  -o-transition:background-color 0.3s ease-in;
+  transition:background-color 0.3s ease-in;
 }
 
 #search {
@@ -288,8 +301,8 @@ nav ul li ul li a:hover {
   color:#2D2D2D;
 }
 
-#connect-background {
-  background: url(/_img/connect-filler.jpg) no-repeat center center fixed;
+#boxes-background {
+  background: url(/_img/boxes-filler.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -299,10 +312,10 @@ nav ul li ul li a:hover {
   height:500px;
 }
 
-#connect-captions {
+#boxes-captions {
   position:relative;
   top:-70px;
-  margin-top:-360px !important;
+  margin-top:-370px !important;
 }
 
 .caption {
@@ -344,7 +357,7 @@ nav ul li ul li a:hover {
 }
 
 .caption-description {
-  height:130px;
+  height:140px;
   width:auto;
   padding:15px;
 }
@@ -358,23 +371,74 @@ nav ul li ul li a:hover {
   margin:7px 0 0 0;
 }
 
-#ministries {
+#page-nav {
+  padding:5px 0;
+  background-color:#F3F3F3;
+  -o-transition: padding 0.25s ease-in, background-color 0.25s ease-in;
+  -moz-transition: padding 0.25s ease-in, background-color 0.25s ease-in;
+  -webkit-transition: padding 0.25s ease-in, background-color 0.25s ease-in;
+  transition:padding 0.25s ease-in, background-color 0.25s ease-in;
+  overflow:hidden;
+}
+
+#page-nav ul {
+  text-align:center;
+}
+
+#page-nav ul li {
+  display:inline-block;
+  padding:0px 10px;
+  margin:0 auto;
+}
+
+#page-nav ul li a {
+  color:#B0B0B0;
+  -o-transition: color 0.2s ease-in, padding 0.3s ease-in;
+  -moz-transition: color 0.2s ease-in, padding 0.3s ease-in;
+  -webkit-transition: color 0.2s ease-in, padding 0.3s ease-in;
+  transition:color 0.2s ease-in, padding 0.3s ease-in;
+  padding:22px 0 23px 0;
+}
+
+#page-nav .active {
+  color:#989d00 !important;
+  border-bottom:5px solid #989d00;
+  padding-bottom:18px;
+}
+
+#page-nav ul li a:hover {
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+  color:#686868;
+}
+
+.page-nav-filler {
+  display:none;
+  width:100%;
+}
+
+#home-ministries {
 
 }
 
-#ministries h3 {
+#home-ministries h3 {
   text-align:center;
   color:#006f7c;
 }
 
-#ministries .button {
+#home-ministries .button {
   color:#006f7c;
   border-color:#006f7c;
 }
 
-#ministries .button:hover {
-  background-color:#006f7c;
-  color:white;
+#home-ministries .hvr-sweep-to-right:before {
+  background:#006f7c !important;
+}
+
+#home-ministries .hvr-sweep-to-right:hover, #home-ministries .hvr-sweep-to-right:focus, #home-ministries .hvr-sweep-to-right:active {
+  color: white;
 }
 
 .ministry {
@@ -406,45 +470,6 @@ nav ul li ul li a:hover {
   z-index:-100 !important;
   background-color:black;
   height:500px;
-}
-
-#about-nav {
-  padding:5px 0;
-  background-color:#F3F3F3;
-  overflow:hidden;
-}
-
-#about-nav ul {
-  text-align:center;
-}
-
-#about-nav ul li {
-  display:inline-block;
-  padding:0 10px;
-  margin:0 auto;
-}
-
-#about-nav ul li a {
-  color:#B0B0B0;
-  -o-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -webkit-transition: color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-  padding:22px 0 23px 0;
-}
-
-#about-nav .active {
-  color:#989d00 !important;
-  border-bottom:5px solid #989d00;
-  padding-bottom:18px;
-}
-
-#about-nav ul li a:hover {
-  -o-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -webkit-transition: color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-  color:#686868;
 }
 
 #story {
@@ -591,6 +616,14 @@ nav ul li ul li a:hover {
   transition:color 0.2s ease-in;
 }
 
+#team-nav ul li a i {
+  display:none;
+}
+
+#team-nav .active {
+  color:#686868;
+}
+
 .team-member {
   height:425px;
   text-align:center;
@@ -666,38 +699,154 @@ nav ul li ul li a:hover {
 }
 
 #connect .grid_6 {
-  height:400px;
+  height:425px;
+}
+
+.connect-entry {
+  padding:20px 0;
 }
 
 .connect-entry-right h1, .connect-entry-right p {
   padding-left:26px;
+  margin-top:50px;
 }
 
 .connect-entry-left h1, .connect-entry-left p {
   padding-right:26px;
+  margin-top:50px;
 }
 
 .connect-img {
-  background: url(/_img/annualreport/lifegroups.jpg) no-repeat center center scroll;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-attachment:scroll;
+  text-align:center;
+  background-size:contain;
+}
+
+.connect-img-mobile {
+  display:none;
+}
+
+#connect-small-groups .connect-img {
+  background-image: url("/_img/annualreport/lifegroups-hex.jpg");
+}
+
+#connect-connections .connect-img {
+  background-image: url("/_img/annualreport/serving-hex.jpg");
+}
+
+#connect-classes .connect-img {
+  background-image: url("/_img/annualreport/equip-hex.jpg");
+}
+
+#connect-devos .connect-img {
+  background-image: url("/_img/annualreport/attendance-hex.jpg");
+}
+
+#connect-interns .connect-img {
+  background-image: url("/_img/annualreport/letter-hex.jpg");
+}
+
+.connect-img h3 {
+  text-transform:uppercase;
+  color:white;
+  margin-top:190px;
+  padding:10px;
+  border:3px solid white;
+}
+
+.connect-img .hvr-sweep-to-right:before {
+  background:white;
+}
+
+.connect-img .hvr-sweep-to-right:hover, .connect-img .hvr-sweep-to-right:focus, .connect-img .hvr-sweep-to-right:active {
+  color: black;
+}
+
+.group-entry {
+  padding:40px 0;
+}
+
+.group-filler .button {
+  background-color:#989d00;
+  color:white;
+  margin-top:80px;
+}
+
+.group-filler {
+  background: url(/_img/annualreport/accomp.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-color:black;
+  height:220px;
+  padding:10px 0;
+  margin-top:40px;
 }
 
-.connect-img h1 {
-  font-size:45px;
-  text-transform:uppercase;
-  font-weight:lighter;
-  color:white;
+#find-a-group, #start-a-group {
+  padding-bottom:0px;
+}
+
+#start-a-group, #connect-your-group, #group-faqs-benefits, #group-resources {
+  display:none;
+}
+
+.connect-your-group-box {
+  margin-top:50px;
+  height:306px;
+  border-radius:50%;
+  overflow:hidden;
   text-align:center;
-  margin-top:140px;
-  opacity:0;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size:auto 100%;
+  -webkit-transition: transform 0.15s ease-in;
+  -moz-transition: transform 0.15s ease-in;
+  -o-transition: transform 0.15s ease-in;
+  transition:transform 0.15s ease-in;
 }
 
-.connect-img:hover h1 {
-  opacity:1;
+.connect-your-group-box:hover {
+  -webkit-transition: transform 0.15s ease-in;
+  -moz-transition: transform 0.15s ease-in;
+  -o-transition: transform 0.15s ease-in;
+  transition:transform 0.15s ease-in;
+  -webkit-transform:scale(0.96,0.96);
+  -moz-transform:scale(0.96,0.96);
+  -o-transform:scale(0.96,0.96);
+  -ms-transform:scale(0.96,0.96);
+  transform:scale(0.96,0.96);
+}
+
+.connect-your-group-box h2, .connect-your-group-box h1 {
+  color:white;
+  padding:10px;
+  margin-top:95px;
+}
+
+#group-events-box {
+  /*background: url(/_img/annualreport/accomp.jpg) no-repeat center center scroll;*/
+  background-color:#989d00;
+}
+
+#group-app-box {
+  /*background: url(/_img/annualreport/accomp.jpg) no-repeat center center scroll;*/
+  background-color:#006f7c;
+}
+
+#group-social-box {
+  /*background: url(/_img/annualreport/accomp.jpg) no-repeat center center scroll;*/
+  background-color:#2D2D2D;
+}
+
+#group-social-box i {
+  margin-top:10px;
+  margin-left:10px;
+  color:white;
 }
 
 footer {

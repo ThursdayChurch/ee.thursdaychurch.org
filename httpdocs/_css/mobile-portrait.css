@@ -2,7 +2,11 @@
   font-size:25px;
 }
 
-#locations img {
+#page-cover h1 {
+  font-size:30px;
+}
+
+#home-locations img {
   height:260px;
 }
 
@@ -16,4 +20,9 @@
 
 .team-member-info .team-photo {
   height:260px;
+}
+
+.group-filler .button {
+  margin-left:0 !important;
+  margin-top:20px;
 }
