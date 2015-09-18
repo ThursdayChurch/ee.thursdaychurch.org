@@ -64,15 +64,12 @@
   <div class="clear"></div>
 
   <div class="container entry">
-    <div class="grid_8">
+    <div class="grid_12">
       <p>A life group is a group of three or more people who gather each week in a home, workplace, or at the church. In a group you’ll hang out, study the Word, and pray together.<br><br>
       Groups come in all shapes and sizes — married couples, singles, men, women, kids, no kids, workplace, under 20, over 40 — the list goes on. No matter where you are in life, there’s a group for you.<br><br>
       Ready to dive in? Find a group that fits you or start one of your own.
       Need help? Email <a href="mailto:lindsey.truelove@journeychurch.tv">lindsey.truelove@journeychurch.tv.</a>
       </p>
-    </div>
-    <div class="grid_4">
-      <div class="circle"><img src="/_img/smallgroups-crop.jpg"/></div>
     </div>
     <div class="clear"></div>
   </div>
@@ -133,10 +130,8 @@ Browse below for upcoming dates and activities for you to connect your group an 
     </div>
 
     <a href="#">
-      <div class="circle">
-        <div id="group-events-box" class="connect-your-group-box grid_4">
-          <h2>Check Out Small Group Events</h2>
-        </div>
+      <div id="group-events-box" class="connect-your-group-box grid_4">
+        <h2>Check Out Small Group Events</h2>
       </div>
     </a>
 
@@ -161,7 +156,26 @@ Browse below for upcoming dates and activities for you to connect your group an 
 <div class="group-entry" id="group-faqs-benefits">
   <div class="container">
     <div class="grid_12">
-      <p>Faqs</p>
+      <h1>FAQs</h1>
+      {exp:channel:entries channel="FAQ" category="24" orderby="date" sort="asc"}
+        <h2>{title}</h2>
+        <p>{faq-body}</p><br>
+      {/exp:channel:entries}
+    </div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="entry-shade">
+    <div class="container">
+      <div class="grid_12">
+        <h1>Benefits</h1>
+        {exp:channel:entries channel="FAQ" category="25" orderby="date" sort="asc"}
+          <h2>{title}</h2>
+          <p>{faq-body}</p><br>
+        {/exp:channel:entries}
+      </div>
+      <div class="clear"></div>
     </div>
   </div>
 

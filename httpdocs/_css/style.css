@@ -212,7 +212,7 @@ nav ul li ul li a:hover {
   width:100%;
   z-index:75;
   padding:0 !important;
-  border-bottom:1px solid #F2F2F2;
+  border-bottom:1px solid #F0F0F0;
   background-color:white !important;
   -webkit-transition:background-color 0.3s ease-in;
   -moz-transition:background-color 0.3s ease-in;
@@ -786,7 +786,7 @@ nav ul li ul li a:hover {
   margin-top:40px;
 }
 
-#find-a-group, #start-a-group {
+#find-a-group, #start-a-group, #group-faqs-benefits {
   padding-bottom:0px;
 }
 
