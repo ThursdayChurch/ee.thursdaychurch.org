@@ -24,13 +24,13 @@
   {if segment_3}
     {exp:channel:entries channel="Team" url_title="{segment_3}"}
     <div class="team-member-info">
-      <div class="grid_5">
+      <div class="grid_4">
         <div class="team-photo"><img src="{team-photo}"/></div>
       </div>
-      <div class="grid_7 omega">
+      <div class="grid_8 omega">
         <h1>{title}</h1>
         <h3>{team-title}</h3>
-        <p>{team-bio}</p><br>
+        <p>{team-bio}</p>
         <ul>
           {if team-email}<li><a href="mailto:{team-email}"><i class="fa fa-envelope-o fa-2x"></i></a></li>{/if}
           {if team-fb}<li><a href="https://www.facebook.com/{team-fb}"><i class="fa fa-facebook-official fa-2x"></i></a></li>{/if}

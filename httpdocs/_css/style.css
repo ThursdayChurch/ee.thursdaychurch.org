@@ -2,11 +2,13 @@
   Site Colors:
     Green:	#989d00
     Blue:	#006f7c
-    Dark Blue:#005963
+    Dark Blue: #28646B
     Darkest Grey: #282828
     Dark Grey: #2D2D2D
-    Grey: #686868
-    Light Grey: #F3F3F3
+    Grey: #464646
+    Light Grey: #B0B0B0
+    Lighter Grey: #686868
+    Lightest Grey: #F3F3F3
 
   Fonts:
     Main: 'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B';
@@ -63,7 +65,7 @@ body {
 }
 
 h1, h4 {
-  color:#2D2D2D;
+  color:#464646;
 }
 
 h2, h5 {
@@ -77,15 +79,16 @@ h3, h6 {
 p {
   color:#686868;
   font-size:16px;
+  line-height:28px;
 }
 
 p i {
-  color:#2D2D2D;
+  color:#686868;
   font-size:20px;
 }
 
 a, a:link, a:visited, a:active {
-  color:#006f7c;
+  color:#989d00;
   text-decoration:none;
   font-weight:bold;
 }
@@ -158,7 +161,7 @@ ul {
 header {
   background-color:#006f7c;
   padding:7px 0;
-  border-bottom: 4px solid #005963;
+  border-bottom: 1px solid #28646B;
 }
 
 #nav-wrapper {
@@ -301,21 +304,9 @@ nav ul li ul li a:hover {
   color:#2D2D2D;
 }
 
-#boxes-background {
-  background: url(/_img/boxes-filler.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  z-index:-100 !important;
-  background-color:black;
-  height:500px;
-}
-
-#boxes-captions {
-  position:relative;
-  top:-70px;
-  margin-top:-370px !important;
+#boxes {
+  padding:40px 0;
+  background-color:#F3F3F3;
 }
 
 .caption {
@@ -419,6 +410,30 @@ nav ul li ul li a:hover {
   width:100%;
 }
 
+#home-locations .location {
+  text-align:center;
+}
+
+#home-locations i {
+  color:#B0B0B0;
+  margin-right:12.5px;
+  margin-left:12.5px;
+  margin-top:30px;
+  font-size:25px;
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+#home-locations i:hover {
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+  color:#686868;
+}
+
 #home-ministries {
 
 }
@@ -486,7 +501,12 @@ nav ul li ul li a:hover {
 }
 
 #values .grid_6 {
-  height:425px;
+  margin-top:40px;
+  margin-bottom:40px;
+}
+
+#values .grid_6:first-child, #values .grid_6:nth-child(2) {
+  margin-top:0;
 }
 
 #values .grid_6 img {
@@ -504,7 +524,7 @@ nav ul li ul li a:hover {
 }
 
 .span-border {
-  border-bottom:4px solid #2D2D2D;
+  border-bottom:4px solid #464646;
   width:30px;
   height:66px;
   display:inline-block;
@@ -525,30 +545,31 @@ nav ul li ul li a:hover {
   display:inline-block;
 }
 
+#theology .grid_6 {
+  margin-top:15px;
+  margin-bottom:15px;
+}
+
 #theology h1 {
   display:inline-block;
   width:300px;
-  color:#2D2D2D;
+  color:#464646;
 }
 
 #theology p {
-  margin-left:30px;
-  padding-bottom:10px;
+  padding-top:10px;
 }
 
 .structure-level {
-  height:325px;
+  margin-top:30px;
   margin-bottom:30px;
 }
 
-.structure-level p {
-  padding:0 20px;
-  margin-top:50px;
+.structure-level:first-child, .structure-level:nth-child(2) {
+  margin-top:0;
 }
 
 .structure-level h1 {
-  padding:0 20px;
-  margin-top:30px;
   -moz-transition:color 0.2s ease-in-out;
   -webkit-transition:color 0.2s ease-in-out;
   -ms-transition:color 0.2s ease-in-out;
@@ -652,9 +673,8 @@ nav ul li ul li a:hover {
 }
 
 .team-member-info .team-photo {
-  height:389px;
+  height:306px;
   border-radius:50%;
-
 }
 
 .team-member-info ul li {
@@ -666,8 +686,28 @@ nav ul li ul li a:hover {
   margin-left:0;
 }
 
+.team-member-info ul li a {
+  color:#B0B0B0;
+  -webkit-transition:color 0.2s ease-in;
+  -moz-transition:color 0.2s ease-in;
+  -o-transition:color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+.team-member-info ul li a:hover {
+  color:#686868;
+  -webkit-transition:color 0.2s ease-in;
+  -moz-transition:color 0.2s ease-in;
+  -o-transition:color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
 #team-nav ul li:first-child a {
   color:#686868;
+  -webkit-transition:color 0.2s ease-in;
+  -moz-transition:color 0.2s ease-in;
+  -o-transition:color 0.2s ease-in;
+  transition:color 0.2s ease-in;
 }
 
 #team-nav ul li a:hover {
@@ -913,6 +953,10 @@ footer #footer-copyright p {
   color:white;
   font-size:12px;
   text-align:center;
+}
+
+footer #footer-copyright p a {
+  color:#006f7c;
 }
 
 footer #footer-copyright p a:hover {
