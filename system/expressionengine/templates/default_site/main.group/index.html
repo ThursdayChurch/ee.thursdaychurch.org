@@ -11,49 +11,72 @@
 	<div class="clear"></div>
 </div>
 
-<div id="home-locations" class="entry">
+<div id="who-location" class="entry">
 	<div class="container">
-		<div class="grid_12">
-			<h1>Locations & Times</h1>
+		<div id="who-are-we" class="grid_6">
+			<h1>Who are we?</h1>
+			<p>JourneyChurch is a <strong>house</strong> where God is honored, where prayers are answered, hearts are mended and lives are changed.<br><br> {!--We are a <strong>house</strong> committed to transforming our cities... one life at a time. A <strong>house</strong> that uses creativity to point people to the Creator. A <strong>house</strong> that believes the God of generations past is the answer for the next generation.<br><br> The people of this <strong>house</strong> gather to build healthy relationships and have a blast together. And the highest calling of our house is to worship the God of the universe. The King of kings. The Lord of lords. We are a <strong>house</strong>. We are JourneyChurch.--}</p>
+			{!--<a href="/about">Learn more about us</a> <i class="fa fa-chevron-right"></i>--}
+			<a href="/about"><div class="button">Learn More About Us</div></a>
 		</div>
-		<div class="clear"></div>
-		<div class="grid_4 location">
-			<h2>Norman Campus</h2>
-			<div class="circle">
-				<img src="/_img/normancampus.jpg">
+
+		<div id="home-locations" class="grid_6">
+			<h1>Locations & Times</h1>
+			<a href="#header" id="location-time-icon" class="active location-icon"><i class="fa fa-clock-o"></i></a>
+			<a href="#header" id="location-address-icon" class="location-icon"><i class="fa fa-map-marker"></i></a>
+			<a href="#header" id="location-phone-icon" class="location-icon"><i class="fa fa-phone"></i></a>
+			<a href="#header" id="location-email-icon" class="location-icon"><i class="fa fa-envelope-o"></i></a>
+
+			<div id="location-info">
+				{exp:channel:entries channel="location"}
+				<div id="location-time" class="location-info-entry">
+					<h3>{title}</h3> <p>{location-times}</p>
+				</div>
+
+				<div id="location-address" class="location-info-entry">
+					<h3>{title}</h3> <p>Address | {location-address}</p>
+				</div>
+
+				<div id="location-phone" class="location-info-entry">
+					<h3>{title}</h3> <p>Phone | {location-phone}</p>
+					<a href="tel:{location-phone}">Call {title}</a> <i class="fa fa-chevron-right"></i>
+				</div>
+
+				<div id="location-email" class="location-info-entry">
+					<h3>{title}</h3> <p>Email | {location-email}</p>
+					<a href="mailto:{location-email}">Email {title}</a> <i class="fa fa fa-chevron-right"></i>
+				</div>
+				{/exp:channel:entries}
 			</div>
-			<a href="#"><i class="fa fa-clock-o"></i></a>
-			<a href="#"><i class="fa fa-map-marker"></i></a>
-			<a href="#"><i class="fa fa-phone"></i></a>
-			<a href="#"><i class="fa fa-envelope-o"></i></a>
-			<p>
-				Sunday - 8:30, 10:00 & 11:30 AM, 6:00 PM<br><br>
-	 			3801 Journey Parkway, Norman, OK 73072<br><br>
-	 			<a href="tel:405-217-8700">405-217-8700</a><br><br>
-	 			<a href="mailto:norman@journeychurch.tv">NORMAN@JourneyChurch.tv</a>
-			</p>
+
+			{!--<a href="/locations"><div class="button">More On Locations</div></a>--}
 		</div>
 	</div>
+
 	<div class="clear"></div>
+
+	</div>
 </div>
 
-<div id="boxes">
-	<div id="boxes-captions" class="container">
-		<div class="grid_12"><h1>Get Connected</h1></div>
-		<div class="grid_4 caption">
-			<a href="/media"><div id="caption-image-1" class="caption-image"></div></a>
-			<div id="caption-1" class="caption-description"><h4>Watch Our Latest Message</h4><p>Watch our latest message from the mystery series!</p></div>
+<div class="entry-shade">
+	<div id="boxes">
+		<div id="boxes-captions" class="container">
+			<div class="grid_12"><h1>Get Connected</h1></div>
+			<div class="grid_4 caption">
+				<a href="/media"><div id="caption-image-1" class="caption-image"></div></a>
+				<div id="caption-1" class="caption-description"><h4>Watch Our Latest Message</h4><p>Watch our latest message from the mystery series!</p></div>
+			</div>
+			<div class="grid_4 caption">
+				<a href="/about"><div id="caption-image-2" class="caption-image"></div></a>
+				<div id="caption-2" class="caption-description"><h4>New to JourneyChurch?</h4><p>If you are new to JourneyChurch, welcome! You can learn more JourneyChurch here!</p></div>
+			</div>
+			<div class="grid_4 caption">
+				<a href="/groups"><div id="caption-image-3" class="caption-image"></div></a>
+				<div id="caption-3" class="caption-description"><h4>Get Plugged Into Life Groups!</h4><p>Get plugged into a life group!</p></div>
+			</div>
 		</div>
-		<div class="grid_4 caption">
-			<a href="/about"><div id="caption-image-2" class="caption-image"></div></a>
-			<div id="caption-2" class="caption-description"><h4>New to JourneyChurch?</h4><p>If you are new to JourneyChurch, welcome! You can learn more JourneyChurch here!</p></div>
-		</div>
-		<div class="grid_4 caption">
-			<a href="/groups"><div id="caption-image-3" class="caption-image"></div></a>
-			<div id="caption-3" class="caption-description"><h4>Get Plugged Into Life Groups!</h4><p>Get plugged into a life group!</p></div>
-		</div>
+		<div class="clear"></div>
 	</div>
-	<div class="clear"></div>
 </div>
 
 <div id="home-ministries" class="entry">
@@ -70,11 +93,11 @@
 		</div>
 
 		<div id="kids-ministry" class="grid_4 ministry">
-			<a href="/kids"><div id="kids-ministry-photo" class="ministry-image"><img src="/_img/ministries/kids.jpg"/></div>
+			<a href="/kids"><div id="kids-ministry-photo" class="ministry-image"><img src="/_img/ministries/kids.jpg"/></div></a>
 			<h3>Kids</h3>
 		</div>
 		<div class="clear"></div>
-		<div class="center"><a href="/ministries"><div class="button hvr-sweep-to-right">More Ministries</div></a></div>
+		<div class="center"><a href="/ministries"><div class="button">More Ministries</div></a></div>
 	</div>
 	<div class="clear"></div>
 </div>
@@ -87,5 +110,41 @@
 	</div>
 	<div class="clear"></div>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('#location-time-icon').click(function() {
+			$('.location-icon').removeClass('active');
+			$(this).addClass('active');
+
+			$('.location-info-entry').css('display', 'none');
+			$('#location-time').fadeIn('fast');
+		});
+
+		$('#location-address-icon').click(function() {
+			$('.location-icon').removeClass('active');
+			$(this).addClass('active');
+
+			$('.location-info-entry').css('display', 'none');
+			$('#location-address').fadeIn('fast');
+		});
+
+		$('#location-phone-icon').click(function() {
+			$('.location-icon').removeClass('active');
+			$(this).addClass('active');
+
+			$('.location-info-entry').css('display', 'none');
+			$('#location-phone').fadeIn('fast');
+		});
+
+		$('#location-email-icon').click(function() {
+			$('.location-icon').removeClass('active');
+			$(this).addClass('active');
+
+			$('.location-info-entry').css('display', 'none');
+			$('#location-email').fadeIn('fast');
+		});
+	});
+</script>
 
 {embed="_includes/footer"}
