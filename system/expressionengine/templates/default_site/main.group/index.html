@@ -34,22 +34,18 @@
 				</div>
 
 				<div id="location-address" class="location-info-entry">
-					<h3>{title}</h3> <p>Address | {location-address}</p>
+					<h3>{title}</h3> <p>Address | <a href="{location-directions}" target="_blank">{location-address}</a></p>
 				</div>
 
 				<div id="location-phone" class="location-info-entry">
-					<h3>{title}</h3> <p>Phone | {location-phone}</p>
-					<a href="tel:{location-phone}">Call {title}</a> <i class="fa fa-chevron-right"></i>
+					<h3>{title}</h3> <p>Phone | <a href="tel:{location-phone}">{location-phone}</a></p>
 				</div>
 
 				<div id="location-email" class="location-info-entry">
-					<h3>{title}</h3> <p>Email | {location-email}</p>
-					<a href="mailto:{location-email}">Email {title}</a> <i class="fa fa fa-chevron-right"></i>
+					<h3>{title}</h3> <p>Email | <a href="mailto:{location-email}">{location-email}</a></p>
 				</div>
 				{/exp:channel:entries}
 			</div>
-
-			{!--<a href="/locations"><div class="button">More On Locations</div></a>--}
 		</div>
 	</div>
 

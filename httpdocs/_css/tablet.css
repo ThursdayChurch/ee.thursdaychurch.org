@@ -1,6 +1,7 @@
 .button {
-  background-color:#989d00;
-  color:white !important;
+  background-color:#2D2D2D;
+  border-color:#2D2D2D;
+  color:white;
 }
 
 nav ul li h3 {
@@ -13,10 +14,6 @@ nav ul li h3 {
 
 #home-locations img {
   height:240px;
-}
-
-#home-ministries .button {
-  background-color:#006f7c;
 }
 
 .team-member {

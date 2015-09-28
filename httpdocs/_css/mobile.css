@@ -2,29 +2,82 @@
   padding:0 !important;
 }
 
-#nav-wrapper {
-  padding:10px 0;
+#cover h1, #page-cover h1 {
+  font-size:35px;
+  top:80px !important;
 }
 
-nav ul .grid_3 {
+#nav-wrapper {
+  padding:25px 0 5px 0;
+}
+
+#full-nav {
+  display:none;
+}
+
+#mobile-nav {
+  display:block;
+}
+
+#mobile-nav ul {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+#mobile-nav ul .grid_3 {
   height:auto;
   clear:both;
   overflow:hidden;
 }
 
-nav ul li {
+#mobile-nav ul li {
   margin-left:15px;
 }
 
-nav ul li h3 {
+#mobile-nav ul li h3 {
+  color:white;
   font-size:18px;
-  border-bottom:0;
+  margin-top:0;
+  font-weight:bold;
+  text-transform:uppercase;
 }
 
-nav ul ul {
+#mobile-nav ul ul {
   display:none;
   overflow:hidden;
   margin-top:-20px;
+}
+
+#mobile-nav ul li ul li {
+  display:block;
+  margin-top:17px;
+  margin-bottom:17px;
+}
+
+#mobile-nav ul li ul li a:hover {
+  opacity:1;
+}
+
+#mobile-nav ul li ul li a h4 {
+  font-size:15px;
+}
+
+#mobile-nav ul li ul li a h4, #mobile-nav ul li ul li a h4:visited {
+  color:#686868;
+  display:inline;
+  padding:5px 0;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+#mobile-nav ul li ul li a h4:hover, #mobile-nav ul li ul li a h4:active {
+  color:white;
+}
+
+#mobile-nav ul li ul li a:hover {
+  text-decoration:none !important;
 }
 
 #cover {
@@ -35,11 +88,6 @@ nav ul ul {
   background-attachment:scroll;
   height:250px !important;
   overflow:hidden;
-}
-
-#cover h1 {
-  font-size:35px;
-  top:115px;
 }
 
 #cover h2 {
@@ -64,22 +112,12 @@ nav ul ul {
   top:100px;
 }
 
-#home-locations img {
-  margin-top:30px;
+#who-are-we {
+  margin-bottom:50px;
 }
 
-#boxes {
-  background-color:#F3F3F3;
-  padding:70px 0;
-}
-
-#boxes-background {
-  display:none;
-}
-
-#boxes-captions {
-  position:static;
-  margin-top:0 !important;
+#who-are-we .button {
+  margin-top:0;
 }
 
 .caption {
@@ -91,6 +129,10 @@ nav ul ul {
 
 .caption:last-child {
   margin-bottom:0;
+}
+
+.caption-description {
+  height:150px;
 }
 
 #page-cover h1 {

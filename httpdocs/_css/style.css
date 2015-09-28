@@ -127,12 +127,20 @@ strong {
   text-align:center;
   margin:20px 0;
   font-weight:bold;
+  -webkit-transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
+  -moz-transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
+  -o-transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
+  transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
 }
 
-.button:hover {
+.button:hover, .button:active {
   background-color:#2D2D2D;
   border-color:#2D2D2D;
   color:white;
+  -webkit-transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
+  -moz-transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
+  -o-transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
+  transition:border-color 0.1s ease-in, background-color 0.1s ease-in;
 }
 
 .button .fa-chevron-right {
@@ -170,7 +178,7 @@ strong {
   position:fixed;
   width:100%;
   z-index:100;
-  background-color:#2D2D2D;
+  /*background-color:#2D2D2D;*/
 }
 
 #logo {
@@ -187,58 +195,47 @@ strong {
 }
 
 header {
-  background-color:#006f7c;
+  border-bottom:1px solid transparent;
   padding:7px 0;
-  border-bottom: 1px solid #28646B;
+  -webkit-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
+  -moz-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
+  -o-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
+  transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
 }
 
 #nav-wrapper {
   display:none;
   padding:35px 0 45px 0;
+  background-color:#2D2D2D;
 }
 
-nav ul .grid_3 {
-  height:403px;
+#mobile-nav {
+  display:none;
 }
 
-nav ul li h3 {
+#full-nav ul li h3 {
   color:white;
-  margin-top:0;
-  font-weight:bold;
-  text-transform:uppercase;
 }
 
-nav ul ul {
-  margin-top:10px;
+#full-nav ul li h4 {
+  color:#686868;
+  -webkit-transition:color 0.2s ease-in;
+  -moz-transition:color 0.2s ease-in;
+  -o-transition:color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+  font-weight:500;
 }
 
-nav ul li ul li {
-  display:block;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-
-nav ul li ul li a:hover {
-  opacity:1;
-}
-
-nav ul li ul li a h4, nav ul li ul li a h4:visited {
-  font-weight:normal;
-  color:#BFBFBF;
-  display:inline;
-  padding:5px 0;
-  -webkit-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -o-transition: color 0.2s ease-in;
+#full-nav ul li a h4:hover {
+  color:white;
+  -webkit-transition:color 0.2s ease-in;
+  -moz-transition:color 0.2s ease-in;
+  -o-transition:color 0.2s ease-in;
   transition:color 0.2s ease-in;
 }
 
-nav ul li ul li a h4:hover, nav ul li ul li a h4:active {
-  color:white;
-}
-
-nav ul li ul li a:hover {
-  text-decoration:none !important;
+#full-nav ul li a:hover {
+  text-decoration:none;
 }
 
 .sticky-nav {
@@ -246,7 +243,7 @@ nav ul li ul li a:hover {
   width:100%;
   z-index:75;
   padding:0 !important;
-  border-bottom:1px solid #F0F0F0;
+  border-bottom:1px solid #f7f7f7;
   background-color:white !important;
   -webkit-transition:background-color 0.3s ease-in;
   -moz-transition:background-color 0.3s ease-in;
@@ -255,6 +252,7 @@ nav ul li ul li a:hover {
 }
 
 #search {
+  background-color:#2D2D2D;
   padding:15px 0;
   display:none;
 }
@@ -279,7 +277,7 @@ nav ul li ul li a:hover {
 }
 
 #page-cover {
-  height:350px;
+  height:375px;
   background: url(/_img/annualreport/creative.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -397,10 +395,6 @@ nav ul li ul li a:hover {
   padding:0;
 }
 
-#home-locations .location-icon:hover {
-  opacity:1;
-}
-
 #home-locations .active i {
   background-color:#464646 !important;
 }
@@ -426,9 +420,17 @@ nav ul li ul li a:hover {
   width:30px;
   border-radius:50%;
   font-size:30px;
+  -webkit-transition:background-color 0.1s ease-in;
+  -moz-transition:background-color 0.1s ease-in;
+  -o-transition:background-color 0.1s ease-in;
+  transition:background-color 0.1s ease-in;
 }
 
 #home-locations i:hover {
+  -webkit-transition:background-color 0.1s ease-in;
+  -moz-transition:background-color 0.1s ease-in;
+  -o-transition:background-color 0.1s ease-in;
+  transition:background-color 0.1s ease-in;
   background-color:#B0B0B0;
 }
 
@@ -436,7 +438,8 @@ nav ul li ul li a:hover {
   padding:30px 0;
 }
 
-#location-info h3 {
+#location-info a {
+  color:#B0B0B0;
 }
 
 .location-info-entry {
@@ -495,7 +498,7 @@ nav ul li ul li a:hover {
 }
 
 .caption-description {
-  height:140px;
+  height:165px;
   width:auto;
   padding:15px;
 }
@@ -588,7 +591,7 @@ nav ul li ul li a:hover {
 .span-border {
   border-bottom:4px solid #464646;
   width:30px;
-  height:66px;
+  height:76px;
   display:inline-block;
   -moz-transition:width 0.7s ease-in-out;
   -webkit-transition:width 0.7s ease-in-out;
@@ -603,18 +606,22 @@ nav ul li ul li a:hover {
 .span-border-2 {
   border-bottom:4px solid #F3F3F3;
   width:300px;
-  height:66px;
+  height:76px;
   display:inline-block;
 }
 
-#theology .grid_6 {
+#theology .grid_12 {
   margin-top:15px;
   margin-bottom:15px;
 }
 
+#theology .grid_12:first-child {
+  margin-top:0;
+}
+
 #theology h1 {
   display:inline-block;
-  width:300px;
+  width:400px;
   color:#464646;
 }
 
@@ -806,21 +813,28 @@ nav ul li ul li a:hover {
 }
 
 #connect .grid_6 {
-  height:425px;
+  height:350px;
 }
 
-.connect-entry {
-  padding:20px 0;
+.connect-entry h2 {
+  color:#464646;
+  text-align:center;
+  margin-top:60px;
 }
 
-.connect-entry-right h1, .connect-entry-right p {
-  padding-left:26px;
-  margin-top:50px;
+.connect-entry p {
+  text-align:center;
+  font-size:15px;
 }
 
-.connect-entry-left h1, .connect-entry-left p {
-  padding-right:26px;
-  margin-top:50px;
+.connect-entry-right h2, .connect-entry-right p {
+  padding-left:13px;
+  padding-right:13px;
+}
+
+.connect-entry-left h2, .connect-entry-left p {
+  padding-left:13px;
+  padding-right:13px;
 }
 
 .connect-img {
@@ -828,7 +842,18 @@ nav ul li ul li a:hover {
   background-position:center center;
   background-attachment:scroll;
   text-align:center;
-  background-size:contain;
+  background-size:cover;
+}
+
+.connect-img .button {
+  margin-top:150px;
+  color:white;
+  border-color:white;
+}
+
+.connect-img .button:hover {
+  background-color:white;
+  color:black;
 }
 
 .connect-img-mobile {
@@ -836,23 +861,23 @@ nav ul li ul li a:hover {
 }
 
 #connect-small-groups .connect-img {
-  background-image: url("/_img/annualreport/lifegroups-hex.jpg");
+  background-image: url("/_img/annualreport/lifegroups.jpg");
 }
 
 #connect-connections .connect-img {
-  background-image: url("/_img/annualreport/serving-hex.jpg");
+  background-image: url("/_img/annualreport/serving.jpg");
 }
 
 #connect-classes .connect-img {
-  background-image: url("/_img/annualreport/equip-hex.jpg");
+  background-image: url("/_img/annualreport/equip.jpg");
 }
 
 #connect-devos .connect-img {
-  background-image: url("/_img/annualreport/attendance-hex.jpg");
+  background-image: url("/_img/annualreport/attendance.jpg");
 }
 
 #connect-interns .connect-img {
-  background-image: url("/_img/annualreport/letter-hex.jpg");
+  background-image: url("/_img/annualreport/letter.jpg");
 }
 
 .connect-img h3 {
@@ -860,15 +885,6 @@ nav ul li ul li a:hover {
   color:white;
   margin-top:190px;
   padding:10px;
-  border:3px solid white;
-}
-
-.connect-img .hvr-sweep-to-right:before {
-  background:white;
-}
-
-.connect-img .hvr-sweep-to-right:hover, .connect-img .hvr-sweep-to-right:focus, .connect-img .hvr-sweep-to-right:active {
-  color: black;
 }
 
 .group-entry {
@@ -980,7 +996,7 @@ footer .social-media ul li {
 }
 
 footer .social-media i {
-  color:#BFBFBF;
+  color:#686868;
   font-size:30px;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
@@ -994,16 +1010,20 @@ footer .social-media i:hover {
 
 footer #footer-nav h3, footer #footer-nav h4 {
   color:white;
-  font-size:14px;
+}
+
+footer #footer-nav h3 {
+  font-size:16px;
 }
 
 footer #footer-nav h4 {
-  color:#BFBFBF;
-  font-weight:normal;
+  color:#686868;
+  font-weight:500;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition:color 0.2s ease-in;
+  font-size:14px;
 }
 
 footer #footer-nav h4:hover {
