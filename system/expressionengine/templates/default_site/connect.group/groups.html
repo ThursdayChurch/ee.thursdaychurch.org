@@ -32,7 +32,7 @@
 
   <div id="find-a-group-filler" class="group-filler">
     <div class="container">
-      <div class="grid_5"><div id="find-a-group-vid"></div></div>
+      <div class="grid_6"><div id="find-a-group-vid"></div></div>
 
       <script type="text/javascript">
 
@@ -54,19 +54,21 @@
         });
       </script>
 
-      <div class="grid_6 push_1">
+      <div class="grid_5 push_1">
+        <h2>What is a Small Group?</h2>
+        <p>A <strong>small group</strong> is a group of three or more people who gather each week in a home, workplace, or at the church. In a group you’ll hang out, study the Word, and pray together.</p>
         <a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest"><div class="button">Browse Groups</div></a>
         <a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/"><div class="button" style="margin-left:10px;">I Need Help</div></a>
       </div>
     </div>
+    <div class="clear"></div>
   </div>
 
   <div class="clear"></div>
 
   <div class="container entry">
     <div class="grid_12">
-      <p>A life group is a group of three or more people who gather each week in a home, workplace, or at the church. In a group you’ll hang out, study the Word, and pray together.<br><br>
-      Groups come in all shapes and sizes — married couples, singles, men, women, kids, no kids, workplace, under 20, over 40 — the list goes on. No matter where you are in life, there’s a group for you.<br><br>
+      <p>Groups come in all shapes and sizes — married couples, singles, men, women, kids, no kids, workplace, under 20, over 40 — the list goes on. No matter where you are in life, there’s a group for you.<br><br>
       Ready to dive in? Find a group that fits you or start one of your own.
       Need help? Email <a href="mailto:lindsey.truelove@journeychurch.tv">lindsey.truelove@journeychurch.tv.</a>
       </p>
@@ -154,29 +156,57 @@ Browse below for upcoming dates and activities for you to connect your group an 
 
 {!-- FAQs/Benefits --}
 <div class="group-entry" id="group-faqs-benefits">
-  <div class="container">
+  <div id="group-faqs" class="container">
     <div class="grid_12">
       <h1>FAQs</h1>
       {exp:channel:entries channel="FAQ" category="24" orderby="date" sort="asc"}
-        <h2>{title}</h2>
-        <p>{faq-body}</p><br>
+        <div class="faq-entry" id="faq-{url_title}">
+          <h2>{title}</h2>
+          <p>{faq-body}</p><br>
+        </div>
+
+        <script>
+        $(document).ready(function() {
+          $('#faq-{url_title} h2').click(function() {
+            $('.faq-entry p').slideUp();
+
+            if ($('#faq-{url_title} p').css('display') == 'none') {
+              $('#faq-{url_title} p').slideDown();
+            }
+          });
+        });
+        </script>
       {/exp:channel:entries}
     </div>
   </div>
 
   <div class="clear"></div>
 
-  <div class="entry-shade">
-    <div class="container">
-      <div class="grid_12">
-        <h1>Benefits</h1>
-        {exp:channel:entries channel="FAQ" category="25" orderby="date" sort="asc"}
+  <div id="group-benefits" class="container entry">
+    <div class="grid_12">
+      <h1>Benefits</h1>
+      {exp:channel:entries channel="FAQ" category="25" orderby="date" sort="asc"}
+        <div class="benefit-entry" id="benefit-{url_title}">
           <h2>{title}</h2>
           <p>{faq-body}</p><br>
-        {/exp:channel:entries}
-      </div>
-      <div class="clear"></div>
+        </div>
+
+        <script>
+        $(document).ready(function() {
+          $('#benefit-{url_title} h2').click(function() {
+            $('.benefit-entry p').slideUp();
+
+            if ($('#benefit-{url_title} p').css('display') == 'none') {
+              $('#benefit-{url_title} p').slideDown();
+            }
+          });
+        });
+        </script>
+      {/exp:channel:entries}
     </div>
+
+    <div class="clear"></div>
+
   </div>
 
   <div class="clear"></div>
@@ -186,7 +216,10 @@ Browse below for upcoming dates and activities for you to connect your group an 
 <div class="group-entry" id="group-resources">
   <div class="container">
     <div class="grid_12">
-      <p>Resources</p>
+      <h1>Resources</h1>
+      {exp:channel:entries channel="pages" url_title="life-group-resources"}
+        {page-body}
+      {/exp:channel:entries}
     </div>
   </div>
 

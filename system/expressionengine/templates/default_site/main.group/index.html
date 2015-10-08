@@ -9,7 +9,40 @@
 		</div>
 	</div>
 	<div class="clear"></div>
+
+	<div id="cover-video"></div>
 </div>
+
+<script type="text/javascript" src="/_js/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
+
+<script type="text/javascript">
+
+var windowHeight = $(window).height();
+
+$('#cover').css('height', windowHeight);
+
+jwplayer("cover-video").setup({
+	mute:true,
+	repeat: true,
+	autostart: true,
+	controls: false,
+	menu: false,
+	width:'125%',
+	height:'125%',
+	'abouttext': 'JourneyChurch.tv',
+	'aboutlink': '#',
+	aspectratio: '16:9',
+	file: '/Welcome video_with edits.mp4',
+	plugins: {
+		'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
+	},
+	modes: [{
+		'type':'flash',
+		'src': '/_js/jwplayer.flash.swf'
+	}]
+});
+</script>
 
 <div id="who-location" class="entry">
 	<div class="container">
@@ -92,17 +125,35 @@
 			<a href="/kids"><div id="kids-ministry-photo" class="ministry-image"><img src="/_img/ministries/kids.jpg"/></div></a>
 			<h3>Kids</h3>
 		</div>
+
 		<div class="clear"></div>
+
 		<div class="center"><a href="/ministries"><div class="button">More Ministries</div></a></div>
 	</div>
 	<div class="clear"></div>
 </div>
 
-<div id="events">
-	<div class="container">
-		<div class="grid_12">
-
+<div id="home-events-wrapper">
+	<div class="container entry">
+		<div id="home-events" class="grid_6">
+			<h1>Events</h1>
+			<h2>Events happening today</h2>
+			<h3>This is an event</h3>
+			<p>Hello this is an event happening on this date at this time</p>
 		</div>
+
+		<div id="home-latest" class="grid_6">
+			<h1>News | Updates</h1>
+			{exp:channel:entries channel="Latest" orderby="date" sort="desc"}
+				<div class="latest-entry">
+					<h3>{if latest-link}<a href="{latest-link}">{/if}{title}{if latest-link}</a>{/if}</h3>
+					{if latest-body}
+						<p>{latest-body}</p>
+					{/if}
+				</div>
+			{/exp:channel:entries}
+		</div>
+		<div class="clear"></div>
 	</div>
 	<div class="clear"></div>
 </div>
