@@ -6,129 +6,93 @@
 
 <div id="page-nav">
   <ul>
-    <li><a href="#header" class="active">Find A Group</a></li>
-    <li><a href="#header">Start A Group</a></li>
+    <li><a href="#header" class="active">About Groups</a></li>
+    <li><a href="#header">Get Started</a></li>
     <li><a href="#header">Connect Your Group</a></li>
     <li><a href="#header">FAQs & Benefits</a></li>
     <li><a href="#header">Resources</a></li>
   </ul>
 </div>
 
-<div class="page-nav-filler"></div>
+<div class="group-entry" id="about-small-groups">
+  <div class="container entry">
+    <h1>A <span>Small group</span> is a group of three or more people who gather each week in a home, workplace, or at the church.</h1>
+  </div>
+</div>
+{!--Life is not meant to be lived alone. In fact, God hates loneliness. We like to say that real community happens in circles, not in rows.  You were created to experience life with other people, and that’s why at JourneyChurch.tv, we encourage you to get into a small group.
+
+A life group is a group of three or more people who gather each week in a home, workplace, or at the church. In a group you’ll hang out, study the Word, and pray together.--}
 
 {!-- Find A Group --}
-<div class="group-entry" id="find-a-group">
-  <div class="container">
-    <div class="grid_12">
-      <h1>Find A Group</h1>
-      <p>Life is not meant to be lived alone. In fact, God hates loneliness. We like to say that real community happens in circles, not in rows.  You were created to experience life with other people, and that’s why at JourneyChurch.tv, we encourage you to get into a small group.<p>
+<div class="group-entry" id="get-started-group">
+  <div id="find-a-group" class="container entry">
+    <div class="grid_8 push_2">
+      {exp:channel:entries channel="pages" url_title="find-a-group"}
+        <h1>{title}</h1>
+        <p>{page-body}</p>
+      {/exp:channel:entries}
+      <a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest"><div class="button">Browse Groups</div></a>
+      <a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/"><div class="button" style="margin-left:10px;">I Need Help</div></a>
     </div>
+
+    <div class="clear"></div>
   </div>
 
   <div class="clear"></div>
+
+  <div class="group-filler">
+    <div class="container">
+      <div class="grid_8 push_2"><div id="find-a-group-vid"></div></div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
 
   <script type="text/javascript" src="/_js/jwplayer.js"></script>
   <script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
 
-  <div id="find-a-group-filler" class="group-filler">
-    <div class="container">
-      <div class="grid_6"><div id="find-a-group-vid"></div></div>
-
-      <script type="text/javascript">
-
-        jwplayer("find-a-group-vid").setup({
-          'autostart': 'true',
-          'width': '100%',
-          'menu': 'false',
-          'aspectratio': '16:9',
-          'file': 'https://www.youtube.com/watch?v=_Lj0X_6FwJw',
-          'abouttext': 'JourneyChurch.tv Media',
-          'aboutlink': 'http://journeychurch.tv/media',
-            'plugins': {
-              'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
-            },
-            'modes': [{
-              'type':'flash',
-              'src': '/_js/jwplayer.flash.swf'
-            }]
-        });
-      </script>
-
-      <div class="grid_5 push_1">
-        <h2>What is a Small Group?</h2>
-        <p>A <strong>small group</strong> is a group of three or more people who gather each week in a home, workplace, or at the church. In a group you’ll hang out, study the Word, and pray together.</p>
-        <a href="https://secure.accessacs.com/access/login_guest.aspx?sn=106649&sc=sgguest"><div class="button">Browse Groups</div></a>
-        <a href="https://journeydreamteam.wufoo.com/forms/i-need-help-finding-a-group/"><div class="button" style="margin-left:10px;">I Need Help</div></a>
-      </div>
-    </div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="clear"></div>
+  <script>
+    jwplayer("find-a-group-vid").setup({
+    'autostart': 'false',
+    'width': '100%',
+    'menu': 'false',
+    'aspectratio': '16:9',
+    'file': 'https://www.youtube.com/watch?v=W-J5_xVSL_8',
+    'image': '/_img/Kiah-Bailey-Story-Thumb.jpg',
+    'abouttext': 'JourneyChurch.tv Media',
+    'aboutlink': 'http://journeychurch.tv/media',
+      'plugins': {
+        'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
+      },
+      'modes': [{
+        'type':'flash',
+        'src': '/_js/jwplayer.flash.swf'
+      }]
+    });
+  </script>
 
   <div class="container entry">
-    <div class="grid_12">
-      <p>Groups come in all shapes and sizes — married couples, singles, men, women, kids, no kids, workplace, under 20, over 40 — the list goes on. No matter where you are in life, there’s a group for you.<br><br>
-      Ready to dive in? Find a group that fits you or start one of your own.
-      Need help? Email <a href="mailto:lindsey.truelove@journeychurch.tv">lindsey.truelove@journeychurch.tv.</a>
-      </p>
+    <div id="start-a-group" class="grid_8 push_2">
+      {exp:channel:entries channel="pages" url_title="start-a-group"}
+        <h1>{title}</h1>
+        <p>{page-body}</p>
+      {/exp:channel:entries}
+        <a href="https://journeydreamteam.wufoo.com/forms/pv0k5hs1d765z0/" target="_blank"><div class="button">Start A Group</div></a>
     </div>
+
     <div class="clear"></div>
   </div>
-</div>
-
-{!-- Start A Group --}
-<div class="group-entry" id="start-a-group">
-  <div class="container">
-    <div class="grid_12">
-      <h1>Start A Group</h1>
-      <p>Life Groups are the friends we grow, laugh, and serve with. We are thrilled that you want to step out in faith to build the relationships God has called us to build to transform a city on life at a time! Your Life Groups staff is excited to share more about this valuable role and support you with the right resources and relationships. Your first step is to complete this form.
-        Need help?  Email <a href="mailto:lindsey.truelove@journeychurch.tv">lindsey.truelove@journeychurch.tv</a></p>
-    </div>
-  </div>
-
-  <div class="clear"></div>
-
-  <div id="start-a-group-filler" class="group-filler">
-    <div class="container">
-      <div class="grid_5"><div id="start-a-group-vid"></div></div>
-
-      <script type="text/javascript">
-
-        jwplayer("start-a-group-vid").setup({
-          'autostart': 'true',
-          'width': '100%',
-          'menu': 'false',
-          'aspectratio': '16:9',
-          'file': 'https://www.youtube.com/watch?v=VLEObrYW5VM',
-          'abouttext': 'JourneyChurch.tv Media',
-          'aboutlink': 'http://journeychurch.tv/media',
-            'plugins': {
-              'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
-            },
-            'modes': [{
-              'type':'flash',
-              'src': '/_js/jwplayer.flash.swf'
-            }]
-        });
-      </script>
-
-      <div class="grid_6 push_1">
-        <a href="https://journeydreamteam.wufoo.com/forms/pv0k5hs1d765z0/" target="_blank"><div class="button">Start A Group</div></a>
-      </div>
-    </div>
-  </div>
-
   <div class="clear"></div>
 </div>
 
 {!-- Connect Your Group --}
 <div class="group-entry" id="connect-your-group">
-  <div class="container">
+  <div class="container entry">
     <div class="grid_12">
-      <h1>Connect Your Group</h1>
-      <p>Life groups have one, simple purpose: to bring people together. We believe God created us to live in relationship with others and only then can we live the full life He intends for us. Sharing life through community is part of our design, but meaningful relationships aren’t always easy to find. That’s why life groups exist—to make these life-changing relationships relevant and accessible to you.<br><br>
-Browse below for upcoming dates and activities for you to connect your group an opportunity that allows you to build healthy relationships & have a blast while serving our community!</p>
+      {exp:channel:entries channel="pages" url_title="connect-your-group"}
+        <h1>{title}</h1>
+        <p>{page-body}</p>
+      {/exp:channel:entries}
     </div>
 
     <a href="#">
@@ -143,12 +107,13 @@ Browse below for upcoming dates and activities for you to connect your group an 
       </div>
     </a>
 
-
     <div id="group-social-box" class="connect-your-group-box grid_4">
       <h2>Connect Your Group On Social Media</h2>
       <a href="https://www.facebook.com/journeychurchtv"><i class="fa fa-facebook fa-2x"></i></a>
       <a href="https://twitter.com/lifegroupsjc"><i class="fa fa-twitter fa-2x"></i></a>
     </div>
+
+    <div class="clear"></div>
   </div>
 
   <div class="clear"></div>
@@ -156,7 +121,7 @@ Browse below for upcoming dates and activities for you to connect your group an 
 
 {!-- FAQs/Benefits --}
 <div class="group-entry" id="group-faqs-benefits">
-  <div id="group-faqs" class="container">
+  <div id="group-faqs" class="container entry">
     <div class="grid_12">
       <h1>FAQs</h1>
       {exp:channel:entries channel="FAQ" category="24" orderby="date" sort="asc"}
@@ -206,7 +171,6 @@ Browse below for upcoming dates and activities for you to connect your group an 
     </div>
 
     <div class="clear"></div>
-
   </div>
 
   <div class="clear"></div>
@@ -214,13 +178,15 @@ Browse below for upcoming dates and activities for you to connect your group an 
 
 {!-- Resources --}
 <div class="group-entry" id="group-resources">
-  <div class="container">
+  <div class="container entry">
     <div class="grid_12">
       <h1>Resources</h1>
       {exp:channel:entries channel="pages" url_title="life-group-resources"}
         {page-body}
       {/exp:channel:entries}
     </div>
+
+    <div class="clear"></div>
   </div>
 
   <div class="clear"></div>
@@ -232,14 +198,14 @@ Browse below for upcoming dates and activities for you to connect your group an 
       $('#page-nav ul li a').removeClass('active');
       $('#page-nav ul li:first-child a').addClass('active');
       $('.group-entry').css('display', 'none');
-      $('#find-a-group').fadeIn('fast');
+      $('#about-small-groups').fadeIn('fast');
     });
 
     $('#page-nav ul li:nth-child(2)').click(function() {
       $('#page-nav ul li a').removeClass('active');
       $('#page-nav ul li:nth-child(2) a').addClass('active');
       $('.group-entry').css('display', 'none');
-      $('#start-a-group').fadeIn('fast');
+      $('#get-started-group').fadeIn('fast');
     });
 
     $('#page-nav ul li:nth-child(3)').click(function() {

@@ -10,39 +10,10 @@
 	</div>
 	<div class="clear"></div>
 
-	<div id="cover-video"></div>
+	<video autoplay loop muted id="cover-video-2">
+		<source src="/Welcome video_with edits.mp4" type="video/mp4">
+	</video>
 </div>
-
-<script type="text/javascript" src="/_js/jwplayer.js"></script>
-<script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
-
-<script type="text/javascript">
-
-var windowHeight = $(window).height();
-
-$('#cover').css('height', windowHeight);
-
-jwplayer("cover-video").setup({
-	mute:true,
-	repeat: true,
-	autostart: true,
-	controls: false,
-	menu: false,
-	width:'125%',
-	height:'125%',
-	'abouttext': 'JourneyChurch.tv',
-	'aboutlink': '#',
-	aspectratio: '16:9',
-	file: '/Welcome video_with edits.mp4',
-	plugins: {
-		'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
-	},
-	modes: [{
-		'type':'flash',
-		'src': '/_js/jwplayer.flash.swf'
-	}]
-});
-</script>
 
 <div id="who-location" class="entry">
 	<div class="container">
@@ -106,6 +77,8 @@ jwplayer("cover-video").setup({
 		</div>
 		<div class="clear"></div>
 	</div>
+
+	<div class="clear"></div>
 </div>
 
 <div id="home-ministries" class="entry">

@@ -68,6 +68,10 @@ h1 {
   font-size:2.4em;
 }
 
+h2 {
+  font-size:1.9em;
+}
+
 h1, h4 {
   color:#464646;
 }
@@ -83,7 +87,7 @@ h3, h6 {
 p {
   color:#686868;
   font-size:16px;
-  line-height:28px;
+  line-height:32px;
 }
 
 p i {
@@ -160,11 +164,11 @@ strong {
 }
 
 .entry {
-  padding:55px 0;
+  padding:80px 0;
 }
 
 .entry-shade {
-  padding:55px 0;
+  padding:80px 0;
   background-color:#F3F3F3;
 }
 
@@ -268,12 +272,6 @@ header {
 #nav-info ul li {
   display:inline;
 }
-#nav-wrapper {
-  box-shadow: inset 7px 0px 7px -8px #000000;
-  -webkit-box-shadow: inset 7px 0px 7px -8px #000000;
-  -moz-box-shadow: inset 7px 0px 7px -8px #000000;
-  -o-box-shadow: inset 7px 0px 7px -8px #000000;
-}
 
 #nav-wrapper ul {
   margin:30px 30px 0 30px;
@@ -364,6 +362,20 @@ header {
 
 #cover-video {
   top:-224px;
+}
+
+#cover-video-2 {
+  top:-224px;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: 0;
+  background: transparent url(video-bg.jpg) no-repeat;
+  background-size: cover;
 }
 
 #page-cover {
@@ -896,6 +908,10 @@ header {
   padding:30px 0;
 }
 
+.location h2 {
+  color:#989d00;
+}
+
 #map-wrapper {
   border-top:1px solid white;
 }
@@ -979,32 +995,35 @@ header {
   padding:10px;
 }
 
-.group-entry {
-  padding:40px 0;
-}
-
-.group-filler .button {
+.group-entry .button {
   background-color:#989d00;
   border-color:#989d00;
   color:white;
 }
 
 .group-filler {
+  height:auto;
+  padding:20px 0 15px 0;
+  width:100%;
   background-color:#F3F3F3;
-  padding:10px 0;
-  margin-top:40px;
 }
 
-.group-filler strong {
-  color:#989d00;
-}
-
-#find-a-group, #start-a-group, #group-faqs-benefits {
-  padding-bottom:0px;
-}
-
-#start-a-group, #connect-your-group, #group-faqs-benefits, #group-resources {
+#get-started-group, #connect-your-group, #group-faqs-benefits, #group-resources {
   display:none;
+}
+
+#find-a-group, #start-a-group, #about-small-groups {
+  text-align:center;
+}
+
+#about-small-groups h1 {
+  color:#686868;
+  font-weight:300;
+}
+
+#about-small-groups span {
+  font-weight:bold;
+  color:#989d00;
 }
 
 #group-faqs-benefits h2 {
