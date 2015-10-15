@@ -14,9 +14,59 @@
   </ul>
 </div>
 
+<script type="text/javascript" src="/_js/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
+
 <div class="group-entry" id="about-small-groups">
   <div class="container entry">
-    <h1>A <span>Small group</span> is a group of three or more people who gather each week in a home, workplace, or at the church.</h1>
+    <div class="grid_12"><h1>A <span>Small Group</span> is a group of three or more people who gather each week in a home, workplace, or at the church.</h1></div>
+    <div class="grid_8 push_2"><div id="about-groups-video"></div></div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="clear"></div>
+
+  <script type="text/javascript">
+    jwplayer("about-groups-video").setup({
+      'autostart': 'false',
+      'width': '100%',
+      'menu': 'false',
+      'aspectratio': '16:9',
+      'file': 'https://www.youtube.com/watch?v=VLEObrYW5VM',
+      'abouttext': 'JourneyChurch.tv Media',
+      'aboutlink': 'http://journeychurch.tv/media',
+        'plugins': {
+          'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
+        },
+        'modes': [{
+          'type':'flash',
+          'src': '/_js/jwplayer.flash.swf'
+        }]
+    });
+  </script>
+
+  <div id="about-groups-info">
+    <div class="container entry">
+      <div class="grid_4">
+        <h2>Get Started</h2>
+        <p>Groups come in all shapes and sizes — married couples, singles, men, women, kids, no kids, workplace, under 20, over 40 — the list goes on. No matter where you are in life, there’s a group for you.</p>
+        <a href="/connect/groups"><div class="button">Get Started</div></a>
+      </div>
+
+      <div class="grid_4">
+        <h2>Connect Your Group</h2>
+        <p>We believe God created us to live in relationship with others and only then can we live the full life He intends for us.</p>
+        <a href="#"><div class="button">Connect Your Group</div></a>
+      </div>
+
+      <div class="grid_4">
+        <h2>Resources</h2>
+        <p>We supply a huge variety of resources for Group Leaders, Individuals participating in groups, and even new visitors.</p>
+        <a href="#"><div class="button">Visit Resources</div></a>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
   </div>
 </div>
 {!--Life is not meant to be lived alone. In fact, God hates loneliness. We like to say that real community happens in circles, not in rows.  You were created to experience life with other people, and that’s why at JourneyChurch.tv, we encourage you to get into a small group.
@@ -47,9 +97,6 @@ A life group is a group of three or more people who gather each week in a home, 
 
     <div class="clear"></div>
   </div>
-
-  <script type="text/javascript" src="/_js/jwplayer.js"></script>
-  <script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
 
   <script>
     jwplayer("find-a-group-vid").setup({
@@ -88,33 +135,46 @@ A life group is a group of three or more people who gather each week in a home, 
 {!-- Connect Your Group --}
 <div class="group-entry" id="connect-your-group">
   <div class="container entry">
-    <div class="grid_12">
+    <div class="grid_8 push_2">
       {exp:channel:entries channel="pages" url_title="connect-your-group"}
         <h1>{title}</h1>
         <p>{page-body}</p>
       {/exp:channel:entries}
     </div>
+    <div class="clear"></div>
+  </div>
 
-    <a href="#">
-      <div id="group-events-box" class="connect-your-group-box grid_4">
-        <h2>Check Out Small Group Events</h2>
-      </div>
-    </a>
+  <div class="clear"></div>
 
-    <a href="#">
-      <div id="group-app-box" class="connect-your-group-box grid_4">
-        <h2>Get Your Group Connected on HouseHold</h2>
-      </div>
-    </a>
-
-    <div id="group-social-box" class="connect-your-group-box grid_4">
-      <h2>Connect Your Group On Social Media</h2>
-      <a href="https://www.facebook.com/journeychurchtv"><i class="fa fa-facebook fa-2x"></i></a>
-      <a href="https://twitter.com/lifegroupsjc"><i class="fa fa-twitter fa-2x"></i></a>
+  <div id="group-events" class="entry-shade">
+    <div class="container">
+      <h1>Small Group Events</h1>
+      {exp:channel:entries channel="group_events"}
+        <div class="grid_4 group-event-entry">
+          <div class="group-event-entry-title"><h3>{title} | {group_event_date format="%M %d"}</h3></div>
+          <p>{group_event_description}</p>
+          <h4><i class="fa fa-map-marker"></i> {group_event_location}</h4>
+          <h4><i class="fa fa-clock-o"></i> {group_event_time}</h4>
+          <h4>Contact | <a href="{group_event_contact_email}">{group_event_contact}</a></h4>
+        </div>
+      {/exp:channel:entries}
     </div>
 
     <div class="clear"></div>
   </div>
+
+  <div class="clear"></div>
+
+  <div class="entry">
+    <div class="container">
+      <div class="grid_12">
+        <h1>Get Your Group Connected On Household</h1>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <img src="/_img/householdguide.png"/></div>
+  </div>
+
 
   <div class="clear"></div>
 </div>

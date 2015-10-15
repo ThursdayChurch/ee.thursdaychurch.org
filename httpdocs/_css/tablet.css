@@ -34,8 +34,12 @@ nav ul li h3 {
   color:black;
 }
 
-.group-filler .button {
-  margin-top:20px;
+#group-events .group-event-entry-title h3 {
+  font-size: 1em;
+}
+
+#group-events .group-event-entry p, #group-events .group-event-entry h4 {
+  font-size:0.9em;
 }
 
 footer .social-media i {

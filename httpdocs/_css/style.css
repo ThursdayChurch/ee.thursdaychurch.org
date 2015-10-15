@@ -65,11 +65,15 @@ body {
 }
 
 h1 {
-  font-size:2.4em;
+  font-size:2.6em;
 }
 
 h2 {
-  font-size:1.9em;
+  font-size:2.1em;
+}
+
+h3 {
+  font-size:1.2em;
 }
 
 h1, h4 {
@@ -78,10 +82,11 @@ h1, h4 {
 
 h2, h5 {
   color:#B0B0B0;
+  color:#989d00;
 }
 
 h3, h6 {
-  color:#989d00;
+  color:#B0B0B0;
 }
 
 p {
@@ -361,11 +366,7 @@ header {
 }
 
 #cover-video {
-  top:-224px;
-}
-
-#cover-video-2 {
-  top:-224px;
+  top:-98px;
   position: relative;
   right: 0;
   bottom: 0;
@@ -380,6 +381,7 @@ header {
 
 #page-cover {
   height:375px;
+  background-image:url('/_img/roadtrip/road.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -393,10 +395,18 @@ header {
 
 #cover h1 {
   top:255px;
+  font-weight:300;
+  opacity:0;
+}
+
+#cover h1 span {
+  font-weight:bold;
+  text-transform:uppercase;
 }
 
 #page-cover h1 {
-  top:165px;
+  top:135px;
+  opacity:0;
 }
 
 #cover h1, #page-cover h1 {
@@ -405,8 +415,6 @@ header {
   text-align:center;
   color:white;
   position:relative;
-  text-transform:uppercase;
-  opacity:0;
   z-index:10;
 }
 
@@ -424,7 +432,6 @@ header {
   text-align:center;
   color:white;
   position:relative;
-  opacity:0;
   z-index:10;
 }
 
@@ -500,8 +507,8 @@ header {
   background-color:#464646 !important;
 }
 
-#home-locations #location-info-wrapper p, #home-locations #location-info-wrapper h3 {
-  color:white;
+#home-locations #location-info h3 {
+  color:#989d00;
 }
 
 #home-locations .location-field {
@@ -551,6 +558,11 @@ header {
   background-color:#F3F3F3;
 }
 
+#boxes .caption {
+  border-radius:7px !important;
+  overflow:hidden !important;
+}
+
 #boxes h1 {
   text-align:center;
   margin-bottom:30px;
@@ -578,10 +590,6 @@ header {
   background-color:white;
 }
 
-.caption-image:hover {
-  opacity:0.7;
-}
-
 #caption-image-1 {
   background-image:url(/_img/annualreport/college.jpg);
 }
@@ -595,7 +603,7 @@ header {
 }
 
 .caption-description {
-  height:165px;
+  height:185px;
   width:auto;
   padding:15px;
 }
@@ -692,10 +700,14 @@ header {
   filter: grayscale(0%);
 }
 
+#values h3 {
+  color:#989d00;
+}
+
 .span-border {
   border-bottom:4px solid #464646;
   width:30px;
-  height:76px;
+  height:86px;
   display:inline-block;
   -moz-transition:width 0.7s ease-in-out;
   -webkit-transition:width 0.7s ease-in-out;
@@ -710,7 +722,7 @@ header {
 .span-border-2 {
   border-bottom:4px solid #F3F3F3;
   width:300px;
-  height:76px;
+  height:86px;
   display:inline-block;
 }
 
@@ -823,6 +835,22 @@ header {
   color:#686868;
 }
 
+#team-nav ul li:first-child a {
+  color:#686868;
+  -webkit-transition:color 0.2s ease-in;
+  -moz-transition:color 0.2s ease-in;
+  -o-transition:color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
+#team-nav ul li a:hover {
+  color:#686868;
+  -o-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition:color 0.2s ease-in;
+}
+
 .team-member {
   height:425px;
   text-align:center;
@@ -880,20 +908,8 @@ header {
   transition:color 0.2s ease-in;
 }
 
-#team-nav ul li:first-child a {
-  color:#686868;
-  -webkit-transition:color 0.2s ease-in;
-  -moz-transition:color 0.2s ease-in;
-  -o-transition:color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-}
-
-#team-nav ul li a:hover {
-  color:#686868;
-  -o-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -webkit-transition: color 0.2s ease-in;
-  transition:color 0.2s ease-in;
+.team-member-info h3 {
+  color:#989d00;
 }
 
 #pastor-clark {
@@ -1012,7 +1028,7 @@ header {
   display:none;
 }
 
-#find-a-group, #start-a-group, #about-small-groups {
+#find-a-group, #start-a-group, #about-small-groups, #connect-your-group {
   text-align:center;
 }
 
@@ -1021,9 +1037,39 @@ header {
   font-weight:300;
 }
 
+#about-small-groups h3 {
+  color:#989d00;
+}
+
 #about-small-groups span {
   font-weight:bold;
   color:#989d00;
+}
+
+#about-groups-video_wrapper {
+  text-align:left !important;
+  margin-top:70px;
+}
+
+#about-groups-info {
+  background: url(/_img/rock.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:black;
+}
+
+#about-groups-info h2 {
+  color:white;
+}
+
+#about-groups-info p {
+  color:white;
+}
+
+#find-a-group h2, #start-a-group h2, #connect-your-group h2 {
+  font-weight:200;
 }
 
 #group-faqs-benefits h2 {
@@ -1043,59 +1089,43 @@ header {
   padding:1px 0;
 }
 
-.connect-your-group-box {
-  margin-top:50px;
-  height:306px;
-  border-radius:50%;
+#group-events {
+
+}
+
+#group-events .group-event-entry {
+  height:400px;
+  background-color:white;
+  margin-top:13px;
+  margin-bottom:13px;
+  border-radius:6px;
   overflow:hidden;
-  text-align:center;
-  -webkit-background-size: auto 100%;
-  -moz-background-size: auto 100%;
-  -o-background-size: auto 100%;
-  background-size:auto 100%;
-  -webkit-transition: transform 0.15s ease-in;
-  -moz-transition: transform 0.15s ease-in;
-  -o-transition: transform 0.15s ease-in;
-  transition:transform 0.15s ease-in;
 }
 
-.connect-your-group-box:hover {
-  -webkit-transition: transform 0.15s ease-in;
-  -moz-transition: transform 0.15s ease-in;
-  -o-transition: transform 0.15s ease-in;
-  transition:transform 0.15s ease-in;
-  -webkit-transform:scale(0.96,0.96);
-  -moz-transform:scale(0.96,0.96);
-  -o-transform:scale(0.96,0.96);
-  -ms-transform:scale(0.96,0.96);
-  transform:scale(0.96,0.96);
+#group-events .group-event-entry p {
+  margin-top:30px;
 }
 
-.connect-your-group-box h2, .connect-your-group-box h1 {
-  color:white;
-  padding:10px;
-  margin-top:95px;
+#group-events .group-event-entry h4 {
+  color:#B0B0B0;
+  font-weight:normal;
 }
 
-#group-events-box {
-  /*background: url(/_img/annualreport/accomp.jpg) no-repeat center center scroll;*/
-  background-color:#989d00;
-}
-
-#group-app-box {
-  /*background: url(/_img/annualreport/accomp.jpg) no-repeat center center scroll;*/
-  background-color:#006f7c;
-}
-
-#group-social-box {
-  /*background: url(/_img/annualreport/accomp.jpg) no-repeat center center scroll;*/
+#group-events .group-event-entry-title {
   background-color:#2D2D2D;
+  padding:15px 0;
+  width:100%;
+  min-height:50px;
 }
 
-#group-social-box i {
-  margin-top:10px;
-  margin-left:10px;
+#group-events .group-event-entry-title h3 {
   color:white;
+  font-weight:200;
+  margin:0;
+}
+
+#group-events .group-event-entry a {
+  color:#D5D5D5;
 }
 
 footer {
