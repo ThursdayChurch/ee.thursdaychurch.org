@@ -558,11 +558,6 @@ header {
   background-color:#F3F3F3;
 }
 
-#boxes .caption {
-  border-radius:7px !important;
-  overflow:hidden !important;
-}
-
 #boxes h1 {
   text-align:center;
   margin-bottom:30px;
@@ -1017,13 +1012,6 @@ header {
   color:white;
 }
 
-.group-filler {
-  height:auto;
-  padding:20px 0 15px 0;
-  width:100%;
-  background-color:#F3F3F3;
-}
-
 #get-started-group, #connect-your-group, #group-faqs-benefits, #group-resources {
   display:none;
 }
@@ -1048,7 +1036,7 @@ header {
 
 #about-groups-video_wrapper {
   text-align:left !important;
-  margin-top:70px;
+  margin-top:80px;
 }
 
 #about-groups-info {
@@ -1126,6 +1114,49 @@ header {
 
 #group-events .group-event-entry a {
   color:#D5D5D5;
+}
+
+#about-connections {
+  text-align:center;
+}
+
+#about-connections h1 {
+  font-weight:300;
+  color:#686868;
+}
+
+#about-connections h1 span {
+  color:#989d00;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+#about-connections-video_wrapper {
+  margin-top:80px;
+  text-align:left !important;
+}
+
+#about-connections-info {
+  background: url(/_img/liberty.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:black;
+}
+
+#about-connections-info h1, #about-connections-info p {
+  color:white;
+}
+
+#about-connections-info h1 {
+  font-weight:bold;
+}
+
+#about-connections-info .button {
+  background-color:#2D2D2D;
+  color:white;
+  border-color:#2D2D2D;
 }
 
 footer {
