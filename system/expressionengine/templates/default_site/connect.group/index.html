@@ -1,16 +1,6 @@
 {embed="_includes/header" title="JourneyChurch.tv : Get Connected"}
 
-{exp:channel:entries channel="Pages" url_title="connect"}
-<div id="page-cover" class="bg-img">
-  <h1>{title}</h1>
-</div>
-
-<script>
-  $(document).ready(function() {
-    $('#page-cover').css('background-image', '/_img/{page-cover-photo}');
-  });
-</script>
-{/exp:channel:entries}
+{embed="_component/embed-page-cover" url-title="connect"}
 
 <div id="connect" class="container entry">
   <div class="connect-entry" id="connect-small-groups">

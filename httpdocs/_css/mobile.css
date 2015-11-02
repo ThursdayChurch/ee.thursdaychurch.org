@@ -18,6 +18,10 @@ h3 {
   background-attachment:scroll;
 }
 
+.bg-video {
+  display:none;
+}
+
 .grid_11, .grid_10, .grid_9, .grid_8, .grid_7, .grid_6, .grid_5, .grid_4, .grid_3, .grid_2, .grid_1 {
   margin-bottom:50px;
 }
