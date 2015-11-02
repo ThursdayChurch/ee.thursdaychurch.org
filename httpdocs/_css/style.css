@@ -219,6 +219,10 @@ strong {
   background-size: cover;
 }
 
+.circle img {
+  border-radius:50%;
+}
+
 #logo {
   float:left;
   color:white;
@@ -397,7 +401,6 @@ header {
 
 #page-cover {
   height:375px;
-  background-image:url('/_img/roadtrip/road.jpg');
 }
 
 #cover h1 {
