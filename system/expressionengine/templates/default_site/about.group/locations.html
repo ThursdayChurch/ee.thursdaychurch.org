@@ -2,7 +2,9 @@
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&sensor=true"></script>
 
-<div id="page-cover"><h1>Our Locations</h1></div>
+<div id="page-cover" class="bg-img">
+  <h1>Our Locations</h1>
+</div>
 
 <div id="page-nav">
   <div class="container">
@@ -18,15 +20,10 @@
   <div class="clear"></div>
 </div>
 
-<div class="page-nav-filler"></div>
-
 <div id="map-wrapper"><div id="map"></div></div>
 
 <div id="locations" class="entry">
 	<div class="container">
-    <div class="grid_12">
-  		<h1>Locations & Times</h1>
-    </div>
     {exp:channel:entries channel="location" sort="asc"}
     <div class="location">
   		<div class="grid_6">

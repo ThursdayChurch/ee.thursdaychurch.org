@@ -7,7 +7,7 @@
 		var windowWidth = $(window).width();
 		var scrollTop = 0;
 
-		{!-- Cover --}
+		{!-- Covers --}
 		$('#cover').css({
 			'height': windowHeight
 		});
@@ -31,7 +31,7 @@
 		, 1500);
 
 
-		{!-- Header/Navigation --}
+		{!-- Header --}
 		$('.header-filler').css({
 			'height': headerHeight
 		});
@@ -84,7 +84,6 @@
 			else {
 				$('#nav-wrapper ul li:first-child ul').slideUp();
 			}
-
 		});
 
 		$('#nav-wrapper ul li:nth-child(2) h3').click(function() {
@@ -118,19 +117,6 @@
 				$('#nav-wrapper ul li:last-child ul').slideUp();
 			}
 		});
-
-		{!-- Staff Nav --}
-		if (windowWidth <= 767) {
-			$('#staff').click(function() {
-				$('#demographic-pastors ul ul').slideUp('fast');
-				$('#staff ul ul').slideDown('fast');
-			});
-
-			$('#demographic-pastors').click(function() {
-				$('#staff ul ul').slideUp('fast');
-				$('#demographic-pastors ul ul').slideDown('fast');
-			});
-		}
 	});
 </script>
 

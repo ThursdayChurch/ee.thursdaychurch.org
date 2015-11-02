@@ -26,3 +26,7 @@
   margin-left:0 !important;
   margin-top:20px;
 }
+
+footer #footer-nav .grid_3 {
+  padding-left:0;
+}

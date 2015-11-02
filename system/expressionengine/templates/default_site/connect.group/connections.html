@@ -1,6 +1,6 @@
 {embed="_includes/header" title="JourneyChurch.tv : Small Groups"}
 
-<div id="page-cover">
+<div id="page-cover" class="bg-img">
   <h1>Connections</h1>
 </div>
 
@@ -41,18 +41,18 @@
     });
   </script>
 
-  <div id="about-connections-info">
+  <div id="about-connections-info" class="bg-img">
     <div class="container entry">
-      <div class="grid_6">
+      <div id="connections-get-involved-info" class="grid_6">
         <h1>Get Involved</h1>
         <p>While serving on the Connection Team, you'll get to meet a variety of people while trying to make people feel comfortable and meeting the needs of our guests each and every week. The main heart and vision of the Connection Team is to do anything and everything to remove barriers so people can be tuned in to what the Lord has for them.</p>
-        <a href="#"><div class="button">Join the Team</div></a>
+        <a href="#page-nav"><div class="button" id="connections-get-involved-button">Join the Team</div></a>
       </div>
 
-      <div class="grid_6">
+      <div id="connections-faqs-info" class="grid_6">
         <h1>Do You Have Any Questions?</h1>
         <p>If you have any questions about the connections team let us know! The FAQs may give you a great start!</p>
-        <a href="#"><div class="button">FAQs</div></a>
+        <a href="#page-nav"><div class="button" id="connections-faqs-button">FAQs</div></a>
       </div>
 
       <div class="clear"></div>
@@ -64,9 +64,73 @@
   <div class="clear"></div>
 </div>
 
+<div class="connections-entry" id="connections-get-involved">
+  <div class="container entry">
+    <div class="grid_8 push_2">
+      <h1>Get Involved</h1>
+      <h2>The Connection Team at JourneyChurch is one of the best places for you to help make a big place feel small.</h2>
+      <p>While serving on the Connection Team, you'll get to meet a variety of people while trying to make people feel comfortable and meeting the needs of our guests each and every week.</p>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div id="connections-get-involved-filler" class="bg-img">
+    <div class="container entry">
+      <div class="grid_8 push_2">
+        <p>The main heart and vision of the Connection Team is to do anything and everything to remove barriers so people can be tuned in to what the Lord has for them.
+          There are many roles you can serve in, which are listed below. If there's a role you're passionate about, but doesn't yet exist, we want to hear about it!</p>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="connections-entry" id="connections-faqs">
+  <h1>FAQS</h1>
+</div>
+
 <script>
   $(document).ready(function() {
+    $('#page-nav ul li:first-child').click(function() {
+      $('#page-nav ul li a').removeClass('active');
+      $('#page-nav ul li:first-child a').addClass('active');
+      $('.connections-entry').css('display', 'none');
+      $('#about-connections').fadeIn('fast');
+    });
 
+    $('#connections-get-involved-button').click(function() {
+      $('#page-nav ul li a').removeClass('active');
+      $('#page-nav ul li:nth-child(2) a').addClass('active');
+      $('.connections-entry').css('display', 'none');
+      $('#connections-get-involved').fadeIn('fast');
+    });
+
+    $('#page-nav ul li:nth-child(2)').click(function() {
+      $('#page-nav ul li a').removeClass('active');
+      $('#page-nav ul li:nth-child(2) a').addClass('active');
+      $('.connections-entry').css('display', 'none');
+      $('#connections-get-involved').fadeIn('fast');
+    });
+
+    $('#connections-faqs-button').click(function() {
+      $('#page-nav ul li a').removeClass('active');
+      $('#page-nav ul li:nth-child(3) a').addClass('active');
+      $('.connections-entry').css('display', 'none');
+      $('#connections-faqs').fadeIn('fast');
+    });
+
+    $('#page-nav ul li:nth-child(3)').click(function() {
+      $('#page-nav ul li a').removeClass('active');
+      $('#page-nav ul li:nth-child(3) a').addClass('active');
+      $('.connections-entry').css('display', 'none');
+      $('#connections-faqs').fadeIn('fast');
+    });
   });
 </script>
 
