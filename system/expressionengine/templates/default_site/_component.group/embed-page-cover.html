@@ -1,25 +1,27 @@
 {exp:channel:entries channel="Pages" url_title="{embed:url-title}"}
   <div id="page-cover" class="bg-img">
     <h1>{title}</h1>
+
+    {if page-cover-video != ""}
+      <video autoplay loop muted id="page-cover-video" class="bg-video">
+    		<source src="/_video/{page-cover-video}" type="video/mp4">
+    	</video>
+    {/if}
   </div>
 
-  {if body != ""}
+  {if page-body != ""}
     <div class="container">
       <div class="grid_12">
-        {body}
+        {page-body}
       </div>
     </div>
+
+    <div class="clear"></div>
   {/if}
 
   <script>
     $(document).ready(function() {
-      $('#page-cover').css('background-image', '/_img/{page-cover-photo}');
+      $('#page-cover').css('background-image', 'url(/_img/{page-cover-photo})');
     });
   </script>
-
-  {if page-cover-video != ""}
-    <video autoplay loop muted class="bg-video">
-  		<source src="/_video/{page-cover-video}" type="video/mp4">
-  	</video>
-  {/if}
 {/exp:channel:entries}

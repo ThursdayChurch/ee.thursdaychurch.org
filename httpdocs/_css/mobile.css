@@ -234,16 +234,15 @@ h3 {
 }
 
 footer #footer-nav .grid_3 {
-  padding-right:0;
-  width:45%;
-  margin-bottom:20px;
+  padding:0 !important;
+  width:40%;
 }
 
-footer #footer-nav .grid_3:nth-child(2) {
-  float:right !important;
+footer #footer-nav .grid_3:first-child, #footer-nav .grid_3:nth-child(3) {
+
 }
 
-footer #footer-nav .grid_3:nth-child(4) {
+footer #footer-nav .grid_3:nth-child(2), #footer-nav .grid_3:nth-child(4) {
   float:right !important;
 }
 

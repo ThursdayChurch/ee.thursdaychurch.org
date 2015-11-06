@@ -28,5 +28,6 @@
 }
 
 footer #footer-nav .grid_3 {
-  padding-left:0;
+  padding:0 !important;
+  width:50%;
 }
