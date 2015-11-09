@@ -1,0 +1,23 @@
+{embed="_includes/header" title="Classes"}
+
+{embed="_component/embed-page-cover" url-title="classes"}
+
+<div id="classes" class="entry">
+  <div class="container">
+    <h1>Classes Available</h1>
+    {exp:channel:entries channel="Classes"}
+      <div class="grid_6 class-entry">
+        <div class="class-entry-cover"><h3>{title}</h3></div>
+        <div class="inner">
+          <h4>Time: {class-time} | Starts on {class-start format="%M %d"} | <a href="#">Get Enrolled</a></h4>
+          <h2></h2>
+          <p>{class-desc}</p>
+        </div>
+      </div>
+    {/exp:channel:entries}
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+{embed="_includes/footer"}

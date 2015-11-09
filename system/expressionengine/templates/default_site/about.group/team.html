@@ -1,8 +1,6 @@
 {embed="_includes/header" title="JourneyChurch.tv : Our Team"}
 
-<div id="page-cover" class="bg-img">
-  <h1>Our Team</h1>
-</div>
+{embed="_component/embed-page-cover" url-title="team"}
 
 <div id="page-nav">
   <div class="container">
@@ -93,7 +91,7 @@
 <script>
   $(document).ready(function() {
     var windowWidth = $(window).width();
-    
+
     {!-- Staff Nav --}
     if (windowWidth <= 767) {
       $('#staff').click(function() {

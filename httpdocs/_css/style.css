@@ -167,11 +167,6 @@ p > .button {
   padding:100px 0;
 }
 
-.entry-shade {
-  padding:100px 0;
-  background-color:#F3F3F3;
-}
-
 .bg-img {
   background-repeat: no-repeat;
   background-position: center;
@@ -225,6 +220,10 @@ p > .button {
 
 .circle img {
   border-radius:50%;
+}
+
+.inner {
+  padding:20px;
 }
 
 .page-entry-header {
@@ -597,10 +596,6 @@ header {
   -o-background-size: cover;
   background-size: cover;
   overflow:hidden;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
   background-color:white;
 }
 
@@ -1166,6 +1161,63 @@ header {
 
 #connections-get-involved-filler p {
   color:white;
+}
+
+#classes {
+  background-color:#F3F3F3;
+}
+
+#classes h1 {
+  text-align:center;
+}
+
+#classes .class-entry {
+  background-color:white;
+  text-align:center;
+  height:450px;
+  overflow:hidden;
+  margin-top:13px;
+  margin-bottom:13px;
+}
+
+#classes .class-entry p {
+  font-size:14px;
+}
+
+#classes .class-entry-cover {
+  background-color:#464646;
+  width:100%;
+  height:100px;
+}
+
+#classes .class-entry:nth-child(5n+1) .class-entry-cover {
+  background-color:#989d00;
+}
+
+#classes .class-entry:nth-child(5n+2) .class-entry-cover {
+  background-color:#006f7c;
+}
+
+#classes .class-entry:nth-child(5n+3) .class-entry-cover {
+  background-color:#B74E26;
+}
+
+#classes .class-entry:nth-child(5n+4) .class-entry-cover {
+  background-color:#9F1E5C;
+}
+
+#classes .class-entry:nth-child(5n+5) .class-entry-cover {
+  background-color:#852679;
+}
+
+#classes .class-entry-cover h3 {
+  color:white;
+  margin-top:0;
+  padding-top:30px;
+}
+
+#classes .class-entry-cover h4 a {
+  font-weight:300;
 }
 
 footer {
