@@ -10,6 +10,11 @@ h3 {
   font-size:1.5em;
 }
 
+blockquote {
+  padding-left:0;
+  padding-right:0;
+}
+
 .circle {
   padding:0 !important;
 }
@@ -228,9 +233,47 @@ h3 {
   display:none;
 }
 
+.team-photo {
+  border-radius:50%;
+}
+
+.team-member p {
+  font-size:16px;
+}
+
 #group-events .group-event-entry {
   padding:0;
   margin-left:16px;
+}
+
+#classes .class-entry {
+  padding:0 !important;
+  margin-left:20px;
+}
+
+.span-border, .span-border-2 {
+  height:76px;
+}
+
+.connect-entry p {
+  font-size:16px;
+}
+
+#devos-nav {
+  display:none;
+}
+
+#devos-share .pull-right {
+  float:none !important;
+}
+
+#devos-share .st_fblike_hcount, #devos-share .st_facebook_hcount, #devos-share .st_twitter_hcount {
+  margin:10px 0;
+  display:block;
+}
+
+#mobile-devos-nav {
+  display:block;
 }
 
 footer #footer-nav .grid_3 {

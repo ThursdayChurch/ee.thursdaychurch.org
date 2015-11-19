@@ -1,0 +1,24 @@
+{exp:channel:entries channel="media" category="{embed:cat_id}" sort="desc" limit="{embed:limit}"
+  <div class="grid_6">
+    <script type="text/javascript">
+      jwplayer("vid{entry_id}").setup({
+        'autostart': 'false',
+        'height': '360px',
+        'width': '100%',
+        'menu': 'false',
+        'aspectratio': '16:9',
+        'file': 'http://www.youtube.com/watch?v={media-youtube}?hd=1',
+        'image': '{media-series}{media-series:series-img}{/media-series}',
+        'abouttext': 'JourneyChurch.tv Media',
+        'aboutlink': 'http://journeychurch.tv/media',
+          'plugins': {
+            'gapro-2':{ accountid: "UA-23134458-1", trackstarts: true, trackpercentage: true, tracktime: true}
+          },
+          'modes': [{
+            'type':'flash',
+            'src': '/_js/jwplayer.flash.swf'
+          }]
+      });
+    </script>
+  </div>
+{/exp:channel:entries}

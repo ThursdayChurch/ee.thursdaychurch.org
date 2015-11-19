@@ -1,0 +1,129 @@
+{embed="_includes/header" title="Daily Devotionals}
+
+{!-- Embed Page does not work whenever a single devo is rendered using the url title. So just hardcoded instead --}
+<div id="page-cover" class="bg-img">
+  <h1>Devos</h1>
+</div>
+
+<style>
+  #page-cover {
+    background-image:url('/_img/river.jpeg');
+  }
+</style>
+
+<div id="page-nav">
+  <ul>
+    <li><a href="/groups"><i class="fa fa-group"></i>  Join a Life Group</a></li>
+    <li><a href="/media"><i class="fa fa-youtube-play"></i> Watch media</a></li>
+    <li><a id="devos-text-anchor" href="#page-nav"><i class="fa fa-comment"></i> Get a Daily Text Reminder</a></li>
+  </ul>
+</div>
+
+<div id="devos-text" class=" entry">
+  <div class="container">
+    <div class="grid_6 push_3">
+      <h4>To recieve daily devotional text reminders, you may enter your phone number below. Msg &amp; data rates may apply.<br><br>To unsubscribe, text STOP to 25827.</h4>
+      <form
+        enctype="application/x-www-form-urlencoded"
+        action="https://app.clubtexting.com/widgets?_method=subscribe"
+        method="post"
+        target="subscribed"            onsubmit="
+                                            window.open(
+                    '',
+                    'subscribed',
+                    'width=530,' +
+                    'height=370,' +
+                    'scrollbars=no,resizable=yes,status=no,toolbar=0'
+            );
+                        "
+      >
+                  <input type="hidden" name="serializedData" value="eNpVj01PwzAMhv+Lz0Vr1279uE0CjSE4IU6MQ5q4racsqeqECU3777hsSHDz89ivrLdoy8KoWhXFKk3bLluvdKnSrFLl2uSVqs9AvJ18HPkVLepA3m2s9Sc00EAKCagrXW+geYdlXpRVCR8JdITWzC4TYOpdHB9RGZwkKkmOWiNzF+1fS/zgVGvRPHlyL7JXPd5eHf4ZEeFrnKeljE4db1JHDv640969TVbUEMLY7Bf7hexOZMIgTroKDUj9EATzfEaSiEBHE4e7H0ggMk47qVrndVYl0M8tn4kldP4t2sA9fnqGy+UbrKpmxQ==">
+
+
+          <label for="PhoneNumber">Phone Number</label><br>
+          <input id="PhoneNumber" style="width:100%" class="ez-text" name="PhoneNumber" type="tel"
+                     value=""
+                     required="required" placeholder="(e.g. 2223334444 no dots)"
+                     pattern="^[2-9][0-9]{9}$" />
+
+
+        <br><br><button type="submit">Join Now</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+{if segment_3 == ""}
+  <div id="devos-home" class="entry">
+    <div class="container">
+      <div class="grid_12">
+        {exp:channel:entries channel="Devos" orderby="date" sort="desc" show_future_entries="no" limit="1"}
+  				<h2><a href="/connect/devos/{url_title}">{if {current_time format="%Y%m%d"} == {entry_date format="%Y%m%d"}}Today's Devotional{if:else}Daily Devotional{/if} - {entry_date format="%F %j"}</a></h2>
+  				<h3>{title} {if devos-author}by {devos-author}{/if}</h3>
+  				{exp:word_limit total="120"}
+  					{devos-body}
+  				{/exp:word_limit}
+  				<br><br>
+  				<p>
+  					<a href="/connect/devos/{url_title}" class="continueon">Continue Reading <i class="fa fa-angle-right fa-lg"></i></a>
+  				</p>
+  			{/exp:channel:entries}
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+{if:else}
+  <div id="devos" class="entry">
+    <div class="container">
+      <div class="grid_12">
+        {exp:channel:entries channel="Devos" dynamic="yes" url_title="{segment_3}" show_future_entries="yes"}
+          <link rel="alternate" type="application/rss+xml" title="{title} - JourneyChurch.tv" href="http://journeychurch.tv/blogs/feed"><script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher: "12217aef-f07e-464d-8757-03bfdb881858", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+          {if no_results}{redirect="devos"}{/if}
+
+          {embed="_component/devos-nav" url="{segment_3}"}
+
+          <h3>{if {entry_date format='%Y'} >= "1999"}{entry_date format="%F %j, %Y"}{/if}</h3>
+          <h2>{title}</h2>
+          {if devos-author}<h4>By {devos-author}</h4>{/if}
+          {if devos-mp3_s3}
+            <br>
+            <h4><a href="{devos-mp3_s3}" target="_blank"><i class="fa fa-volume-up"></i></a> <a href="{devos-mp3_s3}" target="_blank"><strong>LISTEN</strong></a></h4>
+          {if:elseif devos-mp3}
+            <br>
+            <h4><a href="{devos-mp3}" target="_blank"><i class="fa fa-volume-up"></i></a> <a href="{devos-mp3}" target="_blank"><strong>LISTEN</strong></a></h4>
+          {/if}
+
+          {devos-body}
+          <br>
+          <p>
+  					<a href="/connect/devos" class="continueon"><i class="fa fa-angle-left fa-lg"></i> Main Devos Page</a>
+  				</p>
+    	  {/exp:channel:entries}
+
+        <br>
+        <div id="devos-share">
+					<div class="pull-right">
+						<span class='st_fblike_hcount' displayText='Facebook Like'></span>
+						<span class='st_facebook_hcount' displayText='Facebook'></span>
+						<span class='st_twitter_hcount' displayText='Tweet'></span>
+					</div>
+				</div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+{/if}
+
+<script>
+  $(document).ready(function() {
+    $('#devos-text-anchor').click(function() {
+      $('#devos-text').slideDown();
+    });
+  });
+</script>
+
+{embed="_includes/footer"}

@@ -1,7 +1,11 @@
 .button {
   background-color:#2D2D2D;
   border-color:#2D2D2D;
-  color:white;
+  color:white !important;
+}
+
+#cover .bg-video {
+  top:-84px;
 }
 
 nav ul li h3 {
@@ -17,21 +21,32 @@ nav ul li h3 {
 }
 
 .team-member {
-  height:350px;
+  height:375px;
 }
 
 .team-photo {
   height:176px;
-  border-radius:50%;
 }
 
 .team-member-info .team-photo {
   height:240px;
 }
 
+.team-member p {
+  font-size:13px;
+}
+
+.location p {
+  font-size:14px;
+}
+
 .connect-img h3 {
   background-color:white;
   color:black;
+}
+
+.connect-entry p {
+  font-size:14px;
 }
 
 #group-events .group-event-entry-title h3 {
@@ -40,6 +55,14 @@ nav ul li h3 {
 
 #group-events .group-event-entry p, #group-events .group-event-entry h4 {
   font-size:0.9em;
+}
+
+#classes .class-entry {
+  height:500px;
+}
+
+#classes .class-entry .inner {
+  height:310px;
 }
 
 footer .social-media i {

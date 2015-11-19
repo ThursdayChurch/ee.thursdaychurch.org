@@ -1,0 +1,31 @@
+<div id="devos-nav">
+	{exp:channel:prev_entry channel="Devos" show_future_entries="no" url_title="{embed:url}"}
+		{if segment_2 != "first-words"}
+			<a href="/connect/devos/{url_title}"><i class="fa fa-angle-left"></i>&nbsp;{title}</a>
+		{/if}
+	{/exp:channel:prev_entry}
+	{exp:channel:next_entry channel="Devos" show_future_entries="no" url_title="{embed:url}"}
+		{if segment_2 != "first-words"}&nbsp; | &nbsp;{/if}
+		<a href="/connect/devos/{url_title}">{title}&nbsp;<i class="fa fa-angle-right"></i></a>
+	{/exp:channel:next_entry}
+
+	<a href="/connect/devos" class="pull-right">Main Devos Page</a>
+</div>
+
+<div id="mobile-devos-nav">
+	<div class="center"><a href="/connect/devos">Main Devos Page</a><br><br></div>
+
+	<div class="center">
+		{exp:channel:prev_entry channel="Devos" show_future_entries="no" url_title="{embed:url}"}
+			{if segment_2 != "first-words"}
+				<a href="/connect/devos/{url_title}"><i class="fa fa-angle-left fa-lg"></i>&nbsp;Previous&nbsp;&nbsp;</a>
+			{/if}
+		{/exp:channel:prev_entry}
+
+		{exp:channel:next_entry channel="Devos" show_future_entries="no" url_title="{embed:url}"}
+			<a href="/connect/devos/{url_title}">Next&nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+		{/exp:channel:next_entry}
+	</div>
+</div>
+
+<br><br>

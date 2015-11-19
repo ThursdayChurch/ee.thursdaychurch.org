@@ -1,3 +1,7 @@
+.button {
+  margin-left:0px !important;
+}
+
 #cover h1 {
   font-size:25px;
 }
@@ -8,6 +12,10 @@
 
 #home-locations img {
   height:260px;
+}
+
+#theology h1 {
+  font-size:34px;
 }
 
 .team-member {
@@ -25,6 +33,27 @@
 .group-filler .button {
   margin-left:0 !important;
   margin-top:20px;
+}
+
+#classes .class-entry .inner {
+  height:330px;
+}
+
+#classes .class-entry .inner p {
+ font-size:13px;
+}
+
+#classes .class-entry-cover {
+  height:80px;
+}
+
+#classes .class-entry-cover h3 {
+  font-size:18px;
+  padding-top:15px;
+}
+
+#classes .class-entry-cover h4 {
+  font-size:14px;
 }
 
 footer #footer-nav .grid_3 {

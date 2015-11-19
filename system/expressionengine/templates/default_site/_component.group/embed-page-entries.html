@@ -34,6 +34,11 @@
   {if page_entry_background_color != ""}
     <script>
       $(document).ready(function() {
+
+        if ("{page_entry_background_color}" != "#F3F3F3") {
+          $('#page-entry-{entry_id}').addClass('bg-color');
+        }
+
         $('#page-entry-{entry_id}').css({
           'background-color': '{page_entry_background_color}'
         });
@@ -48,7 +53,7 @@
         $('#page-entry-{entry_id}').addClass('bg-img');
 
         $('#page-entry-{entry_id}').css({
-          'background-image': 'url(/_img/{page_entry_background_image})',
+          'background-image': 'url(/_img/{page_entry_background_image})'
         });
       });
     </script>
