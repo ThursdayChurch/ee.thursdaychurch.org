@@ -31,15 +31,16 @@ blockquote {
   margin-bottom:50px;
 }
 
-#cover h1, #page-cover h1 {
-  font-size:35px;
-  top:105px !important;
-}
-
 #cover {
+  background-image: url(/_img/easter.jpg);
   background-attachment:scroll;
   height:265px !important;
   overflow:hidden;
+}
+
+#cover h1, #page-cover h1 {
+  font-size:35px;
+  top:105px !important;
 }
 
 #cover h2 {
@@ -58,6 +59,10 @@ blockquote {
 
 #page-cover h1 {
   top:100px;
+}
+
+#page-social {
+  top:140px;
 }
 
 #who-are-we {

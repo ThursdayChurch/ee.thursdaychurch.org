@@ -374,6 +374,10 @@ header {
   display:inline;
 }
 
+#nav-wrapper {
+  display:none;
+}
+
 #nav-wrapper ul {
   margin:30px 30px 0 30px;
   list-style-type:none;
@@ -453,8 +457,8 @@ header {
 }
 
 #cover {
-  background-image: url(/_img/easter.jpg);
   overflow:hidden;
+  height:800px;
 }
 
 #page-cover {
@@ -563,6 +567,25 @@ header {
   display:none;
   position:relative;
   width:100%;
+}
+
+#page-social {
+  position:relative;
+  top:215px;
+  text-align:center;
+}
+
+#page-social i {
+  opacity:0;
+}
+
+#page-social i:hover {
+  opacity:0.6 !important;
+}
+
+#page-social ul li {
+  margin:0 5px;
+  display:inline;
 }
 
 #who-are-we, #home-locations {
@@ -1329,6 +1352,17 @@ header {
   font-size:20px;
   color:white;
   font-weight:300;
+}
+
+#devos-text input {
+  padding:10px;
+  font-size:16px;
+  font-family:'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B', Arial;
+  color:#686868;
+}
+
+#devos-text input:focus {
+  outline:none;
 }
 
 #devos-home h3 {

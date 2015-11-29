@@ -1,16 +1,14 @@
 {embed="_includes/footer-content"}
 
+{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
+<script src="/_js/jquery.sidr.min.js"></script>
+<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
+
 <script>
 	$(document).ready(function() {
-		var windowHeight = $(window).height();
 		var headerHeight = $('header').outerHeight();
 		var windowWidth = $(window).width();
 		var scrollTop = 0;
-
-		{!-- Covers --}
-		$('#cover').css({
-			'height': windowHeight
-		});
 
 		setTimeout(
 			function() {
@@ -19,6 +17,10 @@
 				});
 
 				$('#page-cover h1').animate({
+					opacity : '1'
+				});
+
+				$('#page-social i').animate({
 					opacity : '1'
 				});
 			}
@@ -70,6 +72,11 @@
 		});
 
 		{!-- Nav --}
+		$('#show-nav').sidr({
+			name: 'nav-wrapper',
+			side: 'right'
+		});
+
 		$('#nav-icon').click(function() {
 			$('#nav-icon i').toggleClass('fa-bars');
 			$('#nav-icon i').toggleClass('fa-chevron-right');

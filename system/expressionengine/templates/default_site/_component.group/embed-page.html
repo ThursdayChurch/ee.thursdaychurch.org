@@ -7,6 +7,14 @@
     		<source src="/_video/{page-cover-video}" type="video/mp4">
     	</video>
     {/if}
+
+    <div id="page-social">
+      <ul>
+        {if page-facebook != ""}<li><a href="{page-facebook}"><i class="fa fa-facebook fa-2x"></i></a></li>{/if}
+        {if page-twitter != ""}<li><a href="{page-twitter}"><i class="fa fa-twitter fa-2x"></i></a></li>{/if}
+        {if page-instagram != ""}<li><a href="{page-instagram}"><i class="fa fa-instagram fa-2x"></i></a></li>{/if}
+      </ul>
+    </div>
   </div>
 
   {if page-body != ""}

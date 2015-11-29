@@ -16,6 +16,14 @@ nav ul li h3 {
   font-size:60px;
 }
 
+#page-social {
+  top:220px;
+}
+
+#page-social i {
+  opacity:1 !important;
+}
+
 #home-locations img {
   height:240px;
 }
