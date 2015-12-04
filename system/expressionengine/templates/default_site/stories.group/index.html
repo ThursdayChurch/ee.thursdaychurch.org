@@ -34,59 +34,65 @@
 			<a href="/stories"><div id="logo"><img src="/_img/logo_black.png" width="50"/></div></a>
 		</header>
 
-		<div id="cover">
-			<div class="container">
-				<div class="grid_12">
-					<h1>Stories</h1>
+		<div class="clear"></div>
+
+		<div id="cover-1">
+			<div class="inner">
+				<div class="container">
+					<div class="grid_12">
+						<h1>Stories</h1>
+						<h1>Stories</h1>
+						<h1>Stories</h1>
+					</div>
 				</div>
+
+				<div class="clear"></div>
 			</div>
-
-			<div class="clear"></div>
-		</div>
-
-		<div id="about-stories" class="entry">
-			<div class="container">
-				<div class="grid_12">
-					<h1>They <span id="word-1" class="upper">encourage</span><span id="word-2" class="upper">refill</span><span id="word-3" class="upper">empower</span><span id="word-4" class="upper">restore</span><span id="word-5" class="upper">transform</span> us.</h1>
-				</div>
-			</div>
-
-			<div class="clear"></div>
 		</div>
 
 		<form id="stories-form" method="post" action="/_scripts/stories_submit.php">
-			<div id="about-you" class="entry">
-				<div class="container">
-					<div class="grid_12">
-						<label for="name">What's Your Name?</label><br><br>
-						<input name="name" type="text" placeholder="First Last" required="required" maxlength="70"/><br><br><br><br>
+			<div id="cover-2">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="name">What's Your Name?</label><br><br>
+							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70"/><br><br><br><br>
 
-						<label for="find">How did you find Journey Church?</label><br><br>
-						<textarea name="find" rows="10" cols="70" maxlength="500" required="required"></textarea>
+							<label for="find">How did you find Journey Church?</label><br><br>
+							<textarea name="find" rows="10" cols="70" maxlength="500" required="required"></textarea>
+
+							<h1>Stories Are Cool</h1>
+							<h1>Stories Are Cool</h1>
+							<h1>Stories Are Cool</h1>
+						</div>
 					</div>
 				</div>
 
 				<div class="clear"></div>
 			</div>
 
-			<div id="story" class="entry">
-				<div class="container">
-					<div class="grid_12">
-						<label for="story">What's Your Story?</label><br><br>
-						<textarea name="story" rows="10" cols="70" maxlength="1000" required="required"></textarea>
+			<div id="cover-3">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="story">What's Your Story?</label><br><br>
+							<textarea name="story" rows="10" cols="70" maxlength="1000" required="required"></textarea>
+						</div>
 					</div>
 				</div>
 
 				<div class="clear"></div>
 			</div>
 
-			<div id="share-story" class="entry">
-				<div class="container">
-					<div class="grid_12">
-						<label for="email">We would love to share your story!</label><br><br>
-						<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55"/><br>
+			<div id="cover-4">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="email">We would love to share your story!</label><br><br>
+							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55"/><br>
 
-						<button type="submit" name="submit">Share My Story</button>
+							<button type="submit" name="submit">Share My Story</button>
+						</div>
 					</div>
 				</div>
 
@@ -98,23 +104,80 @@
 			$('#stories-form').validate();
 
 			$(document).ready(function() {
-				var number = 1;
-				timeOut(number);
+				var height = $(window).height();
 
-				function timeOut(count) {
-					setTimeout(function() {
-						$("#word-"+count).css("display", "none");
+				/**$('#cover').css('height', height);
+				$('#about-stories').css('height', height);
+				$('#about-you').css('height', height);
+				$('#story').css('height', height);
+				$('#share-story').css('height', height);**/
 
-						var countup = count+1;
-						$("#word-"+countup).css("display", "inline");
+				var count = 1;
 
-						if (count < 4) {
-							count++;
-							timeOut(count);
-						}
-					}, 1000);
-				}
+				$('body').bind('DOMMouseScroll', function(e){
+				     if(e.originalEvent.detail > 0) {
+							 //scroll down
+								var slideHeight = $('#cover-'+count).height();
+								document.write(slideHeight);
+
+								if (slideHeight <= 0 && count < 4) {
+									$('#cover-'+count).css('display', 'none');
+									count+=1;
+								}
+								else {
+									$('#cover-'+count).css('display', 'block');
+
+									slideHeight-=15;
+									$('#cover-'+count).css('height', slideHeight + 'px');
+								}
+				     }else {
+				         //scroll up
+								 $('#cover-'+count).css('display', 'block');
+								 var slideHeight = $('#cover-'+count).height();
+
+								 if (slideHeight < height) {
+									 slideHeight+=15;
+									 $('#cover-'+count).css('height', slideHeight + 'px');
+								 }
+				     }
+
+				     //prevent page fom scrolling
+				     return false;
+				 });
+
+				 //IE, Opera, Safari
+				 $('body').bind('mousewheel', function(e){
+					 if(e.originalEvent.detail > 0) {
+						 //scroll down
+							var slideHeight = $('#cover-'+count).height();
+
+							if (slideHeight <= 0 && count < 4) {
+								$('#cover-'+count).css('display', 'none');
+								count+=1;
+							}
+							else {
+								$('#cover-'+count).css('display', 'block');
+
+								slideHeight-=15;
+								$('#cover-'+count).css('height', slideHeight + 'px');
+							}
+					 }else {
+							 //scroll up
+							 $('#cover-'+count).css('display', 'block');
+							 var slideHeight = $('#cover-'+count).height();
+
+							 if (slideHeight < height) {
+								 slideHeight+=15;
+								 $('#cover-'+count).css('height', slideHeight + 'px');
+							 }
+					 }
+
+					 //prevent page fom scrolling
+					 return false;
+				 });
 			});
 		</script>
+
+		<div class="clear"></div>
 	</body>
 </html>

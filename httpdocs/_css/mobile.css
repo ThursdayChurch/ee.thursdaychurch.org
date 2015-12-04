@@ -286,8 +286,8 @@ footer #footer-nav .grid_3 {
   width:40%;
 }
 
-footer #footer-nav .grid_3:first-child, #footer-nav .grid_3:nth-child(3) {
-
+footer .grid_4 {
+  margin:0;
 }
 
 footer #footer-nav .grid_3:nth-child(2), #footer-nav .grid_3:nth-child(4) {

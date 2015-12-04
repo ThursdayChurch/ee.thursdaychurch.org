@@ -2,12 +2,21 @@
   font-family:'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B', Arial !important;
 }
 
+/**body {
+  position:relative;
+  height:718px;
+  overflow:hidden;
+}**/
+
 h1 {
   margin-top:0;
 }
 
 header {
-  padding-top:10px;
+  padding-top:5px;
+  position:fixed;
+  z-index:1000;
+  width:100%;
 }
 
 input, textarea {
@@ -72,12 +81,9 @@ button:hover {
   color:#477789;
 }
 
-.upper {
-  text-transform: uppercase;
-}
-
 #logo {
   margin-left:10px;
+  float:left;
 }
 
 #name-error:before, #story-error:before, #email-error:before, #find-error:before {
@@ -85,74 +91,59 @@ button:hover {
   white-space:pre;
 }
 
-.entry {
-  padding:100px 0;
-  text-align:center;
-}
-
-#cover {
-  height:400px;
-  background: url(/_img/annualreport/lifegroups.jpg) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin-top:-60px;
-}
-
-#cover h1 {
+.inner {
   color:white;
-  font-size:65px;
-  text-align:center;
-  margin-top:140px;
-  margin-bottom:5px;
-}
-
-#cover h3 {
-  color:white;
-  text-align:center;
-  margin-top:0;
-}
-
-#about-stories {
-  text-align:center;
-  color:#464646;
-}
-
-#about-stories h1 {
+  /*text-align:center;*/
   font-size:50px;
+  position:relative;
+  top:0;
 }
 
-#word-2, #word-3, #word-4, #word-5 {
-  display:none;
+.inner h1 {
+  position:relative;
 }
 
-#word-1 {
-  color:#354678;
+#cover-1 {
+  background-color:purple;
+  position:fixed;
+  z-index:0;
+  top:0px;
+  height:100%;
+  width:100%;
+  overflow:hidden !important;
 }
 
-#about-you {
-  background-color:#354678;
+#cover-2 {
+  background-color:green;
+  position:fixed;
+  z-index:-10;
+  top:0px;
+  height:100%;
+  width:100%;
+  overflow:hidden !important;
 }
 
-#story {
-  background-color:#B0B0B0;
+#cover-2 h1 {
+  color:purple;
 }
 
-#share-story {
-  background-color:#477789;
+#cover-3 {
+  background-color:green;
+  position:fixed;
+  z-index:-20;
+  top:0px;
+  height:100%;
+  width:100%;
+  overflow:hidden !important;
+
 }
 
-#submit-body {
-  background-color:#477789;
-  color:white;
-}
-
-#submit {
-  text-align:center;
-  margin-top:200px;
-}
-
-#submit h1 {
-  font-size:50px;
+#cover-4 {
+  background-color:orange;
+  position:fixed;
+  z-index:-30;
+  top:15px;
+  height:100%;
+  width:100%;
+  overflow:hidden !important;
 }

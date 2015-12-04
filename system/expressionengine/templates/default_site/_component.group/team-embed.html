@@ -1,8 +1,9 @@
 {if embed:catid}
+  {if embed:team-name}<div class="grid_12 team-name"><h1>Meet our {embed:team-name} team</h1></div>{/if}
   {exp:channel:entries channel="Team" category="{embed:catid}" sort="asc" orderby="team-sort"}
-      <div class="grid_3 team-member">
+      <div class="grid_3 team-member {if embed:push}push_{embed:push}{/if}">
         <a href="/about/team/{url_title}"><div class="team-photo"><img src="{team-photo}"/></div></a>
-        <h4>{title}</h4>
+        <a href="/about/team/{url_title}"><h4>{title}</h4></a>
         <p>{team-title}</p>
       </div>
   {/exp:channel:entries}

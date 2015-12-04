@@ -52,7 +52,8 @@ Licensed under GPL and MIT
 	.push_8, .pull_8,
 	.push_9, .pull_9,
 	.push_10, .pull_10,
-	.push_11, .pull_11 {
+	.push_11, .pull_11,
+	.push_1_half {
 		position: relative;
 	}
 
@@ -102,6 +103,7 @@ Licensed under GPL and MIT
 
 	/* Push Space */
 	.container .push_1 {left: 83px;}
+	.container .push_1_half {left: 124.5px;}
 	.container .push_2 {left: 166px;}
 	.container .push_3 {left: 249px;}
 	.container .push_4 {left: 332px;}
@@ -200,6 +202,7 @@ Licensed under GPL and MIT
 
 	/* Push Space | 768px */
 	.container .push_1 {left: 64px;}
+	.container .push_1_half {left: 96px;}
 	.container .push_2 {left: 128px;}
 	.container .push_3 {left: 192px;}
 	.container .push_4 {left: 256px;}
@@ -290,7 +293,7 @@ Licensed under GPL and MIT
 	.container .push_5, .container .push_6,
 	.container .push_7, .container .push_8,
 	.container .push_9, .container .push_10,
-	.container .push_11	{
+	.container .push_11, .container .push_1_half	{
 		left: 0;
 	}
 	.container .pull_1, .container .pull_2,
