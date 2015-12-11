@@ -1,3 +1,36 @@
+label {
+  font-size:25px;
+}
+
+input, textarea {
+  font-size:25px;
+}
+
+#cover-1 .inner h1 {
+  font-size:50px;
+}
+
+#cover-1 .inner h5 {
+  font-size:40px;
+  margin-top:0;
+}
+
+#cover-2 .inner {
+  top:60px;
+}
+
+#cover-2 .inner h3 {
+  font-size:50px;
+}
+
+#cover-3 .inner {
+  top:200px;
+}
+
+#cover-6 .inner {
+  top:125px;
+}
+
 #submit {
   margin-top:100px;
 }

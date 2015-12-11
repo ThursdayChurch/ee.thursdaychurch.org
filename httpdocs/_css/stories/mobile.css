@@ -1,17 +1,27 @@
-#header {
-  margin-top:0;
+input {
+  width:100%;
 }
 
-#cover {
-  height:auto;
-  padding:30px 0;
+#cover-1 .inner {
+  top:200px;
 }
 
-#cover h1 {
-  font-size:30px;
-  margin-top:20px;
+#cover-2 .inner {
+  top:125px;
 }
 
-#cover h3 {
+#cover-3 .inner {
+  top:225px;
+}
 
+#cover-4 .inner {
+  top:75px;
+}
+
+#cover-5 .inner {
+  top:100px;
+}
+
+#cover-6 .inner {
+  top:175px;
 }

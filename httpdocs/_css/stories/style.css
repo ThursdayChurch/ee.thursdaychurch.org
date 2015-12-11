@@ -1,12 +1,6 @@
 * {
-  font-family:'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B', Arial !important;
+  font-family:'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B', Arial;
 }
-
-/**body {
-  position:relative;
-  height:718px;
-  overflow:hidden;
-}**/
 
 h1 {
   margin-top:0;
@@ -21,9 +15,13 @@ header {
 
 input, textarea {
   border:none;
-  padding:10px 15px;
-  font-size:20px;
+  padding:15px 15px;
+  font-size:30px;
   color:#686868;
+}
+
+textarea {
+  width:100%;
 }
 
 input[type=password] {
@@ -60,7 +58,7 @@ button:focus {
 }
 
 label {
-  font-size:20px;
+  font-size:30px;
   color:white;
 }
 
@@ -71,8 +69,7 @@ button {
   padding:11px 16px;
   color:white;
   border-radius:4px;
-  margin-top:50px;
-  font-size:20px;
+  font-size:25px;
   font-weight:bold;
 }
 
@@ -86,64 +83,160 @@ button:hover {
   float:left;
 }
 
+nav a {
+  display:block;
+}
+
+nav #arrow-up {
+  display:none;
+}
+
+nav #arrow-up, nav #arrow-down {
+  color:white;
+  margin-bottom:5px;
+  color:rgba(255, 255, 255, 0.7);
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
+  position:fixed;
+  z-index:1000;
+  right:10px;
+}
+
+nav #arrow-up:hover, nav #arrow-down:hover {
+  color:white;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
+}
+
 #name-error:before, #story-error:before, #email-error:before, #find-error:before {
   content: '\A\A';
   white-space:pre;
 }
 
-.inner {
-  color:white;
-  /*text-align:center;*/
-  font-size:50px;
-  position:relative;
-  top:0;
+.cover {
+  position:fixed;
+  top:0px;
+  height:100%;
+  width:100%;
+  overflow:hidden !important;
 }
 
-.inner h1 {
+.inner {
+  color:white;
+  text-align:center;
+  font-size:50px;
   position:relative;
 }
 
 #cover-1 {
-  background-color:purple;
-  position:fixed;
-  z-index:0;
-  top:0px;
-  height:100%;
-  width:100%;
-  overflow:hidden !important;
+  background: url(/_img/sailboat.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:0 !important;
+  background-color:black;
+}
+
+#cover-1 .inner {
+  top:200px;
+}
+
+#cover-1 .inner h5 {
+  font-weight:200;
+  margin-top:-70px;
 }
 
 #cover-2 {
-  background-color:green;
-  position:fixed;
-  z-index:-10;
-  top:0px;
-  height:100%;
-  width:100%;
-  overflow:hidden !important;
+  background-color:#2D2D2D;
+  z-index:-10 !important;
 }
 
-#cover-2 h1 {
-  color:purple;
+#cover-2 .inner {
+  top:175px;
+}
+
+#cover-2 .inner h3 {
+  font-weight:200;
+}
+
+#cover-2 .inner h3 span {
+  font-weight:bold;
+  text-transform:uppercase;
 }
 
 #cover-3 {
-  background-color:green;
-  position:fixed;
-  z-index:-20;
-  top:0px;
-  height:100%;
-  width:100%;
-  overflow:hidden !important;
+  background: url(/_img/typewriter.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:-20 !important;
+  background-color:black;
+}
 
+#cover-3 .inner {
+  top:200px;
+}
+
+#name-error {
+  display:block;
+  margin-top:-20px;
 }
 
 #cover-4 {
-  background-color:orange;
-  position:fixed;
-  z-index:-30;
-  top:15px;
-  height:100%;
-  width:100%;
-  overflow:hidden !important;
+  z-index:-30 !important;
+  background-color:#006f7c;
+}
+
+#cover-4 .inner {
+  top:115px;
+}
+
+#find-error {
+  display:block;
+  margin-top:-40px;
+}
+
+#cover-5 {
+  background: url(/_img/the_ledge.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:-40 !important;
+  background-color:black;
+}
+
+#cover-5 .inner {
+  top:115px;
+}
+
+#story-error {
+  display:block;
+  margin-top:-40px;
+}
+
+#cover-6 {
+  background: url(/_img/rock.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:-50 !important;
+  height:100% !important;
+  background-color:black;
+}
+
+#cover-6 .inner {
+  top:200px;
+}
+
+#email-error {
+  display:block;
+  margin-top:-20px;
 }
