@@ -60,6 +60,7 @@ button:focus {
 label {
   font-size:30px;
   color:white;
+  display:inline-block;
 }
 
 button {
@@ -71,6 +72,8 @@ button {
   border-radius:4px;
   font-size:25px;
   font-weight:bold;
+  display:inline-block;
+  margin-top:40px;
 }
 
 button:hover {
@@ -238,5 +241,5 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 
 #email-error {
   display:block;
-  margin-top:-20px;
+  margin-top:-40px;
 }

@@ -27,8 +27,12 @@ input, textarea {
   top:200px;
 }
 
+#cover-4 .inner {
+  top:150px;
+}
+
 #cover-6 .inner {
-  top:125px;
+  top:150px;
 }
 
 #submit {
