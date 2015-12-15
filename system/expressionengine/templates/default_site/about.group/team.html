@@ -1,0 +1,117 @@
+{embed="_includes/header" title="JourneyChurch.tv : Our Team"}
+
+{!-- Embed Page does not work whenever dynamic url titles are needed. So just hardcoded instead --}
+<div id="page-cover" class="bg-img">
+  <h1>Team</h1>
+</div>
+
+<style>
+  #page-cover {
+    background-image:url('/_img/bamboo.jpeg');
+  }
+</style>
+
+<div id="page-nav">
+  <div class="container">
+    <ul>
+      <li><a href="/about">Our Story</a></li>
+      <li><a href="/about/values">Our Values</a></li>
+      <li><a href="/about/theology">Our Theology</a></li>
+      <li><a href="/about/structure">Our Structure</a></li>
+      <li><a href="/about/team" class="active">Our Team</a></li>
+      <li><a href="/about/locations">Our Locations</a></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container entry">
+  {if segment_3}
+    {exp:channel:entries channel="Team" url_title="{segment_3}"}
+    <div class="team-member-info">
+      <div class="grid_4">
+        <div class="team-photo"><img src="{team-photo}"/></div>
+      </div>
+      <div class="grid_8 omega">
+        <h1>{title}</h1>
+        <h3>{team-title}</h3>
+        <p>{team-bio}</p>
+        <ul>
+          {if team-email}<li><a href="mailto:{team-email}"><i class="fa fa-envelope-o fa-2x"></i></a></li>{/if}
+          {if team-fb}<li><a href="https://www.facebook.com/{team-fb}"><i class="fa fa-facebook-official fa-2x"></i></a></li>{/if}
+          {if team-twitter}<li><a href="https://www.twitter.com/{team-twitter}"><i class="fa fa-twitter fa-2x"></i></a></li>{/if}
+          {if team-instagram}<li><a href="https://www.instagram.com/{team-instagram}"><i class="fa fa-instagram fa-2x"></i></a></li>{/if}
+        </ul>
+      </div>
+    </div>
+    {/exp:channel:entries}
+  {if:else}
+    <div id="team-nav" class="grid_3">
+      <div id="staff">
+        {exp:channel:categories channel="Team" show="not 75"}
+          {if category_id == "73"}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name} <i class="fa fa-chevron-down"></i></a><li>
+          {if:else}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
+          {/if}
+        {/exp:channel:categories}
+      </div>
+
+      <div id="demographic-pastors">
+        {exp:channel:categories channel="Team" show="not 73"}
+          {if category_id == "75"}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name} <i class="fa fa-chevron-down"></i></a><li>
+          {if:else}
+            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
+          {/if}
+        {/exp:channel:categories}
+      </div>
+    </div>
+
+    <div class="grid_9">
+      {exp:channel:categories channel="Team"}
+        <div id="team-{category_id}" class="team">{embed="_component/team-embed" catid="{category_id}"}</div>
+
+        <script>
+          $(document).ready(function() {
+            $('.team-member').addClass('omega');
+            $('.team').css('display', 'none');
+
+            $('#team-73').css('display', 'block');
+
+            $('#team-{category_id}-anchor').click(function() {
+              $('.team').css('display', 'none');
+              $('.team-anchor').removeClass('active');
+              $('#team-{category_id}').fadeIn('fast');
+              $('#team-{category_id}-anchor').addClass('active');
+            });
+          });
+        </script>
+      {/exp:channel:categories}
+    </div>
+  {/if}
+  <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+
+<script>
+  $(document).ready(function() {
+    var windowWidth = $(window).width();
+
+    {!-- Staff Nav --}
+    if (windowWidth <= 767) {
+      $('#staff').click(function() {
+        $('#demographic-pastors ul ul').slideUp('fast');
+        $('#staff ul ul').slideDown('fast');
+      });
+
+      $('#demographic-pastors').click(function() {
+        $('#staff ul ul').slideUp('fast');
+        $('#demographic-pastors ul ul').slideDown('fast');
+      });
+    }
+  });
+</script>
+
+{embed="_includes/footer"}

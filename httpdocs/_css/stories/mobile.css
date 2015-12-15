@@ -1,0 +1,27 @@
+input {
+  width:100%;
+}
+
+#cover-1 .inner {
+  top:200px;
+}
+
+#cover-2 .inner {
+  top:125px;
+}
+
+#cover-3 .inner {
+  top:225px;
+}
+
+#cover-4 .inner {
+  top:125px;
+}
+
+#cover-5 .inner {
+  top:100px;
+}
+
+#cover-6 .inner {
+  top:175px;
+}

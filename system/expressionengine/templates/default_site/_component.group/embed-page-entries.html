@@ -1,0 +1,129 @@
+{exp:channel:entries channel="page_entry" category="{embed:catid}" orderby="page_entry_tier" sort="asc"}
+  <div id="page-entry-{entry_id}" class="entry">
+    <div class="container">
+      {if page_entry_display_title != ""}<h1 class="page-entry-header">{page_entry_display_title}</h1>{/if}
+
+        <div class="section-1">
+          {page_entry_section_1}
+        </div>
+      {if page_entry_section_2 != ""}
+        <div class="section-2">
+          {page_entry_section_2}
+        </div>
+      {/if}
+
+      {if page_entry_section_3 != ""}
+        <div class="section-3">
+          {page_entry_section_3}
+        </div>
+      {/if}
+
+      {if page_entry_section_4 != ""}
+        <div class="section-4">
+          {page_entry_section_4}
+        </div>
+      {/if}
+    </div>
+
+    <div class="clear"></div>
+  </div>
+
+  <div class="clear"></div>
+
+  {!-- Background Color --}
+  {if page_entry_background_color != ""}
+    <script>
+      $(document).ready(function() {
+
+        if ("{page_entry_background_color}" != "#F3F3F3") {
+          $('#page-entry-{entry_id}').addClass('bg-color');
+        }
+
+        $('#page-entry-{entry_id}').css({
+          'background-color': '{page_entry_background_color}'
+        });
+      });
+    </script>
+  {/if}
+
+  {!-- Background Image --}
+  {if page_entry_background_image != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id}').addClass('bg-img');
+
+        $('#page-entry-{entry_id}').css({
+          'background-image': 'url(/_img/{page_entry_background_image})'
+        });
+      });
+    </script>
+  {/if}
+
+
+  {!-- Grid Options --}
+  {if page_entry_grid_option_1 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-1').addClass('grid_{page_entry_grid_option_1}');
+      });
+    </script>
+  {/if}
+
+  {if page_entry_grid_option_2 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-2').addClass('grid_{page_entry_grid_option_2}');
+      });
+    </script>
+  {/if}
+
+  {if page_entry_grid_option_3 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-3').addClass('grid_{page_entry_grid_option_3}');
+      });
+    </script>
+  {/if}
+
+  {if page_entry_grid_option_4 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-4').addClass('grid_{page_entry_grid_option_4}');
+      });
+    </script>
+  {/if}
+
+
+  {!-- Push Options --}
+  {if page_entry_push_option_1 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-1').addClass('push_{page_entry_push_option_1}');
+      });
+    </script>
+  {/if}
+
+  {if page_entry_push_option_2 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-2').addClass('push_{page_entry_push_option_2}');
+      });
+    </script>
+  {/if}
+
+  {if page_entry_push_option_3 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-3').addClass('push_{page_entry_push_option_3}');
+      });
+    </script>
+  {/if}
+
+  {if page_entry_push_option_4 != ""}
+    <script>
+      $(document).ready(function() {
+        $('#page-entry-{entry_id} .section-4').addClass('push_{page_entry_push_option_4}');
+      });
+    </script>
+  {/if}
+{/exp:channel:entries}

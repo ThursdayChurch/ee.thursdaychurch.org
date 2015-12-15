@@ -1,0 +1,17 @@
+{exp:channel:entries channel="Pages" url_title="embed:url-title"}
+  <div id="page-cover" class="bg-img">
+    <h1>{title}</h1>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#page-cover').css('background-image', '/_img/{page-cover-photo}');
+    });
+  </script>
+
+  {if page-cover-video != ""}
+  <video autoplay loop muted class="bg-video">
+		<source src="/_video/{page-cover-video}" type="video/mp4">
+	</video>
+  {/if}
+{/exp:channel:entries}

@@ -1,161 +1,83 @@
 </head>
 
 <body>
-	<div id="wrapper">
-		{!-- Full Page Top --}
-		<div id="navigation">
-			<div class="top">
-				{!-- Site announcement/alerts take priority over countdown --}
-				{if site-alert != ""}
-					{embed="_component/alert"}
-				{if:else}
-					<div id="countdown_contain"></div>
-				{/if}
-
-				{if embed:bar == 'yes'}
-					<div class="bar-enabled">
-				{if:elseif segment_1 == "calendar"}
-					<div>
-				{if:else}
-					<div class="bar-disabled">
-				{/if}
-					<div class="container">
-						<a href="/"><div class="grid_3 journeylogo"><span>JourneyChurch.tv</span></div></a>
-						<div class="grid_9">
-							<ul id="full-only" class="nav-main">
-								<li id="nav-about">About</li>
-								<li><a href="/locations">Location</a></li>
-								<li id="nav-connected">Get Connected</li>
-								<li><a href="/media">Media</a></li>
-								<li><a href="/calendar">Calendar</a></li>
-								<li><a href="/give">Give</a></li>
-								<li><a href="/search"><i class="fa fa-search"></i></a></li>
-							</ul>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-			</div>
-			<div id="nav-about-c" class="nav-sub">
-				<div class="container">
-					<div class="grid_12">
-						<h2>About JourneyChurch</h2>
-					</div>
-					<div class="grid_9">
-						<p>JourneyChurch is a <strong>house</strong> where God is honored, where prayers are answered, hearts are mended and lives are changed. We are a <strong>house</strong> committed to transforming our cities... one life at a time. A <strong>house</strong> that uses creativity to point people to the Creator. A <strong>house</strong> that believes the God of generations past is the answer for the next generation. The people of this <strong>house</strong> gather to build healthy relationships and have a blast together. And the highest calling of our <strong>house</strong> is to worship the God of the universe. The King of kings. The Lord of lords. We are a <strong>house</strong>. We are JourneyChurch.</p>
-					</div>
-					<div class="grid_3">
-						<p><a href="/about/">Our Story</a></p>
-						<p><a href="/about/values">Our Values</a></p>
-						<p><a href="/about/theology">Theology</a></p>
-						<p><a href="/about/structure">Structure (Governance)</a></p>
-						<p><a href="/team/">Our Team</a></p>
-						<p><a href="/team/pastors/">Demographic Pastors</a></p>
-						<p><a href="/new">New to JourneyChurch?</a></p>
-
-					</div>
-				</div>
-			</div>
-			<div id="nav-connected-c" class="nav-sub">
-				<div class="container">
-					<div class="grid_12">
-						<h2>Get Connected</h2>
-					</div>
-					<div class="grid_8">
-						<p>JourneyChurch is a community filled with opportunity to get involved and connect with others. We'd love to help you get connected in a big way! We have created many different and unique connection opportunities, but the best way to engage in community quickly is to do these three things:<br><br>
-
-							<strong>1. &nbsp;Attend a worship experience each weekend.</strong><br>
-							<strong>2. Join a small group</strong><br>
-							<strong>3. Sign up to serve</strong>
-						</p>
-					</div>
-					<div class="grid_4">
-						{exp:channel:entries channel="Connect" orderby="title" sort="asc" dynamic="no"}
-							{if "{categories}{category_id}{/categories}" != "62"}
-								<p><a href="/connect/{url_title}">{title}</a></p>
-							{if:else}
-								<p><a href="{exp:remove_html}{connect-body}{/exp:remove_html}">{title}</a></p>
-							{/if}
-						{/exp:channel:entries}
-					</div>
-				</div>
-			</div>
+	<nav id="nav-wrapper">
+		<div id="nav-info">
+			<ul>
+        <li><a href="https://www.facebook.com/journeychurchtv"><i class="fa fa-facebook-square"></i></a></li>
+        <li><a href="https://twitter.com/journeychurchtv"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="http://instagram.com/journeychurchtv"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="http://youtube.com/journeychurchmedia"><i class="fa fa-youtube"></i></a></li>
+				<li><a href="/search"><div id="search-icon"><i class="fa fa-search"></i></div></a></li>
+      </ul>
 		</div>
 
-		{!-- Full Screen JS --}
-    	<script type="text/javascript">
-			// Countdown
-			$(document).ready(function() {
+		<div class="clear"></div>
+
+		<ul>
+			<li><h3>About</h3>
+				<ul>
+					<li><a href="/about"><h4>Our Story</h4></a></li>
+					<li><a href="/about/values"><h4>Our Values</h4></a></li>
+					<li><a href="/about/theology"><h4>Our Theology</h4></a></li>
+					<li><a href="/about/structure"><h4>Our Structure (Governance)</h4></a></li>
+					<li><a href="/about/team"><h4>Our Team</h4></a></li>
+					<li><a href="/about/locations"><h4>Locations</h4></a></li>
+				</ul>
+			</li>
+			<li><h3>Get Connected</h3>
+				<ul>
+					<li><a href="/connect/groups"><h4>Small Groups</h4></a></li>
+					<li><a href="/connect/events"><h4>Events</h4></a></li>
+					<li><a href="/connect/connections"><h4>Connections</h4></a></li>
+					<li><a href="/connect/classes"><h4>Classes</h4></a></li>
+					<li><a href="/connect/devos"><h4>Daily Devotionals</h4></a></li>
+					<li><a href="/connect/interns"><h4>Internships</h4></a></li>
+				</ul>
+			</li>
+			<li><h3>Ministries</h3>
+				<ul>
+					<li><a href="/ministries/care"><h4>Care</h4></a></li>
+					<li><a href="/ministries/college"><h4>College</h4></a></li>
+					<li><a href="/ministries/creative"><h4>Creative</h4></a></li>
+					<li><a href="/ministries/freedom"><h4>Freedom</h4></a></li>
+					<li><a href="/ministries/kids"><h4>Kids</h4></a></li>
+					<li><a href="/ministries/leadership"><h4>Leadership</h4></a></li>
+					<li><a href="/ministries/womens"><h4>Women's</h4></a></li>
+					<li><a href="/ministries/student"><h4>Student</h4></a></li>
+					<li><a href="/ministries/young-adult"><h4>Young Adult</h4></a></li>
+				</ul>
+			</li>
+			<li><h3>Resources</h3>
+				<ul>
+					<li><a href="/resources/media"><h4>Media</h4></a></li>
+					<li><a href="/resources/app"><h4>App</h4></a></li>
+					<li><a href="/resources/give"><h4>Give</h4></a></li>
+					<li><a href="/resources/blog"><h4>Blog</h4></a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="clear"></div>
+
+	<header>
+		<a href="/"><div id="logo"><img src="/_img/logo.PNG"/></div></a>
+
+		<a id="show-nav" href="#nav-icon"><div id="nav-icon"><i class="fa fa-bars"></i></div></a>
+		{!-- Site announcement/alerts take priority over countdown --}
+			<div id="countdown_contain"></div>
+
+		<div class="clear"></div>
+	</header>
+
+	<script>
+		$(document).ready(function() {
 				$.ajax({
 					url: '/_component/countdown',
 					success: function(data) {
 						$("#countdown_contain").html(data);
 					}
 				});
-
-				// // Navigation
-
-				var id = ""; // Subnav to show
-
-				// Listen to all movement within nav items to update subnav
-				$('.nav-main li').click(function() {
-					// Find all sub nav items that isn't 1 opening
-					id = $(this).attr('id');
-					// Set the subnav to show regardless of whether animation in progress
-					var visible_subnav = ".nav-sub:not('#" + id + "-c'):visible";
-
-					// If animation in progress don't change things
-					if (!$(visible_subnav).is(":animated")) {
-						// If no subnav being shown
-						if ($(visible_subnav).length == 0) {
-							$('#' + id + '-c').slideToggle(200);
-						}
-						else {
-							// If subnav is shown, replace with new one
-							$(visible_subnav).slideUp(200, function() {
-								$('#' + id + '-c').slideDown(200);
-							});
-						}
-					}
-				});
-
-				$('#navigation').mouseleave(function() {
-					$(".nav-sub:not('#" + $(this).attr('id') + "-c'):visible").slideUp(200);
-				});
-
-
-			});
-    	</script>
-
-		{!-- Mobile Top --}
-		<div id="mobile">
-			<div id="mobile-top">
-				<a href="/" id="mobile-logo" title="JourneyChurch.tv"></a>
-				<a id="opensidr" href="#sidr"><i class="fa fa-bars"></i></a>
-				<div class="clear"></div>
-			</div>
-			<div id="sidr">
-				<ul>
-					<li><a href="/about">About</a></li>
-					<li><a href="/blogs">Blogs</a></li>
-					<li><a href="/locations">Location</a></li>
-					<li><a href="/connect">Get Connected</a></li>
-					<li><a href="/media">Media</a></li>
-					<li><a href="/calendar">Calendar</a></li>
-					<li><a href="/give">Give</a></li>
-					<li><a href="/search"><i class="fa fa-search"></i> Search</a></li>
-				</ul>
-			</div>
-			<div class="clear"></div>
- 		</div>
-		<div id="mobile-only" class="mobile-spacer"></div>
-
-		<div id="mobile-only" class="mobile-liveservice">
-			<a href="http://live.journeychurch.tv">Join our live worship experience</a>
-		</div>
-
-		<div class="clear"></div>
-
-		{if !embed:bar}
-			<div class="bar-empty">
-		{/if}
+		});
+	</script>

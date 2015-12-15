@@ -1,0 +1,18 @@
+{embed="_includes/header" title="Classes"}
+
+{embed="_component/embed-page" url-title="ministries"}
+
+<div id="ministries" class="entry">
+  <div class="container">
+    {exp:channel:entries channel="ministries" sort="asc"}
+      <div class="grid_4 ministry">
+        <a href="/ministries/{url_title}"><div class="ministry-image"><img src="/_img/{ministry_icon}"/></div></a>
+        <a href="/ministries/{url_title}"><h3>{title}<h3></a>
+      </div>
+    {/exp:channel:entries}
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+{embed="_includes/footer"}

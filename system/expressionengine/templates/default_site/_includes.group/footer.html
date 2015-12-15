@@ -1,5 +1,132 @@
 {embed="_includes/footer-content"}
-	
+
+{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
+<script src="/_js/jquery.sidr.min.js"></script>
+<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
+
+<script>
+	$(document).ready(function() {
+		var headerHeight = $('header').outerHeight();
+		var windowWidth = $(window).width();
+		var scrollTop = 0;
+
+		setTimeout(
+			function() {
+				$('#cover h1').animate({
+					opacity : '1'
+				});
+
+				$('#page-cover h1').animate({
+					opacity : '1'
+				});
+
+				$('#page-social i').animate({
+					opacity : '1'
+				});
+			}
+		, 750);
+
+		setTimeout(
+			function() {
+				$('#countdown_contain').fadeIn();
+			}
+		, 1500);
+
+
+		{!-- Header --}
+		$('.header-filler').css({
+			'height': headerHeight
+		});
+
+		$(document).scroll(function() {
+			scrollTop = $(document).scrollTop();
+
+			if (windowWidth > 776) {
+				if (scrollTop > 75) {
+					$('header').css({
+						'background-color' : '#006f7c',
+						'border-bottom-color': '#28646B'
+					});
+				}
+				else {
+					$('header').css({
+						'background-color': 'transparent',
+						'border-bottom-color': 'transparent'
+					});
+				}
+			}
+			else {
+				if (scrollTop > 0) {
+					$('header').css({
+						'background-color' : '#006f7c',
+						'border-bottom-color': '#28646B'
+					});
+				}
+				else {
+					$('header').css({
+						'background-color': 'transparent',
+						'border-bottom-color': 'transparent'
+					});
+				}
+			}
+		});
+
+		{!-- Nav --}
+		$('#show-nav').sidr({
+			name: 'nav-wrapper',
+			side: 'right'
+		});
+
+		$('#nav-icon').click(function() {
+			$('#nav-icon i').toggleClass('fa-bars');
+			$('#nav-icon i').toggleClass('fa-chevron-right');
+		});
+
+		$('#nav-wrapper ul li:first-child h3').click(function() {
+			$('#nav-wrapper ul ul').slideUp();
+
+			if ($('#nav-wrapper ul li:first-child ul').css('display') == 'none') {
+				$('#nav-wrapper ul li:first-child ul').slideDown();
+			}
+			else {
+				$('#nav-wrapper ul li:first-child ul').slideUp();
+			}
+		});
+
+		$('#nav-wrapper ul li:nth-child(2) h3').click(function() {
+			$('#nav-wrapper ul ul').slideUp();
+
+			if ($('#nav-wrapper ul li:nth-child(2) ul').css('display') == 'none') {
+				$('#nav-wrapper ul li:nth-child(2) ul').slideDown();
+			}
+			else {
+				$('#nav-wrapper ul li:nth-child(2) ul').slideUp();
+			}
+		});
+
+		$('#nav-wrapper ul li:nth-child(3) h3').click(function() {
+			$('#nav-wrapper ul ul').slideUp();
+
+			if ($('#nav-wrapper ul li:nth-child(3) ul').css('display') == 'none') {
+				$('#nav-wrapper ul li:nth-child(3) ul').slideDown();
+			}
+			else {
+				$('#nav-wrapper ul li:nth-child(3) ul').slideUp();
+			}
+		});
+
+		$('#nav-wrapper ul li:last-child h3').click(function() {
+			$('#nav-wrapper ul ul').slideUp();
+			if ($('#nav-wrapper ul li:last-child ul').css('display') == 'none') {
+				$('#nav-wrapper ul li:last-child ul').slideDown();
+			}
+			else {
+				$('#nav-wrapper ul li:last-child ul').slideUp();
+			}
+		});
+	});
+</script>
+
 	<script type="text/javascript">
 	var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
 	(function(){
@@ -30,14 +157,5 @@
 	  })();
 
 	</script>
-
-	{!-- Mobile Nav --}
-	<script src="/_js/sidr.js"></script>
-	
-	{!-- Retina Friendly
-	<script type="text/javascript" src="/_js/retina.js"></script>
-	--}
-	
-	<script src="/_js/scripts.js"></script>
 </body>
 </html>
