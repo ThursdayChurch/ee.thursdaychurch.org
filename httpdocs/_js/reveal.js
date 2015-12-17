@@ -6,7 +6,8 @@ $(document).ready(function() {
   // Global Variables
   var count = 1;
   var lastSlide = 6;
-  var scrollSpeed = 9;
+  var scrollScale = 0.015;
+  var scrollSpeed = scrollScale*height;
 
 
 
