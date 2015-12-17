@@ -6,35 +6,18 @@ $(document).ready(function() {
   // Global Variables
   var count = 1;
   var lastSlide = 6;
-  var scrollScale = 0.015;
-  var scrollSpeed = scrollScale*height;
-
 
 
   // Move up a slide when arrow up is clicked
   $('nav #arrow-up').click(function() {
 
-    // Get the height of first slide and the current slide
-    var slide1Height = $('#cover-1').height();
-    var currentHeight = $('#cover-'+count).height();
+    // Move up to next closest slide (could be itself or the one before it
+    if (count >= 2) {
+      $('#cover-'+(count-1)).animate({
+        'height': '100%'
+      }, 500);
 
-    // Only move if the first cover doesn't have full height
-    if (slide1Height < height) {
-
-      // Move up to next closest slide (could be itself or the one before it
-      if (currentHeight < height) {
-        $('#cover-'+count).animate({
-          'height': '100%'
-        }, 200);
-
-      }
-      else {
-        $('#cover-'+(count-1)).animate({
-          'height': '100%'
-        }, 200);
-
-        count-=1;
-      }
+      count-=1;
     }
 
     // Fade In/Fade Out arrows
@@ -58,14 +41,11 @@ $(document).ready(function() {
   // Move down a slide when arrow down is clicked
   $('nav #arrow-down').click(function() {
 
-    // Get height of second to last slide
-    var secondToLastHeight = $('#cover-'+(lastSlide-1)).height();
-
     // Move down to next closest slide
-    if (secondToLastHeight > 0) {
+    if (count <= (lastSlide-1)) {
         $('#cover-'+count).animate({
           'height': '0'
-        }, 200);
+        }, 500);
 
         count+=1;
     }
@@ -86,10 +66,73 @@ $(document).ready(function() {
     }
   });
 
+  $('body').bind('DOMMouseScroll', function(e){
+
+      //scroll down
+     if (e.originalEvent.detail > 0) {
+       if (count <= (lastSlide-1)) {
+           $('#cover-'+count).animate({
+             'height': '0'
+           }, 500);
+
+           count+=1;
+       }
+
+      //scroll up
+      }
+      else {
+        if (count >= 2) {
+          $('#cover-'+(count-1)).animate({
+            'height': '100%'
+          }, 500);
+
+          count-=1;
+        }
+      }
+
+     //prevent page fom scrolling
+     return false;
+   });
+
+
+
+
+   //Second version mousescroll - IE, Opera, Safari
+   var mousewheel = function(e){
+
+     //scroll down
+     if (e.originalEvent.wheelDelta < 0) {
+       if (count <= (lastSlide-1)) {
+         $('#cover-'+count).animate({
+           'height': '0'
+         }, 500);
+
+         count+=1;
+       }
+       //scroll up
+     }
+     else {
+       if (count >= 2) {
+         $('#cover-'+(count-1)).animate({
+           'height': '100%'
+         }, 500);
+
+         count-=1;
+       }
+     }
+
+     $('body').unbind('mousewheel', mousewheel);
+
+     //prevent page fom scrolling
+     return false;
+   };
+
+   $('body').bind('mousewheel', mousewheel);
+
 
 
   // First version of mousescroll
-  $('body').bind('DOMMouseScroll', function(e){
+  /*$('body').bind('DOMMouseScroll', function(e){
 
     // Get height of first slide and second to last slide
     var slide1Height = $('#cover-1').height();
@@ -225,5 +268,5 @@ $(document).ready(function() {
 
      //prevent page fom scrolling
      return false;
-   });
+   });*/
 });
