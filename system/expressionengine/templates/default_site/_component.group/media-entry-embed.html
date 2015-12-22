@@ -1,22 +1,9 @@
-<<<<<<< HEAD
-<script type="text/javascript" src="/_js/jwplayer.js"></script>
-<script type="text/javascript">jwplayer.key="kF3pT55ll5YkHD+C2nHMxZzfw+b5tbjmUoRRYg==";</script>
-
-{exp:channel:entries channel="media" {if embed:cat_id}category="{embed:cat_id}"{/if} sort="desc" {if embed:limit}limit="{embed:limit}"{/if}}
-    <div id="vid{entry_id}"></div>
-
-    <script type="text/javascript">
-      jwplayer("vid{entry_id}").setup({
-        'autostart': 'false',
-        'height': 'auto',
-=======
 {exp:channel:entries channel="media" category="{embed:cat_id}" sort="desc" limit="{embed:limit}"
   <div class="grid_6">
     <script type="text/javascript">
       jwplayer("vid{entry_id}").setup({
         'autostart': 'false',
         'height': '360px',
->>>>>>> redesign
         'width': '100%',
         'menu': 'false',
         'aspectratio': '16:9',
@@ -33,8 +20,5 @@
           }]
       });
     </script>
-<<<<<<< HEAD
-=======
   </div>
->>>>>>> redesign
 {/exp:channel:entries}
