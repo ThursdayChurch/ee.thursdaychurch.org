@@ -28,11 +28,7 @@
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	</head>
-<<<<<<< HEAD
 	<body>
-=======
-	<body id="submit-body">
->>>>>>> redesign
 		<header id="header">
 			<a href="/stories"><div id="logo"><img src="/_img/logo.png" width="50"/></div></a>
 		</header>
@@ -40,21 +36,13 @@
 		<div class="clear"></div>
 
     <div id="submit">
-			<div class="inner">
-<<<<<<< HEAD
+	<div class="inner">
 	      <div class="container">
 	        <div class="grid_12">
 	          <h1>Thank You For Sharing <span>Your</span> Story</h1>
 	        </div>
 	      </div>
-=======
-				<div class="container">
-					<div class="grid_12">
-						<h1>Thank You For Sharing <span>Your</span> Story</h1>
-					</div>
-				</div>
->>>>>>> redesign
-			</div>
+	</div>
 
       <div class="clear"></div>
     </div>
