@@ -18,6 +18,12 @@ input, textarea {
   padding:15px 15px;
   font-size:30px;
   color:#686868;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 textarea {
@@ -178,4 +184,25 @@ nav a {
 #email-error {
   display:block;
   margin-top:-40px;
+}
+
+#submit {
+  background: url(/_img/rock.jpeg) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:black;
+}
+
+#submit h1 {
+  color:white;
+  text-align:center;
+  font-size:50px;
+  margin:0;
+  font-weight:200;
+}
+
+#submit h1 span {
+  font-weight:bold;
 }

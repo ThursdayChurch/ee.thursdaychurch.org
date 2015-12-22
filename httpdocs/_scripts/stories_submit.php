@@ -25,20 +25,24 @@
 		<link rel='stylesheet' media='screen and (max-width: 995px)' href='/_css/stories/tablet.css' />
 		<link rel='stylesheet' media='screen and (max-width: 767px)' href='/_css/stories/mobile.css' />
 		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	</head>
-	<body id="submit-body">
-		<header>
-			<a href="/stories"><div id="logo"><img src="/_img/logo_black.png" width="50"/></div></a>
+	<body>
+		<header id="header">
+			<a href="/stories"><div id="logo"><img src="/_img/logo.png" width="50"/></div></a>
 		</header>
 
-		<div id="header-filler"></div>
+		<div class="clear"></div>
 
     <div id="submit">
-      <div class="container">
-        <div class="grid_12">
-          <h1>Thank You For Sharing Your Story!</h1>
-        </div>
-      </div>
+			<div class="inner">
+	      <div class="container">
+	        <div class="grid_12">
+	          <h1>Thank You For Sharing <span>Your</span> Story</h1>
+	        </div>
+	      </div>
+			</div>
 
       <div class="clear"></div>
     </div>
@@ -75,5 +79,13 @@
       mysql_close($con);
     ?>
 
+		<script>
+			$(document).ready(function() {
+				var height = $(window).height();
+
+				$('#submit').css('height', height);
+				$('#submit .inner').css('top', height/2-100);
+			});
+		</script>
   </body>
 </html>
