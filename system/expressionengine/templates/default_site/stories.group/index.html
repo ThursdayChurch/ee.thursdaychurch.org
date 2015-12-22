@@ -26,53 +26,53 @@
 		<link rel='stylesheet' media='screen and (max-width: 767px)' href='/_css/stories/mobile.css' />
 		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
 
+		<link rel="stylesheet" type="text/css" href="/_css/jquery.fullPage.css" />
+
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script type="text/javascript" src="/_js/jquery.validate.js"></script>
+		<script type="text/javascript" src="/_js/jquery.fullPage.js"></script>
 	</head>
 	<body>
-		<header>
+		<header id="header">
 			<a href="/stories"><div id="logo"><img src="/_img/logo.png" width="50"/></div></a>
 		</header>
 
-		<nav>
-			<a href="#"><div id="arrow-up"><i class="fa fa-chevron-up fa-2x"></i></div></a>
-			<a href="#"><div id="arrow-down"><i class="fa fa-chevron-down fa-2x"></i></div></a>
-		</nav>
-
 		<div class="clear"></div>
 
-		<div id="cover-1" class="cover">
-			<div class="inner">
-				<div class="container">
-					<div class="grid_12">
-						<h1>Stories</h1>
-						<h5>They Change Us</h5>
+		<form id="stories-form" method="post" action="/_scripts/stories_submit.php"></form>
+
+		<div id="fullpage">
+			<div id="cover-1" class="section">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<h1>Stories</h1>
+							<h5>They Change Us</h5>
+						</div>
 					</div>
+
+					<div class="clear"></div>
 				</div>
-
-				<div class="clear"></div>
 			</div>
-		</div>
 
-		<div id="cover-2" class="cover">
-			<div class="inner">
-				<div class="container">
-					<div class="grid_12">
-						<h3>We want to hear <span>your</span> story of life change</h3>
+			<div id="cover-2" class="section">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<h3>We want to hear <span>your</span> story of life change</h3>
+						</div>
 					</div>
+
+					<div class="clear"></div>
 				</div>
-
-				<div class="clear"></div>
 			</div>
-		</div>
 
-		<form id="stories-form" method="post" action="/_scripts/stories_submit.php">
-			<div id="cover-3" class="cover">
+			<div id="cover-3" class="section">
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
 							<label for="name">What's Your Name?</label><br>
-							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70"/><br>
+							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
 						</div>
 					</div>
 				</div>
@@ -80,12 +80,12 @@
 				<div class="clear"></div>
 			</div>
 
-			<div id="cover-4" class="cover">
+			<div id="cover-4" class="section">
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
 							<label for="find">How did you find Journey Church?</label><br>
-							<textarea name="find" rows="10" maxlength="500" required="required"></textarea><br>
+							<textarea name="find" rows="10" maxlength="500" required="required" form="stories-form"></textarea><br>
 						</div>
 					</div>
 				</div>
@@ -93,12 +93,12 @@
 				<div class="clear"></div>
 			</div>
 
-			<div id="cover-5" class="cover">
+			<div id="cover-5" class="section">
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
 							<label for="story">What's Your Story?</label><br>
-							<textarea name="story" rows="10" maxlength="1000" required="required"></textarea><br>
+							<textarea name="story" rows="10" maxlength="1000" required="required" form="stories-form"></textarea><br>
 						</div>
 					</div>
 				</div>
@@ -106,36 +106,34 @@
 				<div class="clear"></div>
 			</div>
 
-			<div id="cover-6" class="cover">
+			<div id="cover-6" class="section">
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
 							<label for="email">We would love to share your story!</label><br>
-							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55"/>
-							<br><button type="submit" name="submit">Share My Story</button>
+							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
+							<br><button type="submit" name="submit" form="stories-form">Share My Story</button>
 						</div>
 					</div>
 				</div>
 
 				<div class="clear"></div>
 			</div>
-		</form>
-
-		<script>
-			$('#stories-form').validate();
-		</script>
+		</div>
 
 		<script>
 			$(document).ready(function() {
-				var height = $(window).height();
-				topHeight = height-40;
-				$('nav #arrow-up').css('top', (topHeight-40)+'px');
-				$('nav #arrow-down').css('top', topHeight+'px');
+				$('#stories-form').validate();
+
+		    $('#fullpage').fullpage();
 			});
 		</script>
 
+<<<<<<< HEAD
 		<!--<script type="text/javascript" src="/_js/reveal.js"></script>-->
 
+=======
+>>>>>>> redesign
 		<div class="clear"></div>
 	</body>
 </html>
