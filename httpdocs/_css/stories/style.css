@@ -90,42 +90,9 @@ nav a {
   display:block;
 }
 
-nav #arrow-up {
-  display:none;
-}
-
-nav #arrow-up, nav #arrow-down {
-  color:white;
-  margin-bottom:5px;
-  color:rgba(255, 255, 255, 0.7);
-  -webkit-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -o-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
-  position:fixed;
-  z-index:1000;
-  right:10px;
-}
-
-nav #arrow-up:hover, nav #arrow-down:hover {
-  color:white;
-  -webkit-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -o-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
-}
-
 #name-error:before, #story-error:before, #email-error:before, #find-error:before {
   content: '\A\A';
   white-space:pre;
-}
-
-.cover {
-  position:fixed;
-  top:0px;
-  height:100%;
-  width:100%;
-  overflow:hidden !important;
 }
 
 .inner {
@@ -136,17 +103,12 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 }
 
 #cover-1 {
-  background: url(/_img/sailboat.jpeg) no-repeat center center fixed;
+  background: url(/_img/sailboat.jpeg) no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index:0 !important;
   background-color:black;
-}
-
-#cover-1 .inner {
-  top:200px;
 }
 
 #cover-1 .inner h5 {
@@ -156,11 +118,6 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 
 #cover-2 {
   background-color:#2D2D2D;
-  z-index:-10 !important;
-}
-
-#cover-2 .inner {
-  top:175px;
 }
 
 #cover-2 .inner h3 {
@@ -173,17 +130,12 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 }
 
 #cover-3 {
-  background: url(/_img/typewriter.jpeg) no-repeat center center fixed;
+  background: url(/_img/typewriter.jpeg) no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index:-20 !important;
   background-color:black;
-}
-
-#cover-3 .inner {
-  top:200px;
 }
 
 #name-error {
@@ -192,12 +144,7 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 }
 
 #cover-4 {
-  z-index:-30 !important;
   background-color:#006f7c;
-}
-
-#cover-4 .inner {
-  top:115px;
 }
 
 #find-error {
@@ -206,17 +153,12 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 }
 
 #cover-5 {
-  background: url(/_img/the_ledge.jpeg) no-repeat center center fixed;
+  background: url(/_img/the_ledge.jpeg) no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index:-40 !important;
   background-color:black;
-}
-
-#cover-5 .inner {
-  top:115px;
 }
 
 #story-error {
@@ -225,18 +167,12 @@ nav #arrow-up:hover, nav #arrow-down:hover {
 }
 
 #cover-6 {
-  background: url(/_img/rock.jpeg) no-repeat center center fixed;
+  background: url(/_img/rock.jpeg) no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index:-50 !important;
-  height:100% !important;
   background-color:black;
-}
-
-#cover-6 .inner {
-  top:200px;
 }
 
 #email-error {
