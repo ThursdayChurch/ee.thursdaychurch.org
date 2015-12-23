@@ -77,6 +77,11 @@
 			side: 'right'
 		});
 
+		$('#show-nav').click(function() {
+			$('#nav-icon i').toggleClass('fa-bars');
+			$('#nav-icon i').toggleClass('fa-chevron-right');
+		});
+
 		$('#nav-wrapper ul li:first-child h3').click(function() {
 			$('#nav-wrapper ul ul').slideUp();
 
