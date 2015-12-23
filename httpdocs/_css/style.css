@@ -298,6 +298,10 @@ header {
   z-index:100;
 }
 
+#upper-corner {
+  display:inline-block;
+}
+
 #countdown_contain {
   float:right;
   border-right: 1px solid white;
