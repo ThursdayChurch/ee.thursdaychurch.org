@@ -281,12 +281,14 @@ button:hover {
 #logo {
   float:left;
   color:white;
-  margin:0 0 0 15px;
+  margin-left:10px;
+  margin-top:3px;
+  display:inline-block;
 }
 
 header {
   border-bottom:1px solid transparent;
-  padding:7px 0;
+  padding:2px 0;
   -webkit-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
   -moz-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
   -o-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
@@ -298,9 +300,10 @@ header {
 
 #countdown_contain {
   float:right;
-  margin:13px 20px 0 0;
   border-right: 1px solid white;
-  padding-right:20px;
+  margin-top:17px;
+  margin-right:10px;
+  padding-right:15px;
   display:none;
 }
 
@@ -325,9 +328,15 @@ header {
   color:white;
 }
 
-#nav-icon {
+#show-nav {
+  display:inline-block;
   float:right;
-  margin:5px 15px 0 0;
+  padding:7px;
+  margin-top:2px;
+  margin-right:10px;
+}
+
+#nav-icon {
   font-size:28px;
 }
 
@@ -459,11 +468,13 @@ header {
 #cover {
   overflow:hidden;
   height:800px;
+  background-attachment: scroll !important;
 }
 
 #page-cover {
   height:375px;
   overflow:hidden;
+  background-attachment: scroll !important;
 }
 
 #cover h1 {
