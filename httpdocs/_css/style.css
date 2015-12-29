@@ -300,6 +300,7 @@ header {
 
 #upper-corner {
   display:inline-block;
+	float:right;
 }
 
 #countdown_contain {
