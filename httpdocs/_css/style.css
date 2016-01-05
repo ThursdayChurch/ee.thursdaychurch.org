@@ -485,7 +485,6 @@ header {
 #cover h1 {
   top:255px;
   font-weight:300;
-  opacity:0;
 }
 
 #cover h1 span {
@@ -495,7 +494,6 @@ header {
 
 #page-cover h1 {
   top:135px;
-  opacity:0;
 }
 
 #cover h1, #page-cover h1 {
@@ -591,12 +589,8 @@ header {
   text-align:center;
 }
 
-#page-social i {
-  opacity:0;
-}
-
 #page-social i:hover {
-  opacity:0.6 !important;
+  opacity:0.6;
 }
 
 #page-social ul li {
@@ -1425,6 +1419,7 @@ footer {
 
 footer #footer-nav {
   padding:80px 0;
+  text-align:center;
 }
 
 footer #footer-top {
