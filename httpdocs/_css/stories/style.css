@@ -69,6 +69,11 @@ label {
   display:inline-block;
 }
 
+label span {
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
 button {
   border:none;
   border:1px solid white;
