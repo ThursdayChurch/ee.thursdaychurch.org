@@ -5,10 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width">
 
+		<!-- Return/refresh to main stories page after 4 seconds -->
+		<meta http-equiv="refresh" content="4;url=/stories">
+
 		<meta name="description" content="Share a story about how your life has been changed">
 		<meta name="keywords" content="Stories Jesus Life Change Journey Church Norman OK">
 
-		<title>Stories - What's Your Story?</title>
+		<title>Stories - Thank you for submitting your story</title>
 
 		<!-- Fonts -->
 		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6186432/688704/css/fonts.css" />
@@ -49,8 +52,8 @@
 
     <?php
       define('DB_NAME', 'stories');
-      define('DB_USER', 'root');
-      define('DB_PASS', 'root');
+      define('DB_USER', 'storiesadmin');
+      define('DB_PASS', '64rR4t!s');
       define('DB_HOST', 'localhost');
 
       $con = mysql_connect(DB_HOST, DB_USER, DB_PASS);
@@ -68,15 +71,15 @@
         $find = $_POST['find'];
         $story = $_POST['story'];
         $email = $_POST['email'];
+
+				$sql = "INSERT INTO stories (Name, Find, Story, Email) VALUES ('$name', '$find', '$story', '$email')";
+
+	      if(!mysql_query($sql)) {
+	        die("Error " . mysql_error());
+	      }
       }
 
-      $sql = "INSERT INTO stories (Name, Find, Story, Email) VALUES ('$name', '$find', '$story', '$email')";
-
-      if(!mysql_query($sql)) {
-        die("Error " . mysql_error());
-      }
-
-      mysql_close($con);
+			mysql_close($con);
     ?>
 		<script>
 			$(document).ready(function() {
