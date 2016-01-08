@@ -24,10 +24,7 @@ blockquote {
 }
 
 #cover {
-  background-image: url(/_img/easter.jpg);
-  background-attachment:scroll;
   height:265px !important;
-  overflow:hidden;
 }
 
 #cover h1, #page-cover h1 {

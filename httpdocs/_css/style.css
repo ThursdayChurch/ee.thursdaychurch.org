@@ -2,6 +2,7 @@
   Site Colors:
     Green:	#989d00
     Blue:	#006f7c
+    Dark Blue: #005b66
     Darkest Grey: #282828
     Darker Grey: #2D2D2D
     Dark Grey: #464646
@@ -278,37 +279,43 @@ button:hover {
   color:#D5D5D5;
 }
 
-#logo {
-  float:left;
-  color:white;
-  margin-left:10px;
-  margin-top:3px;
-  display:inline-block;
+header {
+  background-color:transparent;
+  padding:5px 0;
+  -webkit-transition:background-color 0.2s ease-in;
+  -moz-transition:background-color 0.2s ease-in;
+  -o-transition:background-color 0.2s ease-in;
+  transition:background-color 0.2s ease-in;
+  z-index:100;
+  position:relative;
 }
 
-header {
-  border-bottom:1px solid transparent;
-  padding:2px 0;
-  -webkit-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
-  -moz-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
-  -o-transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
-  transition:background-color 0.3s ease-in, border-color 0.3s ease-in;
+.sticky-header {
   position:fixed;
   width:100%;
-  z-index:100;
+  z-index:75;
+  background-color:#006f7c;
+  -webkit-transition:background-color 0.2s ease-in;
+  -moz-transition:background-color 0.2s ease-in;
+  -o-transition:background-color 0.2s ease-in;
+  transition:background-color 0.2s ease-in;
+}
+
+#header-filler {
+  display:none;
 }
 
 #upper-corner {
-  display:inline-block;
 	float:right;
+  margin-right:12px;
 }
 
 #countdown_contain {
   float:right;
   border-right: 1px solid white;
-  margin-top:17px;
   margin-right:10px;
   padding-right:15px;
+  margin-top:13px;
   display:none;
 }
 
@@ -334,11 +341,8 @@ header {
 }
 
 #show-nav {
-  display:inline-block;
   float:right;
-  padding:7px;
-  margin-top:2px;
-  margin-right:10px;
+  padding:5px;
 }
 
 #nav-icon {
@@ -448,19 +452,6 @@ header {
   text-decoration:none !important;
 }
 
-.sticky-nav {
-  position:fixed;
-  width:100%;
-  z-index:75;
-  padding:0 !important;
-  border-bottom:1px solid #f7f7f7;
-  background-color:white !important;
-  -webkit-transition:background-color 0.3s ease-in;
-  -moz-transition:background-color 0.3s ease-in;
-  -o-transition:background-color 0.3s ease-in;
-  transition:background-color 0.3s ease-in;
-}
-
 .gsc-search-button {
   font-weight:normal !important;
   background-color:#006f7c !important;
@@ -471,9 +462,11 @@ header {
 }
 
 #cover {
-  overflow:hidden;
   height:800px;
   background-attachment: scroll !important;
+  position:relative;
+  background-image: url(/_img/boxes-filler.jpg);
+  margin-top:-60px;
 }
 
 #page-cover {
@@ -482,15 +475,35 @@ header {
   background-attachment: scroll !important;
 }
 
-#cover h1 {
-  top:255px;
-  font-weight:300;
-  opacity:0;
+#cover-inner {
+  position:relative;
+  top:150px;
+  text-align:center;
 }
 
-#cover h1 span {
-  font-weight:bold;
+#cover-inner img {
+  -o-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -webkit-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+  width:300px;
+}
+
+#cover-inner img:hover {
+  opacity:0.7;
+  -o-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -webkit-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+}
+
+#cover-inner h2 {
+  font-weight:200;
   text-transform:uppercase;
+}
+
+#cover-inner h2 span {
+  font-weight:normal;
 }
 
 #page-cover h1 {
@@ -498,30 +511,18 @@ header {
   opacity:0;
 }
 
-#cover h1, #page-cover h1 {
+#cover-inner h1, #page-cover h1 {
   margin:0;
   font-size:70px;
   text-align:center;
   color:white;
   position:relative;
   z-index:10;
-}
-
-#cover h2 {
-  top:315px;
+  font-weight:200;
 }
 
 #page-cover h2 {
   top:275px;
-}
-
-#cover h2, #page-cover h2 {
-  margin:0;
-  font-size:20px;
-  text-align:center;
-  color:white;
-  position:relative;
-  z-index:10;
 }
 
 #cover .button, #page-cover .button {
