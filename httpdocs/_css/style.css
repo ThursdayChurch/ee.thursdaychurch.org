@@ -279,11 +279,11 @@ header {
 }
 
 .sticky-header #countdown_contain {
-  border-color:#464646;
+  border-color:#686868;
 }
 
 .sticky-header #nav-icon i, .sticky-header #countdown_contain .notlive, .sticky-header #countdown_contain .live {
-  color:#464646;
+  color:#686868;
 }
 
 #header-filler {
