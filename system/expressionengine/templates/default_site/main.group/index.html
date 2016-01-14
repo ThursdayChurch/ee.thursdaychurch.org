@@ -1,108 +1,76 @@
 {embed="_includes/header"}
 
-<div id="cover" class="bg-img">
-	<div id="cover-inner">
-		<div class="container">
-			<div class="grid_4 push_4">
-				<img src="/_img/journeygroups-logo.png"/>
-			</div>
+<style>
+	#logo {
+		display:none;
+	}
+</style>
 
-			<div class="grid_12">
-				<h2>Journey<span>church</span>.tv</h2>
-			</div>
-		</div>
-
-		<div class="clear"></div>
+<div id="cover" class="home-cover bg-img">
+	<div class="cover-inner">
+		<img src="/_img/logo-large.png"/>
+		<h2>Journey<span>church</span>.tv</h2>
 	</div>
 </div>
 
-<div id="who-location" class="entry">
+<div id="who-we-are" class="entry bg-color">
 	<div class="container">
-		<div id="who-are-we" class="grid_6">
-			<h1>Who are we?</h1>
+		<div class="grid_8 push_2">
+			<h1>Who we are</h1>
 			<p>JourneyChurch is a <strong>house</strong> where God is honored, where prayers are answered, hearts are mended and lives are changed.<br><br> {!--We are a <strong>house</strong> committed to transforming our cities... one life at a time. A <strong>house</strong> that uses creativity to point people to the Creator. A <strong>house</strong> that believes the God of generations past is the answer for the next generation.<br><br> The people of this <strong>house</strong> gather to build healthy relationships and have a blast together. And the highest calling of our house is to worship the God of the universe. The King of kings. The Lord of lords. We are a <strong>house</strong>. We are JourneyChurch.--}</p>
-			<a href="/about"><div class="button">Learn More About Us</div></a>
 		</div>
-
-		<div id="home-locations" class="grid_6">
-			<h1>Locations & Times</h1>
-			<a href="#header" id="location-time-icon" class="active location-icon"><i class="fa fa-clock-o"></i></a>
-			<a href="#header" id="location-address-icon" class="location-icon"><i class="fa fa-map-marker"></i></a>
-			<a href="#header" id="location-phone-icon" class="location-icon"><i class="fa fa-phone"></i></a>
-			<a href="#header" id="location-email-icon" class="location-icon"><i class="fa fa-envelope-o"></i></a>
-
-			<div id="location-info">
-				{exp:channel:entries channel="location"}
-				<div id="location-time" class="location-info-entry">
-					<h3>{title}</h3> <p>{location-times}</p>
-				</div>
-
-				<div id="location-address" class="location-info-entry">
-					<h3>{title}</h3> <p>Address | <a href="{location-directions}" target="_blank">{location-address}</a></p>
-				</div>
-
-				<div id="location-phone" class="location-info-entry">
-					<h3>{title}</h3> <p>Phone | <a href="tel:{location-phone}">{location-phone}</a></p>
-				</div>
-
-				<div id="location-email" class="location-info-entry">
-					<h3>{title}</h3> <p>Email | <a href="mailto:{location-email}">{location-email}</a></p>
-				</div>
-				{/exp:channel:entries}
-			</div>
-		</div>
-	</div>
-
-	<div class="clear"></div>
-
-	</div>
-</div>
-
-<div id="boxes" class="entry">
-	<div id="boxes-captions" class="container">
-		<div class="grid_12"><h1>Get Connected</h1></div>
-		<div class="grid_4 caption">
-			<a href="/media"><div id="caption-image-1" class="caption-image"></div></a>
-			<div id="caption-1" class="caption-description"><h4>Watch Our Latest Message</h4><p>Watch our latest message from the mystery series!</p></div>
-		</div>
-		<div class="grid_4 caption">
-			<a href="/about"><div id="caption-image-2" class="caption-image"></div></a>
-			<div id="caption-2" class="caption-description"><h4>New to JourneyChurch?</h4><p>If you are new to JourneyChurch, welcome! You can learn more JourneyChurch here!</p></div>
-		</div>
-		<div class="grid_4 caption">
-			<a href="/groups"><div id="caption-image-3" class="caption-image"></div></a>
-			<div id="caption-3" class="caption-description"><h4>Get Plugged Into Life Groups!</h4><p>Get plugged into a life group!</p></div>
-		</div>
-	</div>
-	<div class="clear"></div>
-</div>
-
-<div id="home-ministries" class="entry">
-	<div class="container">
-		<h1>We Have A Ministry For You</h1><br><br>
-		<div id="college-ministry" class="grid_4 ministry">
-			<a href="/college"><div id="college-ministry-photo" class="ministry-image"><img src="/_img/ministries/college.JPG"/></div></a>
-			<h3>College</h3>
-		</div>
-
-		<div id="sj-ministry" class="grid_4 ministry">
-			<a href="/student"><div id="sj-ministry-photo" class="ministry-image"><img src="/_img/ministries/student.JPG"/></div></a>
-			<h3>Student</h3>
-		</div>
-
-		<div id="kids-ministry" class="grid_4 ministry">
-			<a href="/kids"><div id="kids-ministry-photo" class="ministry-image"><img src="/_img/ministries/kids.JPG"/></div></a>
-			<h3>Kids</h3>
-		</div>
-
 		<div class="clear"></div>
-
-		<div class="center"><a href="/ministries"><div class="button">More Ministries</div></a></div>
+		<div class="grid_4 push_4">
+			<a href="/about"><h4 class="thin transparent-button">Learn More About Us</h4></a>
+		</div>
 	</div>
+
 	<div class="clear"></div>
 </div>
 
-<div id="home-events-wrapper" class="bg-img">
+<div id="times" class="entry">
+	<div class="container">
+		<div class="grid_3">
+			<h3 class="thin"><i class="fa fa-clock-o fa-2x"></i><br>SUN<br>9:30 AM<br>11:00 AM<br>6:00 PM</h3>
+		</div>
+
+		<div class="grid_3">
+			<a href="http://maps.google.com/?q=3801%20Journey%20Parkway,Norman,%20OK%2073072"><h3 class="thin"><i class="fa fa-map-marker fa-2x"></i><br>3801 Journey Parkway, Norman, OK 73072</h3></a>
+		</div>
+
+		<div class="grid_3">
+			<a href="norman@JourneyChurch.tv"><h3 class="thin"><i class="fa fa-envelope-o fa-2x"></i><br>norman@<br>Journey<br>Church.tv</h3></a><br>
+		</div>
+
+		<div class="grid_3">
+			<h3 class="thin"><i class="fa fa-phone fa-2x"></i><br>405.217.8700</h3>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+</div>
+
+<div id="ministries-home" class="entry bg-img">
+	<div class="container">
+		<div class="grid_12"><h1>We Have A Ministry For You</h1></div>
+
+		<div class="grid_4">
+			<a href="/ministries/college"><h3 class="thin transparent-button">College</h3></a>
+		</div>
+
+		<div class="grid_4">
+			<a href="/ministries/student"><h3 class="thin transparent-button">Student</h3></a>
+		</div>
+
+		<div class="grid_4">
+			<a href="/ministries/kids"><h3 class="thin transparent-button">Kids</h3></a>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+</div>
+
+<div id="home-events-wrapper">
 	<div class="container entry">
 		<div id="home-events" class="grid_6">
 			<h1>Events</h1>
@@ -126,41 +94,5 @@
 	</div>
 	<div class="clear"></div>
 </div>
-
-<script>
-	$(document).ready(function() {
-		$('#location-time-icon').click(function() {
-			$('.location-icon').removeClass('active');
-			$(this).addClass('active');
-
-			$('.location-info-entry').css('display', 'none');
-			$('#location-time').fadeIn('fast');
-		});
-
-		$('#location-address-icon').click(function() {
-			$('.location-icon').removeClass('active');
-			$(this).addClass('active');
-
-			$('.location-info-entry').css('display', 'none');
-			$('#location-address').fadeIn('fast');
-		});
-
-		$('#location-phone-icon').click(function() {
-			$('.location-icon').removeClass('active');
-			$(this).addClass('active');
-
-			$('.location-info-entry').css('display', 'none');
-			$('#location-phone').fadeIn('fast');
-		});
-
-		$('#location-email-icon').click(function() {
-			$('.location-icon').removeClass('active');
-			$(this).addClass('active');
-
-			$('.location-info-entry').css('display', 'none');
-			$('#location-email').fadeIn('fast');
-		});
-	});
-</script>
 
 {embed="_includes/footer"}

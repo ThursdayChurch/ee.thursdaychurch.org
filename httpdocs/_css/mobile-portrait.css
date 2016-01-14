@@ -2,12 +2,8 @@
   margin-left:0px !important;
 }
 
-#cover h1 {
-  font-size:25px;
-}
-
-#page-cover h1 {
-  font-size:30px;
+.home-cover .cover-inner {
+  top:50px;
 }
 
 #home-locations img {
