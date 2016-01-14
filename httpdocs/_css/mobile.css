@@ -19,39 +19,33 @@ blockquote {
   padding:0 !important;
 }
 
-.grid_11, .grid_10, .grid_9, .grid_8, .grid_7, .grid_6, .grid_5, .grid_4, .grid_3, .grid_2, .grid_1 {
-  margin-bottom:50px;
-}
-
 #cover {
-  height:265px !important;
+  height:350px !important;
 }
 
-#cover h1, #page-cover h1 {
-  font-size:35px;
-  top:105px !important;
+.home-cover .cover-inner {
+  top:30px;
 }
 
-#cover h2 {
-  display:none;
+.home-cover .cover-inner h2 {
+  margin:0;
+  font-size:20px;
+}
+
+#cover .cover-inner img {
+  width:40%;
+}
+
+.page-cover .cover-inner {
+
+}
+
+.page-cover .cover-inner h1 {
+  font-size:30px;
 }
 
 #cover .container {
   overflow:visible;
-}
-
-#page-cover {
-  background-attachment:scroll;
-  height:250px;
-  overflow:hidden;
-}
-
-#page-cover h1 {
-  top:100px;
-}
-
-#page-social {
-  top:140px;
 }
 
 #who-are-we {
@@ -79,25 +73,6 @@ blockquote {
 
 .caption-description {
   height:150px;
-}
-
-#page-cover h1 {
-  font-size:40px;
-}
-
-#page-nav ul li {
-  display:block;
-  padding:10px 0;
-  text-align:center;
-}
-
-#page-nav ul li a {
-
-}
-
-#page-nav .active {
-  padding-bottom:0;
-  border-bottom:none;
 }
 
 #story {

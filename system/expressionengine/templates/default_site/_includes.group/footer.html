@@ -1,115 +1,138 @@
 {embed="_includes/footer-content"}
 
-{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
-<script src="/_js/jquery.sidr.min.js"></script>
-<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
+		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
+		<script src="/_js/jquery.sidr.min.js"></script>
+		<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
 
-<script>
-	$(document).ready(function() {
-		var headerHeight = $('header').outerHeight();
-		var scrollTop = 0;
+		<script>
+			$(document).ready(function() {
 
-		setTimeout(
-			function() {
-				$('#countdown_contain').fadeIn();
-			}
-		, 1500);
+				{!-- Countdown fade in (delayed because it needs times to load) --}
+				setTimeout(
+					function() {
+							$( "#countdown_contain" ).fadeTo( "slow" , 1);
+					}
+				, 1500);
 
-		{!-- Nav --}
-		$('#show-nav').sidr({
-			name: 'nav-wrapper',
-			side: 'right'
-		});
 
-		$('#nav-wrapper ul li:first-child h3').click(function() {
-			$('#nav-wrapper ul ul').slideUp();
+				{!-- Nav --}
+				$('#show-nav').sidr({
+					name: 'nav-wrapper',
+					side: 'right'
+				});
 
-			if ($('#nav-wrapper ul li:first-child ul').css('display') == 'none') {
-				$('#nav-wrapper ul li:first-child ul').slideDown();
-			}
-			else {
-				$('#nav-wrapper ul li:first-child ul').slideUp();
-			}
-		});
 
-		$('#nav-wrapper ul li:nth-child(2) h3').click(function() {
-			$('#nav-wrapper ul ul').slideUp();
+				{!-- Create Nav Items --}
+				var createNavItem = function(i) {
+					var selectedSection = '#nav-menu li:nth-child('+i+')';
+					var selectedHeader = selectedSection+' h3';
+					var selectedContent = selectedSection+' ul';
+					var allContent = '#nav-menu ul';
 
-			if ($('#nav-wrapper ul li:nth-child(2) ul').css('display') == 'none') {
-				$('#nav-wrapper ul li:nth-child(2) ul').slideDown();
-			}
-			else {
-				$('#nav-wrapper ul li:nth-child(2) ul').slideUp();
-			}
-		});
+					$(selectedHeader).click(function() {
+						$(allContent).slideUp();
 
-		$('#nav-wrapper ul li:nth-child(3) h3').click(function() {
-			$('#nav-wrapper ul ul').slideUp();
+						if ($(selectedContent).is(":hidden")) {
+							$(selectedContent).slideDown();
+						}
+						else {
+							$(selectedContent).slideUp();
+						}
+					});
+				}
+				var numberOfSections = $('#nav-menu > li').length;
+				for (var i = 1; i <= numberOfSections; ++i) {
+					createNavItem(i);
+				}
 
-			if ($('#nav-wrapper ul li:nth-child(3) ul').css('display') == 'none') {
-				$('#nav-wrapper ul li:nth-child(3) ul').slideDown();
-			}
-			else {
-				$('#nav-wrapper ul li:nth-child(3) ul').slideUp();
-			}
-		});
 
-		$('#nav-wrapper ul li:last-child h3').click(function() {
-			$('#nav-wrapper ul ul').slideUp();
-			if ($('#nav-wrapper ul li:last-child ul').css('display') == 'none') {
-				$('#nav-wrapper ul li:last-child ul').slideDown();
-			}
-			else {
-				$('#nav-wrapper ul li:last-child ul').slideUp();
-			}
-		});
+				{!-- Header --}
+				var headerHeight = $('header').outerHeight();
+				$('#header-filler').height(headerHeight);
 
-		$(document).scroll(function() {
-			scrollTop = $(document).scrollTop();
+				var previousScrollTop = $(document).scrollTop();
+				var fadingIn = false;
+				var fadingOut = false;
 
-			if (scrollTop >= 400) {
-				$('header').addClass('sticky-header');
-				$('#header-filler').show();
-			}
-			else {
-				$('header').removeClass('sticky-header');
-				$('#header-filler').hide();
-			}
-		});
+				$(document).scroll(function() {
+					var scrollTop = $(document).scrollTop();
 
-		$('#header-filler').css('height', headerHeight);
-	});
-</script>
+					if (scrollTop > headerHeight) {
+						if ($('#cover').hasClass('home-cover')) {
+							$('#logo').show();
+						}
 
-	<script type="text/javascript">
-	var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
-	(function(){
-	  function loadChartbeat() {
-	    window._sf_endpt=(new Date()).getTime();
-	    var e = document.createElement('script');
-	    e.setAttribute('language', 'javascript');
-	    e.setAttribute('type', 'text/javascript');
-	    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-	    document.body.appendChild(e);
-	  }
-	  var oldonload = window.onload;
-	  window.onload = (typeof window.onload != 'function') ?
-	     loadChartbeat : function() { oldonload(); loadChartbeat(); };
-	})();
+						$('#logo img').attr("src", "/_img/logo-large-grey.png");
 
-	</script>
-	<script type="text/javascript">
+						if (scrollTop < previousScrollTop) {
+							$('#logo, #upper-corner').show();
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-23134458-1']);
-	  _gaq.push(['_trackPageview']);
+							if (!fadingIn) {
+								$('header').fadeTo(400, 1, function() {
+									fadingIn = false;
+								});
+								fadingIn = true;
+							}
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+							$('header').addClass('sticky-header');
+							$('#header-filler').show();
+						}
+						else {
+							if (!fadingOut) {
+								$('header').fadeTo(400, 0, function() {
+									fadingOut = false;
+									$('#logo, #upper-corner').hide();
+								});
+								fadingOut = true;
+							}
+						}
+					}
+					else {
+						if ($('#cover').hasClass('home-cover')) {
+							$('#logo').hide();
+						}
 
-	</script>
-</body>
+						$('#logo img').attr("src", "/_img/logo-large.png");
+						$('header').removeClass('sticky-header');
+						$('#header-filler').hide();
+					}
+
+					previousScrollTop = scrollTop;
+				});
+			});
+		</script>
+
+
+		{!-- Chartbeat --}
+		<script type="text/javascript">
+			var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
+			(function(){
+			  function loadChartbeat() {
+			    window._sf_endpt=(new Date()).getTime();
+			    var e = document.createElement('script');
+			    e.setAttribute('language', 'javascript');
+			    e.setAttribute('type', 'text/javascript');
+			    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+			    document.body.appendChild(e);
+			  }
+			  var oldonload = window.onload;
+			  window.onload = (typeof window.onload != 'function') ?
+			     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+			})();
+		</script>
+
+
+		{!-- Google Analytics --}
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23134458-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</body>
 </html>
