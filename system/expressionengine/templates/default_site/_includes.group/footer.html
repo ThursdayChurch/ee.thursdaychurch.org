@@ -24,11 +24,14 @@
 
 				{!-- Create Nav Items --}
 				var createNavItem = function(i) {
+
+					// Store section headers/content
 					var selectedSection = '#nav-menu li:nth-child('+i+')';
 					var selectedHeader = selectedSection+' h3';
 					var selectedContent = selectedSection+' ul';
 					var allContent = '#nav-menu ul';
 
+					// Add click events for each header with specific section
 					$(selectedHeader).click(function() {
 						$(allContent).slideUp();
 
@@ -40,6 +43,8 @@
 						}
 					});
 				}
+
+				// Create navigation functionality for each header
 				var numberOfSections = $('#nav-menu > li').length;
 				for (var i = 1; i <= numberOfSections; ++i) {
 					createNavItem(i);
@@ -47,26 +52,34 @@
 
 
 				{!-- Header --}
-				var headerHeight = $('header').outerHeight();
-				$('#header-filler').height(headerHeight);
-
+				// Store scrollTop relative to current position of header
 				var previousScrollTop = $(document).scrollTop();
+
+				// Fade in/Fade out variables used as flags for the animations are complete
 				var fadingIn = false;
 				var fadingOut = false;
 
 				$(document).scroll(function() {
+
+					// Store scrollTop on every event
 					var scrollTop = $(document).scrollTop();
 
-					if (scrollTop > headerHeight) {
+					// If greater than header height, become a sticky header
+					if (scrollTop >= 60) {
+
+						// If home page, display the logo only for the nav not the cover
 						if ($('#cover').hasClass('home-cover')) {
 							$('#logo').show();
 						}
 
+						// Change logo to grey
 						$('#logo img').attr("src", "/_img/logo-large-grey.png");
 
+						// If scrolling up, fade in the nav bar
 						if (scrollTop < previousScrollTop) {
 							$('#logo, #upper-corner').show();
 
+							// Need a flag to know when fade in animation is complete
 							if (!fadingIn) {
 								$('header').fadeTo(400, 1, function() {
 									fadingIn = false;
@@ -74,29 +87,38 @@
 								fadingIn = true;
 							}
 
+							// Make sticky header and fill in gap with header filler because of positon fixed
 							$('header').addClass('sticky-header');
 							$('#header-filler').show();
 						}
 						else {
+
+							// Need a flag to know when fade out animation is complete
 							if (!fadingOut) {
 								$('header').fadeTo(400, 0, function() {
 									fadingOut = false;
+
+									// Hide the logo and uppercorner so that a user cannot click on them
 									$('#logo, #upper-corner').hide();
 								});
 								fadingOut = true;
 							}
 						}
 					}
+
+					// If back to top of page remove sticky header
 					else {
 						if ($('#cover').hasClass('home-cover')) {
 							$('#logo').hide();
 						}
 
+						// Change back to static header
 						$('#logo img').attr("src", "/_img/logo-large.png");
 						$('header').removeClass('sticky-header');
 						$('#header-filler').hide();
 					}
 
+					// Store the current scrollTop to compare to next
 					previousScrollTop = scrollTop;
 				});
 			});

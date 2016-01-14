@@ -288,6 +288,9 @@ header {
 
 #header-filler {
   display:none;
+  height:60px;
+  width:100%;
+  position:relative;
 }
 
 #logo {
@@ -499,8 +502,12 @@ header {
 }
 
 .cover-inner {
-  position:relative;
+  position:absolute;
   text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+  left:0;
+  right:0;
 }
 
 .home-cover .cover-inner {
@@ -509,6 +516,18 @@ header {
 
 .home-cover .cover-inner img {
   width:300px;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+}
+
+.home-cover .cover-inner img:hover {
+  opacity:0.7;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
 }
 
 .home-cover .cover-inner h2 {
@@ -528,6 +547,18 @@ header {
   margin:0;
   font-size:70px;
   color:white;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+}
+
+.page-cover .cover-inner h1:hover {
+  opacity:0.7;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
 }
 
 #page-social {
@@ -603,28 +634,9 @@ header {
   text-align:center;
 }
 
-.ministry {
-  margin-bottom:30px;
-}
-
-.ministry .ministry-image {
-  width:200px;
-  height:200px;
-  margin:0 auto;
-  overflow:hidden !important;
-  border-radius:50%;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
-}
-
-.ministry .ministry-image:hover {
-  opacity:0.7;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
+#ministries-home h3 {
+  border:2px solid rgba(255, 255, 255, 0.7);
+  border-radius:4px;
 }
 
 #home-events-wrapper {
@@ -1296,23 +1308,13 @@ header {
   opacity:0.8;
 }
 
-footer {
-  background-color:#2D2D2D;
-}
-
-footer #footer-nav {
-  padding:80px 0;
-}
-
-footer #footer-top {
-  background-color:#282828;
-  text-align:center;
-}
-
-footer .button, footer .button:hover {
-  color:white !important;
+footer button {
   background-color:#006f7c;
-  border-color:#006f7c;
+  margin-top:20px;
+}
+
+footer button:hover  {
+  opacity:1;
 }
 
 footer .social-media {
@@ -1332,41 +1334,22 @@ footer .social-media ul li:first-child {
 footer .social-media i {
   color:white;
   font-size:25px;
+  -webkit-transition:color 0.3s ease-in;
+  -moz-transition:color 0.3s ease-in;
+  -o-transition:color 0.3s ease-in;
+  transition:color 0.3s ease-in;
 }
 
 footer .social-media i:hover {
   color:#006f7c;
-}
-
-footer #footer-nav ul {
-  list-style-type:none;
-}
-
-footer #footer-nav h3 {
-  font-size:16px;
-  color:white;
-}
-
-footer #footer-nav ul h4 {
-  color:#686868;
-  font-weight:500;
-  -webkit-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -o-transition: color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-  font-size:13px;
-}
-
-footer #footer-nav ul h4:hover {
-  color:white;
-}
-
-footer #footer-nav ul li a:hover {
-  text-decoration:none;
+  -webkit-transition:color 0.3s ease-in;
+  -moz-transition:color 0.3s ease-in;
+  -o-transition:color 0.3s ease-in;
+  transition:color 0.3s ease-in;
 }
 
 footer #footer-copyright {
-  background-color:#282828;
+  background-color:#303030;
   padding:15px 0;
   margin-top:10px;
 }
@@ -1380,8 +1363,5 @@ footer #footer-copyright p {
 
 footer #footer-copyright p a {
   color:#006f7c;
-}
-
-footer #footer-copyright p a:hover {
-  color:#006f7c;
+  font-size:12px;
 }
