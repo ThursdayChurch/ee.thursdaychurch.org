@@ -67,17 +67,21 @@
 					// If greater than header height, become a sticky header
 					if (scrollTop >= 60) {
 
-						// If home page, display the logo only for the nav not the cover
-						if ($('#cover').hasClass('home-cover')) {
-							$('#logo').show();
-						}
-
-						// Change logo to grey
-						$('#logo img').attr("src", "/_img/logo-large-grey.png");
-
 						// If scrolling up, fade in the nav bar
 						if (scrollTop < previousScrollTop) {
+
+							// Make sticky header and fill in gap with header filler because of positon fixed
+							$('header').addClass('sticky-header');
+							$('#header-filler').show();
 							$('#logo, #upper-corner').show();
+
+							// If home page, display the logo only for the nav not the cover
+							if ($('#cover').hasClass('home-cover')) {
+								$('#logo').show();
+							}
+
+							// Change logo to grey
+							$('#logo img').attr("src", "/_img/logo-large-grey.png");
 
 							// Need a flag to know when fade in animation is complete
 							if (!fadingIn) {
@@ -86,10 +90,6 @@
 								});
 								fadingIn = true;
 							}
-
-							// Make sticky header and fill in gap with header filler because of positon fixed
-							$('header').addClass('sticky-header');
-							$('#header-filler').show();
 						}
 						else {
 
@@ -108,14 +108,15 @@
 
 					// If back to top of page remove sticky header
 					else {
+						$('header').removeClass('sticky-header');
+						$('#header-filler').hide();
+
 						if ($('#cover').hasClass('home-cover')) {
 							$('#logo').hide();
 						}
 
 						// Change back to static header
 						$('#logo img').attr("src", "/_img/logo-large.png");
-						$('header').removeClass('sticky-header');
-						$('#header-filler').hide();
 					}
 
 					// Store the current scrollTop to compare to next
