@@ -136,6 +136,7 @@
 					if (scrollTop >= 60) {
 						// Make sticky header and fill in gap with header filler because of positon fixed
 						$('header').addClass('sticky-header');
+						$('header').addClass('header-up');
 						$('#header-filler').show();
 
 						// If home page, display the logo only for the nav not the cover
@@ -148,10 +149,10 @@
 
 						// If scrolling up, fade in the nav bar
 						if (scrollTop < previousScrollTop) {
-							$('header').show();
+							$('header').removeClass('header-up');
 						}
 						else {
-							$('header').hide();
+							$('header').addClass('header-up');
 						}
 					}
 					// If back to top of page remove sticky header

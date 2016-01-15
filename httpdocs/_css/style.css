@@ -256,6 +256,11 @@ header {
   border-bottom:1px solid #F3F3F3;
   position:fixed;
   width:100%;
+  top:0;
+  -webkit-transition:top 0.2s ease-in;
+  -moz-transition:top 0.2s ease-in;
+  -o-transition:top 0.2s ease-in;
+  transition:top 0.2s ease-in;
 }
 
 .sticky-header #countdown_contain {
@@ -264,6 +269,14 @@ header {
 
 .sticky-header #nav-icon i, .sticky-header #countdown_contain .notlive, .sticky-header #countdown_contain .live {
   color:#686868;
+}
+
+.header-up {
+  top:-60px;
+  -webkit-transition:top 0.2s ease-in;
+  -moz-transition:top 0.2s ease-in;
+  -o-transition:top 0.2s ease-in;
+  transition:top 0.2s ease-in;
 }
 
 #header-filler {
