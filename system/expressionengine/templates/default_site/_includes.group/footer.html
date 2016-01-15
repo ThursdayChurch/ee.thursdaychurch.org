@@ -134,7 +134,6 @@
 
 					// If greater than header height, become a sticky header
 					if (scrollTop >= 60) {
-
 						// Make sticky header and fill in gap with header filler because of positon fixed
 						$('header').addClass('sticky-header');
 						$('#header-filler').show();
@@ -149,10 +148,10 @@
 
 						// If scrolling up, fade in the nav bar
 						if (scrollTop < previousScrollTop) {
-							$('header').fadeIn();
+							$('header').show();
 						}
 						else {
-							$('header').fadeOut();
+							$('header').hide();
 						}
 					}
 					// If back to top of page remove sticky header
