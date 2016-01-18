@@ -77,7 +77,7 @@
 				$(document).scroll(function() {
 					var scrollTop = $(document).scrollTop();
 
-					if (scrollTop == 0) {
+					if (scrollTop <= 0) {
 						$('#header-filler').hide();
 
 						$('#logo img').attr('src', '/_img/logo-large.png');
