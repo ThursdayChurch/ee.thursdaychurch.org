@@ -268,12 +268,54 @@ button:focus {
 
 /* Header/Nav */
 header {
-  background-color:transparent;
-  border-bottom:1px solid transparent;
   padding:5px 0;
   z-index:100;
-  position:relative;
   height:49px;
+}
+
+.headroom--top {
+  background-color:transparent;
+  border-bottom:1px solid transparent;
+  position:relative;
+}
+
+.headroom--top #countdown_contain {
+  border-color:white;
+}
+
+.headroom--top #nav-icon i, .headroom--top #countdown_contain .notlive, .headroom--top #countdown_contain .live {
+  color:white !important;
+}
+
+.headroom--not-top {
+  background-color:rgba(255, 255, 255, 0.98);
+  border-bottom:1px solid #F3F3F3;
+  position:fixed;
+  width:100%;
+}
+
+.headroom--not-top #countdown_contain {
+  border-color:#686868;
+}
+
+.headroom--not-top #nav-icon i, .headroom--not-top #countdown_contain .notlive, .headroom--not-top #countdown_contain .live {
+  color:#686868 !important;
+}
+
+.headroom--unpinned {
+  transform:translateY(-100%);
+  -webkit-transition:transform 0.2s ease-in;
+  -moz-transition:transform 0.2s ease-in;
+  -o-transition:transform 0.2s ease-in;
+  transition:transform 0.2s ease-in;
+}
+
+.headroom--pinned {
+  transform:translateY(0%);
+  -webkit-transition:transform 0.2s ease-in;
+  -moz-transition:transform 0.2s ease-in;
+  -o-transition:transform 0.2s ease-in;
+  transition:transform 0.2s ease-in;
 }
 
 .sticky-header {
@@ -345,7 +387,6 @@ header {
   margin-right:12px;
   position:relative;
   float:right;
-  min-width:180px;
 }
 
 #countdown_contain {
@@ -353,7 +394,7 @@ header {
   margin-right:11px;
   padding-right:15px;
   margin-top:13px;
-  float:left;
+  float:right;
   opacity:0;
 }
 
@@ -431,8 +472,12 @@ header {
   margin-left:0;
 }
 
-#nav-info ul #search-icon {
+#nav-info ul #nav-exit {
   float:right;
+  padding:5px;
+  margin-top:-5px;
+  font-size:28px;
+  margin-right:-20px;
 }
 
 #nav-info ul li {

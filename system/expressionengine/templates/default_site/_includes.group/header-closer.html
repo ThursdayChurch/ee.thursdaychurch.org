@@ -8,7 +8,7 @@
         <li><a href="https://twitter.com/journeychurchtv"><i class="fa fa-twitter"></i></a></li>
         <li><a href="http://instagram.com/journeychurchtv"><i class="fa fa-instagram"></i></a></li>
         <li><a href="http://youtube.com/journeychurchmedia"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="/search"><div id="search-icon"><i class="fa fa-search"></i></div></a></li>
+				<li><a href="#nav-wrapper"><div id="nav-exit"><i class="fa fa-times"></i></div></a></li>
       </ul>
 		</div>
 
@@ -65,14 +65,14 @@
 		<a href="/"><div id="logo"><img src="/_img/logo-large.png" width="45"/></div></a>
 
 		<div id="upper-corner">
-			{!-- Site announcement/alerts take priority over countdown --}
-			<div id="countdown_contain"></div>
-
 			<a id="show-nav" href="#nav-wrapper">
 				<div id="nav-icon">
 					<i class="fa fa-bars"></i>
 				</div>
 			</a>
+
+			{!-- Site announcement/alerts take priority over countdown --}
+			<div id="countdown_contain"></div>
 
 			<div class="clear"></div>
 		</div>
@@ -81,6 +81,17 @@
 	</header>
 
 	<div id="header-filler"></div>
+
+	<script src="/_js/headroom.js"></script>
+
+	<script>
+		// grab an element
+		var myElement = document.querySelector("header");
+		// construct an instance of Headroom, passing the element
+		var headroom  = new Headroom(myElement);
+		// initialise
+		headroom.init();
+	</script>
 
 	<script>
 		$(document).ready(function() {
