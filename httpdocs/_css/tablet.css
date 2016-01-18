@@ -1,15 +1,5 @@
-.button {
-  background-color:#2D2D2D;
-  border-color:#2D2D2D;
-  color:white !important;
-}
-
 .bg-img {
   background-attachment: scroll;
-}
-
-.bg-video {
-  display:none;
 }
 
 nav ul li h3 {
@@ -21,12 +11,8 @@ nav ul li h3 {
   font-size:60px;
 }
 
-#page-social i {
+.page-social i {
   opacity:1 !important;
-}
-
-#home-locations img {
-  height:240px;
 }
 
 .team-member {

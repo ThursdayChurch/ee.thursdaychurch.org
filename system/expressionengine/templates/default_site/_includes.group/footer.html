@@ -75,7 +75,7 @@
 						// Change logo to grey
 						$('#logo img').attr("src", "/_img/logo-large-grey.png");
 
-
+						// If scrolling up, slideup
 						if (scrollTop < previousScrollTop) {
 							$('header').removeClass('header-up');
 						}
@@ -96,7 +96,6 @@
 
 						$('#logo img').attr("src", "/_img/logo-large.png");
 					}
-
 					// Store the current scrollTop to compare to next
 					previousScrollTop = scrollTop;
 				});
