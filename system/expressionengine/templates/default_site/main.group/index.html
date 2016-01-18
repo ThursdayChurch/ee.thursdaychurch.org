@@ -13,7 +13,7 @@
 	</div>
 </div>
 
-<div id="who-we-are" class="entry bg-color">
+<div id="who-we-are" class="entry bg-color grey center">
 	<div class="container">
 		<div class="grid_8 push_2">
 			<h1>Who we are</h1>
@@ -21,14 +21,14 @@
 		</div>
 		<div class="clear"></div>
 		<div class="grid_4 push_4">
-			<a href="/about"><h4 class="thin transparent-button">Learn More About Us</h4></a>
+			<a href="/about"><h4 class="transparent-button">Learn More About Us</h4></a>
 		</div>
 	</div>
 
 	<div class="clear"></div>
 </div>
 
-<div id="times" class="entry">
+<div id="times" class="entry light-grey center">
 	<div class="container">
 		<div class="grid_3">
 			<h3 class="thin"><i class="fa fa-clock-o fa-2x"></i><br>SUN<br>9:30 AM<br>11:00 AM<br>6:00 PM</h3>
@@ -50,7 +50,7 @@
 	<div class="clear"></div>
 </div>
 
-<div id="ministries-home" class="entry bg-img">
+<div id="home-ministries" class="entry bg-img center">
 	<div class="container">
 		<div class="grid_12"><h1>We Have A Ministry For You</h1></div>
 
@@ -70,29 +70,8 @@
 	<div class="clear"></div>
 </div>
 
-<div id="home-events-wrapper">
-	<div class="container entry">
-		<div id="home-events" class="grid_6">
-			<h1>Events</h1>
-			<h2>Events happening today</h2>
-			<h3>This is an event</h3>
-			<p>Hello this is an event happening on this date at this time</p>
-		</div>
+<div id="home-events">
 
-		<div id="home-latest" class="grid_6">
-			<h1>News | Updates</h1>
-			{exp:channel:entries channel="Latest" orderby="date" sort="desc"}
-				<div class="latest-entry">
-					<h3>{if latest-link}<a href="{latest-link}">{/if}{title}{if latest-link}</a>{/if}</h3>
-					{if latest-body}
-						<p>{latest-body}</p>
-					{/if}
-				</div>
-			{/exp:channel:entries}
-		</div>
-		<div class="clear"></div>
-	</div>
-	<div class="clear"></div>
 </div>
 
 {embed="_includes/footer"}

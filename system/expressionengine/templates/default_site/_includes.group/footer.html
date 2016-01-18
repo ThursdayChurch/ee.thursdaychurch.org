@@ -54,20 +54,27 @@
 				{!-- Header --}
 				// Variable for previous scrollTop value
 				var previousScrollTop = $(document).scrollTop();
+
 				$(document).scroll(function() {
+
 					// Store scrollTop on every event
 					var scrollTop = $(document).scrollTop();
+
 					// If greater than header height, become a sticky header
 					if (scrollTop >= 60) {
+
 						// Make sticky header and fill in gap with header filler because of positon fixed
 						$('header').addClass('sticky-header header-up');
 						$('#header-filler').show();
+
 						// If home page, display the logo only for the nav not the cover
 						if ($('#cover').hasClass('home-cover')) {
 							$('#logo').show();
 						}
 						// Change logo to grey
 						$('#logo img').attr("src", "/_img/logo-large-grey.png");
+
+						// If scrolling up, slideup
 						if (scrollTop < previousScrollTop) {
 							$('header').removeClass('header-up');
 						}
@@ -77,12 +84,15 @@
 					}
 					// If back to top of page remove sticky header
 					else {
+
 						// Change back to static header
 						$('header').removeClass('sticky-header header-up');
 						$('#header-filler').hide();
+
 						if ($('#cover').hasClass('home-cover')) {
 							$('#logo').hide();
 						}
+
 						$('#logo img').attr("src", "/_img/logo-large.png");
 					}
 					// Store the current scrollTop to compare to next
