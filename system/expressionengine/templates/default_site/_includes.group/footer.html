@@ -78,8 +78,6 @@
 					var scrollTop = $(document).scrollTop();
 
 					if (scrollTop <= 0) {
-						$('#header-filler').hide();
-
 						$('#logo img').attr('src', '/_img/logo-large.png');
 
 						if ($('#cover').hasClass('home-cover')) {
@@ -87,8 +85,6 @@
 						}
 					}
 					else {
-						$('#header-filler').show();
-
 						$('#logo img').attr('src', '/_img/logo-large-grey.png');
 
 						if ($('#cover').hasClass('home-cover')) {
