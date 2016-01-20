@@ -1,20 +1,22 @@
+/* Global */
 .bg-img {
   background-attachment: scroll;
 }
 
+
+/* Header/Nav */
 nav ul li h3 {
   font-size:16px;
 }
 
 
-#cover .cover-inner h1 {
-  font-size:60px;
-}
-
+/* Covers */
 .page-social i {
   opacity:1 !important;
 }
 
+
+/* Team */
 .team-member {
   height:375px;
 }
@@ -31,15 +33,8 @@ nav ul li h3 {
   font-size:13px;
 }
 
-.location p {
-  font-size:14px;
-}
 
-.connect-img h3 {
-  background-color:white;
-  color:black;
-}
-
+/* Connect */
 .connect-entry p {
   font-size:14px;
 }

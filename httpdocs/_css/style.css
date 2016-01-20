@@ -90,7 +90,6 @@ h1, h4 {
 
 h2, h5 {
   color:#686868;
-  font-weight:200;
 }
 
 h3, h6 {
@@ -110,7 +109,7 @@ p i {
 }
 
 a, a:link, a:visited, a:active {
-  color:#D5D5D5;
+  color:#B0B0B0;
   font-weight:300;
   font-size:16px;
   text-decoration:none;
@@ -120,8 +119,24 @@ a, a:link, a:visited, a:active {
   transition:color 0.3s ease-in;
 }
 
-a:hover {
+a i, a:link i, a:visited i, a:active i {
   color:#B0B0B0;
+  -webkit-transition:color 0.3s ease-in;
+  -moz-transition:color 0.3s ease-in;
+  -o-transition:color 0.3s ease-in;
+  transition:color 0.3s ease-in;
+}
+
+a:hover {
+  color:#D5D5D5;
+  -webkit-transition:color 0.3s ease-in;
+  -moz-transition:color 0.3s ease-in;
+  -o-transition:color 0.3s ease-in;
+  transition:color 0.3s ease-in;
+}
+
+a:hover i {
+  color:#D5D5D5;
   -webkit-transition:color 0.3s ease-in;
   -moz-transition:color 0.3s ease-in;
   -o-transition:color 0.3s ease-in;
@@ -159,22 +174,22 @@ button {
   display:inline-block;
   text-align:center;
   padding:14px 18px;
-  background-color:#464646;
+  background-color:rgba(70, 70, 70, 1);
   font-weight:bold;
   border:none;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
+  -webkit-transition:background-color 0.3s ease-in;
+  -moz-transition:background-color 0.3s ease-in;
+  -o-transition:background-color 0.3s ease-in;
+  transition:background-color 0.3s ease-in;
   border-radius:4px;
 }
 
 button:hover, button:active {
-  opacity:0.85;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
+  background-color:rgba(70, 70, 70, 0.8);
+  -webkit-transition:background-color 0.3s ease-in;
+  -moz-transition:background-color 0.3s ease-in;
+  -o-transition:background-color 0.3s ease-in;
+  transition:background-color 0.3s ease-in;
   cursor:pointer;
 }
 
@@ -190,7 +205,6 @@ button:focus {
   -moz-transition:border-color 0.3s ease-in;
   -o-transition:border-color 0.3s ease-in;
   transition:border-color 0.3s ease-in;
-  text-transform:uppercase;
 }
 
 .transparent-button:hover, .transparent-button:active {
@@ -233,36 +247,86 @@ button:focus {
   color:#B0B0B0;
 }
 
-.circle img {
-  border-radius:50%;
+.pad {
+  padding:20px;
 }
 
-.inner {
-  padding:15px;
+.pad h3 {
+  margin-top:0;
 }
 
 .thin {
-  font-weight:200;
+  font-weight:200 !important;
 }
 
 .bold {
   font-weight:bold;
 }
 
+.uppercase {
+  text-transform:uppercase;
+}
+
 .center {
   text-align:center;
 }
 
+.dark-grey {
+  color:#464646 !important;
+}
+
 .grey {
-  background-color:#464646;
+  color:#686868 !important;
 }
 
 .light-grey {
+  color:#B0B0B0 !important;
+}
+
+.bg-dark-grey {
+  background-color:#464646;
+}
+
+.bg-light-grey {
   background-color:#F3F3F3;
 }
 
 .rounded {
-  border-radius:4px;
+  border-radius:6px;
+}
+
+.fade {
+  opacity:1;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+}
+
+.fade:hover {
+  opacity:0.7;
+  -webkit-transition:opacity 0.3s ease-in;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+}
+
+.colorsplash {
+  -webkit-filter:grayscale(100%);
+  filter:grayscale(100%);
+  -webkit-transition:all 0.4s ease-in;
+  -moz-transition:all 0.4s ease-in;
+  -o-transition:all 0.4s ease-in;
+  transition:all 0.4s ease-in;
+}
+
+.colorsplash:hover {
+  -webkit-filter:grayscale(0%);
+  filter:grayscale(0%);
+  -webkit-transition:all 0.4s ease-in;
+  -moz-transition:all 0.4s ease-in;
+  -o-transition:all 0.4s ease-in;
+  transition:all 0.4s ease-in;
 }
 
 
@@ -327,18 +391,6 @@ header {
   float:left;
   margin-left:10px;
   margin-top:2px;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
-}
-
-#logo:hover {
-  opacity:0.7;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
 }
 
 .hide-logo {
@@ -362,19 +414,10 @@ header {
 
 #countdown_contain .live a {
   color:white;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
 }
 
 #countdown_contain .live a:hover {
   text-decoration:none;
-  opacity:0.7;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
 }
 
 #countdown_contain .notlive {
@@ -385,18 +428,6 @@ header {
   float:right;
   font-size:28px;
   padding:5px;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
-}
-
-#nav-icon:hover {
-  opacity:0.7;
-  -webkit-transition:opacity 0.2s ease-in;
-  -moz-transition:opacity 0.2s ease-in;
-  -o-transition:opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
 }
 
 #nav-icon i {
@@ -510,15 +541,6 @@ header {
   text-decoration:none !important;
 }
 
-.gsc-search-button {
-  font-weight:normal !important;
-  background-color:#006f7c !important;
-}
-
-.gsc-search-button, input.gsc-search-button {
-  border:0 !important;
-}
-
 
 
 /* Covers */
@@ -552,18 +574,6 @@ header {
 
 .home-cover .cover-inner img {
   width:300px;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
-}
-
-.home-cover .cover-inner img:hover {
-  opacity:0.7;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
 }
 
 .home-cover .cover-inner h2 {
@@ -583,18 +593,7 @@ header {
   margin:0;
   font-size:70px;
   color:white;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
-}
-
-.page-cover .cover-inner h1:hover {
-  opacity:0.7;
-  -webkit-transition:opacity 0.3s ease-in;
-  -moz-transition:opacity 0.3s ease-in;
-  -o-transition:opacity 0.3s ease-in;
-  transition:opacity 0.3s ease-in;
+  display:inline-block;
 }
 
 .page-social {
@@ -619,19 +618,6 @@ header {
 
 
 /* Home */
-#who-we-are h1 {
-  color:white;
-}
-
-#who-we-are p {
-  font-size:18px;
-  color:white;
-}
-
-#times h3 {
-  color:#464646;
-}
-
 #times h3 i {
   margin-bottom:10px;
   position:relative;
@@ -667,33 +653,18 @@ header {
 #strategy .strategy {
   height:150px;
   background-attachment:scroll !important;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  -moz-transition:all 0.4s ease-in;
-	-webkit-transition:all 0.4s ease-in;
-	-ms-transition:all 0.4s ease-in;
-	-o-transition:all 0.4s ease-in;
 }
 
-#strategy .strategy:first-child {
+#strategy .strategy:nth-child(2){
   background-image:url("/_img/ministries.jpg");
 }
 
-#strategy .strategy:nth-child(2) {
-  background-image:url("/_img/gods-house.jpg");
+#strategy .strategy:nth-child(3) {
+  background-image:url("/_img/creativity.jpg");
 }
 
 #strategy .strategy:last-child {
   background-image:url("/_img/annualreport/closing.jpg");
-}
-
-#strategy .strategy:hover {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-  -moz-transition:all 0.4s ease-in;
-	-webkit-transition:all 0.4s ease-in;
-	-ms-transition:all 0.4s ease-in;
-	-o-transition:all 0.4s ease-in;
 }
 
 #strategy .strategy h3 {
@@ -704,91 +675,57 @@ header {
   background-image:url("/_img/liberty.jpeg");
 }
 
-#values .grid_6 {
+
+/* Values */
+#values .value {
   margin-top:40px;
   margin-bottom:40px;
 }
 
-#values .grid_6:first-child, #values .grid_6:nth-child(2) {
+#values .value:first-child, #values .value:nth-child(2) {
   margin-top:0;
 }
 
-#values .grid_6 img {
-  -moz-transition:all 0.4s ease-in;
-	-webkit-transition:all 0.4s ease-in;
-	-ms-transition:all 0.4s ease-in;
-	-o-transition:all 0.4s ease-in;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+
+/* Theology */
+#theology .theology {
+  padding:20px 0;
 }
 
-#values .grid_6:hover img {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
+#theology .theology h1 {
+  -moz-transition:color 0.4s ease-in-out;
+  -webkit-transition:color 0.4s ease-in-out;
+  -ms-transition:color 0.4s ease-in-out;
+  transition:color 0.4s ease-in-out;
 }
 
-#values h3 {
-  color:#989d00;
+#theology .theology:hover h1 {
+  color:#F3F3F3;
+  -moz-transition:color 0.4s ease-in-out;
+  -webkit-transition:color 0.4s ease-in-out;
+  -ms-transition:color 0.4s ease-in-out;
+  transition:color 0.4s ease-in-out;
 }
 
-.span-border {
-  border-bottom:4px solid #464646;
-  width:30px;
-  height:86px;
-  display:inline-block;
-  -moz-transition:width 0.7s ease-in-out;
-  -webkit-transition:width 0.7s ease-in-out;
-  -ms-transition:width 0.7s ease-in-out;
-  transition:width 0.7s ease-in-out;
-}
 
-.span-border:hover {
-  width:250px;
-}
-
-.span-border-2 {
-  border-bottom:4px solid #F3F3F3;
-  width:300px;
-  height:86px;
-  display:inline-block;
-}
-
-#theology .grid_12 {
-  margin-top:15px;
-  margin-bottom:15px;
-}
-
-#theology .grid_12:first-child {
-  margin-top:0;
-}
-
-#theology h1 {
-  display:inline-block;
-  width:400px;
-  color:#464646;
-}
-
-#theology p {
-  padding-top:10px;
-}
-
-.structure-level {
+/* Structure */
+.structure {
   margin-top:30px;
   margin-bottom:30px;
 }
 
-.structure-level:first-child, .structure-level:nth-child(2) {
+.structure:first-child, .structure-level:nth-child(2) {
   margin-top:0;
 }
 
-.structure-level h1 {
+.structure h1 {
   -moz-transition:color 0.2s ease-in-out;
   -webkit-transition:color 0.2s ease-in-out;
   -ms-transition:color 0.2s ease-in-out;
   transition:color 0.2s ease-in-out;
 }
 
-.structure-level:hover h1 {
+.structure:hover h1 {
   color:#006f7c;
   -moz-transition:color 0.2s ease-in-out;
   -webkit-transition:color 0.2s ease-in-out;
@@ -796,7 +733,7 @@ header {
   transition:color 0.2s ease-in-out;
 }
 
-.structure-level .flip {
+.structure .flip {
   -moz-transition:transform 0.4s ease-in-out;
   -webkit-transition:transform 0.4s ease-in-out;
   -ms-transition:transform 0.4s ease-in-out;
@@ -804,7 +741,7 @@ header {
 
 }
 
-.structure-level:hover .flip {
+.structure:hover .flip {
   -ms-transform:rotateY(360deg);
   -o-transform:rotateY(360deg);
   -webkit-transform:rotateY(360deg);
@@ -816,79 +753,18 @@ header {
   transition:transform 0.4s ease-in;
 }
 
+
+/* Team */
+#clark-team img {
+  border-radius:50%;
+}
+
 #nav_categories, #nav_categories ul {
   list-style-type:none;
+  margin:0;
 }
 
-#nav_categories > li:nth-child(2) {
-  margin-left:10px;
-}
-
-#nav_categories > li:nth-child(2) a {
-  color:#686868;
-  font-size:20px;
-}
-
-#team-nav ul {
-  background-color:#F3F3F3;
-  padding:10px;
-  border-left:5px solid #989d00;
-  list-style-type:none;
-}
-
-.team {
-  text-align:center !important;
-}
-
-#team-nav ul ul {
-  border:0;
-  list-style-type:none;
-}
-
-#team-nav ul li {
-  margin:20px 0;
-}
-
-#team-nav ul li a {
-  font-size:16px;
-  color:#B0B0B0;
-  padding:5px 0;
-  -o-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -webkit-transition: color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-  font-weight:bold;
-}
-
-#team-nav ul li a:hover {
-  text-decoration:none;
-}
-
-#team-nav ul li a i {
-  display:none;
-}
-
-#team-nav .active {
-  color:#686868;
-}
-
-#team-nav ul li:first-child a {
-  color:#686868;
-  -webkit-transition:color 0.2s ease-in;
-  -moz-transition:color 0.2s ease-in;
-  -o-transition:color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-}
-
-#team-nav ul li a:hover {
-  color:#686868;
-  -o-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -webkit-transition: color 0.2s ease-in;
-  transition:color 0.2s ease-in;
-}
-
-.page-team {
+#nav_categories ul li:nth-child(odd) {
   background-color:#F3F3F3;
 }
 
@@ -954,56 +830,17 @@ header {
   transition:color 0.2s ease-in;
 }
 
-.team-member-info h3 {
-  color:#989d00;
-}
 
-#pastor-clark {
-  margin-bottom:50px;
-}
-
-#demographic-pastors .team {
-  display:none;
-}
-
-.location {
-  padding:30px 0;
-}
-
-.location h2 {
-  color:#989d00;
-}
-
-#map-wrapper {
-  border-top:1px solid white;
-}
-
-#map {
-  height:350px;
-}
-
-#connect {
-  text-align:center;
-}
-
+/* Connect */
 #connect h3 {
   color:#464646;
 }
 
-#connect a {
-  font-weight:200;
-}
-
-#connect a i {
-  color:inherit;
-}
-
-#connect .grid_6 {
+#connect .connect-entry, #connect .connect-img  {
   height:350px;
 }
 
 .connect-entry h3 {
-  color:#464646;
   margin-top:50px;
 }
 
@@ -1025,19 +862,9 @@ header {
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:scroll;
-  text-align:center;
   background-size:cover;
-}
-
-.connect-img .button {
-  margin-top:150px;
-  color:white;
-  border-color:white;
-}
-
-.connect-img .button:hover {
-  background-color:white;
-  color:black;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
 }
 
 .connect-img-mobile {
@@ -1064,100 +891,10 @@ header {
   background-image: url("/_img/annualreport/letter.jpg");
 }
 
-.connect-img h3 {
-  text-transform:uppercase;
-  color:white;
-  margin-top:190px;
-  padding:10px;
-}
 
-#find-a-group, #start-a-group, #connect-your-group {
-  text-align:center;
-}
-
-#find-a-group {
-  background-image: url(/_img/rock.jpeg);
-}
-
-#find-a-group .button {
-  background-color:#2D2D2D;
-  border-color:#2D2D2D;
-  color:white;
-}
-
-#find-a-group h2, #start-a-group h2, #connect-your-group h2 {
-  font-weight:200;
-}
-
-#start-a-group .button {
-  background-color:#989d00;
-  border-color:#989d00;
-  color:white;
-}
-
-#groups-info {
-  text-align:center;
+/* Groups */
+#find-start-group {
   background-image:url("/_img/sailboat.jpeg");
-}
-
-#group-faqs-benefits h2 {
-  -o-transition: opacity 0.2s ease-in;
-  -moz-transition: opacity 0.2s ease-in;
-  -webkit-transition: opacity 0.2s ease-in;
-  transition:opacity 0.2s ease-in;
-  color:#B0B0B0;
-}
-
-#group-faqs-benefits h2:hover {
-  color:#D5D5D5;
-}
-
-#group-faqs-benefits .benefit-entry p, #group-faqs-benefits .faq-entry p {
-  display:none;
-  padding:1px 0;
-}
-
-#group-events {
-  text-align:center;
-}
-
-#group-events .group-event-entry {
-  height:400px;
-  background-color:white;
-  margin-top:13px;
-  margin-bottom:13px;
-  border-radius:6px;
-  overflow:hidden;
-}
-
-#group-events .group-event-entry p {
-  margin-top:30px;
-}
-
-#group-events .group-event-entry h4 {
-  color:#B0B0B0;
-  font-weight:normal;
-}
-
-#group-events .group-event-entry-title {
-  background-color:#2D2D2D;
-  padding:15px 0;
-  width:100%;
-  min-height:50px;
-}
-
-#group-events .group-event-entry-title h3 {
-  color:white;
-  font-weight:200;
-  margin:0;
-}
-
-#group-events .group-event-entry a {
-  color:#D5D5D5;
-}
-
-#groups-resources {
-  text-align:center;
 }
 
 .connections-entry {
@@ -1371,7 +1108,7 @@ footer p a {
 }
 
 footer button {
-  background-color:#006f7c;
+  background-color:#006f7c !important;
   margin-top:20px;
 }
 

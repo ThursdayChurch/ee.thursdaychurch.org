@@ -1,18 +1,20 @@
 {embed="_includes/header" title="JourneyChurch.tv : Our Team"}
 
-{!-- Embed Page does not work whenever dynamic url titles are needed. So just hardcoded instead --}
-<div id="page-cover" class="bg-img">
-  <h1>Team</h1>
+<div id="cover" class="page-cover bg-img">
+  <div class="cover-inner">
+    <h1 class="fade">Team</h1>
+  </div>
 </div>
 
 <style>
-  #page-cover {
-    background-image:url('/_img/bamboo.jpeg');
+  #cover {
+    background-image:url("/_img/bamboo.jpeg");
   }
 </style>
 
-<div class="container entry">
-  {if segment_3}
+{if segment_3}
+<div class="entry">
+  <div class="container">
     {exp:channel:entries channel="Team" url_title="{segment_3}"}
     <div class="team-member-info">
       <div class="grid_4">
@@ -31,73 +33,39 @@
       </div>
     </div>
     {/exp:channel:entries}
-  {if:else}
-    <div id="team-nav" class="grid_3">
-      <div id="staff">
-        {exp:channel:categories channel="Team" show="not 75"}
-          {if category_id == "73"}
-            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name} <i class="fa fa-chevron-down"></i></a><li>
-          {if:else}
-            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
-          {/if}
-        {/exp:channel:categories}
-      </div>
+  </div>
 
-      <div id="demographic-pastors">
-        {exp:channel:categories channel="Team" show="not 73"}
-          {if category_id == "75"}
-            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name} <i class="fa fa-chevron-down"></i></a><li>
-          {if:else}
-            <li><a class="team-anchor" id="team-{category_id}-anchor" href="#staff">{category_name}</a><li>
-          {/if}
-        {/exp:channel:categories}
-      </div>
-    </div>
-
-    <div class="grid_9">
-      {exp:channel:categories channel="Team"}
-        <div id="team-{category_id}" class="team">{embed="_component/team-embed" catid="{category_id}"}</div>
-
-        <script>
-          $(document).ready(function() {
-            $('.team-member').addClass('omega');
-            $('.team').css('display', 'none');
-
-            $('#team-73').css('display', 'block');
-
-            $('#team-{category_id}-anchor').click(function() {
-              $('.team').css('display', 'none');
-              $('.team-anchor').removeClass('active');
-              $('#team-{category_id}').fadeIn('fast');
-              $('#team-{category_id}-anchor').addClass('active');
-            });
-          });
-        </script>
-      {/exp:channel:categories}
-    </div>
-  {/if}
   <div class="clear"></div>
 </div>
+{if:else}
+  <div id="clark-team" class="entry">
+    <div class="container">
+      <div class="grid_4">
+        <img src="/_img/team/PastorClark.jpg"/>
+      </div>
 
-<div class="clear"></div>
+      <div class="grid_8">
+        <h2 class="dark-grey">Pastor Clark</h2>
+        <p>At 15, Clark Mitchell knew God was shaping his desire to lead and over the years the Holy Spirit developed his deep-seated passion for people. His zeal for leading the next generation motivated him to begin JourneyChurch.tv with his wife and 34 others in 2001...</p><br>
+        <a href="/pastorclark">About Pastor Clark <i class="fa fa-angle-right"></i></a>
+      </div>
+    </div>
 
-<script>
-  $(document).ready(function() {
-    var windowWidth = $(window).width();
+    <div class="clear"></div>
+  </div>
+  {exp:channel:categories channel="Team" show="73|81|82|82|77|79|76|78|80"}
+    {if category_id != 73}
+      <div id="team-{category_id}" class="entry team">
+        <div class="container">
+          <h1>{category_name}</h1>
+          {embed="_component/team-embed" catid="{category_id}"}
+          <div class="clear"></div>
+        </div>
 
-    {!-- Staff Nav --}
-    if (windowWidth <= 767) {
-      $('#staff').click(function() {
-        $('#demographic-pastors ul ul').slideUp('fast');
-        $('#staff ul ul').slideDown('fast');
-      });
-
-      $('#demographic-pastors').click(function() {
-        $('#staff ul ul').slideUp('fast');
-        $('#demographic-pastors ul ul').slideDown('fast');
-      });
-    }
-  });
-</script>
+        <div class="clear"></div>
+      </div>
+    {/if}
+  {/exp:channel:categories}
+{/if}
 
 {embed="_includes/footer"}
