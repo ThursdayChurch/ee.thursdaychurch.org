@@ -1,15 +1,10 @@
-.home-cover .cover-inner {
-  top:50px;
-}
-
-#home-locations img {
-  height:260px;
-}
-
+/* Theology */
 #theology h1 {
   font-size:34px;
 }
 
+
+/* Team */
 .team-member {
   height:425px;
 }
@@ -21,6 +16,7 @@
 .team-member-info .team-photo {
   height:260px;
 }
+
 
 .group-filler .button {
   margin-left:0 !important;

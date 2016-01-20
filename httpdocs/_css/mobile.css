@@ -1,3 +1,4 @@
+/* Global */
 h1 {
   font-size:2.3em;
 }
@@ -15,16 +16,18 @@ blockquote {
   padding-right:0;
 }
 
-.circle {
-  padding:0 !important;
-}
 
+/* Covers */
 #cover {
   height:350px !important;
 }
 
+#cover .cover-inner img {
+  width:150px;
+}
+
 .home-cover .cover-inner {
-  top:30px;
+  top:90px;
 }
 
 .home-cover .cover-inner h2 {
@@ -32,18 +35,12 @@ blockquote {
   font-size:20px;
 }
 
-#cover .cover-inner img {
-  width:40%;
-}
-
-.page-cover .cover-inner {
-
-}
-
 .page-cover .cover-inner h1 {
-  font-size:30px;
+  font-size:40px;
 }
 
+
+/* Home */
 #who-are-we {
   margin-bottom:50px;
 }
@@ -52,20 +49,17 @@ blockquote {
   margin-top:0;
 }
 
+
+/* Values */
 #values img {
   -webkit-filter:grayscale(0%) !important;
   filter:grayscale(0%) !important;
 }
 
-#nav_categories > li:first-child, #nav_categories > li:nth-child(2), #nav_categories > li:nth-child(3) {
-  margin-top:0;
-  margin-bottom:0;
-}
 
-#team-nav ul li a i {
-  display:block;
-  float:right;
-  margin-top:5px;
+/* Team */
+#nav_categories h1 {
+  text-align:center;
 }
 
 .team-member {
@@ -78,33 +72,30 @@ blockquote {
 
 .team-member-info .team-photo {
   height:416px;
+  margin-bottom:15px;
 }
 
-.connect-entry-right h1, .connect-entry-right p {
-  padding-left:0;
-  margin-top:0;
+.team-photo {
+  border-radius:50%;
 }
 
-.connect-entry-left h1, .connect-entry-left p {
-  padding-right:0;
-  margin-top:0;
+.team-member p {
+  font-size:16px;
 }
 
-#connect .grid_6 {
-  height:auto;
+
+/* Connect */
+.connect-entry {
+  height:auto !important;
+  margin-bottom:100px;
 }
 
-.connect-img, .connect-img-mobile {
-  height:250px !important;
-  margin:30px 0 50px 0;
+.connect-entry h3 {
+  margin-top:20px;
 }
 
-.connect-img h3 {
-  margin-top:100px;
-}
-
-#connect-connections .connect-img, #connect-devos .connect-img {
-  display:none !important;
+.connect-entry:last-child {
+  margin-bottom:0;
 }
 
 .connect-img-mobile {
@@ -112,50 +103,31 @@ blockquote {
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:black;
-  text-align:center;
 }
 
-#connect-small-groups .connect-img {
+.connect-img, .connect-img-mobile {
+  height:200px !important;
+  -moz-background-size:contain;
+  -webkit-background-size:contain;
+  background-size:contain;
+}
+
+#connect-small-groups .connect-img, #connect-classes .connect-img, #connect-interns .connect-img {
+  display:none;
+}
+
+#connect-small-groups .connect-img-mobile {
   background-image: url("/_img/annualreport/lifegroups.jpg");
 }
 
-#connect-connections .connect-img-mobile {
-  background-image: url("/_img/annualreport/serving.jpg");
-}
-
-#connect-classes .connect-img {
+#connect-classes .connect-img-mobile {
   background-image: url("/_img/annualreport/equip.jpg");
 }
 
-#connect-devos .connect-img-mobile {
-  background-image: url("/_img/annualreport/attendance.jpg");
-}
-
-#connect-interns .connect-img {
+#connect-interns .connect-img-mobile {
   background-image: url("/_img/annualreport/letter.jpg");
 }
 
-.connect-img-mobile h3 {
-  text-transform:uppercase;
-  color:black;
-  margin-top:100px;
-  padding:10px;
-  border:3px solid white;
-  background-color:white;
-}
-
-.connect-img-mobile .hvr-sweep-to-right:before {
-  background:white;
-}
-
-.connect-img-mobile .hvr-sweep-to-right:hover, .connect-img-mobile .hvr-sweep-to-right:focus, .connect-img-mobile .hvr-sweep-to-right:active {
-  color: black;
-}
 
 .group-filler {
   height:auto;
@@ -165,18 +137,6 @@ blockquote {
   -o-background-size: auto 100%;
   background-size: auto 100%;
   background-attachment:scroll;
-}
-
-#staff ul ul, #demographic-pastors ul ul {
-  display:none;
-}
-
-.team-photo {
-  border-radius:50%;
-}
-
-.team-member p {
-  font-size:16px;
 }
 
 #group-events .group-event-entry {
