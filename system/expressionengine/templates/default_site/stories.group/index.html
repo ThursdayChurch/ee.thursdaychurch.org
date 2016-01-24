@@ -26,106 +26,140 @@
 		<link rel='stylesheet' media='screen and (max-width: 767px)' href='/_css/stories/mobile.css' />
 		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
 
-		<link rel="stylesheet" type="text/css" href="/_css/jquery.fullPage.css" />
-
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script type="text/javascript" src="/_js/jquery.validate.js"></script>
-		<script type="text/javascript" src="/_js/jquery.fullPage.js"></script>
 	</head>
 	<body>
 		<header id="header">
-			<a href="/stories"><div id="logo"><img src="/_img/logo.png" width="50"/></div></a>
+			<a href="/stories"><div id="logo"></div></a>
 		</header>
 
 		<div class="clear"></div>
 
+		<nav>
+			<div id="scroll-up"><i class="fa fa-chevron-up"></i></div><br>
+			<div id="scroll-down"><i class="fa fa-chevron-down"></i></div>
+		</nav>
+
+		<div class="clear"></div>
+
 		<form id="stories-form" method="post" action="/_scripts/stories_submit.php">
-			<div id="fullpage">
-				<div id="cover-1" class="section">
-					<div class="inner">
-						<div class="container">
-							<div class="grid_12">
-								<h1>Stories</h1>
-								<h5>They Change Us</h5>
-							</div>
-						</div>
-
-						<div class="clear"></div>
-					</div>
-				</div>
-
-				<div id="cover-2" class="section">
-					<div class="inner">
-						<div class="container">
-							<div class="grid_12">
-								<h3>We want to hear <span>your</span> story</h3>
-							</div>
-						</div>
-
-						<div class="clear"></div>
-					</div>
-				</div>
-
-				<div id="cover-3" class="section">
-					<div class="inner">
-						<div class="container">
-							<div class="grid_12">
-								<label for="name">Tell us <span>your</span> name</label><br>
-								<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
-							</div>
+			<section id="cover">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<h1>Stories</h1>
+							<h5>They Change Us</h5>
 						</div>
 					</div>
 
 					<div class="clear"></div>
 				</div>
+			</section>
 
-				<div id="cover-4" class="section">
-					<div class="inner">
-						<div class="container">
-							<div class="grid_12">
-								<label for="find">What brought <span>you</span> to Journeychurch?</label><br>
-								<textarea name="find" rows="5" maxlength="400" required="required" form="stories-form"></textarea><br>
-							</div>
+			<section id="story-line">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<h3>We want to hear <span>your</span> story</h3>
 						</div>
 					</div>
 
 					<div class="clear"></div>
 				</div>
+			</section>
 
-				<div id="cover-5" class="section">
-					<div class="inner">
-						<div class="container">
-							<div class="grid_12">
-								<label for="story">Tell us <span>your</span> story</label><br>
-								<textarea name="story" rows="5" maxlength="800" required="required" form="stories-form"></textarea><br>
-							</div>
+			<section id="name">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="name">Tell us <span>your</span> name</label><br>
+							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
 						</div>
 					</div>
-
-					<div class="clear"></div>
 				</div>
 
-				<div id="cover-6" class="section">
-					<div class="inner">
-						<div class="container">
-							<div class="grid_12">
-								<label for="email">Our stories team wants to know <span>you</span></label><br>
-								<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
-								<br><button type="submit" name="submit" form="stories-form">Share My Story</button>
-							</div>
+				<div class="clear"></div>
+			</section>
+
+			<section id="visit">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="find">What brought <span>you</span> to Journeychurch?</label><br>
+							<textarea name="find" rows="5" maxlength="400" required="required" form="stories-form"></textarea><br>
 						</div>
 					</div>
-
-					<div class="clear"></div>
 				</div>
-			</div>
+
+				<div class="clear"></div>
+			</section>
+
+			<section id="your-story" class="section">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="story">Tell us <span>your</span> story</label><br>
+							<textarea name="story" rows="5" maxlength="800" required="required" form="stories-form"></textarea><br>
+						</div>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+			</section>
+
+			<section id="share">
+				<div class="inner">
+					<div class="container">
+						<div class="grid_12">
+							<label for="email">Our stories team wants to know <span>you</span></label><br>
+							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
+							<br><button type="submit" name="submit" form="stories-form">Share My Story</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+			</section>
 		</form>
 
 		<script>
 			$(document).ready(function() {
 				$('#stories-form').validate();
 
-		    $('#fullpage').fullpage();
+				var windowHeight = $(window).height();
+				var sections = $('section');
+				var numberOfSections = sections.length;
+				var tops = [];
+				var count = 0;
+
+				sections.height(windowHeight);
+
+				for (var i = 0; i < numberOfSections; ++i) {
+					var id = $('section:eq('+i+')').attr("id");
+					tops[i] = $('#'+id).offset().top;
+				}
+
+				$('#scroll-down').click(function() {
+					if (count < numberOfSections-1) {
+						count+=1;
+					}
+
+					$('body').animate({
+						scrollTop: tops[count]
+					}, 800);
+				});
+
+				$('#scroll-up').click(function() {
+					if (count > 0) {
+						count-=1;
+					}
+
+					$('body').animate({
+						scrollTop: tops[count]
+					}, 800);
+				});
+
 			});
 		</script>
 
