@@ -131,13 +131,28 @@
 				var sections = $('section');
 				var numberOfSections = sections.length;
 				var tops = [];
-				var count = 0;
 
 				sections.height(windowHeight);
 
 				for (var i = 0; i < numberOfSections; ++i) {
 					var id = $('section:eq('+i+')').attr("id");
 					tops[i] = $('#'+id).offset().top;
+				}
+
+				var scrollTop = $(document).scollTop();
+				count = getCount(scrollTop);
+
+				$(document).scroll(function() {
+					scrollTop = $(document).scollTop();
+					count = getCount(scrollTop);
+				});
+
+				var getCount = function(scrollTop) {
+					for (var i = 0; i < tops.length-1; ++i) {
+						if (scrollTop > tops[i] && scrollTop < tops[i+1]) {
+							return i;
+						}
+					}
 				}
 
 				$('#scroll-down').click(function() {
