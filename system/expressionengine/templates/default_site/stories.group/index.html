@@ -139,40 +139,45 @@
 					tops[i] = $('#'+id).offset().top;
 				}
 
-				var scrollTop = $(document).scollTop();
-				count = getCount(scrollTop);
-
-				$(document).scroll(function() {
-					scrollTop = $(document).scollTop();
-					count = getCount(scrollTop);
-				});
-
 				var getCount = function(scrollTop) {
 					for (var i = 0; i < tops.length-1; ++i) {
-						if (scrollTop > tops[i] && scrollTop < tops[i+1]) {
+						if (scrollTop >= tops[i] && scrollTop < tops[i+1]) {
 							return i;
 						}
 					}
-				}
+
+					return tops.length-1;
+				};
+
+				var scrollTop = $(document).scrollTop();
+				var count = getCount(scrollTop);
 
 				$('#scroll-down').click(function() {
+					scrollTop = $(document).scrollTop();
+					count = getCount(scrollTop);
+
 					if (count < numberOfSections-1) {
 						count+=1;
-					}
 
-					$('body').animate({
-						scrollTop: tops[count]
-					}, 800);
+						$('body').animate({
+							scrollTop: tops[count]
+						}, 800);
+					}
 				});
 
 				$('#scroll-up').click(function() {
-					if (count > 0) {
-						count-=1;
-					}
+					scrollTop = $(document).scrollTop();
+					count = getCount(scrollTop);
 
-					$('body').animate({
-						scrollTop: tops[count]
-					}, 800);
+					if (scrollTop > 0) {
+						if (scrollTop%windowHeight == 0) {
+							--count;
+						}
+
+						$('body').animate({
+							scrollTop: tops[count]
+						}, 800);
+					}
 				});
 
 			});
