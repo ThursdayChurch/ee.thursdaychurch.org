@@ -1,5 +1,44 @@
 {embed="_includes/footer-content"}
 
+		{!-- Chartbeat --}
+		<script type="text/javascript">
+			var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
+			(function(){
+			  function loadChartbeat() {
+			    window._sf_endpt=(new Date()).getTime();
+			    var e = document.createElement('script');
+			    e.setAttribute('language', 'javascript');
+			    e.setAttribute('type', 'text/javascript');
+			    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+			    document.body.appendChild(e);
+			  }
+			  var oldonload = window.onload;
+			  window.onload = (typeof window.onload != 'function') ?
+			     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+			})();
+		</script>
+
+
+		{!-- Google Analytics --}
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23134458-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+
+		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
+		<script src="/_js/jquery.sidr.min.js"></script>
+		<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
+
+		{!-- Swiping for mobile nav --}
+		<script src="//cdn.jsdelivr.net/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
+
 		<script>
 			$(document).ready(function() {
 
@@ -25,17 +64,17 @@
 
 
 				{!-- Nav Swipe --}
-		    $('header').swipe({
-		        //Single swipe handler for left swipes
-		        swipeLeft: function () {
-		            $.sidr('open', 'nav-wrapper');
-		        },
-		        swipeRight: function () {
-		            $.sidr('close', 'nav-wrapper');
-		        },
-		        //Default is 75px, set to 0 for demo so any distance triggers swipe
-		        threshold: 0
-		    });
+				$('header').swipe({
+						//Single swipe handler for left swipes
+						swipeLeft: function () {
+								$.sidr('open', 'nav-wrapper');
+						},
+						swipeRight: function () {
+								$.sidr('close', 'nav-wrapper');
+						},
+						//Default is 75px, set to 0 for demo so any distance triggers swipe
+						threshold: 0
+				});
 
 
 				{!-- Create Nav Items --}
@@ -87,45 +126,5 @@
 				});
 			});
 		</script>
-
-
-		{!-- Chartbeat --}
-		<script type="text/javascript">
-			var _sf_async_config={uid:49423,domain:"journeychurch.tv",useCanonical:true};
-			(function(){
-			  function loadChartbeat() {
-			    window._sf_endpt=(new Date()).getTime();
-			    var e = document.createElement('script');
-			    e.setAttribute('language', 'javascript');
-			    e.setAttribute('type', 'text/javascript');
-			    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-			    document.body.appendChild(e);
-			  }
-			  var oldonload = window.onload;
-			  window.onload = (typeof window.onload != 'function') ?
-			     loadChartbeat : function() { oldonload(); loadChartbeat(); };
-			})();
-		</script>
-
-
-		{!-- Google Analytics --}
-		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-23134458-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
-
-		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
-		<script src="/_js/jquery.sidr.min.js"></script>
-		<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
-
-		{!-- Swiping for mobile nav --}
-		<script src="//cdn.jsdelivr.net/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
 	</body>
 </html>
