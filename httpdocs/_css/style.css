@@ -436,6 +436,7 @@ header {
 
 #nav-info {
   font-size:24px;
+	display:none;
 }
 
 #nav-info ul {
@@ -505,10 +506,10 @@ header {
   padding-bottom:10px;
 }
 
-#nav-wrapper ul li ul li {
+#nav-wrapper ul ul li {
   display:block;
-  margin-top:17px;
-  margin-bottom:17px;
+  margin-top:22px;
+  margin-bottom:22px;
 }
 
 #nav-wrapper ul li ul li a:hover {
@@ -548,6 +549,7 @@ header {
 
 .home-cover {
   background-image: url(/_img/boxes-filler.jpg);
+	height:1000px;
 }
 
 .page-cover {

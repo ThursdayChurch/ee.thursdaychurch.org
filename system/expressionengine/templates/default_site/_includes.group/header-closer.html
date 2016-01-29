@@ -13,6 +13,8 @@
         <li><a href="http://youtube.com/journeychurchmedia"><i class="fa fa-youtube"></i></a></li>
 				<li><a href="#nav-wrapper"><div id="nav-exit"><i class="fa fa-times"></i></div></a></li>
       </ul>
+
+			<div class="clear"></div>
 		</div>
 
 		<div class="clear"></div>
@@ -87,15 +89,35 @@
 	<div id="header-filler"></div>
 
 
+	{!-- Sidr --}
+	<script>
+		$(document).ready(function() {
+			{!-- Nav --}
+			$('#show-nav').sidr({
+				name: 'nav-wrapper',
+				side: 'right'
+			});
+
+
+			{!-- Nav Exit --}
+			$('#nav-exit').click(function() {
+				$.sidr('close', 'nav-wrapper');
+			});
+
+			$('#nav-info').show();
+		});
+	</script>
+
+
 	{!-- Headroom.js to hide header --}
 	<script src="/_js/headroom.js"></script>
 	<script>
-		// grab an element
-		var myElement = document.querySelector("header");
-		// construct an instance of Headroom, passing the element
-		var headroom  = new Headroom(myElement);
-		// initialise
-		headroom.init();
+		$(document).ready(function() {
+			var myElement = document.querySelector("header");
+			var headroom  = new Headroom(myElement);
+
+			headroom.init();
+		});
 	</script>
 
 
