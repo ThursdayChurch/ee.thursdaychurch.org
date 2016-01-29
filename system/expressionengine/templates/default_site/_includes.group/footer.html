@@ -1,14 +1,8 @@
 {embed="_includes/footer-content"}
 
-		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
-		<script src="/_js/jquery.sidr.min.js"></script>
-		<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
-
-		{!-- Swiping for mobile nav --}
-		<script src="//cdn.jsdelivr.net/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
-
 		<script>
 			$(document).ready(function() {
+
 
 				{!-- Countdown fade in (delayed because it needs times to load) --}
 				setTimeout(
@@ -29,20 +23,6 @@
 				$('#nav-exit').click(function() {
 					$.sidr('close', 'nav-wrapper');
 				});
-
-
-				{!-- Nav Swipe --}
-		    {!--}$('header').swipe({
-		        //Single swipe handler for left swipes
-		        swipeLeft: function () {
-		            $.sidr('open', 'nav-wrapper');
-		        },
-		        swipeRight: function () {
-		            $.sidr('close', 'nav-wrapper');
-		        },
-		        //Default is 75px, set to 0 for demo so any distance triggers swipe
-		        threshold: 0
-		    });{--}
 
 
 				{!-- Create Nav Items --}
@@ -94,6 +74,11 @@
 				});
 			});
 		</script>
+
+
+		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
+		<script src="/_js/jquery.sidr.min.js"></script>
+		<link rel="stylesheet" href="/_css/jquery.sidr.dark.css">
 
 
 		{!-- Chartbeat --}

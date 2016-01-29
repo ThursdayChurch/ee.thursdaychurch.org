@@ -1,6 +1,9 @@
 </head>
 
 <body>
+
+
+	{!-- Nav --}
 	<nav id="nav-wrapper">
 		<div id="nav-info">
 			<ul>
@@ -60,6 +63,8 @@
 
 	<div class="clear"></div>
 
+
+	{!-- Header --}
 	<header>
 		<a href="/"><div id="logo" class="fade"><img src="/_img/logo-large.png" width="45"/></div></a>
 
@@ -81,8 +86,9 @@
 
 	<div id="header-filler"></div>
 
-	<script src="/_js/headroom.js"></script>
 
+	{!-- Headroom.js to hide header --}
+	<script src="/_js/headroom.js"></script>
 	<script>
 		// grab an element
 		var myElement = document.querySelector("header");
@@ -92,6 +98,18 @@
 		headroom.init();
 	</script>
 
+
+	{!-- Full Size Home Cover --}
+	<script>
+		$(document).ready(function() {
+			var windowHeight = $(window).height();
+
+			$('.home-cover').height(windowHeight+100);
+		});
+	</script>
+
+
+	{!-- Countdown --}
 	<script>
 		$(document).ready(function() {
 				$.ajax({
