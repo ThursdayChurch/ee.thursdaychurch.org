@@ -26,13 +26,13 @@
 
 
 				{!-- Nav Exit --}
-				{!--}$('#nav-exit').click(function() {
+				$('#nav-exit').click(function() {
 					$.sidr('close', 'nav-wrapper');
-				});{--}
+				});
 
 
 				{!-- Nav Swipe --}
-		    $('header').swipe({
+		    {!--}$('header').swipe({
 		        //Single swipe handler for left swipes
 		        swipeLeft: function () {
 		            $.sidr('open', 'nav-wrapper');
@@ -42,7 +42,7 @@
 		        },
 		        //Default is 75px, set to 0 for demo so any distance triggers swipe
 		        threshold: 0
-		    });
+		    });{--}
 
 
 				{!-- Create Nav Items --}
