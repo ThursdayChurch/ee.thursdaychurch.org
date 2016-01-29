@@ -551,7 +551,6 @@ header {
 }
 
 .home-cover {
-  height:800px;
   background-image: url(/_img/boxes-filler.jpg);
 }
 
@@ -569,7 +568,7 @@ header {
 }
 
 .home-cover .cover-inner {
-  top:150px;
+  top:20%;
 }
 
 .home-cover .cover-inner img {
@@ -586,7 +585,7 @@ header {
 }
 
 .page-cover .cover-inner {
-  top:125px;
+  top:35%;
 }
 
 .page-cover .cover-inner h1 {
