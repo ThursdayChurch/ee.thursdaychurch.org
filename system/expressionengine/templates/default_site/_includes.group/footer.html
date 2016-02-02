@@ -1,15 +1,42 @@
 {embed="_includes/footer-content"}
 
+		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
+		<script src="//cdn.jsdelivr.net/jquery.sidr/2.1.0/jquery.sidr.min.js"></script>
+
+		{!-- Headroom.js --}
+		<script src="/_js/headroom.js"></script>
+
 		<script>
 			$(document).ready(function() {
 
+				{!-- Countdown --}
+				$.ajax({
+					url: '/_component/countdown',
+					success: function(data) {
+						$("#countdown_contain").html(data);
+					}
+				});
 
-				{!-- Countdown fade in (delayed because it needs times to load) --}
 				setTimeout(
 					function() {
 							$( "#countdown_contain" ).fadeTo( "slow" , 1);
 					}
 				, 1500);
+				
+
+				{!-- Nav --}
+				$('#show-nav').sidr({
+					name: 'nav-wrapper',
+					side: 'right'
+				});
+
+
+				{!-- Nav Exit --}
+				$('#nav-exit').click(function() {
+					$.sidr('close', 'nav-wrapper');
+				});
+
+				$('#nav-info').show();
 
 
 				{!-- Create Nav Items --}
@@ -59,12 +86,14 @@
 						}
 					}
 				});
+
+				{!-- Header - headroom.js --}
+				var myElement = document.querySelector("header");
+				var headroom  = new Headroom(myElement);
+
+				headroom.init();
 			});
 		</script>
-
-
-		{!-- Sidr Nav Bar (http://www.berriart.com/sidr/)--}
-		<script src="//cdn.jsdelivr.net/jquery.sidr/2.1.0/jquery.sidr.min.js"></script>
 
 
 		{!-- Chartbeat --}

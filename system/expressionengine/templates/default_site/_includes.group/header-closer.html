@@ -89,56 +89,11 @@
 	<div id="header-filler"></div>
 
 
-	{!-- Sidr --}
-	<script>
-		$(document).ready(function() {
-			{!-- Nav --}
-			$('#show-nav').sidr({
-				name: 'nav-wrapper',
-				side: 'right'
-			});
-
-
-			{!-- Nav Exit --}
-			$('#nav-exit').click(function() {
-				$.sidr('close', 'nav-wrapper');
-			});
-
-			$('#nav-info').show();
-		});
-	</script>
-
-
-	{!-- Headroom.js to hide header --}
-	<script src="/_js/headroom.js"></script>
-	<script>
-		$(document).ready(function() {
-			var myElement = document.querySelector("header");
-			var headroom  = new Headroom(myElement);
-
-			headroom.init();
-		});
-	</script>
-
-
 	{!-- Full Size Home Cover --}
 	<script>
 		$(document).ready(function() {
 			var windowHeight = $(window).height();
 
 			$('.home-cover').height(windowHeight+100);
-		});
-	</script>
-
-
-	{!-- Countdown --}
-	<script>
-		$(document).ready(function() {
-				$.ajax({
-					url: '/_component/countdown',
-					success: function(data) {
-						$("#countdown_contain").html(data);
-					}
-				});
 		});
 	</script>
