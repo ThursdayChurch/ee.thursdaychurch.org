@@ -73,7 +73,7 @@
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
-							<label for="name">Tell us <span>your</span> name</label><br>
+							<label for="name">Tell us your name</label><br>
 							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
-							<label for="find">What brought <span>you</span> to Journeychurch?</label><br>
+							<label for="find">What brought you to Journeychurch?</label><br>
 							<textarea name="find" rows="5" maxlength="400" required="required" form="stories-form"></textarea><br>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
-							<label for="story">Tell us <span>your</span> story</label><br>
+							<label for="story">Tell us your story</label><br>
 							<textarea name="story" rows="5" maxlength="800" required="required" form="stories-form"></textarea><br>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
-							<label for="email">Our stories team wants to know <span>you</span></label><br>
+							<label for="email">Our stories team wants to know you</label><br>
 							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
 							<br><button type="submit" name="submit" form="stories-form">Share My Story</button>
 						</div>
@@ -159,7 +159,7 @@
 					if (count < numberOfSections-1) {
 						count+=1;
 
-						$('body').animate({
+						$('body').stop().animate({
 							scrollTop: tops[count]
 						}, 800);
 					}
@@ -174,7 +174,7 @@
 							--count;
 						}
 
-						$('body').animate({
+						$('body').stop().animate({
 							scrollTop: tops[count]
 						}, 800);
 					}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Stories Admin</title>
+
+		<!-- Fonts -->
+		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6186432/688704/css/fonts.css" />
+
+		<!-- Font Icons -->
+		<link rel="stylesheet" href="/_css/font-awesome.css" type='text/css'>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="/_css/stories/normalize.css">
+		<link rel="stylesheet" href="/_css/stories/base.css">
+		<link rel="stylesheet" href="/_css/stories/grid.css">
+		<link rel="stylesheet" href="/_css/stories/style.css">
+
+		<link rel='stylesheet' media='screen and (max-width: 995px)' href='/_css/stories/tablet.css' />
+		<link rel='stylesheet' media='screen and (max-width: 767px)' href='/_css/stories/mobile.css' />
+		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	</head>
+  <body>
+    <header>
+      <div id="admin-logo"></div>
+    </header>
+
+		{if logged_in}
+			<div id="admin-main">
+				<div class="container">
+					<ul>
+						<li>
+							<div class="row-title">
+								<div class="grid_2">
+									<h3>Name</h3>
+								</div>
+								<div class="grid_3">
+									<h3>How Did You Find Journey Church?</h3>
+								</div>
+								<div class="grid_4">
+									<h3>Story</h3>
+								</div>
+								<div class="grid_3">
+									<h3>Email</h3>
+								</div>
+							</div>
+						</li>
+
+						<?php
+							define('DB_NAME', 'stories');
+							define('DB_USER', 'storiesadmin');
+							define('DB_PASS', '64rR4t!s');
+							define('DB_HOST', 'localhost');
+
+							$con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+							if (!$con) {
+								die("Cannot connect to database" . mysql_error());
+							}
+
+							$result = mysqli_query($con,"SELECT * FROM stories");
+
+							while ($row = mysqli_fetch_assoc($result)) {
+								$name = $row['Name'];
+								$find = $row['Find'];
+								$email = $row['Email'];
+								$story = $row['Story'];
+						    echo "<li><div class='story-row'><div class='grid_2'>" . $name . "</div><div class='grid_3'>" . $find . "</div><div class='grid_4'>" . $story . "</div><div class='grid_3'><a href='mailto:'.$email>" . $email . "</a></div></div><div class='clear'></div></li>";
+							}
+
+							mysqli_close($con);
+						?>
+					</ul>
+				</div>
+			</div>
+		{/if}
+
+    {if logged_out}
+      <div id="admin-login">
+				<div class="container">
+					<div class="grid_12">
+						<h1>Please Login as a Stories Admin</h1>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+    {/if}
+  </body>
+</html>
