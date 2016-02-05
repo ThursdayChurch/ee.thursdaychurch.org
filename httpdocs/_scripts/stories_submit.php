@@ -67,9 +67,7 @@
         $story = $_POST['story'];
         $email = $_POST['email'];
 
-	      if(!mysqli_query($sql, "INSERT INTO stories (Name, Find, Story, Email) VALUES ('$name', '$find', '$story', '$email')")) {
-	        die("Error " . mysqli_error());
-	      }
+	      mysqli_query($sql, "INSERT INTO stories (Name, Find, Story, Email) VALUES ('$name', '$find', '$story', '$email')");
       }
 
 			mysqli_close($con);
