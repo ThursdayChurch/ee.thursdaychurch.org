@@ -42,7 +42,7 @@
 			<div class="inner">
 				<div class="container">
 					<div class="grid_12">
-						<h1>Thank You For Sharing <span>Your</span> Story</h1>
+						<h1>Thank You For Sharing Your Story</h1>
 					</div>
 				</div>
 			</div>
@@ -56,14 +56,9 @@
       define('DB_PASS', '64rR4t!s');
       define('DB_HOST', 'localhost');
 
-      $con = mysql_connect(DB_HOST, DB_USER, DB_PASS);
+      $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
       if (!$con) {
-        die("Cannot connect to database" . mysql_error());
-      }
-
-      $db = mysql_select_db(DB_NAME, $con);
-      if (!$db) {
-        die("Cannot use " . DB_NAME . " " . mysql_error());
+        die("Cannot connect to database" . mysqli_error());
       }
 
       if(isset($_POST['submit'])) {
@@ -74,12 +69,12 @@
 
 				$sql = "INSERT INTO stories (Name, Find, Story, Email) VALUES ('$name', '$find', '$story', '$email')";
 
-	      if(!mysql_query($sql)) {
-	        die("Error " . mysql_error());
+	      if(!mysqli_query($sql)) {
+	        die("Error " . mysqli_error());
 	      }
       }
 
-			mysql_close($con);
+			mysqli_close($con);
     ?>
 		<script>
 			$(document).ready(function() {

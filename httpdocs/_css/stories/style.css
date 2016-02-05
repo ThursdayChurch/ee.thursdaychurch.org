@@ -243,3 +243,63 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   font-weight:bold;
   text-transform:uppercase;
 }
+
+/* Stories Admin */
+#admin-main {
+  color:#686868;
+  font-size:14px;
+}
+
+.story-row {
+  padding:70px 0;
+  border-bottom:1px solid #F3F3F3;
+  -webkit-transition: 0.3s ease-in background-color;
+  -moz-transition: 0.3s ease-in background-color;
+  -o-transition: 0.3s ease-in background-color;
+  transition: 0.3s ease-in background-color;
+}
+
+.story-row:hover {
+  background-color:#F3F3F3;
+  -webkit-transition: 0.3s ease-in background-color;
+  -moz-transition: 0.3s ease-in background-color;
+  -o-transition: 0.3s ease-in background-color;
+  transition: 0.3s ease-in background-color;
+}
+
+.story-row .grid_3, .story-row .grid_2, .story-row .grid_4 {
+  min-height:10px;
+}
+
+.row-title {
+  padding:70px 0;
+  border-bottom:1px solid #F3F3F3;
+}
+
+#admin-main ul {
+  margin:0;
+  padding:0;
+}
+
+#admin-main ul li {
+  list-style-type:none;
+}
+
+#admin-main ul li a {
+  color:#006f7c;
+  font-weight:bold;
+}
+
+#admin-main h3 {
+  margin-top:0;
+}
+
+#admin-login {
+  text-align:center;
+  position:relative;
+  top:200px;
+}
+
+#admin-login h1 {
+  color:#B0B0B0;
+}
