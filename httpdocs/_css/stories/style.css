@@ -288,6 +288,19 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 #admin-main ul li a {
   color:#006f7c;
   font-weight:bold;
+  word-wrap: break-word;
+  -webkit-transition: 0.3s ease-in opacity;
+  -moz-transition: 0.3s ease-in opacity;
+  -o-transition: 0.3s ease-in opacity;
+  transition: 0.3s ease-in opacity;
+}
+
+#admin-main ul li a:hover {
+  opacity:0.8;
+  -webkit-transition: 0.3s ease-in opacity;
+  -moz-transition: 0.3s ease-in opacity;
+  -o-transition: 0.3s ease-in opacity;
+  transition: 0.3s ease-in opacity;
 }
 
 #admin-main h3 {
