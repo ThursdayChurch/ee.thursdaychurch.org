@@ -30,3 +30,7 @@ input, textarea {
 button {
   font-size:20px;
 }
+
+.story-row .grid_3, .story-row .grid_2, .story-row .grid_4 {
+  margin:15px 0;
+}
