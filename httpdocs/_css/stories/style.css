@@ -144,15 +144,6 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   top:30%;
 }
 
-#cover {
-  background: url(/_img/sailboat.jpeg) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:black;
-}
-
 #cover .inner h5 {
   font-weight:200;
   margin-top:-70px;
@@ -171,15 +162,6 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   text-transform:uppercase;
 }
 
-#name {
-  background: url(/_img/typewriter.jpeg) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:black;
-}
-
 #name-error {
   display:block;
   margin-top:-20px;
@@ -194,27 +176,9 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   margin-top:-40px;
 }
 
-#your-story {
-  background: url(/_img/the_ledge.jpeg) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:black;
-}
-
 #story-error {
   display:block;
   margin-top:-40px;
-}
-
-#share {
-  background: url(/_img/rock.jpeg) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:black;
 }
 
 #email-error {

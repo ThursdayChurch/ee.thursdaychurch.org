@@ -28,6 +28,7 @@
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script type="text/javascript" src="/_js/jquery.validate.js"></script>
+		<script src="/_js/parallax.min.js"></script>
 	</head>
 	<body>
 		<header id="header">
@@ -179,6 +180,11 @@
 						}, 800);
 					}
 				});
+
+				$('#cover').parallax({imageSrc: '/_img/sailboat.jpeg'});
+				$('#name').parallax({imageSrc: '/_img/typewriter.jpeg'});
+				$('#your-story').parallax({imageSrc: '/_img/the_ledge.jpeg'});
+				$('#share').parallax({imageSrc: '/_img/rock.jpeg'});
 
 			});
 		</script>
