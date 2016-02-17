@@ -24,63 +24,96 @@
 		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	</head>
-  <body>
-    <header>
-      <div id="admin-logo"></div>
-    </header>
-
+  <body id="admin">
 		{if logged_in}
+	    <header>
+	      <div id="admin-logo"></div>
+				<button id="save">Save</button>
+
+				<div class="clear"></div>
+	    </header>
+
+			<div id="admin-header-filler"></div>
+
 			<div id="admin-main">
 				<div class="container">
-					<ul>
-						<li>
-							<div class="row-title">
-								<div class="grid_2">
-									<h3>Name</h3>
-								</div>
-								<div class="grid_3">
-									<h3>How Did You Find Journey Church?</h3>
-								</div>
-								<div class="grid_4">
-									<h3>Story</h3>
-								</div>
-								<div class="grid_3">
-									<h3>Email</h3>
-								</div>
-								<div class="clear"></div>
-							</div>
-						</li>
-
+					<ul id="stories-feed">
 						<?php
-							define('DB_NAME', 'stories');
-							define('DB_USER', 'storiesadmin');
-							define('DB_PASS', '64rR4t!s');
-							define('DB_HOST', 'localhost');
-
-							$con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-							if (!$con) {
-								die("Cannot connect to database" . mysql_error());
-							}
+							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
 
 							$result = mysqli_query($con, "SELECT * FROM stories");
 
 							while ($row = mysqli_fetch_assoc($result)) {
+								$id = $row['ID'];
 								$name = $row['Name'];
 								$find = $row['Find'];
 								$email = $row['Email'];
 								$story = $row['Story'];
-						    echo "<li><div class='story-row'><div class='grid_2'>" . $name . "</div><div class='grid_3'>" . $find . "</div><div class='grid_4'>" . $story . "</div><div class='grid_3'><a href='mailto:'.$email>" . $email . "</a></div><div class='clear'></div></div></li>";
+
+								$timestamp = $row['Date'];
+								$date = date('M j Y', strtotime($timestamp));
+
+						    echo "
+								<li id='story-$id'>
+									<div class='story-row-header'>
+										<div class='story-row-date'>" . $date . "</div>
+										<div class='story-row-handle'><i class='fa fa-bars'></i></div>
+										<div class='story-row-remove'><i class='fa fa-trash-o'></i></div>
+
+										<div class='clear'></div>
+									</div>
+
+									<div class='story-row'>
+										<div class='grid_2'>
+											<div class='pad'>" . $name . "</div>
+										</div>
+
+										<div class='grid_3'>
+											<div class='pad'>" . $find . "</div>
+										</div>
+
+										<div class='grid_4'>
+											<div class='pad'>" . $story . "</div>
+										</div>
+
+										<div class='grid_3'>
+											<div class='pad'>
+												<a href='mailto:'.$email>" . $email . "</a>
+											</div>
+										</div>
+
+										<div class='clear'></div>
+									</div>
+								</li>";
 							}
 
 							mysqli_close($con);
 						?>
 					</ul>
 				</div>
-			</div>
-		{/if}
 
-    {if logged_out}
+				<div class='clear'></div>
+			</div>
+
+			<script>
+				$(document).ready(function () {
+					$('#stories-feed').sortable({
+						containment: 'parent',
+						tolerance: 'pointer',
+						cursor: 'pointer',
+						handle: '.story-row-handle',
+						revert: true
+					});
+
+					$('#save').click(function() {
+						var ids = $('#stories-feed').sortable('toArray');
+					});
+
+				});
+			</script>
+		{if:elseif logged_out}
       <div id="admin-login">
 				<div class="container">
 					<div class="grid_12">

@@ -22,13 +22,25 @@ input, textarea {
   border:none;
   padding:15px 15px;
   font-size:30px;
-  color:#686868;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  color:#B0B0B0;
+  -moz-transition: 0.3s ease-in color;
+  -o-transition: 0.3s ease-in color;
+  -webkit-transition: 0.3s ease-in color;
+  transition: 0.3s ease-in color;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+input:hover, textarea:hover {
+  color:#686868;
+  -moz-transition: 0.3s ease-in color;
+  -o-transition: 0.3s ease-in color;
+  -webkit-transition: 0.3s ease-in color;
+  transition: 0.3s ease-in color;
 }
 
 textarea {
@@ -85,7 +97,9 @@ button {
   background-color:transparent;
   padding:11px 16px;
   color:white;
-  border-radius:4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   font-size:25px;
   font-weight:bold;
   display:inline-block;
@@ -209,35 +223,119 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 }
 
 /* Stories Admin */
+#admin {
+  background-color:#F3F3F3;
+}
+
+#admin header {
+  padding:10px 0;
+  background-color:rgba(70, 70, 70, 0.97);
+}
+
+#admin-header-filler {
+  height:48px;
+  width:100%;
+}
+
+#admin-logo {
+  float:left;
+}
+
+#save {
+  float:right;
+  font-size:16px;
+  padding:5px 20px;
+  background-color:#006f7c;
+  border:0;
+  border-radius:0;
+  margin-right:20px;
+  font-weight:normal;
+}
+
+#save:hover {
+  color:#464646;
+  background-color:white;
+}
+
 #admin-main {
   color:#686868;
   font-size:14px;
 }
 
-.story-row {
-  padding:70px 0;
-  border-bottom:1px solid #F3F3F3;
-  -webkit-transition: 0.3s ease-in background-color;
-  -moz-transition: 0.3s ease-in background-color;
-  -o-transition: 0.3s ease-in background-color;
-  transition: 0.3s ease-in background-color;
+#story-row-title {
+  padding:10px 0;
+  background-color:rgba(70, 70, 70, 0.97);
+  position:fixed;
+  width:100%;
+  z-index:100000;
 }
 
-.story-row:hover {
-  background-color:#F3F3F3;
-  -webkit-transition: 0.3s ease-in background-color;
-  -moz-transition: 0.3s ease-in background-color;
-  -o-transition: 0.3s ease-in background-color;
-  transition: 0.3s ease-in background-color;
+#story-row-title h3 {
+  font-size:14px;
+  color:white;
+  margin:0;
+  font-weight:normal;
+}
+
+#story-row-title-filler {
+  height:58px;
+}
+
+.story-row {
+  padding:60px 0;
+  background-color:white;
+  word-wrap: break-word;
 }
 
 .story-row .grid_3, .story-row .grid_2, .story-row .grid_4 {
   min-height:10px;
 }
 
-.row-title {
-  padding:70px 0;
-  border-bottom:1px solid #F3F3F3;
+.story-row-header {
+  background-color:#e9e9e9;
+}
+
+.story-row-header i {
+  color:#464646;
+  -webkit-transition: 0.3s ease-in color;
+  -moz-transition: 0.3s ease-in color;
+  -o-transition: 0.3s ease-in color;
+  transition: 0.3s ease-in color;
+  font-size:24px;
+  cursor:pointer;
+  padding:5px;
+}
+
+.story-row-header i:first-child {
+  margin:1px 5px 0px 5px;
+}
+
+.story-row-header i:hover {
+  color:#B0B0B0;
+  -webkit-transition: 0.3s ease-in color;
+  -moz-transition: 0.3s ease-in color;
+  -o-transition: 0.3s ease-in color;
+  transition: 0.3s ease-in color;
+}
+
+.story-row-date {
+  float:left;
+  padding:10px;
+  background-color:#464646;
+  color:white;
+  font-size:12px;
+}
+
+.story-row-handle {
+    float:right;
+}
+
+.story-row-remove {
+    float:right;
+}
+
+.pad {
+  padding:5px;
 }
 
 #admin-main ul {
@@ -247,12 +345,21 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 
 #admin-main ul li {
   list-style-type:none;
+  margin-top:40px;
+  -webkit-box-shadow: 0px 1px 5px -2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 1px 5px -2px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 5px -2px rgba(0,0,0,0.3);
+  border-radius:5px;
+  display:inline-block;
+}
+
+#admin-main ul li:last-child {
+  margin-bottom:40px;
 }
 
 #admin-main ul li a {
   color:#006f7c;
   font-weight:bold;
-  word-wrap: break-word;
   -webkit-transition: 0.3s ease-in opacity;
   -moz-transition: 0.3s ease-in opacity;
   -o-transition: 0.3s ease-in opacity;
@@ -260,7 +367,7 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 }
 
 #admin-main ul li a:hover {
-  opacity:0.8;
+  opacity:0.7;
   -webkit-transition: 0.3s ease-in opacity;
   -moz-transition: 0.3s ease-in opacity;
   -o-transition: 0.3s ease-in opacity;
