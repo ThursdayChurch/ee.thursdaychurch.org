@@ -43,7 +43,7 @@
 						<?php
 							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
 
-							$result = mysqli_query($con, "SELECT * FROM stories ORDER BY 'Sorting Index'");
+							$result = mysqli_query($con, "SELECT * FROM stories ORDER BY SortingIndex");
 
 							while ($row = mysqli_fetch_assoc($result)) {
 								$id = $row['ID'];
