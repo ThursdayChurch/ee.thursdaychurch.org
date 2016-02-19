@@ -43,7 +43,7 @@
 						<?php
 							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
 
-							$result = mysqli_query($con, "SELECT * FROM stories");
+							$result = mysqli_query($con, "SELECT * FROM stories ORDER BY 'Sorting Index'");
 
 							while ($row = mysqli_fetch_assoc($result)) {
 								$id = $row['ID'];
@@ -109,10 +109,24 @@
 
 					$('#save').click(function() {
 						var ids = $('#stories-feed').sortable('toArray');
-					});
 
+						for(var i = 0; i < ids.length; ++i) {
+							ids[i] = ids[i].substring(6, ids[i].length);
+						}
+
+						$.ajax({
+							type: 'POST',
+							url: '/_scripts/stories_admin_update.php',
+							data: {
+								id : ids
+							},
+							success: function(data) {
+								alert(data);
+							}
+						});
+					});
 				});
-			</script>
+				</script>
 		{if:elseif logged_out}
       <div id="admin-login">
 				<div class="container">

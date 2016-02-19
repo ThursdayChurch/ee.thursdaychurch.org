@@ -1,5 +1,5 @@
-input {
-  width:100%;
+input, textarea {
+  width:auto;
 }
 
 label {
