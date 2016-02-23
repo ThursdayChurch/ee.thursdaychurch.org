@@ -43,7 +43,7 @@
 						<?php
 							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
 
-							$result = mysqli_query($con, "SELECT * FROM stories ORDER BY SortingIndex");
+							$result = mysqli_query($con, "SELECT * FROM stories WHERE Removed = 0 ORDER BY SortingIndex");
 
 							while ($row = mysqli_fetch_assoc($result)) {
 								$id = $row['ID'];
@@ -86,7 +86,16 @@
 
 										<div class='clear'></div>
 									</div>
-								</li>";
+								</li>
+
+								<script>
+									$('#story-$id .story-row-remove').click(
+										function() {
+											$('#story-$id ').toggleClass('remove');
+											$('#story-$id .story-row-remove i').toggleClass('fa-times fa-trash-o');
+										}
+									);
+								</script>";
 							}
 
 							mysqli_close($con);
@@ -109,8 +118,16 @@
 
 					$('#save').click(function() {
 						var ids = $('#stories-feed').sortable('toArray');
+						var removeList = [];
 
 						for(var i = 0; i < ids.length; ++i) {
+							if ($('#' + ids[i]).hasClass("remove")) {
+								removeList[i] = 1;
+							}
+							else {
+								removeList[i] = 0;
+							}
+
 							ids[i] = ids[i].substring(6, ids[i].length);
 						}
 
@@ -118,10 +135,12 @@
 							type: 'POST',
 							url: '/_scripts/stories_admin_update.php',
 							data: {
-								id : ids
+								id : ids,
+								remove : removeList
 							},
 							success: function(data) {
 								alert(data);
+								window.location.reload();
 							}
 						});
 					});

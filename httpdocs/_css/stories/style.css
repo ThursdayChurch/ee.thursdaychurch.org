@@ -230,6 +230,7 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 #admin header {
   padding:10px 0;
   background-color:rgba(70, 70, 70, 0.97);
+  z-index:10000;
 }
 
 #admin-header-filler {
@@ -260,25 +261,6 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 #admin-main {
   color:#686868;
   font-size:14px;
-}
-
-#story-row-title {
-  padding:10px 0;
-  background-color:rgba(70, 70, 70, 0.97);
-  position:fixed;
-  width:100%;
-  z-index:100000;
-}
-
-#story-row-title h3 {
-  font-size:14px;
-  color:white;
-  margin:0;
-  font-weight:normal;
-}
-
-#story-row-title-filler {
-  height:58px;
 }
 
 .story-row {
@@ -338,6 +320,14 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   padding:5px;
 }
 
+.remove {
+  opacity:0.5;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  -webkit-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
+}
+
 #admin-main ul {
   margin:0;
   padding:0;
@@ -351,6 +341,10 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   box-shadow: 0px 1px 5px -2px rgba(0,0,0,0.3);
   border-radius:5px;
   display:inline-block;
+  -moz-transition:opacity 0.3s ease-in;
+  -o-transition:opacity 0.3s ease-in;
+  -webkit-transition:opacity 0.3s ease-in;
+  transition:opacity 0.3s ease-in;
 }
 
 #admin-main ul li:last-child {
