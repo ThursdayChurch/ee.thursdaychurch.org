@@ -308,6 +308,16 @@ nav #scroll-up:hover, nav #scroll-down:hover {
   font-size:12px;
 }
 
+.story-row-new {
+  float:left;
+  padding:10px;
+  background-color:#006f7c;
+  color:white;
+  font-size:12px;
+  display:none;
+  text-transform:uppercase;
+}
+
 .story-row-handle {
     float:right;
 }
@@ -380,4 +390,6 @@ nav #scroll-up:hover, nav #scroll-down:hover {
 
 #admin-login h1 {
   color:#B0B0B0;
+  text-transform:uppercase;
+  font-weight:200;
 }

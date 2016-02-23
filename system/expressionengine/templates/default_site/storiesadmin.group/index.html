@@ -52,6 +52,8 @@
 								$email = $row['Email'];
 								$story = $row['Story'];
 
+								$sortingIndex = $row['SortingIndex'];
+
 								$timestamp = $row['Date'];
 								$date = date('M j Y', strtotime($timestamp));
 
@@ -59,6 +61,7 @@
 								<li id='story-$id'>
 									<div class='story-row-header'>
 										<div class='story-row-date'>" . $date . "</div>
+										<div class='story-row-new'>New</div>
 										<div class='story-row-handle'><i class='fa fa-bars'></i></div>
 										<div class='story-row-remove'><i class='fa fa-trash-o'></i></div>
 
@@ -96,6 +99,14 @@
 										}
 									);
 								</script>";
+
+								if ($sortingIndex == -1) {
+									echo "
+									<script>
+										$('#story-$id .story-row-new').show();
+									</script>
+									";
+								}
 							}
 
 							mysqli_close($con);
