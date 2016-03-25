@@ -52,9 +52,9 @@
 							<h1>Stories</h1>
 							<h5>They Change Us</h5>
 						</div>
-					</div>
 
-					<div class="clear"></div>
+						<div class="clear"></div>
+					</div>
 				</div>
 			</section>
 
@@ -64,9 +64,9 @@
 						<div class="grid_12">
 							<h3>We want to hear <span>your</span> story</h3>
 						</div>
-					</div>
 
-					<div class="clear"></div>
+						<div class="clear"></div>
+					</div>
 				</div>
 			</section>
 
@@ -77,6 +77,8 @@
 							<label for="name">Tell us your name</label><br>
 							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
 						</div>
+
+						<div class="clear"></div>
 					</div>
 				</div>
 
@@ -90,6 +92,8 @@
 							<label for="find">What brought you to Journeychurch?</label><br>
 							<textarea name="find" rows="5" maxlength="400" required="required" form="stories-form"></textarea><br>
 						</div>
+
+						<div class="clear"></div>
 					</div>
 				</div>
 
@@ -103,6 +107,8 @@
 							<label for="story">Tell us your story</label><br>
 							<textarea name="story" rows="5" maxlength="800" required="required" form="stories-form"></textarea><br>
 						</div>
+
+						<div class="clear"></div>
 					</div>
 				</div>
 
@@ -113,14 +119,14 @@
 				<div class="inner">
 					<div class="container">
 						<div class="grid_12">
-							<label for="email">Our stories team wants to know you</label><br>
+							<label for="email">Our stories team wants to meet you</label><br>
 							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
 							<br><button type="submit" name="submit" form="stories-form">Share My Story</button>
 						</div>
+
+						<div class="clear"></div>
 					</div>
 				</div>
-
-				<div class="clear"></div>
 			</section>
 		</form>
 
@@ -198,7 +204,7 @@
 
 						$.ajax({
 							type: 'POST',
-							url: '/_scripts/stories_submit.php',
+							url: '/_scripts/stories/stories_submit.php',
 							data: {
 								values : valuesArray
 							},

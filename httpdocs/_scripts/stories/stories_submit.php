@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories/stories_connect.php');
 
 	$values = $_POST['values'];
 
