@@ -3,7 +3,7 @@
     $ids = $_POST['id'];
     $removeList = $_POST['remove'];
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories/stories_connect.php');
 
     $result = mysqli_query($con, "SELECT ID, SortingIndex FROM stories ORDER BY SortingIndex");
 

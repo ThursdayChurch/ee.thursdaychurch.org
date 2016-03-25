@@ -31,16 +31,16 @@
 	    <header>
 				<div class="container">
 					<div class="grid_2">
-			      <a href="/storiesadmin"><div id="admin-logo"><i class="fa fa-home"></i></div></a>
+			      <a href="/stories/admin"><div id="admin-logo"><i class="fa fa-home"></i></div></a>
 					</div>
 					<div class="grid_10 omega">
 						<nav id="admin-nav">
 							<ul>
-								<li><a href="/storiesadmin/marriage">Marriage</a></li>
-								<li><a href="/storiesadmin/faith">Faith</a></li>
-								<li><a href="/storiesadmin/healing">Healing</a></li>
-								<li><a href="/storiesadmin/mercy">Mercy</a></li>
-								<li><a href="/storiesadmin/bacon">Bacon</a></li>
+								<li><a href="/stories/admin/marriage">Marriage</a></li>
+								<li><a href="/stories/admin/faith">Faith</a></li>
+								<li><a href="/stories/admin/healing">Healing</a></li>
+								<li><a href="/stories/admin/mercy">Mercy</a></li>
+								<li><a href="/stories/admin/bacon">Bacon</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -57,7 +57,7 @@
 						{if segment_3 != ""}
 						{if:else}
 						<?php
-							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
+							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories/stories_connect.php');
 
 							$result = mysqli_query($con, "SELECT * FROM stories WHERE Removed = 0 ORDER BY SortingIndex");
 
@@ -199,7 +199,7 @@
 
 						$.ajax({
 							type: 'POST',
-							url: '/_scripts/stories_admin_update.php',
+							url: '/_scripts/stories/stories_admin_update.php',
 							data: {
 								id : ids,
 								remove : removeList
@@ -212,6 +212,7 @@
 					});
 				});
 				</script>
+				{if segment_3 == ""}<button id="save">Save</button>{/if}
 		{if:elseif logged_out}
       <div id="admin-login">
 				<div class="container">
@@ -223,6 +224,5 @@
 				</div>
 			</div>
     {/if}
-		{if segment_3 == ""}<button id="save">Save</button>{/if}
   </body>
 </html>
