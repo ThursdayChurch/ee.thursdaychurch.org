@@ -54,7 +54,7 @@
 			<div id="admin-main">
 				<div class="container">
 					<ul id="stories-feed">
-						{if segment_2 != ""}
+						{if segment_3 != ""}
 						{if:else}
 						<?php
 							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories_connect.php');
@@ -223,6 +223,6 @@
 				</div>
 			</div>
     {/if}
-		{if segment_2 == ""}<button id="save">Save</button>{/if}
+		{if segment_3 == ""}<button id="save">Save</button>{/if}
   </body>
 </html>
