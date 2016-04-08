@@ -7,220 +7,147 @@
 
 		<title>Stories Admin</title>
 
-		<!-- Fonts -->
+		{!-- Stylesheets --}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="/_css/stories/admin.css" type='text/css'>
+
+		{!-- Fonts --}
 		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6186432/688704/css/fonts.css" />
 
-		<!-- Font Icons -->
+		{!-- Font Icons --}
 		<link rel="stylesheet" href="/_css/font-awesome.css" type='text/css'>
 
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="/_css/stories/normalize.css">
-		<link rel="stylesheet" href="/_css/stories/base.css">
-		<link rel="stylesheet" href="/_css/stories/grid.css">
-		<link rel="stylesheet" href="/_css/stories/style.css">
-
-		<link rel='stylesheet' media='screen and (max-width: 995px)' href='/_css/stories/tablet.css' />
-		<link rel='stylesheet' media='screen and (max-width: 767px)' href='/_css/stories/mobile.css' />
-		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
-
+		{!-- JQuery --}
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+		{!-- Latest compiled and minified JavaScript --}
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	</head>
   <body id="admin">
 		{if logged_in}
-	    <header>
-				<div class="container">
-					<div class="grid_2">
-			      <a href="/stories/admin"><div id="admin-logo"><i class="fa fa-home"></i></div></a>
+			<header id="admin-header">
+				<div class="container-fluid">
+					<div class="col-sm-12">
+						<button id="save" class="btn btn-default">Save</button>
 					</div>
-					<div class="grid_10 omega">
-						<nav id="admin-nav">
-							<ul>
-								<li><a href="/stories/admin/marriage">Marriage</a></li>
-								<li><a href="/stories/admin/faith">Faith</a></li>
-								<li><a href="/stories/admin/healing">Healing</a></li>
-								<li><a href="/stories/admin/mercy">Mercy</a></li>
-								<li><a href="/stories/admin/bacon">Bacon</a></li>
-							</ul>
-						</nav>
+				</div>
+			</header>
+
+			<div class="header-filler"></div>
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-3">
+						<div id="admin-sidebar">
+							<div class="pad">
+								<form>
+									<input type="checkbox" name="marriage"> Marriage<br>
+								  <input type="checkbox" name="addiction"> Addiction<br>
+									<input type="checkbox" name="adoption"> Adoption<br>
+									<input type="checkbox" name="death"> Death/Lost<br>
+									<input type="checkbox" name="financial"> Financial<br>
+									<input type="checkbox" name="parenting"> Parenting<br>
+									<input type="checkbox" name="family"> Family<br>
+									<input type="checkbox" name="reconciliation"> Reconciliation<br>
+									<input type="checkbox" name="doubt"> Doubt<br>
+									<input type="checkbox" name="religion"> Religion<br>
+									<input type="checkbox" name="missions"> Missions<br>
+									<input type="checkbox" name="persecution"> Persecution<br>
+									<input type="checkbox" name="redemption"> Redemption<br>
+									<input type="checkbox" name="dissapointment"> Dissapointment<br>
+									<input type="checkbox" name="love"> Love<br>
+									<input type="checkbox" name="prophecy"> Prophecy<br>
+									<input type="checkbox" name="healing"> Healing<br>
+									<input type="checkbox" name="apathy"> Apathy<br>
+									<input type="checkbox" name="synnacism"> Synnacism<br>
+									<input type="checkbox" name="bitterness"> Bitterness<br>
+									<input type="checkbox" name="forgiveness"> Forgiveness<br>
+									<input type="checkbox" name="anger"> Anger<br>
+								  <button class="btn btn-default" type="submit"></button>
+								</form>
+
+								<button id="filter-categories" class="btn btn-default"></button>
+								<button id="add-category" class="btn btn-default"></button>
+							</div>
+						</div>
 					</div>
 
-					<div class="clear"></div>
+					<div id="admin-main" class="col-sm-9"></div>
+
+					<div class="clearfix"></div>
 				</div>
-	    </header>
-
-			<div id="admin-header-filler"></div>
-
-			<div id="admin-main">
-				<div class="container">
-					<ul id="stories-feed">
-						{if segment_3 != ""}
-						{if:else}
-						<?php
-							require_once($_SERVER['DOCUMENT_ROOT'].'/_scripts/stories/stories_connect.php');
-
-							$result = mysqli_query($con, "SELECT * FROM stories WHERE Removed = 0 ORDER BY SortingIndex");
-
-							while ($row = mysqli_fetch_assoc($result)) {
-								$id = $row['ID'];
-								$name = $row['Name'];
-								$find = $row['Find'];
-								$email = $row['Email'];
-								$story = $row['Story'];
-
-								$sortingIndex = $row['SortingIndex'];
-
-								$timestamp = $row['Date'];
-								$date = date('M j Y', strtotime($timestamp));
-
-						    echo "
-								<li id='story-$id'>
-									<div class='story-row-header'>
-										<div class='story-row-date'>" . $date . "</div>
-										<div class='story-row-new'>New</div>
-										<div class='story-row-handle'><i class='fa fa-bars'></i></div>
-										<div class='story-row-remove'><i class='fa fa-trash-o'></i></div>
-
-										<div class='clear'></div>
-									</div>
-
-									<div class='story-row'>
-										<div class='grid_2'>
-											<div class='pad'>" . $name . "</div>
-										</div>
-
-										<div class='grid_3'>
-											<div class='pad'>" . $find . "</div>
-										</div>
-
-										<div class='grid_4'>
-											<div class='pad'>" . $story . "</div>
-										</div>
-
-										<div class='grid_3'>
-											<div class='pad'>
-												<a href='mailto:'.$email>" . $email . "</a>
-											</div>
-										</div>
-
-										<div class='clear'></div>
-
-										<form>
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> Marriage</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> Faith</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> Healing</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> Mercy</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> Bacon</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> I have a bike</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> I have a bike</div>
-											</div>
-
-											<div class='grid_3'>
-												<div class='pad'><input type='checkbox' name='vehicle' value='Bike'> I have a bike</div>
-											</div>
-
-											<div class='clear'></div>
-										</form>
-
-										<div class='clear'></div>
-									</div>
-								</li>
-
-								<script>
-									$('#story-$id .story-row-remove').click(
-										function() {
-											$('#story-$id ').toggleClass('remove');
-											$('#story-$id .story-row-remove i').toggleClass('fa-times fa-trash-o');
-										}
-									);
-								</script>";
-
-								if ($sortingIndex == -1) {
-									echo "
-									<script>
-										$('#story-$id .story-row-new').show();
-									</script>
-									";
-								}
-							}
-
-							mysqli_close($con);
-						?>
-						{/if}
-					</ul>
-				</div>
-
-				<div class='clear'></div>
 			</div>
 
 			<script>
 				$(document).ready(function () {
-					$('#stories-feed').sortable({
-						containment: 'parent',
-						tolerance: 'pointer',
-						cursor: 'pointer',
-						handle: '.story-row-handle',
-						revert: true
+					$.ajax({
+						type: 'POST',
+						url: '/_scripts/stories/get_stories.php',
+						success: function(data) {
+							$("#admin-main").html(data);
+						}
 					});
 
-					$('#save').click(function() {
-						var ids = $('#stories-feed').sortable('toArray');
-						var removeList = [];
+					$("#admin-main").css("min-height", $(window).height()-$("header").outerHeight());
 
-						for(var i = 0; i < ids.length; ++i) {
-							if ($('#' + ids[i]).hasClass("remove")) {
-								removeList[i] = 1;
-							}
-							else {
-								removeList[i] = 0;
-							}
 
-							ids[i] = ids[i].substring(6, ids[i].length);
-						}
+					/*$('#save').click(function() {
+						var ids = [];
+						var remove = [];
+						var categories = [];
+
+						$('.story').each(function () {
+								var id = this.id;
+								var hashId = '#' + id;
+
+								if ($(hashId).hasClass("remove")) {
+									remove.push(1);
+								}
+								else {
+									remove.push(0);
+								}
+
+								ids.push(id.substring(6, id.length));
+
+								var empty = $(hashId+' .categories').is(':empty');
+
+								if(!empty) {
+									var categoryArray = [];
+
+									$(hashId+' .category').each(function() {
+										categoryArray.push($(this).text().toLowerCase());
+									});
+
+									categories.push({
+										categories : categoryArray,
+										id : id
+									});
+								}
+						});
 
 						$.ajax({
 							type: 'POST',
 							url: '/_scripts/stories/stories_admin_update.php',
 							data: {
-								id : ids,
-								remove : removeList
+								ids : ids,
+								remove : remove,
+								categories : categories
 							},
 							success: function(data) {
 								alert(data);
 								window.location.reload();
 							}
 						});
-					});
+					});*/
 				});
 				</script>
-				{if segment_3 == ""}<button id="save">Save</button>{/if}
 		{if:elseif logged_out}
       <div id="admin-login">
-				<div class="container">
-					<div class="grid_12">
+				<div class="container-fluid">
+					<div class="col-sm-12">
 						<h1>Please Login as a Stories Admin</h1>
 					</div>
-
-					<div class="clear"></div>
 				</div>
 			</div>
     {/if}
