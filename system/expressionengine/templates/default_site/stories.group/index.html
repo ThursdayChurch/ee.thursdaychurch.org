@@ -10,129 +10,115 @@
 
 		<title>Stories - What's Your Story?</title>
 
-		<!-- Fonts -->
+		{!-- Stylesheets --}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="/_css/jquery.fullPage.css" type='text/css'>
+		<link rel="stylesheet" href="/_css/stories/style.css" type='text/css'>
+
+		{!-- Fonts --}
 		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6186432/688704/css/fonts.css" />
 
-		<!-- Font Icons -->
+		{!-- Font Icons --}
 		<link rel="stylesheet" href="/_css/font-awesome.css" type='text/css'>
-
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="/_css/stories/normalize.css">
-		<link rel="stylesheet" href="/_css/stories/base.css">
-		<link rel="stylesheet" href="/_css/stories/grid.css">
-		<link rel="stylesheet" href="/_css/stories/style.css">
-
-		<link rel='stylesheet' media='screen and (max-width: 995px)' href='/_css/stories/tablet.css' />
-		<link rel='stylesheet' media='screen and (max-width: 767px)' href='/_css/stories/mobile.css' />
-		<link rel='stylesheet' media='screen and (max-width: 479px)' href='/_css/stories/mobile-portrait.css' />
-
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script type="text/javascript" src="/_js/jquery.validate.js"></script>
-		<script src="/_js/parallax.min.js"></script>
 	</head>
 	<body>
-		<header id="header">
+		<header>
 			<p>Thank You For Sharing You Story. Our Stories Team Will Be In Touch</p>
 		</header>
 
-		<div class="clear"></div>
-
-		<nav id="stories-nav">
-			<div id="scroll-up"><i class="fa fa-chevron-up"></i></div><br>
-			<div id="scroll-down"><i class="fa fa-chevron-down"></i></div>
-		</nav>
-
-		<div class="clear"></div>
-
-		<form id="stories-form" method="post">
-			<section id="cover">
-				<div class="inner">
-					<div class="container">
-						<div class="grid_12">
-							<h1>Stories</h1>
-							<h5>They Change Us</h5>
+		<div id="fullpage">
+			<form id="stories-form">
+				<section id="cover" class="section bg-img text-center">
+					<div class="inner">
+						<div class="container">
+							<div class="col-sm-8 col-sm-offset-2">
+								<h1 class="text-uppercase">Stories</h1>
+								<h3 class="text-uppercase light">They Change Us</h3>
+							</div>
 						</div>
-
-						<div class="clear"></div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section id="story-line">
-				<div class="inner">
+				<section id="intro" class="section">
 					<div class="container">
-						<div class="grid_12">
-							<h3>We want to hear <span>your</span> story</h3>
+						<div class="col-sm-12 text-center">
+							<p>It is a wonderful thing to remember God’s handiwork in our lives, to trace His fingerprints across the details of our faith.</p><br>
 						</div>
-
-						<div class="clear"></div>
+						<div class="col-sm-12 text-center">
+							<p>As we move through each season in life we strive to live each moment, each day. Those days define and mold us. They become our milestones for reminding us to keep on. They are the stories of our lives; the testimonies of Christ’s work in finishing our faith.</p><br>
+						</div>
+						<div id="stories-vid" class="col-sm-8 col-sm-offset-2"></div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section id="name">
-				<div class="inner">
+				<section id="name" class="section bg-img text-center">
 					<div class="container">
-						<div class="grid_12">
+						<div class="col-sm-8 col-sm-offset-2">
 							<label for="name">Tell us your name</label><br>
 							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
 						</div>
-
-						<div class="clear"></div>
 					</div>
-				</div>
+				</section>
 
-				<div class="clear"></div>
-			</section>
-
-			<section id="visit">
-				<div class="inner">
+				<section id="visit" class="section text-center">
 					<div class="container">
-						<div class="grid_12">
+						<div class="col-sm-8 col-sm-offset-2">
 							<label for="find">What brought you to Journeychurch?</label><br>
 							<textarea name="find" rows="5" maxlength="400" required="required" form="stories-form"></textarea><br>
 						</div>
-
-						<div class="clear"></div>
 					</div>
-				</div>
+				</section>
 
-				<div class="clear"></div>
-			</section>
-
-			<section id="your-story" class="section">
-				<div class="inner">
+				<section id="your-story" class="section bg-img text-center">
 					<div class="container">
-						<div class="grid_12">
+						<div class="col-sm-8 col-sm-offset-2">
 							<label for="story">Tell us your story</label><br>
 							<textarea name="story" rows="5" maxlength="800" required="required" form="stories-form"></textarea><br>
 						</div>
-
-						<div class="clear"></div>
 					</div>
-				</div>
+				</section>
 
-				<div class="clear"></div>
-			</section>
-
-			<section id="share">
-				<div class="inner">
+				<section id="share" class="section bg-img text-center">
 					<div class="container">
-						<div class="grid_12">
+						<div class="col-sm-8 col-sm-offset-2">
 							<label for="email">Our stories team wants to meet you</label><br>
 							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
-							<br><button type="submit" name="submit" form="stories-form">Share My Story</button>
+							<br><button type="submit" name="submit" form="stories-form" class="btn btn-default">Share My Story</button>
 						</div>
-
-						<div class="clear"></div>
 					</div>
-				</div>
-			</section>
-		</form>
+				</section>
+			</form>
+		</div>
+
+		{!-- Jquery --}
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+		{!-- Validation --}
+		<script type="text/javascript" src="/_js/jquery.validate.js"></script>
+
+		{!-- Full Page Scrolling --}
+		<script type="text/javascript" src="/_js/jquery.fullPage.js"></script>
+
+		{!-- Latest compiled and minified JavaScript --}
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 		<script>
 			$(document).ready(function() {
-				var windowHeight = $(window).height();
+				$("#fullpage").fullpage({
+					onLeave: function(index, nextIndex, direction){
+	            var leavingSection = $(this);
+
+	            if (index == 1 && direction =="down"){
+								var empty = $("#stories-vid").is(":empty");
+
+								if (empty) {
+										$("#stories-vid").html("<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed//t6i6TBT4kfg?autoplay=1' frameborder='0' allowfullscreen></iframe></div>");
+								}
+	            }
+	        }
+				});
+				/*var windowHeight = $(window).height();
 				var sections = $('section');
 				var numberOfSections = sections.length;
 				var tops = [];
@@ -183,12 +169,7 @@
 							scrollTop: tops[count]
 						}, 800);
 					}
-				});
-
-				$('#cover').parallax({imageSrc: '/_img/sailboat.jpeg'});
-				$('#name').parallax({imageSrc: '/_img/typewriter.jpeg'});
-				$('#your-story').parallax({imageSrc: '/_img/the_ledge.jpeg'});
-				$('#share').parallax({imageSrc: '/_img/rock.jpeg'});
+				});*/
 
 
 				$('#stories-form').validate();
@@ -228,7 +209,5 @@
 
 			});
 		</script>
-
-		<div class="clear"></div>
 	</body>
 </html>
