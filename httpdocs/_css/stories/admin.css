@@ -11,20 +11,54 @@ ul {
   margin:0;
 }
 
-.btn-default {
-  background-color:#006f7c;
-  padding:2px 15px;
+.btn {
+  background-image:none;
   border-radius:0;
   border:0;
+  text-shadow:none;
+  box-shadow:none;
+}
+
+.btn:hover {
+  text-shadow:none;
+}
+
+.btn:active {
+  text-shadow:none;
+  box-shadow:none;
+}
+
+.btn:focus {
+  text-shadow:none;
+  box-shadow:none;
+}
+
+.btn-default {
+  color:white;
+  padding:2px 15px;
   font-size:18px;
   font-weight:200;
   -moz-transition:0.2s color ease-in, 0.2s background-color ease-in;
   -webkit-transition:0.2s color ease-in, 0.2s background-color ease-in;
   -o-transition:0.2s color ease-in, 0.2s background-color ease-in;
   transition:0.2s color ease-in, 0.2s background-color ease-in;
+  background-color:#006f7c;
 }
 
 .btn-default:hover {
+  background-color:white;
+  color:#464646;
+}
+
+.btn-default:active {
+  background-color:white !important;
+}
+
+.btn-default:focus {
+  background-color:white;
+}
+
+/*.btn-default:hover {
   background-color:white;
   color:#464646;
   -moz-transition:0.2s color ease-in, 0.2s background-color ease-in;
@@ -32,6 +66,13 @@ ul {
   -o-transition:0.2s color ease-in, 0.2s background-color ease-in;
   transition:0.2s color ease-in, 0.2s background-color ease-in;
 }
+.btn-default:active {
+  background-color:transparent;
+}
+
+.btn-default:focus {
+  background-color:transparent;
+}*/
 
 .pad {
   padding:20px;
@@ -52,6 +93,15 @@ ul {
   width:100%;
   z-index:1000;
   padding:7px 0;
+}
+
+#notification {
+  display:none;
+}
+
+#notification h5 {
+  color:white;
+  margin:7px 0 0 0;
 }
 
 .header-filler {
@@ -125,6 +175,14 @@ ul {
 .more .content {
   margin-top:10px;
   margin-bottom:10px;
+}
+
+.more .content p {
+  color:#B0B0B0;
+}
+
+.more .content strong {
+  color:#464646;
 }
 
 .more .content a {

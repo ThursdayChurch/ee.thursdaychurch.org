@@ -28,7 +28,11 @@
 		{if logged_in}
 			<header id="admin-header">
 				<div class="container-fluid">
-					<div class="col-sm-12">
+					<div class="col-sm-10">
+						<div id="notification"><h5>Your changes have been saved.</h5></div>
+					</div>
+
+					<div class="col-sm-2">
 						<button id="save" class="btn btn-default">Save</button>
 					</div>
 				</div>
@@ -92,36 +96,30 @@
 					$("#admin-main").css("min-height", $(window).height()-$("header").outerHeight());
 
 
-					/*$('#save').click(function() {
-						var ids = [];
+					$('#save').click(function() {
 						var remove = [];
 						var categories = [];
 
 						$('.story').each(function () {
-								var id = this.id;
-								var hashId = '#' + id;
+								var id = this.id.substring(6, this.id.length);
+								var hashId = '#' + this.id;
 
 								if ($(hashId).hasClass("remove")) {
-									remove.push(1);
+									remove.push(id);
 								}
-								else {
-									remove.push(0);
-								}
-
-								ids.push(id.substring(6, id.length));
 
 								var empty = $(hashId+' .categories').is(':empty');
 
-								if(!empty) {
+								if (!empty) {
 									var categoryArray = [];
 
 									$(hashId+' .category').each(function() {
-										categoryArray.push($(this).text().toLowerCase());
+										categoryArray.push($(this).text().toUpperCase());
 									});
 
 									categories.push({
-										categories : categoryArray,
-										id : id
+										id : id,
+										categories : categoryArray
 									});
 								}
 						});
@@ -130,16 +128,21 @@
 							type: 'POST',
 							url: '/_scripts/stories/stories_admin_update.php',
 							data: {
-								ids : ids,
 								remove : remove,
 								categories : categories
 							},
 							success: function(data) {
-								alert(data);
-								window.location.reload();
+								$("#admin-main").html(data);
+								$("#notification").fadeIn();
+
+								setTimeout(
+									function() {
+										$("#notification").fadeOut();
+									}
+								, 8000);
 							}
 						});
-					});*/
+					});
 				});
 				</script>
 		{if:elseif logged_out}

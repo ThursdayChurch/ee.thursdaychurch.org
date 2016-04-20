@@ -5,6 +5,7 @@
 body {
   position:relative;
   top:0;
+  background-color:#2D2D2D;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {
@@ -12,8 +13,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 h1 {
-  font-size:90px;
-  letter-spacing:8px;
+  font-size:100px;
+  letter-spacing:15px;
 }
 
 h2 {
@@ -54,7 +55,7 @@ section {
 
 input, textarea {
   border:none;
-  padding:15px 15px;
+  padding:13px 15px;
   font-size:30px;
   color:#B0B0B0;
   -moz-transition: 0.3s ease-in color;
@@ -100,11 +101,11 @@ button:focus {
    color: #B0B0B0;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
    color: #B0B0B0;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
    color: #B0B0B0;
 }
 
@@ -116,7 +117,7 @@ label {
   font-size:30px;
   color:white;
   display:inline-block;
-  font-weight:normal;
+  font-weight:200;
 }
 
 nav {
@@ -170,14 +171,47 @@ nav {
   background-image:none;
   border:2px solid white;
   color:white;
+  padding:11px 13px 11px 15px;
   font-size:22px;
-  padding:10px 13px;
+  letter-spacing:7px;
+  font-weight:200;
+  text-transform:uppercase;
+  -moz-transition: 0.25s ease-in color, 0.25s ease-in background-color;
+  -o-transition: 0.25s ease-in color, 0.25s ease-in background-color;
+  -webkit-transition: 0.25s ease-in color, 0.25s ease-in background-color;
+  transition: 0.25s ease-in color, 0.25s ease-in background-color;
 }
 
 .btn-default:hover, .btn-default:active, .btn-default:focus {
   background-color:white !important;
-  border-color:white;
-  color:#464646;
+  border-color:white !important;
+  color:#B0B0B0 !important;
+  -moz-transition: 0.25s ease-in color, 0.25s ease-in background-color;
+  -o-transition: 0.25s ease-in color, 0.25s ease-in background-color;
+  -webkit-transition: 0.25s ease-in color, 0.25s ease-in background-color;
+  transition: 0.25s ease-in color, 0.25s ease-in background-color;
+}
+
+.btn-block {
+  font-size:25px;
+  letter-spacing:16px;
+  padding:13px;
+}
+
+.vid-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.vid-responsive iframe, .vid-responsive object, .vid-responsive embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #name-error:before, #story-error:before, #email-error:before, #find-error:before {
@@ -193,40 +227,36 @@ nav {
   margin-bottom:20px;
 }
 
-#intro {
+#vid {
   background-color:#2D2D2D;
 }
 
-#intro p {
-  color:#B0B0B0;
-  -moz-transition:color 0.3s ease-in;
-  -webkit-transition:color 0.3s ease-in;
-  -o-transition:color 0.3s ease-in;
-  transition:color 0.3s ease-in;
-}
-
-#intro p:hover {
-  color:white;
-  -moz-transition:color 0.3s ease-in;
-  -webkit-transition:color 0.3s ease-in;
-  -o-transition:color 0.3s ease-in;
-  transition:color 0.3s ease-in;
-}
-
-#stories-vid {
-  margin-top:40px;
+#intro {
+  background-image:url("/_img/ribbon.jpeg");
 }
 
 #name {
   background-image:url("/_img/typewriter.jpeg");
 }
 
-#visit {
-  background-color:#006f7c;
+#beginning {
+  background-image:url("/_img/stream.jpeg");
 }
 
-#your-story {
+#persevered {
+  background-image:url("/_img/escalator.jpeg");
+}
+
+#change {
   background-image:url("/_img/the_ledge.jpeg");
+}
+
+#thanks {
+  background-image:url("/_img/looking-out.jpeg");
+}
+
+#email {
+  background-image:url("/_img/shore.jpeg");
 }
 
 #share {
@@ -242,6 +272,7 @@ nav {
 @media screen and (max-width: 991px) {
   h1 {
     font-size:50px;
+    letter-spacing:10px;
   }
 
   h2 {
@@ -254,7 +285,11 @@ nav {
   }
 
   label, input, textarea {
-    font-size:25px;
+    font-size:20px;
+  }
+
+  .btn-block {
+    font-size:20px;
   }
 }
 
@@ -262,5 +297,9 @@ nav {
 @media screen and (max-width: 767px) {
   input {
     width:100%;
+  }
+
+  .btn-block {
+    letter-spacing:7px;
   }
 }
