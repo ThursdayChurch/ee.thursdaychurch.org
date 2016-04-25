@@ -33,7 +33,7 @@
 					</div>
 
 					<div class="col-sm-2">
-						<button id="save" class="btn btn-default">Save</button>
+						<button id="save" class="btn btn-default btn-block">Save</button>
 					</div>
 				</div>
 			</header>
@@ -45,11 +45,12 @@
 					<div class="col-sm-3">
 						<div id="admin-sidebar">
 							<div class="pad">
+								<h4>Categories</h4>
 								<form>
 									<input type="checkbox" name="marriage"> Marriage<br>
 								  <input type="checkbox" name="addiction"> Addiction<br>
 									<input type="checkbox" name="adoption"> Adoption<br>
-									<input type="checkbox" name="death"> Death/Lost<br>
+									<input type="checkbox" name="death-&-loss"> Death & Loss<br>
 									<input type="checkbox" name="financial"> Financial<br>
 									<input type="checkbox" name="parenting"> Parenting<br>
 									<input type="checkbox" name="family"> Family<br>
@@ -68,11 +69,18 @@
 									<input type="checkbox" name="bitterness"> Bitterness<br>
 									<input type="checkbox" name="forgiveness"> Forgiveness<br>
 									<input type="checkbox" name="anger"> Anger<br>
-								  <button class="btn btn-default" type="submit"></button>
 								</form>
-
-								<button id="filter-categories" class="btn btn-default"></button>
-								<button id="add-category" class="btn btn-default"></button>
+								<br>
+								<h4>Tiers</h4>
+								<select>
+									<option value="all">All</option>
+								  <option value="new">New</option>
+								  <option value="in-progress">In Progress</option>
+								  <option value="active">Active</option>
+								  <option value="completed">Completed</option>
+								</select>
+								<br><br><br>
+								<button id="filter" class="btn btn-default btn-block">Filter</button>
 							</div>
 						</div>
 					</div>
@@ -101,32 +109,32 @@
 						var categories = [];
 
 						$('.story').each(function () {
-								var id = this.id.substring(6, this.id.length);
-								var hashId = '#' + this.id;
+							var id = this.id.substring(6, this.id.length);
+							var hashId = '#' + this.id;
 
-								if ($(hashId).hasClass("remove")) {
-									remove.push(id);
-								}
+							if ($(hashId).hasClass("remove")) {
+								remove.push(id);
+							}
 
-								var empty = $(hashId+' .categories').is(':empty');
+							var empty = $(hashId+' .categories').is(':empty');
 
-								if (!empty) {
-									var categoryArray = [];
+							if (!empty) {
+								var categoryArray = [];
 
-									$(hashId+' .category').each(function() {
-										categoryArray.push($(this).text().toUpperCase());
-									});
+								$(hashId+' .category').each(function() {
+									categoryArray.push($(this).text().toUpperCase());
+								});
 
-									categories.push({
-										id : id,
-										categories : categoryArray
-									});
-								}
+								categories.push({
+									id : id,
+									categories : categoryArray
+								});
+							}
 						});
 
 						$.ajax({
 							type: 'POST',
-							url: '/_scripts/stories/stories_admin_update.php',
+							url: '/_scripts/stories/admin_update.php',
 							data: {
 								remove : remove,
 								categories : categories
@@ -143,11 +151,41 @@
 							}
 						});
 					});
+
+					$('#filter').click(function() {
+						var inputs = $("#admin-sidebar input");
+						var categories = [];
+						var tier;
+
+						inputs.each(function() {
+							if ($(this).is(":checked")) {
+								categories.push($(this).attr("name"));
+							}
+						});
+
+						tier = $("select").val();
+
+						$.ajax({
+							type: 'POST',
+							url: '/_scripts/stories/get_stories.php',
+							data: {
+								categories : categories,
+								tier : tier
+							},
+							success: function(data) {
+								$("#admin-main").html(data);
+							}
+						});
+					});
 				});
 				</script>
 		{if:elseif logged_out}
       <div id="admin-login">
-				<div class="container-fluid">
+				<div class="container">
+					<div class="col-sm-4 col-sm-offset-4">
+						<img src="/_img/logo-large-grey.png" class="img-responsive"/>
+					</div>
+
 					<div class="col-sm-12">
 						<h1>Please Login as a Stories Admin</h1>
 					</div>
