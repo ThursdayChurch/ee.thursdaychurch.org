@@ -31,27 +31,29 @@
       mysqli_close($this->con);
     }
 
-    public function getStories($categories, $tier) {
+    public function getStories($categories, $tier, $startDate, $endDate) {
       $this->sql .= "SELECT * FROM stories WHERE Removed = 0";
 
-      if (!empty($categories) && !empty($tier)) {
+      if (!empty($categories)) {
         foreach($categories as $category) {
            $this->sql .= " AND $category = 1";
         }
+      }
 
+      if (!empty($tier)) {
         if ($tier != 'all') {
             $this->sql .= " AND tier = '$tier'";
         }
       }
-      else if (!empty($categories)) {
-        foreach($categories as $category) {
-           $this->sql .= " AND $category = 1";
-        }
+
+      if (!empty($startDate) && !empty($endDate)) {
+        $this->sql .= " AND Date >= '$startDate' AND Date <= '$endDate'";
       }
-      else if (!empty($tier)) {
-        if ($tier != 'all') {
-            $this->sql .= " AND tier = '$tier'";
-        }
+      else if (!empty($startDate)) {
+        $this->sql .= " AND Date >= '$startDate'";
+      }
+      else if (!empty($endDate)) {
+        $this->sql .= " AND Date <= '$endDate'";
       }
 
       $this->sql .= " ORDER BY ID DESC";
@@ -68,8 +70,8 @@
       	$email = $row['Email'];
         $tier = $row['tier'];
 
-        $timestamp = $row['Date'];
-        $date = date('M j Y', strtotime($timestamp));
+        $timestamp = strtotime($row['Date']);
+        $date = date('M j Y', $timestamp);
 
         $this->printStory($id, $name, $beginning, $persevered, $growth, $thanks, $email, $date, $tier);
       }
