@@ -21,10 +21,6 @@
 	<body>
 		<div class="banner">
 			<div class="banner-inner">
-				<div class="title">
-					<h1>#JourneyOn</h1>
-				</div>
-				
 				<div id="outline-wrapper" class="container-fluid">
 					<div class="outline-wrapper col-sm-12">
 						<div class="outline">
@@ -50,17 +46,31 @@
 						<div class="outline">
 							<img src="/_img/JourneyOn/Journey On Web Art-06.png" class="img-responsive"/>
 						</div>
+
+						<div class="outline">
+							<img src="/_img/JourneyOn/Journey On-01.png" class="img-responsive"/>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="wrapper">
+			<div id="intro">
+				<div class="container">
+					<div class="col-sm-6">
+						<div class="vid-responsive">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/B-IAPxgkpaM" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div id="social">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6">
-							<a class="twitter-timeline" href="https://twitter.com/hashtag/JourneyOn" data-widget-id="733393206163841024">#JourneyOn Tweets</a>
+							<a class="twitter-timeline" href="https://twitter.com/hashtag/JourneyOn" data-widget-id="733393206163841024" data-link-color="#81d0d8" data-chrome="nofooter transparent noheader transparent">#JourneyOn Tweets</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						</div>
 					</div>
@@ -103,7 +113,7 @@
 				  TweenMax.to($(".outline:nth-child(5) img"), 1.5, {rotation:angle5});
 
 					angle6+=-4;
-				  TweenMax.to($(".outline:last-child img"), 1.5, {rotation:angle6});
+				  TweenMax.to($(".outline:nth-child(6) img"), 1.5, {rotation:angle6});
 				}, 200);
       });
     </script>

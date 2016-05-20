@@ -25,6 +25,22 @@ h1, h2, h3, h4, h5, h6 {
   background-image:black;
 }
 
+.vid-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.vid-responsive iframe, .vid-responsive object, .vid-responsive embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .banner {
   background-color:#81d0d8;
   position:absolute;
@@ -51,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title {
-  
+
 }
 
 .outline-wrapper {
@@ -67,35 +83,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-right:auto;
 }
 
-#outline-1 {
-
-}
-
-#outline-2 {
-  background-image:url("/_img/JourneyOn/Journey On Web Art-02.png");
-}
-
-#outline-3 {
-  background-image:url("/_img/JourneyOn/Journey On Web Art-03.png");
-}
-
-#outline-4 {
-  background-image:url("/_img/JourneyOn/Journey On Web Art-04.png");
-}
-
-#outline-5 {
-  background-image:url("/_img/JourneyOn/Journey On Web Art-05.png");
-}
-
-#outline-6 {
-  background-image:url("/_img/JourneyOn/Journey On Web Art-06.png");
-}
-
 #social {
   padding:100px 0;
-}
-
-/* Twitter */
-.timeline-Tweet:hover {
-  background-color:#F7F7F7 !important;
 }
