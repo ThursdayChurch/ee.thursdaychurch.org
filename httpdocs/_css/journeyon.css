@@ -1,17 +1,29 @@
 /*
   Colors:
-  blue: 81d0d8
+  Cream: FDFAEC
+  Green: 00A887
+  Orange: EF7622
+  Red: D4451D
+  Blue: 83D1D8
 */
 
 html, body {
   min-height:100%;
   margin:0;
   padding:0;
+  font-family:'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B';
+  overflow-x:hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
+}
+
+p {
+  font-size:16px;
+  line-height:24px;
+  color:#686868;
 }
 
 .bg-img {
@@ -41,6 +53,18 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
+.pad {
+  padding:30px 15px;
+}
+
+.border {
+  width:100px;
+  height:3px;
+  background-color:#EF7622;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
 .banner {
   background-color:#81d0d8;
   position:absolute;
@@ -58,6 +82,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrapper {
   position:absolute;
+  left:0;
+  right:0;
   top:100%;
   width:100%;
 }
@@ -81,6 +107,24 @@ h1, h2, h3, h4, h5, h6 {
   right:0;
   margin-left:auto;
   margin-right:auto;
+}
+
+#intro {
+  padding:100px 0;
+}
+
+#share {
+  text-align:center;
+}
+
+#share h3, #share p {
+  font-weight:200;
+  color:#EF7622;
+}
+
+#share h3 {
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 
 #social {
