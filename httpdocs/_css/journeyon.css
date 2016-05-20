@@ -1,0 +1,101 @@
+/*
+  Colors:
+  blue: 81d0d8
+*/
+
+html, body {
+  min-height:100%;
+  margin:0;
+  padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+  padding:0;
+}
+
+.bg-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-attachment: scroll;
+  background-image:black;
+}
+
+.banner {
+  background-color:#81d0d8;
+  position:absolute;
+  height:100%;
+  width:100%;
+  display:table;
+}
+
+.banner .banner-inner {
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+  color:white;
+}
+
+.wrapper {
+  position:absolute;
+  top:100%;
+  width:100%;
+}
+
+#outline-wrapper {
+  height:80%;
+}
+
+.title {
+  
+}
+
+.outline-wrapper {
+  height:100%;
+}
+
+.outline img {
+  position:absolute;
+  max-height:100%;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#outline-1 {
+
+}
+
+#outline-2 {
+  background-image:url("/_img/JourneyOn/Journey On Web Art-02.png");
+}
+
+#outline-3 {
+  background-image:url("/_img/JourneyOn/Journey On Web Art-03.png");
+}
+
+#outline-4 {
+  background-image:url("/_img/JourneyOn/Journey On Web Art-04.png");
+}
+
+#outline-5 {
+  background-image:url("/_img/JourneyOn/Journey On Web Art-05.png");
+}
+
+#outline-6 {
+  background-image:url("/_img/JourneyOn/Journey On Web Art-06.png");
+}
+
+#social {
+  padding:100px 0;
+}
+
+/* Twitter */
+.timeline-Tweet:hover {
+  background-color:#F7F7F7 !important;
+}
