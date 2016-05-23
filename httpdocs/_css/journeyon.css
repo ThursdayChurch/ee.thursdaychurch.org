@@ -115,6 +115,7 @@ p {
 
 #share {
   text-align:center;
+  height:100%;
 }
 
 #share h3, #share p {
@@ -125,6 +126,34 @@ p {
 #share h3 {
   text-transform:uppercase;
   letter-spacing:1px;
+}
+
+#steps {
+  background-color:#EF7622;
+  padding:100px 0;
+}
+
+#steps h1 {
+  font-size:65px;
+  color:white;
+  font-weight:200;
+}
+
+#steps h3 {
+  text-transform:uppercase;
+  color:white;
+  font-weight:200;
+  border-bottom:4px solid #D4451D;
+  display:inline-block;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+#steps p {
+  padding-top:15px;
+  padding-bottom:15px;
+  color:white;
+  font-weight:200;
 }
 
 #social {
