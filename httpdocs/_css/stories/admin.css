@@ -169,18 +169,6 @@ select {
   margin-bottom:15px;
 }
 
-#filter-categories input {
-  -webkit-appearance:none;
-  border:2px solid #F3F3F3;
-  padding:7px;
-	display: inline-block;
-	position: relative;
-}
-
-#filter-categories input:checked {
-  background-color:#F3F3F3;
-}
-
 #filter-date input {
   border:none;
   width:100%;
