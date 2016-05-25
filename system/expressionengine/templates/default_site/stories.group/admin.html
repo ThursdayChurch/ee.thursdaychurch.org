@@ -20,16 +20,24 @@
 
 		{!-- JQuery --}
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 		{!-- Latest compiled and minified JavaScript --}
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		{!-- Validation --}
+		<script type="text/javascript" src="/_js/jquery.validate.js"></script>
 	</head>
   <body id="admin">
 		{if logged_in}
 			<header id="admin-header">
 				<div class="container-fluid">
-					<div class="col-sm-12">
-						<button id="save" class="btn btn-default">Save</button>
+					<div class="col-sm-10">
+						<div id="notification"><h5>Your changes have been saved.</h5></div>
+					</div>
+
+					<div class="col-sm-2">
+						<button id="save" class="btn btn-default btn-block">Save</button>
 					</div>
 				</div>
 			</header>
@@ -41,34 +49,58 @@
 					<div class="col-sm-3">
 						<div id="admin-sidebar">
 							<div class="pad">
-								<form>
-									<input type="checkbox" name="marriage"> Marriage<br>
-								  <input type="checkbox" name="addiction"> Addiction<br>
-									<input type="checkbox" name="adoption"> Adoption<br>
-									<input type="checkbox" name="death"> Death/Lost<br>
-									<input type="checkbox" name="financial"> Financial<br>
-									<input type="checkbox" name="parenting"> Parenting<br>
-									<input type="checkbox" name="family"> Family<br>
-									<input type="checkbox" name="reconciliation"> Reconciliation<br>
-									<input type="checkbox" name="doubt"> Doubt<br>
-									<input type="checkbox" name="religion"> Religion<br>
-									<input type="checkbox" name="missions"> Missions<br>
-									<input type="checkbox" name="persecution"> Persecution<br>
-									<input type="checkbox" name="redemption"> Redemption<br>
-									<input type="checkbox" name="dissapointment"> Dissapointment<br>
-									<input type="checkbox" name="love"> Love<br>
-									<input type="checkbox" name="prophecy"> Prophecy<br>
-									<input type="checkbox" name="healing"> Healing<br>
-									<input type="checkbox" name="apathy"> Apathy<br>
-									<input type="checkbox" name="synnacism"> Synnacism<br>
-									<input type="checkbox" name="bitterness"> Bitterness<br>
-									<input type="checkbox" name="forgiveness"> Forgiveness<br>
-									<input type="checkbox" name="anger"> Anger<br>
-								  <button class="btn btn-default" type="submit"></button>
+								<form id="filter-form">
+									<section id="filter-categories">
+										<h4>Categories</h4>
+										<input type="checkbox" id="marriage" name="marriage"> <label for="marriage">Marriage</label><br>
+									  <input type="checkbox" id="addiction" name="addiction"> <label for="addiction">Addiction</label><br>
+										<input type="checkbox" id="adoption" name="adoption"> <label for="adoption">Adoption</label><br>
+										<input type="checkbox" id="death-&-loss" name="death-&-loss"> <label for="death-&-loss">Death & Loss</label><br>
+										<input type="checkbox" id="financial" name="financial"> <label for="financial">Financial</label><br>
+										<input type="checkbox" id="parenting" name="parenting"> <label for="parenting">Parenting</label><br>
+										<input type="checkbox" id="family" name="family"> <label for="family">Family</label><br>
+										<input type="checkbox" id="reconciliation" name="reconciliation"> <label for="reconciliation">Reconciliation</label><br>
+										<input type="checkbox" id="doubt" name="doubt"> <label for="doubt">Doubt</label><br>
+										<input type="checkbox" id="religion" name="religion"> <label for="religion">Religion</label><br>
+										<input type="checkbox" id="missions" name="missions"> <label for="missions">Missions</label><br>
+										<input type="checkbox" id="persecution" name="persecution"> <label for="persecution">Persecution</label><br>
+										<input type="checkbox" id="redemption" name="redemption"> <label for="redemption">Redemption</label><br>
+										<input type="checkbox" id="dissapointment" name="dissapointment"> <label for="dissapointment">Dissapointment</label><br>
+										<input type="checkbox" id="love" name="love"> <label for="love">Love</label><br>
+										<input type="checkbox" id="prophecy" name="prophecy"> <label for="prophecy">Prophecy</label><br>
+										<input type="checkbox" id="healing" name="healing"> <label for="healing">Healing</label><br>
+										<input type="checkbox" id="apathy" name="apathy"> <label for="apathy">Apathy</label><br>
+										<input type="checkbox" id="synnacism" name="synnacism"> <label for="synnacism">Synnacism</label><br>
+										<input type="checkbox" id="bitterness" name="bitterness"> <label for="bitterness">Bitterness</label><br>
+										<input type="checkbox" id="forgiveness" name="forgiveness"> <label for="forgiveness">Forgiveness</label><br>
+										<input type="checkbox" id="anger" name="anger"> <label for="anger">Anger</label><br>
+									</section>
+
+									<div class="clearfix"></div>
+
+									<section id="filter-tiers">
+										<h4>Tiers</h4>
+										<select>
+											<option value="all">All</option>
+										  <option value="new">New</option>
+										  <option value="in-progress">In Progress</option>
+										  <option value="active">Active</option>
+										  <option value="completed">Completed</option>
+										</select>
+									</section>
+
+									<div class="clearfix"></div>
+
+									<section id="filter-date">
+										<h4>Date</h4>
+										<input id="from" name="from" placeholder="From" class="datepicker"></input>
+										<input id="to" name="to" placeholder="To" class="datepicker"></input>
+									</section>
 								</form>
 
-								<button id="filter-categories" class="btn btn-default"></button>
-								<button id="add-category" class="btn btn-default"></button>
+								<br>
+
+								<button id="filter" class="btn btn-default btn-block">Filter</button>
 							</div>
 						</div>
 					</div>
@@ -79,72 +111,14 @@
 				</div>
 			</div>
 
-			<script>
-				$(document).ready(function () {
-					$.ajax({
-						type: 'POST',
-						url: '/_scripts/stories/get_stories.php',
-						success: function(data) {
-							$("#admin-main").html(data);
-						}
-					});
-
-					$("#admin-main").css("min-height", $(window).height()-$("header").outerHeight());
-
-
-					/*$('#save').click(function() {
-						var ids = [];
-						var remove = [];
-						var categories = [];
-
-						$('.story').each(function () {
-								var id = this.id;
-								var hashId = '#' + id;
-
-								if ($(hashId).hasClass("remove")) {
-									remove.push(1);
-								}
-								else {
-									remove.push(0);
-								}
-
-								ids.push(id.substring(6, id.length));
-
-								var empty = $(hashId+' .categories').is(':empty');
-
-								if(!empty) {
-									var categoryArray = [];
-
-									$(hashId+' .category').each(function() {
-										categoryArray.push($(this).text().toLowerCase());
-									});
-
-									categories.push({
-										categories : categoryArray,
-										id : id
-									});
-								}
-						});
-
-						$.ajax({
-							type: 'POST',
-							url: '/_scripts/stories/stories_admin_update.php',
-							data: {
-								ids : ids,
-								remove : remove,
-								categories : categories
-							},
-							success: function(data) {
-								alert(data);
-								window.location.reload();
-							}
-						});
-					});*/
-				});
-				</script>
+			<script type="text/javascript" src="/_js/stories/admin.js"></script>
 		{if:elseif logged_out}
       <div id="admin-login">
-				<div class="container-fluid">
+				<div class="container">
+					<div class="col-sm-4 col-sm-offset-4">
+						<img src="/_img/logo-large-grey.png" class="img-responsive"/>
+					</div>
+
 					<div class="col-sm-12">
 						<h1>Please Login as a Stories Admin</h1>
 					</div>

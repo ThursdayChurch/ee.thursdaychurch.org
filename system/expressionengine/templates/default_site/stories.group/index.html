@@ -33,48 +33,82 @@
 					<div class="inner">
 						<div class="container">
 							<div class="col-sm-8 col-sm-offset-2">
-								<h1 class="text-uppercase">Stories</h1>
+								<h1>Stories</h1>
 								<h3 class="text-uppercase light">They Change Us</h3>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<section id="intro" class="section">
+				<section id="vid" class="section">
 					<div class="container">
-						<div class="col-sm-12 text-center">
+						<div class="col-sm-10 col-sm-offset-1">
+							<div class="vid-responsive"><iframe id="stories-vid" src="http://www.youtube.com/embed/Ah0uydqMYhE?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe></div>
+						</div>
+					</div>
+				</section>
+
+				<section id="intro" class="section bg-img text-center">
+					<div class="container">
+						<div class="col-sm-12">
 							<p>It is a wonderful thing to remember God’s handiwork in our lives, to trace His fingerprints across the details of our faith.</p><br>
-						</div>
-						<div class="col-sm-12 text-center">
 							<p>As we move through each season in life we strive to live each moment, each day. Those days define and mold us. They become our milestones for reminding us to keep on. They are the stories of our lives; the testimonies of Christ’s work in finishing our faith.</p><br>
+							<p>Stories can encourage those who hear them; they discover they’re not alone. The foundation of their faith is strengthened, and they are emboldened to deepen that faith.</p><br>
+							<p>As a church we want to give you the opportunity to encourage others through your story</p><br>
 						</div>
-						<div id="stories-vid" class="col-sm-8 col-sm-offset-2"></div>
 					</div>
 				</section>
 
 				<section id="name" class="section bg-img text-center">
 					<div class="container">
 						<div class="col-sm-8 col-sm-offset-2">
-							<label for="name">Tell us your name</label><br>
-							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form"/><br>
+							<label for="name">My name is…</label><br>
+							<input name="name" type="text" placeholder="First Last" required="required" maxlength="70" form="stories-form" class="light"/><br>
 						</div>
 					</div>
 				</section>
 
-				<section id="visit" class="section text-center">
+				<section id="beginning" class="section text-center">
 					<div class="container">
 						<div class="col-sm-8 col-sm-offset-2">
-							<label for="find">What brought you to Journeychurch?</label><br>
-							<textarea name="find" rows="5" maxlength="400" required="required" form="stories-form"></textarea><br>
+							<label for="beginning">Where does your story begin? Describe that season…</label><br>
+							<textarea name="beginning" rows="5" maxlength="800" required="required" form="stories-form" class="light"></textarea><br>
 						</div>
 					</div>
 				</section>
 
-				<section id="your-story" class="section bg-img text-center">
+				<section id="persevered" class="section bg-img text-center">
 					<div class="container">
 						<div class="col-sm-8 col-sm-offset-2">
-							<label for="story">Tell us your story</label><br>
-							<textarea name="story" rows="5" maxlength="800" required="required" form="stories-form"></textarea><br>
+							<label for="persevered">Can you further describe how you persevered during that season?</label><br>
+							<textarea name="persevered" rows="5" maxlength="800" required="required" form="stories-form" class="light"></textarea><br>
+						</div>
+					</div>
+				</section>
+
+				<section id="growth" class="section bg-img text-center">
+					<div class="container">
+						<div class="col-sm-8 col-sm-offset-2">
+							<label for="growth">In the timeline of your story, how have you changed? Where were you before? Where are you now?</label><br>
+							<textarea name="growth" rows="5" maxlength="800" required="required" form="stories-form" class="light"></textarea><br>
+						</div>
+					</div>
+				</section>
+
+				<section id="thanks" class="section bg-img text-center">
+					<div class="container">
+						<div class="col-sm-8 col-sm-offset-2">
+							<label for="thanks">How would you thank God for His provision and/or guidance during this time?</label><br>
+							<textarea name="thanks" rows="5" maxlength="800" required="required" form="stories-form" class="light"></textarea><br>
+						</div>
+					</div>
+				</section>
+
+				<section id="email" class="section bg-img text-center">
+					<div class="container">
+						<div class="col-sm-8 col-sm-offset-2">
+							<label for="email">Our stories team wants to meet you</label><br>
+							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form" class="light"/><br>
 						</div>
 					</div>
 				</section>
@@ -82,9 +116,7 @@
 				<section id="share" class="section bg-img text-center">
 					<div class="container">
 						<div class="col-sm-8 col-sm-offset-2">
-							<label for="email">Our stories team wants to meet you</label><br>
-							<input name="email" type="email" placeholder="person@email.com" required="required" maxlength="55" form="stories-form"/>
-							<br><button type="submit" name="submit" form="stories-form" class="btn btn-default">Share My Story</button>
+							<button type="submit" name="submit" form="stories-form" class="btn btn-default btn-block">Share My Story</button>
 						</div>
 					</div>
 				</section>
@@ -106,104 +138,72 @@
 		<script>
 			$(document).ready(function() {
 				$("#fullpage").fullpage({
-					onLeave: function(index, nextIndex, direction){
+					onLeave: function(index, nextIndex, direction) {
 	            var leavingSection = $(this);
 
-	            if (index == 1 && direction =="down"){
-								var empty = $("#stories-vid").is(":empty");
+							setTimeout(function() {
+									if (index == 2) {
+										  $('#stories-vid')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+									}
+							}, 500);
+	        },
 
-								if (empty) {
-										$("#stories-vid").html("<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed//t6i6TBT4kfg?autoplay=1' frameborder='0' allowfullscreen></iframe></div>");
-								}
-	            }
+					afterLoad: function(anchorLink, index) {
+	            var loadedSection = $(this);
+
+							setTimeout(function() {
+			            if (index == 2) {
+											$('#stories-vid')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+									}
+							}, 500);
 	        }
 				});
-				/*var windowHeight = $(window).height();
-				var sections = $('section');
-				var numberOfSections = sections.length;
-				var tops = [];
 
-				sections.height(windowHeight);
+				$("#stories-form").validate();
 
-				for (var i = 0; i < numberOfSections; ++i) {
-					var id = $('section:eq('+i+')').attr("id");
-					tops[i] = $('#'+id).offset().top;
-				}
-
-				var getCount = function(scrollTop) {
-					for (var i = 0; i < tops.length-1; ++i) {
-						if (scrollTop >= tops[i] && scrollTop < tops[i+1]) {
-							return i;
-						}
-					}
-
-					return tops.length-1;
-				};
-
-				var scrollTop = $(document).scrollTop();
-				var count = getCount(scrollTop);
-
-				$('#scroll-down').click(function() {
-					scrollTop = $(document).scrollTop();
-					count = getCount(scrollTop);
-
-					if (count < numberOfSections-1) {
-						count+=1;
-
-						$('body').stop().animate({
-							scrollTop: tops[count]
-						}, 800);
-					}
-				});
-
-				$('#scroll-up').click(function() {
-					scrollTop = $(document).scrollTop();
-					count = getCount(scrollTop);
-
-					if (scrollTop > 0) {
-						if (scrollTop%windowHeight == 0) {
-							--count;
-						}
-
-						$('body').stop().animate({
-							scrollTop: tops[count]
-						}, 800);
-					}
-				});*/
-
-
-				$('#stories-form').validate();
-
-				$('#stories-form').submit(function() {
+				$("#stories-form").submit(function() {
 					if ($(this).valid()) {
-						var name = $('input[name=name]').val();
-						var find = $('textarea[name=find]').val();
-						var story = $('textarea[name=story]').val();
-						var email = $('input[name=email]').val();
+						var name = $("input[name=name]").val();
+						var beginning = $("textarea[name=beginning]").val();
+						var persevered = $("textarea[name=persevered]").val();
+						var growth = $("textarea[name=growth]").val();
+						var thanks = $("textarea[name=thanks]").val();
+						var email = $("input[name=email]").val();
 
-						var valuesArray = [name, find, story, email];
+						var valuesArray = [name, beginning, persevered, growth, thanks, email];
 
 						$.ajax({
-							type: 'POST',
-							url: '/_scripts/stories/stories_submit.php',
+							type: "POST",
+							url: "/_scripts/stories/submit.php",
 							data: {
 								values : valuesArray
 							},
 							success: function(data) {
-								$('input[name=name]').val("");
-								$('textarea[name=find]').val("");
-								$('textarea[name=story]').val("");
-								$('input[name=email]').val("");
+								$("input[name=name]").val("");
+								$("textarea[name=beginning]").val("");
+								$("textarea[name=persevered]").val("");
+								$("textarea[name=growth]").val("");
+								$("textarea[name=thanks]").val("");
+								$("input[name=email]").val("");
 
-								$('header').fadeIn("slow");
+								$("header").html(data);
+								$("header").fadeIn("slow");
 
 								setTimeout(function() {
-									$('header').fadeOut("slow");
+									$("header").fadeOut("slow");
 								}, 8000);
 							}
 						});
 
 						event.preventDefault();
+					}
+					else {
+						$("header").html("<p>Please fill out all fields</p>");
+						$("header").fadeIn("slow");
+
+						setTimeout(function() {
+							$("header").fadeOut("slow");
+						}, 8000);
 					}
 				});
 

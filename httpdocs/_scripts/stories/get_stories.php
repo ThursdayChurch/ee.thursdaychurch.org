@@ -1,6 +1,6 @@
 <?php
-  require_once("stories_class.php");
+  require_once("StoriesConnection.php");
 
   $connection = new StoriesConnection();
-  $connection->query();
+  $connection->getStories($_POST['categories'], $_POST['tier'], $_POST['startDate'], $_POST['endDate']);
 ?>

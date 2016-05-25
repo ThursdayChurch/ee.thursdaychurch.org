@@ -1,0 +1,161 @@
+/*
+  Colors:
+  Cream: FDFAEC
+  Green: 00A887
+  Orange: EF7622
+  Red: D4451D
+  Blue: 83D1D8
+*/
+
+html, body {
+  min-height:100%;
+  margin:0;
+  padding:0;
+  font-family:'Gotham SSm 5r', 'Gotham SSm A', 'Gotham SSm B';
+  overflow-x:hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+  padding:0;
+}
+
+p {
+  font-size:16px;
+  line-height:24px;
+  color:#686868;
+}
+
+.bg-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-attachment: scroll;
+  background-image:black;
+}
+
+.vid-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.vid-responsive iframe, .vid-responsive object, .vid-responsive embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pad {
+  padding:30px 15px;
+}
+
+.border {
+  width:100px;
+  height:3px;
+  background-color:#EF7622;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.banner {
+  background-color:#81d0d8;
+  position:absolute;
+  height:100%;
+  width:100%;
+  display:table;
+}
+
+.banner .banner-inner {
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+  color:white;
+}
+
+.wrapper {
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  width:100%;
+}
+
+#outline-wrapper {
+  height:80%;
+}
+
+.title {
+
+}
+
+.outline-wrapper {
+  height:100%;
+}
+
+.outline img {
+  position:absolute;
+  max-height:100%;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#intro {
+  padding:100px 0;
+}
+
+#share {
+  text-align:center;
+  height:100%;
+}
+
+#share h3, #share p {
+  font-weight:200;
+  color:#EF7622;
+}
+
+#share h3 {
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+#steps {
+  background-color:#EF7622;
+  padding:100px 0;
+}
+
+#steps h1 {
+  font-size:65px;
+  color:white;
+  font-weight:200;
+}
+
+#steps h3 {
+  text-transform:uppercase;
+  color:white;
+  font-weight:200;
+  border-bottom:4px solid #D4451D;
+  display:inline-block;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+#steps p {
+  padding-top:15px;
+  padding-bottom:15px;
+  color:white;
+  font-weight:200;
+}
+
+#social {
+  padding:100px 0;
+}
