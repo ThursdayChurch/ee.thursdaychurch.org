@@ -36,7 +36,7 @@
 
       if (!empty($categories)) {
         foreach($categories as $category) {
-           $this->sql .= " AND $category = 1";
+           $this->sql .= " AND `$category` = 1";
         }
       }
 
@@ -47,16 +47,18 @@
       }
 
       if (!empty($startDate) && !empty($endDate)) {
-        $this->sql .= " AND Date >= '$startDate' AND Date <= '$endDate'";
+        $this->sql .= " AND `Date` >= '$startDate' AND `Date` <= '$endDate'";
       }
       else if (!empty($startDate)) {
-        $this->sql .= " AND Date >= '$startDate'";
+        $this->sql .= " AND `Date` >= '$startDate'";
       }
       else if (!empty($endDate)) {
-        $this->sql .= " AND Date <= '$endDate'";
+        $this->sql .= " AND `Date` <= '$endDate'";
       }
 
       $this->sql .= " ORDER BY ID DESC";
+
+      //echo $this->sql;
 
       $this->result = mysqli_query($this->con, $this->sql);
 
