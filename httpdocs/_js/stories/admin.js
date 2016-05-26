@@ -69,6 +69,10 @@ $(document).ready(function () {
       }
     });
 
+    $('#filter-categories').find('input[type=checkbox]:checked').removeAttr('checked');
+    $('#filter-tiers select').val('all');
+    $('#filter-date input').val('');
+
     $.ajax({
       type: 'POST',
       url: '/_scripts/stories/admin_update.php',
@@ -78,6 +82,7 @@ $(document).ready(function () {
       },
       success: function(data) {
         $("#admin-main").html(data);
+
         $("#notification").fadeIn();
 
         setTimeout(
