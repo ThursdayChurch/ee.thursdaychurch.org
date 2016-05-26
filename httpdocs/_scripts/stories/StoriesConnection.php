@@ -82,9 +82,15 @@
     }
 
     public function remove($remove) {
+      $this->sql .= "UPDATE stories SET Removed = 1 WHERE ID IN (";
+
       foreach($remove as $id) {
-        $this->sql .= "UPDATE stories SET Removed = 1 WHERE ID = $id";
+        $this->sql .= "$id,";
       }
+
+      $this->sql = rtrim($this->sql, ",");
+
+      $this->sql .= ")";
     }
 
     public function setTier($tier) {
