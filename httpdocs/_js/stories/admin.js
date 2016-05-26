@@ -110,12 +110,12 @@ $(document).ready(function () {
       if ($("#from").val() != "") {
           date = $("#from").val();
           splitDate = date.split("/");
-          startDate = splitDate[2] + "-" + splitDate[0] + "-" + splitDate[1];
+          startDate = splitDate[2] + "-" + splitDate[0] + "-" + splitDate[1] + " 00:00:01";
       }
       if ($("#to").val() != "") {
           date = $("#to").val();
           splitDate = date.split("/");
-          endDate = splitDate[2] + "-" + splitDate[0] + "-" + splitDate[1];
+          endDate = splitDate[2] + "-" + splitDate[0] + "-" + splitDate[1] + " 23:59:59";
       }
 
       $.ajax({
