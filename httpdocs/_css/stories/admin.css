@@ -156,10 +156,6 @@ select {
   margin-bottom:0;
 }
 
-#admin-sidebar input {
-  margin-top:0;
-}
-
 #admin-sidebar .datepicker {
   margin-bottom:5px;
 }
@@ -170,11 +166,12 @@ select {
 }
 
 #filter-date input {
+  margin-top:0;
   border:none;
-  width:100%;
   padding:5px;
   background-color:#F3F3F3;
   color:#686868;
+  width:100%;
 }
 
 #from-error, #to-error {
