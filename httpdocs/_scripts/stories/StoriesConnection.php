@@ -24,7 +24,7 @@
       $thanks = $values[4];
       $email = $values[5];
 
-      $this->sql .= "INSERT INTO stories (Name, Beginning, Persevered, Growth, Thanks, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$thanks', '$email')";
+      $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Thanks, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$thanks', '$email')";
 
       mysqli_query($this->con, $this->sql);
 
@@ -32,7 +32,7 @@
     }
 
     public function getStories($categories, $tier, $startDate, $endDate) {
-      $this->sql .= "SELECT * FROM stories WHERE Removed = 0";
+      $this->sql .= "SELECT * FROM `stories-posts` WHERE Removed = 0";
 
       if (!empty($categories)) {
         foreach($categories as $category) {
@@ -42,7 +42,7 @@
 
       if (!empty($tier)) {
         if ($tier != 'all') {
-            $this->sql .= " AND tier = '$tier'";
+            $this->sql .= " AND `Tier` = '$tier'";
         }
       }
 
@@ -70,7 +70,7 @@
       	$growth = $row['Growth'];
       	$thanks = $row['Thanks'];
       	$email = $row['Email'];
-        $tier = $row['tier'];
+        $tier = $row['Tier'];
 
         $timestamp = strtotime($row['Date']);
         $date = date('M j Y', $timestamp);
@@ -82,7 +82,7 @@
     }
 
     public function remove($remove) {
-      $this->sql .= "UPDATE stories SET Removed = 1 WHERE ID IN (";
+      $this->sql .= "UPDATE `stories-posts` SET Removed = 1 WHERE ID IN (";
 
       foreach($remove as $id) {
         $this->sql .= "$id,";
