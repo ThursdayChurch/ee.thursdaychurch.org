@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#fullpage").fullpage({
+  /*$("#fullpage").fullpage({
     onLeave: function(index, nextIndex, direction) {
         var leavingSection = $(this);
 
@@ -19,11 +19,69 @@ $(document).ready(function() {
             }
         }, 500);
     }
+  });*/
+
+  var windowHeight = $(window).height();
+
+  $("section").css({
+    "min-height" : windowHeight
+  });
+
+  $(window).resize(function() {
+    windowHeight = $(window).height();
+
+    $("section").css({
+      "min-height" : windowHeight
+    });
   });
 
   $("#stories-form").validate();
 
-  $("#stories-form").submit(function() {
+  var sections = $("section");
+  var sectionScrollTops = [];
+
+  sections.each(function() {
+    sectionScrollTops.push($(this).offset().top);
+  });
+
+  function getSectionIndex() {
+    var currentScrollTop = $(document).scrollTop();
+
+    for (var i = 0; i < (sectionScrollTops.length)-1; ++i) {
+      if (currentScrollTop >= sectionScrollTops[i] && currentScrollTop < sectionScrollTops[i+1]) {
+        return i;
+      }
+    }
+
+    return i;
+  };
+
+  var sectionIndex = getSectionIndex();
+
+  $(".arrow-up").click(function() {
+    sectionIndex = getSectionIndex();
+
+    if ($(document).scrollTop() != sectionScrollTops[sectionIndex]) {
+      $("html, body").animate({
+        scrollTop: sectionScrollTops[sectionIndex]
+      });
+    }
+    else {
+      $("html, body").animate({
+        scrollTop: sectionScrollTops[sectionIndex-1]
+      });
+    }
+  });
+
+  $(".arrow-down").click(function() {
+    sectionIndex = getSectionIndex();
+
+    $("html, body").animate({
+      scrollTop: sectionScrollTops[sectionIndex+1]
+    });
+  });
+
+  /*$("#stories-form").submit(function() {
     if ($(this).valid()) {
       var name = $("input[name=name]").val();
       var beginning = $("textarea[name=beginning]").val();
@@ -67,5 +125,5 @@ $(document).ready(function() {
         $("header").fadeOut("slow");
       }, 8000);
     }
-  });
+  });*/
 });
