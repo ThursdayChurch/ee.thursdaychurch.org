@@ -24,14 +24,16 @@ $(document).ready(function() {
   var windowHeight = $(window).height();
 
   $("section").css({
-    "min-height" : windowHeight
+    "min-height" : windowHeight,
+    "height" : windowHeight
   });
 
   $(window).resize(function() {
     windowHeight = $(window).height();
 
     $("section").css({
-      "min-height" : windowHeight
+      "min-height" : windowHeight,
+      "height" : windowHeight
     });
   });
 
