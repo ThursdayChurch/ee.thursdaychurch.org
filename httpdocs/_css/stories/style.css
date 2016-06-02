@@ -36,7 +36,7 @@ h3 {
 }
 
 p {
-  font-size:16px;
+  font-size:18px;
   line-height:30px;
   font-weight:200;
   letter-spacing:1px;
@@ -281,14 +281,6 @@ nav .arrow:hover {
 
 #cover h1 {
   margin-bottom:20px;
-}
-
-#cover h3 {
-
-}
-
-#cover h3 span {
-  letter-spacing:0 !important
 }
 
 /*#cover h3 span {
