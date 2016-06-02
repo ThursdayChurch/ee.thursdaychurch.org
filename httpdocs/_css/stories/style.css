@@ -39,6 +39,7 @@ p {
   font-size:16px;
   line-height:30px;
   font-weight:200;
+  letter-spacing:1px;
 }
 
 ul {
@@ -77,6 +78,7 @@ input, textarea {
   margin-top:15px;
   width:100%;
   background-color:rgba(255, 255, 255, 0);
+  letter-spacing:1px;
 }
 
 textarea {
@@ -169,6 +171,7 @@ label {
   font-size:30px;
   display:inline-block;
   font-weight:200;
+  letter-spacing:1px;
 }
 
 nav {
@@ -268,13 +271,32 @@ nav .arrow:hover {
   white-space:pre;
 }
 
-#cover, #vid, #intro, #name, #beginning, #persevered, #growth, #thanks, #email, #share {
+#cover {
+  background-image:url("/_img/stories/Cover-4.2.png");
+}
+
+#vid, #intro, #name, #beginning, #persevered, #growth, #thanks, #email, #share {
   background-image:url("/_img/stories/paper-texture.jpg");
 }
 
 #cover h1 {
   margin-bottom:20px;
 }
+
+#cover h3 {
+
+}
+
+#cover h3 span {
+  letter-spacing:0 !important
+}
+
+/*#cover h3 span {
+  border-bottom:2px solid black;
+  width:125px;
+  display:inline-block;
+  height:20px;
+}*/
 
 /* md (Small Desktop) */
 @media screen and (max-width: 1199px) {
