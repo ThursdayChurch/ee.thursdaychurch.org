@@ -3,8 +3,6 @@
 
   $connection = new StoriesConnection();
   $connection->submit($_POST["name"], $_POST["beginning"], $_POST["persevered"], $_POST["growth"], $_POST["email"]);
-
-  echo "Thank You For Submiting Your Story! Our Stories Team will be in touch";
 ?>
 
 <!DOCTYPE html>

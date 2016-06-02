@@ -17,11 +17,13 @@
     }
 
     public function submit($name, $beginning, $persevered, $growth, $email) {
-      $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$email')";
+      if (!empty($email)) {
+        $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$email')";
 
-      mysqli_query($this->con, $this->sql);
+        mysqli_query($this->con, $this->sql);
 
-      mysqli_close($this->con);
+        mysqli_close($this->con);
+      }
     }
 
     public function getStories($categories, $tier, $startDate, $endDate) {
@@ -61,14 +63,13 @@
       	$beginning = $row['Beginning'];
       	$persevered = $row['Persevered'];
       	$growth = $row['Growth'];
-      	$thanks = $row['Thanks'];
       	$email = $row['Email'];
         $tier = $row['Tier'];
 
         $timestamp = strtotime($row['Date']);
         $date = date('M j Y', $timestamp);
 
-        $this->printStory($id, $name, $beginning, $persevered, $growth, $thanks, $email, $date, $tier);
+        $this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $tier);
       }
 
       mysqli_close($this->con);
@@ -101,7 +102,7 @@
       $this->getStories();
     }
 
-    private function printStory($id, $name, $beginning, $persevered, $growth, $thanks, $email, $date, $tier) {
+    private function printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $tier) {
       $tierString = str_replace('-', ' ', $tier);
 
       echo "
@@ -136,9 +137,6 @@
               <div class='clearfix'></div>
 
               <div class='entry col-sm-6'><p><strong>In the timeline of your story, how have you changed? Where were you before? Where are you now?</strong><br>$growth</p></div>
-              <div class='entry col-sm-6'><p><strong>How would you thank God for His provision and/or guidance during this time?</strong><br>$thanks</p></div>
-              <div class='clearfix'></div>
-
               <div class='entry col-sm-6'><p><strong>Email</strong><br><a href='mailto:$email'>$email</a></p></div>
               <div class='clearfix'></div>
             </div>
