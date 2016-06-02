@@ -26,7 +26,7 @@
       }
     }
 
-    public function getStories($categories, $tier, $startDate, $endDate) {
+    public function getStories($categories, $status, $startDate, $endDate) {
       $this->sql .= "SELECT * FROM `stories-posts` WHERE Removed = 0";
 
       if (!empty($categories)) {
@@ -35,9 +35,9 @@
         }
       }
 
-      if (!empty($tier)) {
-        if ($tier != 'all') {
-            $this->sql .= " AND `Tier` = '$tier'";
+      if (!empty($status)) {
+        if ($status != 'all') {
+            $this->sql .= " AND `Status` = '$status'";
         }
       }
 
@@ -64,12 +64,12 @@
       	$persevered = $row['Persevered'];
       	$growth = $row['Growth'];
       	$email = $row['Email'];
-        $tier = $row['Tier'];
+        $status = $row['Status'];
 
         $timestamp = strtotime($row['Date']);
         $date = date('M j Y', $timestamp);
 
-        $this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $tier);
+        $this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $status);
       }
 
       mysqli_close($this->con);
@@ -87,7 +87,7 @@
       $this->sql .= ")";
     }
 
-    public function setTier($tier) {
+    public function setStatus($status) {
 
     }
 
@@ -102,15 +102,15 @@
       $this->getStories();
     }
 
-    private function printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $tier) {
-      $tierString = str_replace('-', ' ', $tier);
+    private function printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $status) {
+      $statusString = str_replace('-', ' ', $status);
 
       echo "
       <div id='story-$id' class='story'>
         <div class='header'>
           <div class='date col-sm-3 col-xs-4'>$date</div>
 
-          <div class='$tier col-sm-3 col-xs-4 col-sm-offset-4 col-xs-offset-2'>$tierString</div>
+          <div class='$status col-sm-3 col-xs-4 col-sm-offset-4 col-xs-offset-2'>$statusString</div>
 
           <div class='edit-category col-sm-1 col-xs-2 col-sm-offset-0 col-xs-offset-4 text-center'>
             <i class='fa fa-pencil-square-o'></i>

@@ -238,11 +238,15 @@ select {
 }
 
 .new {
-  background-color:#006f7c;
+  background-color:#009933;
+}
+
+.reviewed {
+  background-color:#4B0082;
 }
 
 .in-progress {
-  background-color:#e67300;
+  background-color:#006f7c;
 }
 
 .active {
@@ -250,7 +254,7 @@ select {
 }
 
 .completed {
-  background-color:#009933;
+  background-color:#e67300;
 }
 
 .date {
