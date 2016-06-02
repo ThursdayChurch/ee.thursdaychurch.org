@@ -16,15 +16,8 @@
       }
     }
 
-    public function submit($values) {
-      $name = $values[0];
-      $beginning = $values[1];
-      $persevered = $values[2];
-      $growth = $values[3];
-      $thanks = $values[4];
-      $email = $values[5];
-
-      $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Thanks, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$thanks', '$email')";
+    public function submit($name, $beginning, $persevered, $growth, $email) {
+      $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$email')";
 
       mysqli_query($this->con, $this->sql);
 
