@@ -8,7 +8,7 @@
     private $sql = "";
     private $result;
 
-    public function __construct() {
+    public function connect() {
       $this->con = mysqli_connect($this->DB_HOST, $this->DB_USER, $this->DB_PASS, $this->DB_NAME);
 
       if (!$this->con) {
@@ -17,6 +17,8 @@
     }
 
     public function submit($name, $beginning, $persevered, $growth, $email) {
+      $this->connect();
+
       if (!empty($email)) {
         $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$email')";
 
@@ -26,7 +28,9 @@
       }
     }
 
-    public function getStories($categories, $tier, $startDate, $endDate) {
+    public function getStories($categories, $status, $startDate, $endDate) {
+      $this->connect();
+
       $this->sql .= "SELECT * FROM `stories-posts` WHERE Removed = 0";
 
       if (!empty($categories)) {
@@ -35,9 +39,9 @@
         }
       }
 
-      if (!empty($tier)) {
-        if ($tier != 'all') {
-            $this->sql .= " AND `Tier` = '$tier'";
+      if (!empty($status)) {
+        if ($status != 'all') {
+            $this->sql .= " AND `Status` = '$status'";
         }
       }
 
@@ -57,6 +61,10 @@
 
       $this->result = mysqli_query($this->con, $this->sql);
 
+      $values = array();
+      $AllCategories = array("abuse", "addiction", "adoption", "anger", "apathy", "bitterness", "death-&-loss", "dissapointment", "doubt", "family", "financial", "forgiveness", "gods-love", "life-change", "love-relationships", "marriage", "mercy", "miracle", "hope", "healing-recovery", "missions", "natural-disasters", "parenting", "patience", "persecution", "prophecy", "reconciliation", "religion", "salvation", "school", "serving", "work");
+      $count = 0;
+
       while($row = mysqli_fetch_assoc($this->result)) {
         $id = $row['ID'];
         $name = $row['Name'];
@@ -64,171 +72,69 @@
       	$persevered = $row['Persevered'];
       	$growth = $row['Growth'];
       	$email = $row['Email'];
-        $tier = $row['Tier'];
+        $status = $row['Status'];
+
+        $storyCategories = array();
+
+        foreach($AllCategories as $category) {
+          if ($row[$category] == 1) {
+            array_push($storyCategories, $category);
+          }
+        }
 
         $timestamp = strtotime($row['Date']);
         $date = date('M j Y', $timestamp);
 
-        $this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $tier);
+        //$this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $status);
+        $values[$count] = array('id' => $id, 'name' => $name, 'beginning' => $beginning, 'persevered' => $persevered, 'growth' => $growth, 'email' => $email, 'status' => $status, 'date' => $date, 'categories' => $storyCategories);
+
+        ++$count;
       }
 
       mysqli_close($this->con);
+
+      echo json_encode($values);
     }
 
-    public function remove($remove) {
-      $this->sql .= "UPDATE `stories-posts` SET Removed = 1 WHERE ID IN (";
+    public function remove($remove, $id) {
+      if ($remove == 1) {
+          $this->sql .= "UPDATE `stories-posts` SET Removed = 1 WHERE ID = $id;";
+      }
+    }
 
-      foreach($remove as $id) {
-        $this->sql .= "$id,";
+    public function setCategories($categoryNames, $checked, $id) {
+      $this->sql .= "UPDATE `stories-posts` SET";
+
+      $categoryIndex = 0;
+
+      foreach($categoryNames as $category) {
+        if ($checked[$categoryIndex] == 1) {
+          $this->sql .= " `$category` = 1,";
+        }
+        else {
+          $this->sql .= " `$category` = 0,";
+        }
+
+        ++$categoryIndex;
       }
 
       $this->sql = rtrim($this->sql, ",");
 
-      $this->sql .= ")";
+      $this->sql .= " WHERE `ID` = $id;";
     }
 
-    public function setTier($tier) {
-
-    }
-
-    public function setCategories($categories) {
-
+    public function setStatus($status, $id) {
+      $this->sql .= " UPDATE `stories-posts` SET `Status` = '$status' WHERE `ID` = '$id';";
     }
 
     // multiple queries from database to admin
     public function update() {
+      $this->connect();
+
       mysqli_multi_query($this->con, $this->sql);
       $this->sql = "";
+      mysqli_close($this->con);
       $this->getStories();
-    }
-
-    private function printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $tier) {
-      $tierString = str_replace('-', ' ', $tier);
-
-      echo "
-      <div id='story-$id' class='story'>
-        <div class='header'>
-          <div class='date col-sm-3 col-xs-4'>$date</div>
-
-          <div class='$tier col-sm-3 col-xs-4 col-sm-offset-4 col-xs-offset-2'>$tierString</div>
-
-          <div class='edit-category col-sm-1 col-xs-2 col-sm-offset-0 col-xs-offset-4 text-center'>
-            <i class='fa fa-pencil-square-o'></i>
-          </div>
-
-          <div class='trash col-sm-1 col-xs-2 text-center'>
-            <i class='fa fa-trash-o'></i>
-          </div>
-
-          <div class='clearfix'></div>
-        </div>
-
-        <div class='content'>
-          <div class='col-sm-12'>
-            <div class='col-sm-12'>
-              <h3>$name</h3>
-            </div>
-
-            <div class='clearfix'></div>
-
-            <div class='more'>
-              <div class='entry col-sm-6'><p><strong>Where does your story begin? Describe that season…</strong><br>$beginning</p></div>
-              <div class='entry col-sm-6'><p><strong>Can you further describe how you persevered during that season?</strong><br>$persevered</p></div>
-              <div class='clearfix'></div>
-
-              <div class='entry col-sm-6'><p><strong>In the timeline of your story, how have you changed? Where were you before? Where are you now?</strong><br>$growth</p></div>
-              <div class='entry col-sm-6'><p><strong>Email</strong><br><a href='mailto:$email'>$email</a></p></div>
-              <div class='clearfix'></div>
-            </div>
-          </div>
-          <div class='clearfix'></div>
-        </div>
-
-        <div class='footer'>
-          <div class='col-sm-12'>
-            <div class='edit-categories'>
-              <div class='col-sm-12'>
-                <form>
-                  <input type='checkbox' name='marriage'> Marriage<br>
-                  <input type='checkbox' name='addiction'> Addiction<br>
-                  <input type='checkbox' name='adoption'> Adoption<br>
-                  <input type='checkbox' name='death-&-loss'> Death & Loss<br>
-                  <input type='checkbox' name='financial'> Financial<br>
-                  <input type='checkbox' name='parenting'> Parenting<br>
-                  <input type='checkbox' name='family'> Family<br>
-                  <input type='checkbox' name='reconciliation'> Reconciliation<br>
-                  <input type='checkbox' name='doubt'> Doubt<br>
-                  <input type='checkbox' name='religion'> Religion<br>
-                  <input type='checkbox' name='missions'> Missions<br>
-                  <input type='checkbox' name='persecution'> Persecution<br>
-                  <input type='checkbox' name='redemption'> Redemption<br>
-                  <input type='checkbox' name='dissapointment'> Dissapointment<br>
-                  <input type='checkbox' name='love'> Love<br>
-                  <input type='checkbox' name='prophecy'> Prophecy<br>
-                  <input type='checkbox' name='healing'> Healing<br>
-                  <input type='checkbox' name='apathy'> Apathy<br>
-                  <input type='checkbox' name='synnacism'> Synnacism<br>
-                  <input type='checkbox' name='bitterness'> Bitterness<br>
-                  <input type='checkbox' name='forgiveness'> Forgiveness<br>
-                  <input type='checkbox' name='anger'> Anger<br>
-                </form>
-              </div>
-            </div>
-
-            <div class='categories'>
-              <div class='col-sm-6'>
-                <div class='category'>
-                  Category 1
-                </div>
-              </div>
-
-              <div class='col-sm-6'>
-                <div class='category'>
-                  Category 1
-                </div>
-              </div>
-
-              <div class='col-sm-6'>
-                <div class='category'>
-                  Category 1
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='more-info col-sm-1 col-xs-2 col-sm-offset-11 col-xs-offset-10 text-center'>
-            <i class='fa fa-chevron-down'></i>
-          </div>
-
-          <div class='clearfix'></div>
-        </div>
-      </div>
-
-      <div class='clearfix'></div>
-
-      <script>
-        $('#story-$id .trash').click(
-          function() {
-            $('#story-$id').toggleClass('remove');
-            $('#story-$id .trash i').toggleClass('fa-times fa-trash-o');
-          }
-        );
-
-        $('#story-$id .more-info').click(
-          function() {
-            $('#story-$id .more').slideToggle();
-            $('#story-$id .more-info i').toggleClass('fa-chevron-up fa-chevron-down');
-          }
-        );
-
-        $('#story-$id .edit-category').click(
-          function() {
-            $('#story-$id .edit-categories').slideToggle();
-            $('#story-$id .edit-category i').toggleClass('fa-times fa-pencil-square-o');
-          }
-        );
-      </script>
-      ";
     }
   }
 ?>

@@ -32,12 +32,9 @@
 		{if logged_in}
 			<header id="admin-header">
 				<div class="container-fluid">
-					<div class="col-sm-10">
-						<div id="notification"><h5>Your changes have been saved.</h5></div>
-					</div>
-
-					<div class="col-sm-2">
-						<button id="save" class="btn btn-default btn-block">Save</button>
+					<div class="row">
+						<div class="col-sm-1"><div class="logo center-block"><a href="/stories/admin"><img src="/_img/stories/stories-logo.png" class="img-responsive"/></a></div></div>
+						<div class="col-sm-4 col-sm-offset-7"><div id="notification"><h5>Your Changes Have Been Saved</h5></div></div>
 					</div>
 				</div>
 			</header>
@@ -50,11 +47,11 @@
 						<div id="admin-sidebar">
 							<div class="pad">
 								<form id="filter-form">
-									<h3>Filter Entries</h3><br>
+									<h3>Filter Stories</h3><br>
 									<section id="filter-categories">
 										<h4>Categories</h4>
 
-										<input type="checkbox" id="abuse" name="abuse"> <label for="marriage">Marriage</label><br>
+										<input type="checkbox" id="abuse" name="abuse"> <label for="abuse">Abuse</label><br>
 									  <input type="checkbox" id="addiction" name="addiction"> <label for="addiction">Addiction</label><br>
 										<input type="checkbox" id="adoption" name="adoption"> <label for="adoption">Adoption</label><br>
 										<input type="checkbox" id="anger" name="anger"> <label for="anger">Anger</label><br>
@@ -92,11 +89,12 @@
 
 									<div class="clearfix"></div>
 
-									<section id="filter-tiers">
-										<h4>Tiers</h4>
+									<section id="filter-statuses">
+										<h4>Status</h4>
 										<select>
 											<option value="all">All</option>
 										  <option value="new">New</option>
+											<option value="reviewed">Reviewed</option>
 										  <option value="in-progress">In Progress</option>
 										  <option value="active">Active</option>
 										  <option value="completed">Completed</option>
@@ -129,12 +127,14 @@
 		{if:elseif logged_out}
       <div id="admin-login">
 				<div class="container">
-					<div class="col-sm-4 col-sm-offset-4">
-						<img src="/_img/logo-large-grey.png" class="img-responsive"/>
-					</div>
+					<div class="row">
+						<div class="col-sm-4 col-sm-offset-4">
+							<img src="/_img/logo-large-grey.png" class="img-responsive"/>
+						</div>
 
-					<div class="col-sm-12">
-						<h1>Please Login as a Stories Admin</h1>
+						<div class="col-sm-12">
+							<h1>Please Login as a Stories Admin</h1>
+						</div>
 					</div>
 				</div>
 			</div>

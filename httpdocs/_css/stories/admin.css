@@ -122,27 +122,27 @@ select {
 #admin-header {
   background-color:rgba(70, 70, 70, 0.97);
   display:block;
+  z-index:1000;
   position:fixed;
   width:100%;
-  z-index:1000;
-  padding:7px 0;
+}
+
+#admin-header .logo {
+  width:60px;
 }
 
 #notification {
   display:none;
+  text-align:center;
 }
 
 #notification h5 {
   color:white;
-  margin:11px 0 0 0;
+  margin:24px 0 0 0;
 }
 
 .header-filler {
-  height:51px;
-}
-
-#save {
-  float:right;
+  height:60px;
 }
 
 #admin-main {
@@ -227,7 +227,7 @@ select {
   background-color:#464646;
 }
 
-.new, .in-progress, .active, .completed {
+.new, .in-progress, .active, .completed, .reviewed {
   padding-top:15px;
   padding-bottom:15px;
   text-transform:uppercase;
@@ -238,11 +238,15 @@ select {
 }
 
 .new {
-  background-color:#006f7c;
+  background-color:#009933;
+}
+
+.reviewed {
+  background-color:#4B0082;
 }
 
 .in-progress {
-  background-color:#e67300;
+  background-color:#006f7c;
 }
 
 .active {
@@ -250,7 +254,7 @@ select {
 }
 
 .completed {
-  background-color:#009933;
+  background-color:#e67300;
 }
 
 .date {
@@ -277,6 +281,11 @@ select {
   -webkit-transition:0.2s opacity ease-in;
   -o-transition:0.2s opacity ease-in;
   transition:0.2s opacity ease-in;
+}
+
+.save {
+  padding-top:15px;
+  padding-bottom:15px;
 }
 
 .story .content {
@@ -368,7 +377,12 @@ select {
 }
 
 .edit-categories {
-  padding-top:10px;
-  padding-bottom:10px;
+  padding-top:20px;
+  padding-bottom:20px;
   display:none;
+}
+
+.edit-categories form label {
+  font-weight:200;
+  margin:0;
 }
