@@ -169,7 +169,6 @@ $(document).ready(function () {
             status : status
           },
           success: function(data) {
-            alert(data);
             printStories(data);
 
             $("#notification").fadeIn();
