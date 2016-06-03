@@ -57,6 +57,9 @@
 
       $this->result = mysqli_query($this->con, $this->sql);
 
+      $value = array();
+      $count = 0;
+
       while($row = mysqli_fetch_assoc($this->result)) {
         $id = $row['ID'];
         $name = $row['Name'];
@@ -69,10 +72,15 @@
         $timestamp = strtotime($row['Date']);
         $date = date('M j Y', $timestamp);
 
-        $this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $status);
+        //$this->printStory($id, $name, $beginning, $persevered, $growth, $email, $date, $status);
+        $values[$count] = array('id' => $id, 'name' => $name, 'beginning' => $beginning, 'persevered' => $persevered, 'growth' => $growth, 'email' => $email, 'status' => $status, 'date' => $date);
+
+        ++$count;
       }
 
       mysqli_close($this->con);
+
+      echo json_encode($values);
     }
 
     public function remove($remove) {
@@ -110,15 +118,13 @@
         <div class='header'>
           <div class='date col-sm-3 col-xs-4'>$date</div>
 
-          <div class='$status col-sm-3 col-xs-4 col-sm-offset-4 col-xs-offset-2'>$statusString</div>
+          <div class='$status col-sm-3 col-xs-4'>$statusString</div>
 
-          <div class='edit-category col-sm-1 col-xs-2 col-sm-offset-0 col-xs-offset-4 text-center'>
-            <i class='fa fa-pencil-square-o'></i>
-          </div>
+          <div class='edit-category col-sm-1 col-xs-2 col-sm-offset-1 text-center'><i class='fa fa-pencil-square-o'></i></div>
 
-          <div class='trash col-sm-1 col-xs-2 text-center'>
-            <i class='fa fa-trash-o'></i>
-          </div>
+          <div class='trash col-sm-1 col-xs-2 text-center'><i class='fa fa-trash-o'></i></div>
+
+          <div class='col-sm-3'><button id='save-$id' class='save btn btn-default btn-block'>Save</button></div>
 
           <div class='clearfix'></div>
         </div>

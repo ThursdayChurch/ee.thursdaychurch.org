@@ -32,13 +32,7 @@
 		{if logged_in}
 			<header id="admin-header">
 				<div class="container-fluid">
-					<div class="col-sm-10">
-						<div id="notification"><h5>Your changes have been saved.</h5></div>
-					</div>
-
-					<div class="col-sm-2">
-						<button id="save" class="btn btn-default btn-block">Save</button>
-					</div>
+					{!--}<div class="col-sm-1"><img src="/_img/stories/Stories Full Bottle White.png"/></div>{--}
 				</div>
 			</header>
 
@@ -50,7 +44,7 @@
 						<div id="admin-sidebar">
 							<div class="pad">
 								<form id="filter-form">
-									<h3>Filter Entries</h3><br>
+									<h3>Filter Stories</h3><br>
 									<section id="filter-categories">
 										<h4>Categories</h4>
 
@@ -130,12 +124,14 @@
 		{if:elseif logged_out}
       <div id="admin-login">
 				<div class="container">
-					<div class="col-sm-4 col-sm-offset-4">
-						<img src="/_img/logo-large-grey.png" class="img-responsive"/>
-					</div>
+					<div class="row">
+						<div class="col-sm-4 col-sm-offset-4">
+							<img src="/_img/logo-large-grey.png" class="img-responsive"/>
+						</div>
 
-					<div class="col-sm-12">
-						<h1>Please Login as a Stories Admin</h1>
+						<div class="col-sm-12">
+							<h1>Please Login as a Stories Admin</h1>
+						</div>
 					</div>
 				</div>
 			</div>
