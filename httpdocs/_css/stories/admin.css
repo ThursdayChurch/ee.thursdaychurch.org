@@ -377,11 +377,12 @@ select {
 }
 
 .edit-categories {
-  padding-top:10px;
-  padding-bottom:10px;
+  padding-top:20px;
+  padding-bottom:20px;
   display:none;
 }
 
 .edit-categories form label {
   font-weight:200;
+  margin:0;
 }
