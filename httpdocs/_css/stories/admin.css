@@ -227,7 +227,7 @@ select {
   background-color:#464646;
 }
 
-.new, .in-progress, .active, .completed {
+.new, .in-progress, .active, .completed, .reviewed {
   padding-top:15px;
   padding-bottom:15px;
   text-transform:uppercase;

@@ -8,7 +8,7 @@
     private $sql = "";
     private $result;
 
-    public function __construct() {
+    public function connect() {
       $this->con = mysqli_connect($this->DB_HOST, $this->DB_USER, $this->DB_PASS, $this->DB_NAME);
 
       if (!$this->con) {
@@ -17,6 +17,8 @@
     }
 
     public function submit($name, $beginning, $persevered, $growth, $email) {
+      $this->connect();
+
       if (!empty($email)) {
         $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$email')";
 
@@ -27,6 +29,8 @@
     }
 
     public function getStories($categories, $status, $startDate, $endDate) {
+      $this->connect();
+
       $this->sql .= "SELECT * FROM `stories-posts` WHERE Removed = 0";
 
       if (!empty($categories)) {
@@ -57,7 +61,7 @@
 
       $this->result = mysqli_query($this->con, $this->sql);
 
-      $value = array();
+      $values = array();
       $AllCategories = array("abuse", "addiction", "adoption", "anger", "apathy", "bitterness", "death-&-loss", "dissapointment", "doubt", "family", "financial", "forgiveness", "gods-love", "life-change", "love-relationships", "marriage", "mercy", "miracle", "hope", "healing-recovery", "missions", "natural-disasters", "parenting", "patience", "persecution", "prophecy", "reconciliation", "religion", "salvation", "school", "serving", "work");
       $count = 0;
 
@@ -119,14 +123,17 @@
       $this->sql .= " WHERE `ID` = $id;";
     }
 
-    public function setStatus($status) {
-
+    public function setStatus($status, $id) {
+      $this->sql .= " UPDATE `stories-posts` SET `Status` = '$status' WHERE `ID` = '$id';";
     }
 
     // multiple queries from database to admin
     public function update() {
+      $this->connect();
+
       mysqli_multi_query($this->con, $this->sql);
       $this->sql = "";
+      mysqli_close($this->con);
       $this->getStories();
     }
   }
