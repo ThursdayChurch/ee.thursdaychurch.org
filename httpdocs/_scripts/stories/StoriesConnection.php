@@ -83,16 +83,8 @@
       echo json_encode($values);
     }
 
-    public function remove($remove) {
-      $this->sql .= "UPDATE `stories-posts` SET Removed = 1 WHERE ID IN (";
-
-      foreach($remove as $id) {
-        $this->sql .= "$id,";
-      }
-
-      $this->sql = rtrim($this->sql, ",");
-
-      $this->sql .= ")";
+    public function remove($remove, $id) {
+      $this->sql .= "UPDATE `stories-posts` SET Removed = 1 WHERE ID = $id";
     }
 
     public function setStatus($status) {

@@ -33,8 +33,8 @@
       <div class="inner">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12">
-              <p>Thank you for sharing your story! It takes courage to shed light on a piece of yourself that's so personal.<br><br>By telling your story, you are helping us connect with you which is an integral part of who we are at Journey. We are on a mission to build healthy relationships. With your permission, of course, we would like to use some of these stories as a connection to others in the Church. This could be in the form of a video narrative, social media spotlight, or live interview.<br><br>If your story is selected, we will be in touch with you concerning next steps. Thank you again for your sharing your story. It was made to be told.</p><br><br>
+            <div class="col-sm-8 col-sm-offset-2">
+              <p>Thank you for sharing your story! We will be in touch with you concerning the next steps. Your story was made to be told.</p><br><br>
             </div>
           </div>
 

@@ -100,13 +100,60 @@ $(document).ready(function () {
         $(storyHashId+" .more-info i").removeClass("fa-chevron-up");
         $(storyHashId+" .more-info i").addClass("fa-chevron-down");
       });
-    });
 
+      // Add functionality for save
+      $("#save-"+ids[index]).click(function() {
+
+        // Three things that need to be updated
+        var id = ids[index];
+        var remove = 0;
+        var categories = [];
+
+        // if has class remove, set remove to 1
+        if ($(storyHashId).hasClass("remove")) {
+          remove = 1;
+        }
+
+        var empty = $(storyHashId+" .categories").is(":empty");
+
+        // If categories are no empty add them to array
+        if (!empty) {
+          $(storyHashId+" .category").each(function() {
+            categories.push($(this).text().toLowerCase());
+          });
+        }
+
+        // Reset all filtering fields
+        $("#filter-categories").find("input[type=checkbox]:checked").removeAttr("checked");
+        $("#filter-statuses select").val("all");
+        $("#filter-date input").val("");
+
+        // Update stories admin
+        $.ajax({
+          type: "POST",
+          url: "/_scripts/stories/admin_update.php",
+          data: {
+            id : id,
+            remove : remove,
+            categories : categories
+          },
+          success: function(data) {
+            printStories(data);
+
+            $("#notification").fadeIn();
+
+            setTimeout(function() {
+              $("#notification").fadeOut();
+            }, 4000);
+          }
+        });
+      });
+    });
   };
 
   $.ajax({
-    type: 'POST',
-    url: '/_scripts/stories/get_stories.php',
+    type: "POST",
+    url: "/_scripts/stories/get_stories.php",
     success: function(data) {
       printStories(data);
     }
@@ -137,13 +184,13 @@ $(document).ready(function () {
       });
     }
 
-    $('#filter-categories').find('input[type=checkbox]:checked').removeAttr('checked');
-    $('#filter-tiers select').val('all');
-    $('#filter-date input').val('');
+    $("#filter-categories").find("input[type=checkbox]:checked").removeAttr("checked");
+    $("#filter-tiers select").val("all");
+    $("#filter-date input").val("");
 
     $.ajax({
-      type: 'POST',
-      url: '/_scripts/stories/admin_update.php',
+      type: "POST",
+      url: "/_scripts/stories/admin_update.php",
       data: {
         id : id,
         remove : remove,
@@ -195,8 +242,8 @@ $(document).ready(function () {
       }
 
       $.ajax({
-        type: 'POST',
-        url: '/_scripts/stories/get_stories.php',
+        type: "POST",
+        url: "/_scripts/stories/get_stories.php",
         data: {
           categories : categories,
           status : status,

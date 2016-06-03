@@ -123,25 +123,27 @@ select {
   background-color:rgba(70, 70, 70, 0.97);
   display:block;
   z-index:1000;
-  padding:7px 0;
+  position:fixed;
+  width:100%;
 }
 
-/*#notification {
+#admin-header .logo {
+  width:60px;
+}
+
+#notification {
   display:none;
+  text-align:center;
 }
 
 #notification h5 {
   color:white;
-  margin:11px 0 0 0;
+  margin:24px 0 0 0;
 }
 
 .header-filler {
-  height:51px;
+  height:60px;
 }
-
-#save {
-  float:right;
-}*/
 
 #admin-main {
   background-color:#F3F3F3;
@@ -378,4 +380,8 @@ select {
   padding-top:10px;
   padding-bottom:10px;
   display:none;
+}
+
+.edit-categories form label {
+  font-weight:200;
 }
