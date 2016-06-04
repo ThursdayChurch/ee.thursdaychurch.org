@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   // Set section heights
   var windowHeight = $(window).height();
-  
+
   $("section").css({
     "min-height" : windowHeight,
     "height" : windowHeight
