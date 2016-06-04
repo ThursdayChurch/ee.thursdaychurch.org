@@ -62,7 +62,7 @@
       $this->result = mysqli_query($this->con, $this->sql);
 
       $values = array();
-      $AllCategories = array("abuse", "addiction", "adoption", "anger", "apathy", "bitterness", "death-&-loss", "dissapointment", "doubt", "family", "financial", "forgiveness", "gods-love", "life-change", "love-relationships", "marriage", "mercy", "miracle", "hope", "healing-recovery", "missions", "natural-disasters", "parenting", "patience", "persecution", "prophecy", "reconciliation", "religion", "salvation", "school", "serving", "work");
+      $AllCategories = array("abuse", "addiction", "adoption", "anger", "apathy", "bitterness", "death-&-loss", "disappointment", "doubt", "family", "financial", "forgiveness", "gods-love", "grace", "healing-recovery", "hope", "journey-groups", "life-change", "love-relationships", "marriage", "mercy", "miracle", "missions", "natural-disasters", "parenting", "patience", "persecution", "prophecy", "reconciliation", "religion", "salvation", "school", "serving", "work");
       $count = 0;
 
       while($row = mysqli_fetch_assoc($this->result)) {
