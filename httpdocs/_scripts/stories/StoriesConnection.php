@@ -1,7 +1,7 @@
 <?php
   class StoriesConnection {
-    private $DB_NAME = "stories";
-    private $DB_USER = "storiesadmin";
+    private $DB_NAME = "stories_";
+    private $DB_USER = "stories-admin";
     private $DB_PASS = "%M79dl2g";
     private $DB_HOST = "localhost";
     private $con;
@@ -19,13 +19,13 @@
     public function submit($name, $beginning, $persevered, $growth, $email) {
       $this->connect();
 
-      if (!empty($email)) {
+      if (isset($email)) {
         $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name', '$beginning', '$persevered', '$growth', '$email')";
 
         mysqli_query($this->con, $this->sql);
-
-        mysqli_close($this->con);
       }
+
+      mysqli_close($this->con);
     }
 
     public function getStories($categories, $status, $startDate, $endDate) {
