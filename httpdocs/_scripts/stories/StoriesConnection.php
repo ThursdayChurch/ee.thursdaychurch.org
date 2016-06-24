@@ -19,14 +19,14 @@
     public function submit($name, $beginning, $persevered, $growth, $email) {
       $this->connect();
 
-      $name_ = mysql_real_escape_string($name);
-      $beginning_ = mysql_real_escape_string($beginning);
-      $persevered_ = mysql_real_escape_string($persevered);
-      $growth_ = mysql_real_escape_string($growth);
-      $email_ = mysql_real_escape_string($email);
+      $_name = mysqli_real_escape_string($this->con, $name);
+      $_beginning = mysqli_real_escape_string($this->con, $beginning);
+      $_persevered = mysqli_real_escape_string($this->con, $persevered);
+      $_growth = mysqli_real_escape_string($this->con, $growth);
+      $_email = mysqli_real_escape_string($this->con, $email);
 
       //if (isset($email)) {
-        $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$name_', '$beginning_', '$persevered_', '$growth_', '$email_')";
+        $this->sql .= "INSERT INTO `stories-posts` (Name, Beginning, Persevered, Growth, Email) VALUES ('$_name', '$_beginning', '$_persevered', '$_growth', '$_email')";
 
         mysqli_query($this->con, $this->sql);
       //}
