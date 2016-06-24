@@ -269,6 +269,7 @@ nav .arrow:hover {
 
 #invalid p {
   color:white;
+  font-size:14px;
 }
 
 #name-error:before, #story-error:before, #email-error:before, #find-error:before {
