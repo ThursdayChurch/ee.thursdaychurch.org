@@ -28,7 +28,7 @@
       $connection = new StoriesConnection();
       $connection->submit($_POST["name"], $_POST["beginning"], $_POST["persevered"], $_POST["growth"], $_POST["email"]);
 
-			$mail = mail('zac.conant@journeychurch.tv', 'Submission Email Test' , 'Email Test');
+			$mail = mail('zac.conant@journeychurch.tv', 'Submission Email Test', 'Email Test');
 
 			echo $mail;
     ?>
