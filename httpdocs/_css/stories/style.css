@@ -258,18 +258,11 @@ nav .arrow:hover {
 }
 
 #invalid {
-  width:100%;
-  position:fixed;
   display:none;
-  background-color:rgba(70, 70, 70, 0.95);
   padding:10px 0;
   z-index:1000;
   text-align:center;
-}
-
-#invalid p {
-  color:white;
-  font-size:14px;
+  margin-bottom:20px;
 }
 
 #name-error:before, #story-error:before, #email-error:before, #find-error:before {
@@ -352,5 +345,9 @@ nav .arrow:hover {
   #cover h3 {
     font-size:20px;
     letter-spacing:7px;
+  }
+
+  #intro p {
+    font-size:14px;
   }
 }

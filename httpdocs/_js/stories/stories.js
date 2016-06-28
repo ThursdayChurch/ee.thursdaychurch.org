@@ -30,20 +30,25 @@ $(document).ready(function() {
   });
 
   // Validate entries
-  $("#stories-form").validate();
+  var validator = $("#stories-form").validate();
 
-  $("#stories-form").submit(function() {
+  $("#stories-form").submit(function(event) {
     if (!$("#stories-form").valid()) {
+      var invalids = validator.numberOfInvalids();
+
+      $("#invalid").html("<h3>Oops... " + invalids + " of your fields are invalid.<br><br>Please review and resubmit your entry.</h3>");
+
       $("#invalid").fadeIn();
 
       setTimeout(
         function() {
           $("#invalid").fadeOut();
         }
-      , 8000)
+      , 8000);
+
+      return false;
     }
   });
-
 
   var sections = $("section");
   var sectionScrollTops = [];
@@ -105,11 +110,12 @@ $(document).ready(function() {
   // Adjust heights of sections and scroll tops on resize
   $(window).resize(function() {
     windowHeight = $(window).height();
-    setScrollTops();
 
     $("section").css({
       "min-height" : windowHeight,
       "height" : windowHeight
     });
+
+    setScrollTops();
   });
 });
