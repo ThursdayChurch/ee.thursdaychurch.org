@@ -28,26 +28,13 @@
       $connection = new StoriesConnection();
       $connection->submit($_POST["name"], $_POST["beginning"], $_POST["persevered"], $_POST["growth"], $_POST["email"]);
 
-			$subject = "New Story Submission: " . $_POST["name"];
+			<!--$subject = "New Story Submission: " . $_POST["name"];
 
-			$message = '<html>
-			<head>
-			  <title>New Story Submission: ' . $_POST["name"] . '</title>
-			</head>
-			<body>
-			  <h3>What is your name?</h3><br><p>' . $_POST["name"] . '</p><br><br>
-				<h3>Where does your story begin? Describe that season…</h3><br><p>' . $_POST["beginning"] . '</p><br><br>
-				<h3>Can you further describe how you persevered during that season?</h3><br><p>' . $_POST["persevered"] . '</p><br><br>
-				<h3>How did that season change you and impact your story? Where were you before? Where are you now?</h3><br><p>' . $_POST["growth"] . '</p><br><br>
-				<h3>What is your email address?</h3><br><p>' . $_POST["email"] . '</p>
-			</body>
-			</html>';
+			$message = '<html><head><title>New Story Submission: ' . $_POST["name"] . '</title></head><body><h3>What is your name?</h3><br><p>' . $_POST["name"] . '</p><br><br><h3>Where does your story begin? Describe that season…</h3><br><p>' . $_POST["beginning"] . '</p><br><br><h3>Can you further describe how you persevered during that season?</h3><br><p>' . $_POST["persevered"] . '</p><br><br><h3>How did that season change you and impact your story? Where were you before? Where are you now?</h3><br><p>' . $_POST["growth"] . '</p><br><br><h3>What is your email address?</h3><br><p>' . $_POST["email"] . '</p></body></html>';
 
-			// In case any of our lines are larger than 70 characters, we should use wordwrap()
-			$message = wordwrap($message, 70, "\r\n");
+			$message = wordwrap($message, 70, "\r\n");-->
 
-			// Send
-			mail('zac.conant@journeychurch.tv', $subject , $message);
+			mail('zac.conant@journeychurch.tv', 'Submission Email Test' , 'Email Test');
     ?>
 
     <section id="submit" class="bg-img text-center">
